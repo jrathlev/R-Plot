@@ -1,0 +1,176 @@
+#  Doesn't have any letters
+#. frmSheet..MainMenu..itSheet..N3..Caption
+#: RPlotMain.dfm:1460
+#. frmSheet..MainMenu..itSheet..N2..Caption
+#: RPlotMain.dfm:1472
+#. frmSheet..MainMenu..itSheet..N5..Caption
+#: RPlotMain.dfm:1479
+#. frmSheet..MainMenu..itSheet..N1..Caption
+#: RPlotMain.dfm:1497
+#. frmSheet..MainMenu..itInfo..N4..Caption
+#: RPlotMain.dfm:1635
+#. frmSheet..MainMenu..itInfo..N6..Caption
+#: RPlotMain.dfm:1646
+msgid "-"
+msgstr ""
+
+#  Doesn't have any letters
+#. ImageDialog..gbImgSize..Label5..Caption
+#: ImageDlg.dfm:537
+msgid "%"
+msgstr ""
+
+#  Seems like a Font.Name extract
+#. DataDialog..paData..seHeader..Font.Name
+#: DataDlg.dfm:549
+#. DataDialog..paData..seHeader..Gutter.Font.Name
+#: DataDlg.dfm:556
+#. DataDialog..paData..seData..Font.Name
+#: DataDlg.dfm:577
+#. DataDialog..paData..seData..Gutter.Font.Name
+#: DataDlg.dfm:584
+msgid "Courier New"
+msgstr ""
+
+#  Seems like a Font.Name extract
+#. ImportDialog..CancelBtn..Font.Name
+#: ImportDlg.dfm:109
+msgid "Microsoft Sans Serif"
+msgstr ""
+
+#  Seems like a Font.Name extract
+#. CurveDialog..gbMarker..sbNoSym..Font.Name
+#: CurveDlg.dfm:308
+msgid "MS Sans Serif"
+msgstr ""
+
+#  Seems like a Font.Name extract
+#. CurveDialog..gbMarker..sbNoSym..Font.Name
+#: CurveDlg.dfm:308
+#. FunctionDialog..gbFormula..Label15..Font.Name
+#: FunctionDlg.dfm:176
+#. ImportDialog..Font.Name
+#: ImportDlg.dfm:12
+#. ImportDialog..CancelBtn..Font.Name
+#: ImportDlg.dfm:109
+#. PlotFontDialog..edPreview..Font.Name
+#: PlotFontDlg.dfm:193
+#. PreferencesDialog..pcPrefs..tsText..Panel2..edPreview..Font.Name
+#: PrefsDlg.dfm:1079
+#. frmView..Font.Name
+#: RPlotView.dfm:11
+#. frmView..GraphBox..GraphArea..Font.Name
+#: RPlotView.dfm:63
+#. TextDialog..gbProps..edPreview..Font.Name
+#: TextDlg.dfm:376
+#. TextDialog..pcType..tsComment..reAngle..Font.Name
+#: TextDlg.dfm:763
+msgid "Tahoma"
+msgstr ""
+
+#. DrawingDialog..pcProps..tsArrow..Caption
+#: DrawingDlg.dfm:535
+msgid "tsArrow"
+msgstr ""
+
+#. GraphDialog..pcType..tsScaled..gbDesign..pcSubType..tsBar..Caption
+#: GraphDlg.dfm:453
+msgid "tsBar"
+msgstr ""
+
+#. TextDialog..pcType..tsComment..Caption
+#: TextDlg.dfm:607
+msgid "tsComment"
+msgstr ""
+
+#. DrawingDialog..pcProps..tsFill..Caption
+#: DrawingDlg.dfm:605
+msgid "tsFill"
+msgstr ""
+
+#. TextDialog..pcType..tsMode..pcMode..tsFitResult..Caption
+#: TextDlg.dfm:545
+msgid "tsFitResult"
+msgstr ""
+
+#. GraphDialog..pcType..tsScaled..gbDesign..pcSubType..tsHisto..Caption
+#: GraphDlg.dfm:511
+msgid "tsHisto"
+msgstr ""
+
+#. AxisDialog..pcLabels..tsLabels..Caption
+#: AxisDlg.dfm:1122
+msgid "tsLabels"
+msgstr ""
+
+#. TextDialog..pcType..tsMode..pcMode..tsLegText..Caption
+#: TextDlg.dfm:577
+msgid "tsLegText"
+msgstr ""
+
+#. DrawingDialog..pcType..tsLine..Caption
+#: DrawingDlg.dfm:243
+msgid "tsLine"
+msgstr ""
+
+#. TextDialog..pcType..tsMode..Caption
+#: TextDlg.dfm:517
+msgid "tsMode"
+msgstr ""
+
+#. AxisDialog..pcLabels..tsProps..gbLabels..pcNotate..tsNumber..Caption
+#: AxisDlg.dfm:822
+msgid "tsNumber"
+msgstr ""
+
+#. GraphDialog..pcType..tsPie..Caption
+#: GraphDlg.dfm:585
+msgid "tsPie"
+msgstr ""
+
+#. AxisDialog..pcLabels..tsProps..Caption
+#: AxisDlg.dfm:685
+msgid "tsProps"
+msgstr ""
+
+#. DrawingDialog..pcType..tsRect..Caption
+#: DrawingDlg.dfm:397
+msgid "tsRect"
+msgstr ""
+
+#. GraphDialog..pcType..tsScaled..Caption
+#: GraphDlg.dfm:303
+msgid "tsScaled"
+msgstr ""
+
+#. TextDialog..pcType..tsText..Caption
+#: TextDlg.dfm:497
+msgid "tsText"
+msgstr ""
+
+#. AxisDialog..pcLabels..tsProps..gbLabels..pcNotate..tsUser..Caption
+#: AxisDlg.dfm:858
+msgid "tsUser"
+msgstr ""
+
+#  Doesn't look like text
+#. Programmer's name for it: SUTF7Encoding
+#: Vcl.Consts.pas:337
+msgid "UTF-7"
+msgstr ""
+
+#  Doesn't look like text
+#. Programmer's name for it: SUTF8Encoding
+#: Vcl.Consts.pas:336
+msgid "UTF-8"
+msgstr ""
+
+#. DrawingDialog..edDescription..EditLabel.Caption
+#: DrawingDlg.dfm:162
+#. GraphDialog..paTop..edDescription..EditLabel.Caption
+#: GraphDlg.dfm:619
+#. TextDialog..edDescription..EditLabel.Caption
+#: TextDlg.dfm:162
+msgid "xxx"
+msgstr ""
+
