@@ -1,4 +1,4 @@
-###R-Plot - Visualization of measuring data
+### R-Plot - Visualization of measuring data
 
 R-Plot is a Windows program for presenting measuring data as X-Y diagrams, 
 bar charts or histograms. Optionally you can add error bars, best-fit curves, 
