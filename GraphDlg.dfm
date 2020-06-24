@@ -511,6 +511,10 @@ object GraphDialog: TGraphDialog
             Caption = 'tsHisto'
             ImageIndex = 1
             TabVisible = False
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 0
+            ExplicitHeight = 0
             object Label9: TLabel
               Left = 20
               Top = 20

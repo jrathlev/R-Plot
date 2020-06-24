@@ -96,6 +96,7 @@ type
     procedure bbLoadTemplateClick(Sender: TObject);
     procedure bbSaveTemplateClick(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+    procedure cbXAxisSelectCloseUp(Sender: TObject);
   private
     { Private-Deklarationen }
     FIniName,
@@ -105,6 +106,7 @@ type
     FDataTable   : TDataTable;
     Bitmap       : TBitmap;
     FJoinMode    : TJoinMode;
+    FTimeSeries,
     DataChanged  : boolean;
     procedure ShowData(ACurve : TCurveItem);
     procedure SaveData(ACurve : TCurveItem);
@@ -224,6 +226,17 @@ begin
     end;
   end;
 
+procedure TCurveDialog.cbXAxisSelectCloseUp(Sender: TObject);
+var
+  id : integer;
+begin
+  with cbXAxisSelect do if ItemIndex>0 then begin
+    id:=integer(Items.Objects[ItemIndex]);
+    FTimeSeries:=(FCurve.ParentChart.GetItemFromID(id) as TAxisItem).ScaleType=stTime;
+    cbxErr.Visible:=not FTimeSeries;
+    end;
+  end;
+
 { ------------------------------------------------------------------- }
 procedure TCurveDialog.ShowParameter;
 begin
@@ -276,7 +289,7 @@ procedure TCurveDialog.bbDataClick(Sender: TObject);
 var
   al : boolean;
 begin
-  DataChanged:=DataDialog.Execute(DataTitle,true,al,FDataTable);
+  DataChanged:=DataDialog.Execute(DataTitle,true,FTimeSeries,al,FDataTable);
   cxXRange.Checked:=(cbXAxisSelect.ItemIndex<>0) and al;
   cxYRange.Checked:=(cbYAxisSelect.ItemIndex<>0) and al;
   end;
@@ -440,7 +453,7 @@ begin
     end;
   for i:=0 to ComponentCount-1 do if (Components[i] is TLabel) and (Components[i].Tag=1) then
     (Components[i] as TLabel).Caption:=s;
-  cxXRange.Checked:=false; cxYRange.Checked:=false;
+  cxXRange.Checked:=false; cxYRange.Checked:=false; FTimeSeries:=false;
   with ACurve do begin
     DataTitle:=TryFormat(_('%s of %s'),[Description,ParentChart.ChartDesc]);
     if IsNew then Caption:=TryFormat(_('Create %s for %s'),[_('Curve'),ParentChart.ChartDesc])
@@ -454,12 +467,11 @@ begin
         Clear;
         AddItem(_('<not selected>'),nil);
         end;
-      np:=2;
       ai:=GetFirstItem(itAxis);
       while assigned(ai) do with ai as TAxisItem do begin
         if AxType=atHorz then begin
           cbXAxisSelect.AddItem(Description,pointer(ItemID));
-          if (XAxID=ItemID) then np:=Properties.Precision;
+          if (XAxID=ItemID) then FTimeSeries:=ScaleType=stTime;
           end
         else cbYAxisSelect.AddItem(Description,pointer(ItemID));
         ai:=GetNextItem(itAxis);
@@ -467,6 +479,7 @@ begin
       end;
     ShowAxis(cbXAxisSelect,XAxID); ShowAxis(cbYAxisSelect,YAxID);
     end;
+  cbxErr.Visible:=not FTimeSeries;
   ShowData(ACurve);
   UpdateView;
   ColorDialog.CustomColors.CommaText:=UserColors;

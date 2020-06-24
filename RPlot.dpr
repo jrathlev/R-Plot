@@ -1,8 +1,8 @@
 program RPlot;
 
 uses
-  GnuGetText in 'units\GnuGetText.pas',
-  LangUtils in 'units\LangUtils.pas',
+  GnuGetText in '..\..\Bibliotheken\Units\GnuGetText.pas',
+  LangUtils in '..\..\Bibliotheken\Units\LangUtils.pas',
   Vcl.Forms,
   Vcl.Graphics,
   RPlotMain in 'RPlotMain.pas' {frmSheet},
@@ -18,17 +18,17 @@ uses
   DrawingDlg in 'DrawingDlg.pas' {DrawingDialog},
   RPlotObjects in 'RPlotObjects.pas',
   PsPlot in 'PsPlot.pas',
-  FindReplDlg in 'units\FindReplDlg.pas' {FindReplDialog},
+  FindReplDlg in '..\..\Bibliotheken\dialogs\FindReplDlg.pas' {FindReplDialog},
   PrefsDlg in 'PrefsDlg.pas' {PreferencesDialog},
-  RadioDials in 'units\RadioDials.pas',
+  RadioDials in '..\..\Bibliotheken\Components\RadioDials.pas',
   PlotFontDlg in 'PlotFontDlg.pas' {PlotFontDialog},
   GraphDlg in 'GraphDlg.pas' {GraphDialog},
   SetCustomColorDlg in 'SetCustomColorDlg.pas' {SetCustomColorDialog},
   SelectAxisDlg in 'SelectAxisDlg.pas' {SelectAxisDialog},
   TextFormatDlg in 'TextFormatDlg.pas' {TextFormatDialog},
   FitDlg in 'FitDlg.pas' {FitDialog},
-  //  SkConsts in 'SkConsts.pas',
-  RPlotUtils in 'RPlotUtils.pas';
+  RPlotUtils in 'RPlotUtils.pas',
+  DateFormatDlg in '..\..\Bibliotheken\Dialogs\DateFormatDlg.pas' {DateFormatDialog};
 
 {$R *.res}
 
@@ -55,5 +55,6 @@ begin
   Application.CreateForm(TGraphDialog, GraphDialog);
   Application.CreateForm(TSelectAxisDialog, SelectAxisDialog);
   Application.CreateForm(TFitDialog, FitDialog);
+  Application.CreateForm(TDateFormatDialog, DateFormatDialog);
   Application.Run;
 end.

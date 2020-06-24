@@ -1911,7 +1911,9 @@ const
   begin
     Delta:=Ende-Anf+0.5*OneSecond;
     if Delta<0 then Delta:=1.0;
-    if Delta>10 then begin   (* mehr als 10 Tage *)
+    if Delta>350 then begin   (* mehr als 35 Tage *)
+      end
+    else if Delta>10 then begin   (* mehr als 10 Tage *)
       dec:=pwr(10.0,aint(lg(Delta)-0.05)); xa:=Anf/dec;
       if xa<=2.1 then xb:=0.5 else
         if xa<=5.1 then xb:=1.0 else xb:=2.0;
@@ -1996,7 +1998,7 @@ const
     XL : double;
     S  : String;
   begin
-    s:=FormatDateTime ('yyyy-mm-dd',dt);
+    s:=FormatDateTime (AAxis.Properties.DateFormat,dt);
     if Wd then s:=s+' ('+GetShortDayOfWeek(dt)+')';
     XL:=0.5*GetTextWidth(S,false);
     if NOT VSW then begin (* horizontale Achse *)
@@ -2012,10 +2014,10 @@ const
 
   procedure TimeAxis(xp : double; cm1,cm2,fm1,fm2 : double; ShowText,ShowGrid,Mirror : boolean);
   var
-    I            : integer;
+    I,n          : integer;
     XT           : TDateTime;
     X,Y,ng       : double;
-    first        : boolean;
+    first,mark   : boolean;
   begin
     with AAxis,Properties do begin
       if Mirror and (TmStyle<>tmBoth) then begin  // Markierungen an der Achse spiegeln
@@ -2025,7 +2027,12 @@ const
       for i:=0 to IFein do begin
         XT:=AFein+i*Zwf; X:=Scale(XT);
         NewLineColor(LnColor);
-        if ABS((XT-ng)/Zwf) <= 0.5 then begin
+        if IFein*Zwf>35 then begin
+          n:=DayOfTheMonth(XT)-1;
+          mark:=(n<Zwf) or ((n>=14) and (n<14+Zwf));
+          end
+        else mark:=ABS((XT-ng)/Zwf)<=0.5;
+        if mark then begin
           if NOT VSW then begin (* horizontale Achse *)
          (*  zeichne die groben Skalierungen mit Beschriftung und
             das vertikale Raster der Hor. Achse *)
@@ -2038,9 +2045,9 @@ const
             if ShowText then begin
               y:=xp+ys;
               NewTextColor(LabFont.FontColor);
-              if PlotTime (X+xs,y,ng) then y:=y-1.2*LabFont.FontSize;
-              if (asDate in AxStyles) and (First or (abs(frac(ng))<OneSecond)) then begin
-                PlotDate (x+xs,y,ng,asWeekday in AxStyles);
+              if PlotTime (X+xs,y,xt) then y:=y-1.2*LabFont.FontSize;
+              if (asDate in AxStyles) and (First or (abs(frac(xt))<OneSecond)) then begin
+                PlotDate (x+xs,y,xt,asWeekday in AxStyles);
                 first:=false;
                 end;
               end;
@@ -2057,11 +2064,11 @@ const
             if ShowText then begin
               y:=x+ys; x:=xp+xs;
               NewTextColor(LabFont.FontColor);
-              if PlotTime (x,y,ng) then begin
+              if PlotTime (x,y,xt) then begin
                 if asRotate in AxStyles then x:=x-1.2*LabFont.FontSize else y:=y-1.2*LabFont.FontSize;
                 end;
-              if (asDate in AxStyles) and (First or (abs(frac(ng))<OneSecond)) then begin
-                PlotDate (x,y,ng,asWeekday in AxStyles);
+              if (asDate in AxStyles) and (First or (abs(frac(xt))<OneSecond)) then begin
+                PlotDate (x,y,xt,asWeekday in AxStyles);
                 first:=false;
                 end;
               end;

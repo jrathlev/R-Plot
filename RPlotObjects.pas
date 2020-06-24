@@ -268,6 +268,7 @@ type
     ShowLabels    : boolean;     // benutzerdefinierte Labels anzeigen
     Precision     : integer;     // Anzahl signif. Stellen bei der Beschriftung
     Notation      : TNotation;   // Schreibweise der Zahlen
+    DateFormat    : string;      // Datumsformat
     LnColor       : TColor;      // Linienfarbe
     LabDist,                     // Abstand der Beschriftung von der Achse
     LnWidth,                     // Dicke der Achsen-Linien
@@ -540,7 +541,8 @@ const
                 ShowLabels : false;    // benutzerdefinierte Labels anzeigen
                 Precision  : AutoPrec; // autom. Auswahl der sign. Stellen der
                 Notation   : noFixed;   // Schreibweise der Zahlen
-                LnColor    : clBlack;  // Linienfarbe
+                DateFormat : 'yyyy-mm-dd'; // Datumsformat
+                LnColor    : clBlack;   // Linienfarbe
                 LabDist    : MetricLabDist;  // Abstand der Beschriftung von der Achse
                 LnWidth    : 0.025;     // Dicke der Achsen-Linien
                 GrWidth    : 0.025;     // Dicke der Rasterlinien
@@ -563,6 +565,7 @@ const
                 ShowLabels : false;    // benutzerdefinierte Labels anzeigen
                 Precision  : AutoPrec; // autom. Auswahl der sign. Stellen der
                 Notation   : noFixed;  // Schreibweise der Zahlen
+                DateFormat : 'yyyy-mm-dd'; // Datumsformat
                 LnColor    : clBlack;  // Linienfarbe
                 LabDist    : InchLabDist;   // Abstand der Beschriftung von der Achse
                 LnWidth    : 0.01;    // Dicke der Achsen-Linien
@@ -814,7 +817,7 @@ type
     AxPos         : TAxPos;      // Position links/unten, rechts/oben oder benutzerdefiniert
     AxOffset      : double;      // Offset der Achsenposition in cm/inch rel. zu Rand
     ScaleType     : TScaleType;  // Skalierung (lin, log, reziprok oder Zeit)
-    Caption,AUnit : string;      // Legendentext, Eiheit der Werte
+    Caption,AUnit : string;      // Legendentext, Einheit der Werte
     Labels        : TStringList; // benutzerdef. Beschriftung
     Properties    : TAxisProperties;  // Achseneigenschaften
     constructor Create (AChart : TChart; AAxType : TAxisType; AProps : TAxisProperties);
@@ -1055,6 +1058,7 @@ type
     function AddToList (AList : TObjectList) : integer;
     procedure Clear;
     procedure ResetItems;             // reset all items
+    function IndexOf (AID : integer) : integer;
     function GetAxisOffset (AAxType : TAxisType) : TOffset;
     procedure SetAxesOffset (AAxType : TAxisType; Value : double);
     function GetAxisCount (AAxType : TAxisType; AAxPos : TAxPos) : integer;
@@ -1065,6 +1069,7 @@ type
     function GetFirstItemID (AItemType : TItemType) : integer;
     function GetFirstItem (AItemType : TItemType) : TChartItem;
     function GetNextItem (AItemType : TItemType) : TChartItem;
+    function GetItemFromID (AID : integer) : TChartItem;
     function AddNewItem (AItemType : TItemType) : TChartItem;
     function AddItemByName (const AItemName : string) : TChartItem;
     function AddItem (AItem : TChartItem) : integer;
@@ -1079,7 +1084,6 @@ type
     function AddImage : TImageItem;
     function AddDrawing (dt : TDrawingType = dtLine) : TDrawingItem;
     function CreateID (AItemType : TItemType) : integer;
-    function IndexOf (AID : integer) : integer;
     function IsInChart (APos : TFPoint) : boolean;
     procedure UpdateFits (AItemID : integer);
     property Area : TFloatArea read FArea write FArea;  // rel. zu unterer linker Ecke
@@ -1436,6 +1440,7 @@ const
   iniLab      = 'L';
   iniLShow    = 'ShowLabels';
   iniLabFont  = 'LabelFont';
+  iniDatForm  = 'DateFormat';
   iniCTmSize  = 'CoarseTickmark';
   iniFTmSize  = 'FineTickmark';
   iniIvWidth  = 'TickmarkWidth';
@@ -2224,6 +2229,14 @@ begin
   if i>=ItemCount then Result:=-1 else Result:=i;
   end;
 
+function TChart.GetItemFromID (AID : integer) : TChartItem;
+var
+  n : integer;
+begin
+  n:=IndexOf(AID);
+  if n>=0 then Result:=Item[n] else Result:=nil;
+  end;
+
 function TChart.IsInChart(APos : TFPoint) : boolean;
 begin
   with FArea,APos do Result:=(x>=Left) and (x<=Left+Width) and
@@ -2822,6 +2835,7 @@ begin
     ShowLabels:=XMLReadBool(XmlNode,iniLShow,ShowLabels);
     Precision:=XMLReadInteger(XmlNode,iniPrec,Precision);
     Notation:=TNotation(XMLReadInteger(XmlNode,iniNotate,integer(Notation)));
+    DateFormat:=XMLReadString(XmlNode,iniDatForm,DateFormat);
     LnColor:=XMLReadInteger(XmlNode,iniLnCol,LnColor);
     lnode:=XMLReadNode(XmlNode,iniLabFont);
     with LabFont do if assigned(lnode) then begin
@@ -2886,6 +2900,7 @@ begin
     XMLWriteVariant(XmlNode,iniLShow,ShowLabels);
     XMLWriteVariant(XmlNode,iniPrec,Precision);
     XMLWriteVariant(XmlNode,iniNotate,integer(Notation));
+    XMLWriteVariant(XmlNode,iniDatForm,DateFormat);
     XMLWriteVariant(XmlNode,iniLnCol,LnColor);
     lnode:=XMLNewNode(XmlNode,iniLabFont);
     with LabFont do begin

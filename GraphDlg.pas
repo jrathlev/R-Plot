@@ -256,7 +256,7 @@ procedure TGraphDialog.bbDataClick(Sender: TObject);
 var
   al : boolean;
 begin
-  DataDialog.Execute(FGraph.Description,true,al,FDataTable);
+  DataDialog.Execute(FGraph.Description,false,false,al,FDataTable);
   cxXRange.Checked:=(cbXAxisSelect.ItemIndex<>0) and al;
   cxYRange.Checked:=(cbYAxisSelect.ItemIndex<>0) and al;
   end;

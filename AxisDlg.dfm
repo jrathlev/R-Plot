@@ -153,108 +153,13 @@ object AxisDialog: TAxisDialog
     NumGlyphs = 2
     TabOrder = 1
   end
-  object rgType: TRadioGroup
-    Left = 10
-    Top = 50
-    Width = 226
-    Height = 46
-    Caption = 'Type'
-    Columns = 2
-    ItemIndex = 0
-    Items.Strings = (
-      'Horizontal'
-      'Vertical')
-    TabOrder = 3
-  end
-  object gbRange: TGroupBox
-    Tag = 10
-    Left = 10
-    Top = 100
-    Width = 226
-    Height = 66
-    Caption = 'Range'
-    TabOrder = 4
-    object Label11: TLabel
-      Left = 15
-      Top = 18
-      Width = 26
-      Height = 13
-      Caption = 'from:'
-    end
-    object Label12: TLabel
-      Left = 90
-      Top = 18
-      Width = 14
-      Height = 13
-      Caption = 'to:'
-    end
-    object edMinVal: TEdit
-      Left = 15
-      Top = 35
-      Width = 66
-      Height = 21
-      TabOrder = 0
-      OnExit = edMinValExit
-    end
-    object edMaxVal: TEdit
-      Left = 90
-      Top = 35
-      Width = 66
-      Height = 21
-      TabOrder = 1
-      OnExit = edMaxValExit
-    end
-    object bbInterval: TBitBtn
-      Left = 165
-      Top = 35
-      Width = 56
-      Height = 21
-      Hint = 'Compute interval settings'
-      Glyph.Data = {
-        B6010000424DB601000000000000760000002800000028000000100000000100
-        0400000000004001000000000000000000001000000000000000000000000000
-        8000008000000080800080000000800080008080000080808000C0C0C0000000
-        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00BBBBBBBBBBBB
-        BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
-        BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB000000000000000000
-        000000000000000000BBBB000000000000000000000000000000000000BBBB00
-        BBB0BBB0BBB0BBB00BBB0BBB0BBB0BBB00BBBB00BBB0BBB0BBB0BBB00BBB0BBB
-        0BBB0BBB00BBBB00BBB0BBB0BBB0BBB00BBB0BBB0BBB0BBB00BBBB00BBB0BBB0
-        BBB0BBB00BBB0BBB0BBB0BBB00BBBB00BBBBBBBBBBBBBBB00BBBBBBBBBBBBBBB
-        00BBBB00BBBBBBBBBBBBBBB00BBBBBBBBBBBBBBB00BBBB00BBBBBBBBBBBBBBB0
-        0BBBBBBBBBBBBBBB00BBBB00BBBBBBBBBBBBBBB00BBBBBBBBBBBBBBB00BBBBBB
-        BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
-        BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB}
-      ParentDoubleBuffered = True
-      ParentShowHint = False
-      ShowHint = True
-      TabOrder = 2
-      OnClick = bbIntervalClick
-    end
-  end
-  object rgScale: TRadioGroup
-    Left = 10
-    Top = 175
-    Width = 226
-    Height = 66
-    Caption = 'Scaling'
-    Columns = 2
-    ItemIndex = 0
-    Items.Strings = (
-      'Linear'
-      'Logarith.'
-      'Inverse'
-      'Date/Time')
-    TabOrder = 5
-    OnClick = rgScaleClick
-  end
   object gbPos: TGroupBox
-    Left = 10
-    Top = 250
-    Width = 226
-    Height = 96
+    Left = 5
+    Top = 240
+    Width = 231
+    Height = 106
     Caption = 'Position'
-    TabOrder = 6
+    TabOrder = 3
     object laPlotUnit1: TLabel
       Tag = 1
       Left = 162
@@ -321,12 +226,12 @@ object AxisDialog: TAxisDialog
     end
   end
   object gbLine: TGroupBox
-    Left = 10
-    Top = 355
-    Width = 226
+    Left = 5
+    Top = 350
+    Width = 231
     Height = 56
     Caption = 'Line'
-    TabOrder = 7
+    TabOrder = 4
     object laUnit3: TLabel
       Tag = 1
       Left = 107
@@ -370,7 +275,7 @@ object AxisDialog: TAxisDialog
     Width = 311
     Height = 141
     Caption = 'Caption'
-    TabOrder = 10
+    TabOrder = 7
     object Label2: TLabel
       Left = 15
       Top = 95
@@ -568,7 +473,7 @@ object AxisDialog: TAxisDialog
     NumGlyphs = 2
     ParentShowHint = False
     ShowHint = True
-    TabOrder = 13
+    TabOrder = 10
     OnClick = bbLoadTemplateClick
   end
   object bbSaveTemplate: TBitBtn
@@ -659,7 +564,7 @@ object AxisDialog: TAxisDialog
     NumGlyphs = 2
     ParentShowHint = False
     ShowHint = True
-    TabOrder = 14
+    TabOrder = 11
     OnClick = bbSaveTemplateClick
   end
   object cxShow: TCheckBox
@@ -671,7 +576,7 @@ object AxisDialog: TAxisDialog
     Caption = 'Visible'
     Checked = True
     State = cbChecked
-    TabOrder = 11
+    TabOrder = 8
   end
   object pcLabels: TPageControl
     Left = 240
@@ -680,7 +585,7 @@ object AxisDialog: TAxisDialog
     Height = 341
     ActivePage = tsProps
     Style = tsButtons
-    TabOrder = 9
+    TabOrder = 6
     object tsProps: TTabSheet
       Caption = 'tsProps'
       TabVisible = False
@@ -1284,12 +1189,12 @@ object AxisDialog: TAxisDialog
     end
   end
   object gbGrid: TGroupBox
-    Left = 10
-    Top = 420
-    Width = 226
-    Height = 76
+    Left = 5
+    Top = 410
+    Width = 231
+    Height = 81
     Caption = 'Grid lines'
-    TabOrder = 8
+    TabOrder = 5
     object Label15: TLabel
       Left = 145
       Top = 18
@@ -1393,8 +1298,296 @@ object AxisDialog: TAxisDialog
       99FFCC99FF00BFBF00BFBF00BFBF00BFBFCC99FFCC99FFCC99FF}
     ParentShowHint = False
     ShowHint = True
-    TabOrder = 12
+    TabOrder = 9
     OnClick = bbTextFormatClick
+  end
+  object pcRange: TPageControl
+    Left = 0
+    Top = 95
+    Width = 241
+    Height = 141
+    ActivePage = tsDateTime
+    Style = tsButtons
+    TabOrder = 12
+    object tsNormal: TTabSheet
+      Caption = 'tsNormal'
+      TabVisible = False
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
+      object rgScale: TRadioGroup
+        Left = 2
+        Top = 85
+        Width = 231
+        Height = 46
+        Caption = 'Scaling'
+        Columns = 3
+        ItemIndex = 0
+        Items.Strings = (
+          'Linear'
+          'Logarith.'
+          'Inverse')
+        TabOrder = 0
+        OnClick = rgScaleClick
+      end
+      object gbRange: TGroupBox
+        Tag = 10
+        Left = 2
+        Top = 0
+        Width = 231
+        Height = 81
+        Caption = 'Range'
+        TabOrder = 1
+        object Label11: TLabel
+          Left = 15
+          Top = 23
+          Width = 26
+          Height = 13
+          Caption = 'from:'
+        end
+        object Label12: TLabel
+          Left = 90
+          Top = 23
+          Width = 14
+          Height = 13
+          Caption = 'to:'
+        end
+        object edMinVal: TEdit
+          Left = 15
+          Top = 40
+          Width = 66
+          Height = 21
+          TabOrder = 0
+          OnExit = edMinValExit
+        end
+        object edMaxVal: TEdit
+          Left = 90
+          Top = 40
+          Width = 66
+          Height = 21
+          TabOrder = 1
+          OnExit = edMaxValExit
+        end
+        object bbInterval: TBitBtn
+          Left = 165
+          Top = 40
+          Width = 56
+          Height = 21
+          Hint = 'Compute interval settings'
+          Glyph.Data = {
+            B6010000424DB601000000000000760000002800000028000000100000000100
+            0400000000004001000000000000000000001000000000000000000000000000
+            8000008000000080800080000000800080008080000080808000C0C0C0000000
+            FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00BBBBBBBBBBBB
+            BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+            BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB000000000000000000
+            000000000000000000BBBB000000000000000000000000000000000000BBBB00
+            BBB0BBB0BBB0BBB00BBB0BBB0BBB0BBB00BBBB00BBB0BBB0BBB0BBB00BBB0BBB
+            0BBB0BBB00BBBB00BBB0BBB0BBB0BBB00BBB0BBB0BBB0BBB00BBBB00BBB0BBB0
+            BBB0BBB00BBB0BBB0BBB0BBB00BBBB00BBBBBBBBBBBBBBB00BBBBBBBBBBBBBBB
+            00BBBB00BBBBBBBBBBBBBBB00BBBBBBBBBBBBBBB00BBBB00BBBBBBBBBBBBBBB0
+            0BBBBBBBBBBBBBBB00BBBB00BBBBBBBBBBBBBBB00BBBBBBBBBBBBBBB00BBBBBB
+            BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+            BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB}
+          ParentDoubleBuffered = True
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 2
+          OnClick = bbIntervalClick
+        end
+      end
+    end
+    object tsDateTime: TTabSheet
+      Caption = 'tsDateTime'
+      ImageIndex = 1
+      TabVisible = False
+      object gbTimeRange: TGroupBox
+        Left = 2
+        Top = 0
+        Width = 231
+        Height = 126
+        Caption = 'Time range'
+        TabOrder = 0
+        object Label24: TLabel
+          Left = 15
+          Top = 23
+          Width = 26
+          Height = 13
+          Caption = 'from:'
+        end
+        object Label25: TLabel
+          Left = 125
+          Top = 23
+          Width = 14
+          Height = 13
+          Caption = 'to:'
+        end
+        object dtpMinD: TDateTimePicker
+          Left = 15
+          Top = 40
+          Width = 96
+          Height = 21
+          Date = 43995.745114409720000000
+          Time = 43995.745114409720000000
+          TabOrder = 0
+          OnChange = dtpMinChange
+        end
+        object dtpMaxD: TDateTimePicker
+          Left = 125
+          Top = 40
+          Width = 96
+          Height = 21
+          Date = 43995.745114409720000000
+          Time = 43995.745114409720000000
+          TabOrder = 1
+          OnChange = dtpMaxChange
+        end
+        object dtpMinT: TDateTimePicker
+          Left = 15
+          Top = 70
+          Width = 96
+          Height = 21
+          Date = 43995.745114409720000000
+          Time = 43995.745114409720000000
+          Kind = dtkTime
+          TabOrder = 2
+          OnChange = dtpMinChange
+        end
+        object dtpMaxT: TDateTimePicker
+          Left = 125
+          Top = 70
+          Width = 96
+          Height = 21
+          Date = 43995.745114409720000000
+          Time = 43995.745114409720000000
+          Kind = dtkTime
+          TabOrder = 3
+          OnChange = dtpMaxChange
+        end
+        object bbMinTSet: TBitBtn
+          Left = 15
+          Top = 95
+          Width = 31
+          Height = 21
+          Hint = 'Set tp begin of day'
+          Glyph.Data = {
+            36030000424D3603000000000000360000002800000010000000100000000100
+            18000000000000030000120B0000120B00000000000000000000CCCC99CCCC99
+            CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC
+            99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CC
+            CC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99
+            CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC
+            99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CC
+            CC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99
+            CCCC99CCCC99CCCC99000000000000CCCC99CCCC99CCCC99CCCC99CCCC99CCCC
+            99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99000000DDD7D4000000CC
+            CC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99
+            CCCC99000000CEBCB4CEBCB40000000000000000000000000000000000000000
+            00000000000000CCCC99CCCC99CCCC99000000BFA193BFA193BFA193BFA193BF
+            A193BFA193BFA193BFA193BFA193BFA193BFA193000000CCCC99CCCC99000000
+            B18672B18672B18672B18672B18672B18672B18672B18672B18672B18672B186
+            72B18672000000CCCC99CCCC99CCCC99000000A26B51A26B51A26B51A26B51A2
+            6B51A26B51A26B51A26B51A26B51A26B51A26B51000000CCCC99CCCC99CCCC99
+            CCCC990000009350309350300000000000000000000000000000000000000000
+            00000000000000CCCC99CCCC99CCCC99CCCC99CCCC99000000843510000000CC
+            CC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99
+            CCCC99CCCC99CCCC99000000000000CCCC99CCCC99CCCC99CCCC99CCCC99CCCC
+            99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CC
+            CC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99
+            CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC
+            99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CC
+            CC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99}
+          ParentDoubleBuffered = True
+          TabOrder = 4
+          OnClick = bbMinTSetClick
+        end
+        object bbMaxTSet: TBitBtn
+          Left = 125
+          Top = 95
+          Width = 31
+          Height = 21
+          Hint = 'Set to end of day'
+          Glyph.Data = {
+            36030000424D3603000000000000360000002800000010000000100000000100
+            18000000000000030000120B0000120B00000000000000000000CCCC99CCCC99
+            CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC
+            99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CC
+            CC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99
+            CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC
+            99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CC
+            CC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99
+            CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99000000000000CCCC99CCCC
+            99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CC
+            CC99CCCC99000000DDD7D4000000CCCC99CCCC99CCCC99CCCC99CCCC99000000
+            000000000000000000000000000000000000000000000000CEBCB4CEBCB40000
+            00CCCC99CCCC99CCCC99CCCC99000000BFA193BFA193BFA193BFA193BFA193BF
+            A193BFA193BFA193BFA193BFA193BFA193000000CCCC99CCCC99CCCC99000000
+            B18672B18672B18672B18672B18672B18672B18672B18672B18672B18672B186
+            72B18672000000CCCC99CCCC99000000A26B51A26B51A26B51A26B51A26B51A2
+            6B51A26B51A26B51A26B51A26B51A26B51000000CCCC99CCCC99CCCC99000000
+            0000000000000000000000000000000000000000000000009350309350300000
+            00CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CC
+            CC99CCCC99000000843510000000CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99
+            CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99000000000000CCCC99CCCC
+            99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CC
+            CC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99
+            CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC
+            99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CC
+            CC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99CCCC99}
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 5
+          OnClick = bbMaxTSetClick
+        end
+        object bbDateFormat: TBitBtn
+          Left = 175
+          Top = 95
+          Width = 46
+          Height = 21
+          Hint = 'Select date format'
+          Glyph.Data = {
+            56020000424D5602000000000000560000002800000020000000100000000100
+            08000000000000020000120B0000120B0000080000000000000000000000646F
+            71000000FF00FF00FF0099A8AC00D8E9EC00E2EFF100FFFFFF00030303030303
+            0303030303030303030303030303030303030303030303030303030303030303
+            0303030303030303030303030303030303030303030303030303030303030303
+            0303030303030303030303030303030303030303030303030303030000000000
+            0000000000000000000000000000000000000000000000000003030007070707
+            0707070707070707070707070707070707070707070707070003030007000000
+            0700000007000000070000000700000007000000070707070003030007070007
+            0707070007000700070007070700070707000700070707070003030007070007
+            0707070007000700070007070700000007000700070707070003030007000007
+            0707070007000700070007070707070007000700070707070003030007070007
+            0707070007000700070007070700000007000000070000000003030007070707
+            0707070707070707070707070707070707070707070007070003030002020202
+            0202020202020202020202020202020202020202020007000303030007070707
+            0707070707070707070707070707070707070707070000030303030000000000
+            0000000000000000000000000000000000000000000003030303030303030303
+            0303030303030303030303030303030303030303030303030303030303030303
+            0303030303030303030303030303030303030303030303030303}
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 6
+          OnClick = bbDateFormatClick
+        end
+      end
+    end
+  end
+  object rgType: TRadioGroup
+    Left = 5
+    Top = 45
+    Width = 231
+    Height = 46
+    Caption = 'Type'
+    Columns = 3
+    ItemIndex = 0
+    Items.Strings = (
+      'Horizontal'
+      'Vertical'
+      'Date/Time')
+    TabOrder = 13
+    OnClick = rgTypeClick
   end
   object ColorDialog: TColorDialog
     Left = 200

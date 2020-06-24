@@ -81,6 +81,7 @@ type
     FData     : TDataArray;
     FDataCols : TDataCols;
     FoImp     : TCsvFormatSettings;
+    timser,
     xcol,ycol : boolean;
     function CompareVals (const arg1,arg2) : boolean;
     procedure ShowData;
@@ -88,7 +89,7 @@ type
   public
     { Public-Deklarationen }
     procedure LoadFromIni (AIniName : string);
-    function Execute (const ATitle : string; ShowErrors : boolean;
+    function Execute (const ATitle : string; ShowErrors,TimeSeries : boolean;
                       var AutoAlign : boolean;
                       var ADataTable : TDataTable) : boolean;
   end;
@@ -174,7 +175,8 @@ begin
     FDataCols:=[];
     TabWidth:=udTab.Position;
     if xcol then begin
-      s:=_('X-Values'); include(FDataCols,dcValX);
+      if timser then s:=_('Date/Time') else s:=_('X-Values');
+      include(FDataCols,dcValX);
       if rbXSymErr.Checked then begin
         s:=s+Tab+_('X-Errors'); include(FDataCols,dcErrSX);
         end
@@ -206,7 +208,8 @@ begin
     end;
   for i:=0 to length(FData)-1 do with FData[i] do begin
     if xcol then begin
-      s:=FloatToStrF(Val.X,DataForm,DataPrec,DataDig);
+    if timser then s:=DateTimeToStr(Val.X)
+      else s:=FloatToStrF(Val.X,DataForm,DataPrec,DataDig);
       if rbXSymErr.Checked then s:=s+Tab+FloatToStrF(PErr.X,DataForm,DataPrec,DataDig)
       else if rbXAsymErr.Checked then s:=s+Tab+FloatToStrF(PErr.X,DataForm,DataPrec,DataDig)
         +Tab+FloatToStrF(MErr.X,DataForm,DataPrec,DataDig);
@@ -223,6 +226,14 @@ begin
     end;
   end;
 
+function ReadNxtDateTime (var s : String; Del : char; Default : TDateTime) : TDateTime;
+var
+  sd : string;
+begin
+  sd:=ReadNxtStr(s,Del);
+  if not TryStringToDateTime(sd,Result) then Result:=Default;
+  end;
+
 procedure TDataDialog.SaveData;
 var
   i,n : integer;
@@ -235,7 +246,8 @@ begin
       s:=DelSp(Lines[i]);
       if length(s)>0 then begin
         if xcol then begin
-          Val.X:=ReadNxtDbl(s,Tab,0);
+          if timser then Val.X:=ReadNxtDateTime(s,Tab,Date)
+          else Val.X:=ReadNxtDbl(s,Tab,0);
           if dcErrSX in FDataCols then PErr.X:=ReadNxtDbl(s,Tab,0)
           else if dcErrAX in FDataCols then begin
             PErr.X:=ReadNxtDbl(s,Tab,0); MErr.X:=ReadNxtDbl(s,Tab,0);
@@ -382,6 +394,14 @@ var
   da     : TDataArray;
   err    : boolean;
 
+  function ReadDateTime (const s       : String;
+                         Default : TDateTime;
+                         var err : boolean) : TDateTime;
+  begin
+    err:=not TryStringToDateTime(s,Result);
+    if err then Result:=Default;
+    end;
+
   function ReadFloat (s       : String;
                       Default : double;
                       var err : boolean) : double;
@@ -458,7 +478,7 @@ begin
         Path:=ExtractFilePath(Filename);
         Ext:=GetExt(Filename);
         end;
-      if ImportDialog.Execute(Filename,FoImp,FDataCols,ImpSet) then begin
+      if ImportDialog.Execute(Filename,timser,FoImp,FDataCols,ImpSet) then begin
         ft:=TReadTextFile.Create(Filename,fmShareDenyRead);
         n:=0; line:=0;
         with ft do while not Eof do begin
@@ -482,7 +502,10 @@ begin
                 inc(j);
                 if length(t)>0 then begin
                   with XCols do begin
-                    if j=icV then Val.X:=ReadFloat(t,0,err);
+                    if j=icV then begin
+                      if timser then Val.X:=ReadDateTime(t,Date,err)
+                      else Val.X:=ReadFloat(t,0,err);
+                      end;
                     if j=icP then PErr.X:=ReadFloat(t,0,err);
                     if j=icM then MErr.X:=ReadFloat(t,0,err);
                     end;
@@ -530,13 +553,15 @@ begin
   ShowData;
   end;
 
-function TDataDialog.Execute (const ATitle : string; ShowErrors : boolean;
+function TDataDialog.Execute (const ATitle : string; ShowErrors,TimeSeries : boolean;
                               var AutoAlign : boolean;
                               var ADataTable : TDataTable) : boolean;
 begin
   Caption:=_('Edit data for ')+ATitle;
   FTitle:=ATitle;
   paTop.Visible:=ShowErrors;
+  timser:=TimeSeries;
+  gbxErr.Visible:=not timser;
   with ADataTable do begin
     xcol:=dcValX in DataCols ; ycol:=dcValY in DataCols ;
     rbXNoerr.Checked:=true;

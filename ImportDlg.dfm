@@ -519,6 +519,7 @@ object ImportDialog: TImportDialog
     Top = 260
     Width = 581
     Height = 116
+    BevelOuter = bvNone
     TabOrder = 7
     object Label3: TLabel
       Left = 10

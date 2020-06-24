@@ -168,6 +168,7 @@ object CurveDialog: TCurveDialog
       Height = 21
       Style = csDropDownList
       TabOrder = 0
+      OnCloseUp = cbXAxisSelectCloseUp
     end
     object cxXRange: TCheckBox
       Left = 30

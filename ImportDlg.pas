@@ -120,12 +120,14 @@ type
   private
     { Private declarations }
     ColVal : integer;
+    FTimeSeries : boolean;
     FFormat : TCsvFormatSettings;
     procedure UpdatePreview;
     procedure EnableControls(AEnable : Boolean; AIndex : integer);
   public
     { Public declarations }
-    function Execute (AFilename   : string;
+    function Execute (const AFilename : string;
+                      TimeSeries  : boolean;
                       var AFormat : TCsvFormatSettings;
                       ADataCols   : TDataCols;
                       var ImpSet  : TImportSettings) : boolean;
@@ -134,11 +136,48 @@ type
 var
   ImportDialog: TImportDialog;
 
+function TryStringToDateTime (s : string; var dt : TDateTime) : boolean;
+
 implementation
 
 {$R *.DFM}
 
-uses StringUtils, FileUtils, GnuGetText;
+uses System.DateUtils, StringUtils, FileUtils, GnuGetText;
+
+function TryStringToDateTime (s : string; var dt : TDateTime) : boolean;
+var
+  j1,j2,j3 : integer;
+  err : boolean;
+begin
+  err:=false;
+  s:=Trim(s);
+  if length(s)>0 then begin
+    if Pos('-',s)>0 then begin // mit Datum
+      j1:=ReadNxtInt(s,'-',YearOf(Now),err);
+      j2:=ReadNxtInt(s,'-',MonthOf(Now),err);
+      j3:=ReadNxtInt(s,' ',DayOf(Now),err);
+      try dt:=EncodeDate(j1,j2,j3); except err:=true; end;
+      end
+    else begin
+      j1:=Pos(':',s); j2:=Pos('.',s);
+      if ((j1=0) and (j2>0)) or ((j2>0) and (j2<j1)) then begin
+        j3:=ReadNxtInt(s,'.',DayOf(Now),err);
+        j2:=ReadNxtInt(s,'.',MonthOf(Now),err);
+        j1:=ReadNxtInt(s,' ',YearOf(Now),err);
+        try dt:=EncodeDate(j1,j2,j3); except err:=true; end;
+        end
+      else dt:=Date;
+      end;
+    if not err and (length(s)>0) then begin  // Zeit
+      j1:=ReadNxtInt(s,':',HourOf(Now),err);
+      j2:=ReadNxtInt(s,':',MinuteOf(Now),err);
+      j3:=ReadNxtInt(s,'.',SecondOf(Now),err);
+      dt:=dt+j1*OneHour+j2*OneMinute+j3*OneSecond;
+      end;
+    end
+  else dt:=Date;
+  Result:=not err;
+  end;
 
 procedure TImportDialog.FormCreate(Sender: TObject);
 begin
@@ -149,6 +188,13 @@ procedure TImportDialog.UpdatePreview;
 var
   n,j : integer;
   s,t : string;
+
+  function CHeckDateTime (s : String) : boolean;
+  var
+    dt : TDateTime;
+  begin
+    Result:=TryStringToDateTime(s,dt);
+    end;
 
   function CheckFloat (s : String) : boolean;
   var
@@ -189,7 +235,8 @@ begin
       if j=reYMCol.Value then edYM.Text:=t;
       end;
     until length(s)=0;
-  siX.Indicate:=not CheckFloat(edX.Text);
+  if FTimeSeries then siX.Indicate:=not CheckDateTime(edX.Text)
+  else siX.Indicate:=not CheckFloat(edX.Text);
   siY.Indicate:=not CheckFloat(edY.Text);
   with rgDecimal do if (pos(Period,edX.Text)>0) or (pos(Period,edY.Text)>0) then begin
     ItemIndex:=0; Enabled:=false;
@@ -295,19 +342,20 @@ begin
   if AEnable then inc(ColVal);
   end;
 
-function TImportDialog.Execute (AFilename   : string;
+function TImportDialog.Execute (const AFilename : string;
+                                TimeSeries  : boolean;
                                 var AFormat : TCsvFormatSettings;
                                 ADataCols   : TDataCols;
                                 var ImpSet  : TImportSettings) : boolean;
 var
   fi      : TFileStream;
   s       : string;
-  i,fm    : integer;
+  fm      : integer;
 begin
   Result:=false;
   edFilename.Text:=StripPath(AFilename,85);
   edDelim.Text:=''; edQuote.Text:='';
-  fm:=FileMode;
+  fm:=FileMode; FTimeSeries:=TimeSeries;
   fi:=TFileStream.Create(AFilename,fmOpenRead or fmShareDenyRead);
   with mePreview do begin
     Clear;
@@ -356,14 +404,14 @@ begin
     AFormat:=FFormat;
     with ImpSet do begin
       with XCols do begin
-        icV:=reXCol.Value;
-        icP:=reXPCol.Value;
-        icM:=reXMCol.Value;
+        with reXCol do if Enabled then icV:=Value else icV:=0;
+        with reXPCol do if Enabled then icP:=Value else icP:=0;
+        with reXMCol do if Enabled then icM:=Value else icM:=0;
         end;
       with YCols do begin
-        icV:=reYCol.Value;
-        icP:=reYPCol.Value;
-        icM:=reYMCol.Value;
+        with reYCol do if Enabled then icV:=Value else icV:=0;
+        with reYPCol do if Enabled then icP:=Value else icP:=0;
+        with reYMCol do if Enabled then icM:=Value else icM:=0;
         end;
       FirstLine:=reLine.Value;
       Reduce:=reReduce.Value;

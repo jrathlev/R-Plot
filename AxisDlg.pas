@@ -36,7 +36,6 @@ type
     rbTopRight: TRadioButton;
     Label4: TLabel;
     cbPrec: TComboBox;
-    rgType: TRadioGroup;
     gbLabels: TGroupBox;
     gbLine: TGroupBox;
     laUnit3: TLabel;
@@ -136,6 +135,20 @@ type
     bbDone: TBitBtn;
     Label22: TLabel;
     Label23: TLabel;
+    pcRange: TPageControl;
+    tsNormal: TTabSheet;
+    tsDateTime: TTabSheet;
+    rgType: TRadioGroup;
+    gbTimeRange: TGroupBox;
+    dtpMinD: TDateTimePicker;
+    Label24: TLabel;
+    Label25: TLabel;
+    dtpMaxD: TDateTimePicker;
+    dtpMinT: TDateTimePicker;
+    dtpMaxT: TDateTimePicker;
+    bbMinTSet: TBitBtn;
+    bbMaxTSet: TBitBtn;
+    bbDateFormat: TBitBtn;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure bbLnColorClick(Sender: TObject);
@@ -164,13 +177,22 @@ type
     procedure edUnitEnter(Sender: TObject);
     procedure rbPosClick(Sender: TObject);
     procedure bbDoneClick(Sender: TObject);
+    procedure dtpMinChange(Sender: TObject);
+    procedure dtpMaxChange(Sender: TObject);
+    procedure bbMinTSetClick(Sender: TObject);
+    procedure bbMaxTSetClick(Sender: TObject);
+    procedure rgTypeClick(Sender: TObject);
+    procedure bbDateFormatClick(Sender: TObject);
   private
     { Private-Deklarationen }
     FIniName,
     LastTemplate     : string;
     FAxis            : TAxisItem;
+    DateFormats,
+    FDateFormat      : string;
     XMin,XMax,XInt,
     AxBegin,AxLength : double;  // Achse in cm/inch
+    ValErr           : boolean;
     CFont,LFont      : TPLotFont;
     BitMap           : TBitMap;
     GridStyle        : TLineStyle;
@@ -181,7 +203,7 @@ type
     procedure ShowData (AAxis : TAxisItem);
     procedure SaveData (AAxis : TAxisItem);
     function SetValue (Value : double) : string;
-    function GetValue (Edit : TEdit) : double;
+    function CheckValue (Edit : TEdit; var Val : double) : boolean;
     procedure UpdateView;
     function GetGrid : double;
     function GetFGrid (Grid  : double) : integer;
@@ -198,11 +220,13 @@ implementation
 
 {$R *.dfm}
 
-uses GnuGetText, WinUtils, StringUtils, System.IniFiles, System.Math, NumberUtils,
-  MathUtils, ExtSysUtils, PlotFontDlg, DateUtils, SelectFromListDlg, TextFormatDlg;
+uses GnuGetText, System.IniFiles, System.Math, System.StrUtils,
+  NumberUtils, WinUtils, StringUtils, MathUtils, ExtSysUtils, DateUtils,
+  PlotFontDlg, SelectFromListDlg, TextFormatDlg, DateFormatDlg;
 
 const
   BitMapHeight=8;
+  DfFile = 'DateFormats.cfg';
 
 { ------------------------------------------------------------------- }
 procedure TAxisDialog.FormCreate(Sender: TObject);
@@ -213,11 +237,14 @@ begin
     Height:=BitMapHeight; Width:=bbLnColor.Width-6;
     TransparentMode:=tmFixed;
     end;
-  LastTemplate:=''; GridStyle:=lsNone;
+  LastTemplate:=''; GridStyle:=lsNone; DateFormats:='';
   LabList:=TStringList.Create;
   end;
 
 procedure TAxisDialog.LoadFromIni (const AIniName : string);
+var
+  sd,s : string;
+  fs : TextFile;
 begin
   FIniName:=AIniName;
   with TIniFile.Create(FIniName) do begin
@@ -226,6 +253,22 @@ begin
     LastTemplate:=ReadString(AxisSekt,iniTpl,'');
     Free;
     end;
+// Load user date formats
+  sd:=ExtractFilePath(Application.ExeName)+DfFile;
+  if FileExists(sd) then begin
+    AssignFile(fs,sd);
+    Reset(fs); DateFormats:='';
+    while not Eof(fs) do begin
+      ReadLn(fs,s);
+      s:=Trim(s);
+      if length(s)>0 then begin
+        s:=AnsiReplaceText(s,'/','"/"');
+        if length(DateFormats)>0 then DateFormats:=DateFormats+';';
+        DateFormats:=DateFormats+s;
+        end;
+      end;
+    CloseFile(fs);
+    end;
   end;
 
 procedure TAxisDialog.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
@@ -233,13 +276,16 @@ var
   x : double;
 begin
   if ModalResult=mrOK then begin
-    x:=GetValue(edMinVal);
-    with rgScale do if (ItemIndex=1) or (ItemIndex=2) then CanClose:=(x>0) and (GetValue(edMaxVal)>x)
-    else CanClose:=(GetValue(edMaxVal)>x);
-    if not CanClose then begin
-      ErrorDialog(_('Invalid range selection'));
-      edMinVal.SetFocus;
-      end;
+    if not ValErr then begin
+//    if CheckValue(edMinVal,x) and CheckValue(edMaxVal,x) then begin
+      with rgScale do if (ItemIndex=1) or (ItemIndex=2) then CanClose:=(XMin>0) and (XMax>XMin)
+      else CanClose:=XMax>XMin;
+      if not CanClose then begin
+        ErrorDialog(_('Invalid range selection'));
+        edMinVal.SetFocus;
+        end;
+      end
+    else CanClose:=false;
     end;
   end;
 
@@ -259,15 +305,16 @@ procedure TAxisDialog.UpdateView;
 var
   x : double;
 begin
-  if rgType.ItemIndex=0 then begin   // horizontal
+  with rgType do if ItemIndex<>1 then begin   // horizontal, date/time
     rbBottomLeft.Caption:=_('At bottom');
     rbTopRight.Caption:=_('At top');
+    cxRotate.Visible:=false;
     end
   else begin                         // vertical
     rbBottomLeft.Caption:=_('At left');
     rbTopRight.Caption:=_('At right');
+    cxRotate.Visible:=true;
     end;
-  cxRotate.Visible:=rgType.ItemIndex=1;
   with edInterval do begin
     Enabled:=rgScale.ItemIndex=0;
     edTicks.Visible:=Enabled; udTicks.Visible:=Enabled;
@@ -286,7 +333,7 @@ begin
   udTicks.Visible:=edTicks.Visible;
   bbInterval.Visible:=edTicks.Visible;
   cbLess.Visible:=rgScale.ItemIndex=2;
-  cbPrec.Visible:=rgScale.ItemIndex<>3;
+  cbPrec.Visible:=rgType.ItemIndex<>2;
   with pcNotate do begin
     Visible:=cbPrec.Visible;
     if (cbPrec.ItemIndex=1) then ActivePageIndex:=1 else ActivePageIndex:=0;
@@ -317,35 +364,39 @@ var
   err : boolean;
 begin
   err:=false;
-  if Pos('-',s)>0 then begin // mit Datum
-    j1:=ReadNxtInt(s,'-',YearOf(Now),err);
-    j2:=ReadNxtInt(s,'-',MonthOf(Now),err);
-    j3:=ReadNxtInt(s,' ',DayOf(Now),err);
-    try dt:=EncodeDate(j1,j2,j3); except err:=true; end;
+  s:=Trim(s);
+  if length(s)>0 then begin
+    if Pos('-',s)>0 then begin // mit Datum
+      j1:=ReadNxtInt(s,'-',YearOf(Now),err);
+      j2:=ReadNxtInt(s,'-',MonthOf(Now),err);
+      j3:=ReadNxtInt(s,' ',DayOf(Now),err);
+      try dt:=EncodeDate(j1,j2,j3); except err:=true; end;
+      end
+    else dt:=Date;
+    if not err and (length(s)>0) then begin  // Zeit
+      j1:=ReadNxtInt(s,':',HourOf(Now),err);
+      j2:=ReadNxtInt(s,':',MinuteOf(Now),err);
+      j3:=ReadNxtInt(s,'.',SecondOf(Now),err);
+      dt:=dt+j1*OneHour+j2*OneMinute+j3*OneSecond;
+      end;
     end
-  else dt:=0;
-  if not err then begin  // Zeit
-    j1:=ReadNxtInt(s,':',HourOf(Now),err);
-    j2:=ReadNxtInt(s,':',MinuteOf(Now),err);
-    j3:=ReadNxtInt(s,'.',SecondOf(Now),err);
-    dt:=dt+j1*OneHour+j2*OneMinute+j3*OneSecond;
-    end;
+  else dt:=Date;
   Result:=not err;
   end;
 
-function TAxisDialog.GetValue (Edit : TEdit) : double;
+function TAxisDialog.CheckValue (Edit : TEdit; var Val : double) : boolean;
 var
   ok : boolean;
   dt : TDateTime;
 begin
+  Result:=true;
   if ModalResult=mrCancel then Exit;
   with Edit do if rgScale.ItemIndex=3 then begin
-    ok:=TryStringToDateTime(Text,dt);  // Datum,Zeit
-    Result:=dt;
+    Result:=TryStringToDateTime(Text,dt);  // Datum,Zeit
+    if Result then Val:=dt;
     end
-  else ok:=TryStrToFloat(Text,Result);
-  if not ok then begin
-    Result:=Edit.Tag;
+  else Result:=TryStrToFloat(Text,Val);
+  if not Result then begin
     if Visible then with Edit do begin
       Beep; SetFocus; SelectAll;
       end;
@@ -362,7 +413,7 @@ function TAxisDialog.GetGrid : double;
 var
   xa,xb,dec        : double;
 begin
-  xa:=XMax-XMin; //GetValue(edMaxVal)-GetValue(edMinVal);
+  xa:=XMax-XMin;
   dec:=pwr(10.0,aint(lg(abs(xa))-0.05)); xa:=xa/dec;
   if xa<=2.1 then xb:=0.5 else
   if xa<=5.1 then xb:=1.0 else xb:=2.0;
@@ -376,7 +427,7 @@ function TAxisDialog.GetFGrid (Grid  : double) : integer;
 var
   xa   : double;
 begin
-  xa:=XMax-XMin; //GetValue(edMaxVal)-GetValue(edMinVal);
+  xa:=XMax-XMin;
   if xa=0 then Result:=0
   else begin
     xa:=AxLength*Grid/xa; (* ein Raster in cm/inch *)
@@ -415,9 +466,31 @@ begin
   UpdateView;
   end;
 
+procedure TAxisDialog.rgTypeClick(Sender: TObject);
+begin
+  if Visible then begin
+    with FAxis do if rgType.ItemIndex=2 then begin  // date/time
+      AxType:=atHorz; ScaleType:=stTime;
+      end
+    else begin
+      AxType:=TAxisType(rgType.ItemIndex); ScaleType:=stLin;
+      end;
+    ShowData(FAxis);
+    UpdateView;
+    end;
+  end;
+
 procedure TAxisDialog.bbCapFontClick(Sender: TObject);
 begin
   EditPlotFont(BottomLeftPos(bbCapFont),CFont);
+  end;
+
+procedure TAxisDialog.bbDateFormatClick(Sender: TObject);
+var
+   s : string;
+begin
+  if SelectDateFormat(BottomRightPos(bbDateFormat),FDateFormat,DateFormats) then
+    bbDateFormat.Hint:=_('Select date format')+' ('+FDateFormat+')';
   end;
 
 procedure TAxisDialog.bbDoneClick(Sender: TObject);
@@ -502,6 +575,28 @@ begin
   edMinVal.Text:=SetValue(XMin); edMaxVal.Text:=SetValue(XMax);
   end;
 
+procedure TAxisDialog.bbMaxTSetClick(Sender: TObject);
+begin
+  dtpMaxT.Time:=1-OneSecond;
+  end;
+
+procedure TAxisDialog.dtpMaxChange(Sender: TObject);
+begin
+  XMax:=DateOf(dtpMaxD.Date)+TimeOf(dtpMaxT.Time);
+  cxDate.Checked:=DaysBetween(XMin,XMax)>2;
+  end;
+
+procedure TAxisDialog.bbMinTSetClick(Sender: TObject);
+begin
+  dtpMinT.Time:=0;
+  end;
+
+procedure TAxisDialog.dtpMinChange(Sender: TObject);
+begin
+  XMin:=DateOf(dtpMinD.Date)+TimeOf(dtpMinT.Time);
+  cxDate.Checked:=DaysBetween(XMin,XMax)>2;
+  end;
+
 procedure TAxisDialog.edCaptionEnter(Sender: TObject);
 begin
   LastEdit:=edCaption;
@@ -514,12 +609,12 @@ begin
 
 procedure TAxisDialog.edMaxValExit(Sender: TObject);
 begin
-  XMax:=GetValue(edMaxVal);
+  ValErr:=not CheckValue(edMaxVal,XMax);
   end;
 
 procedure TAxisDialog.edMinValExit(Sender: TObject);
 begin
-  XMin:=GetValue(edMinVal);
+  ValErr:=not CheckValue(edMinVal,XMin);
   end;
 
 procedure TAxisDialog.BuidlLabelList (ACount : integer; AList : TStringList);
@@ -553,7 +648,22 @@ begin
   with AAxis do begin
     edDescription.Text:=Description;
     cxShow.Checked:=Visible;
-    rgType.ItemIndex:=integer(AxType);
+    XMin:=MinVal; XMax:=MaxVal;
+    with rgType do if ScaleType=stTime then begin  // scale. date/time
+      ItemIndex:=2;
+      pcRange.ActivePage:=tsDateTime;
+      dtpMinD.Date:=DateOf(XMin);
+      dtpMinT.Time:=TimeOf(XMin);
+      dtpMaxT.Date:=DateOf(XMax);
+      dtpMaxT.Time:=TimeOf(XMax);
+      end
+    else begin
+      ItemIndex:=integer(AxType);
+      pcRange.ActivePage:=tsNormal;
+      rgScale.ItemIndex:=integer(ScaleType);     // scale (lin, log, invers)
+      edMinVal.Text:=SetValue(MinVal);
+      edMaxVal.Text:=SetValue(MaxVal);
+      end;
     with ParentChart.Area do begin
       if AxType=atHorz then begin
         AxBegin:=Left; AxLength:=Width;
@@ -565,9 +675,6 @@ begin
     if AxPos=apTopRight then rbTopRight.Checked:=true  // Position links/unten, rechts/oben
     else rbBottomLeft.Checked:=true;
     feOffsetPos.Value:=AxOffset;               // Offset in cm/inch rel zu Rand
-    XMin:=MinVal; XMax:=MaxVal;
-    rgScale.ItemIndex:=integer(ScaleType);     // Skalierung (lin, log, reziprok oder Zeit)
-    edMinVal.Text:=SetValue(MinVal); edMaxVal.Text:=SetValue(MaxVal);
     edCaption.Text:=Caption;                   // Legendentext
     edUnit.Text:=AUnit;
     XInt:=GridWidth;
@@ -582,6 +689,8 @@ begin
       cbShowLabel.Checked:=ShowLabels;         // benutzerdefinierte Labels anzeigen
       cbPrec.ItemIndex:=Precision;             // Anzahl signif. Stellen bei der Beschriftung
       cbNotation.ItemIndex:=integer(Notation); // Schreibweise der Zahlen
+      bbDateFormat.Hint:=_('Select date format')+' ('+DateFormat+')';
+      FDateFormat:=DateFormat;
       FillBtnGlyph(Bitmap,bbLnColor,LnColor);  // Linienfarbe
       LFont:=LabFont;                          // Schriftart und Farbe für Beschriftung
       feLabSize.Value:=LabFont.FontSize;       // Textgröße
@@ -617,17 +726,24 @@ begin
   with AAxis do begin
     Description:=edDescription.Text;
     Visible:=cxShow.Checked;
-    AxType:=TAxisType(rgType.ItemIndex);
-    MinVal:=GetValue(edMinVal); MaxVal:=GetValue(edMaxVal);   // Bereich
-    ScaleType:=TScaleType(rgScale.ItemIndex);     // Skalierung (lin, log, reziprok oder Zeit)
-    if ScaleType=stLin then begin
-      if TryStrToFloat(edInterval.Text,XInt) then begin
-        i:=round(abs(MaxVal-MInVal)/XInt);
-        if (i>50) or (i<1) then XInt:=GetGrid;
-        end
-      else  XInt:=GetGrid;
-      GridWidth:=XInt;
-      GridTicks:=udTicks.Position;
+    with rgType do if ItemIndex=2 then begin   // scale: date/time
+      AxType:=atHorz; ScaleType:=stTime;
+      MinVal:=DateOf(dtpMinD.Date)+TimeOf(dtpMinT.Time);
+      MaxVal:=DateOf(dtpMaxD.Date)+TimeOf(dtpMaxT.Time);
+      end
+    else begin
+      AxType:=TAxisType(ItemIndex);
+      ScaleType:=TScaleType(rgScale.ItemIndex);    // scale (lin, log, invers)
+      MinVal:=XMin; MaxVal:=XMax;   // range
+      if ScaleType=stLin then begin
+        if TryStrToFloat(edInterval.Text,XInt) then begin
+          i:=round(abs(MaxVal-MInVal)/XInt);
+          if (i>50) or (i<1) then XInt:=GetGrid;
+          end
+        else  XInt:=GetGrid;
+        GridWidth:=XInt;
+        GridTicks:=udTicks.Position;
+        end;
       end;
     if rbBottomLeft.Checked then AxPos:=apBottomLeft // Position links/unten, rechts/oben
     else AxPos:=apTopRight;
@@ -645,6 +761,7 @@ begin
       ShowLabels:=cbShowLabel.Checked;         // benutzerdefinierte Labels anzeigen
       Precision:=cbPrec.ItemIndex;             // Anzahl signif. Stellen bei der Beschriftung
       Notation:=TNotation(cbNotation.ItemIndex); // Schreibweise der Zahlen
+      DateFormat:=FDateFormat;
       LFont.FontSize:=feLabSize.Value;         // Textgröße
       LabFont:=LFont;
       LnColor:=bbLnColor.Tag;                  // Linienfarbe
@@ -755,6 +872,7 @@ begin
     if length(s)>0 then cbLabel.Items.Add(s);
     end;
   LastEdit:=edCaption;
+  ValErr:=false;
   ShowData(AAxis);
   UpdateView;
   ColorDialog.CustomColors.CommaText:=UserColors;
