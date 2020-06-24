@@ -54,6 +54,7 @@ const
   Space = #32;
   Semicolon = ';';
   Comma = ',';
+  Slash = '/';
   Tab = #9;
   CrLf = #13#10;
   Cr = #13;

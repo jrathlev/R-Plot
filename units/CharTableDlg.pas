@@ -41,7 +41,7 @@ type
     { Public declarations }
   end;
 
-function CharFromtable (APos : TPoint; AFontName : TFontName) : char;
+function CharFromTable (APos : TPoint; const AFontName : TFontName) : char;
 
 var
   CharTableDialog: TCharTableDialog;
@@ -92,7 +92,7 @@ begin
   end;
 
 {------------------------------------------------------------------- }
-function CharFromTable (APos : TPoint; AFontName : TFontName) : char;
+function CharFromTable (APos : TPoint; const AFontName : TFontName) : char;
 begin
   if not assigned(CharTableDialog) then CharTableDialog:=TCharTableDialog.Create(Application);
   with CharTableDialog do begin

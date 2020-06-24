@@ -1100,7 +1100,8 @@ begin
   end;
 
 {------------------------------------------------------------------}
-(* erzeugen einer System-Fehlermeldung *)
+// erzeugen einer System-Fehlermeldung
+// siehe: Win-SDK - Structure of COM Error Codes
 function SystemErrorMessage(ASysError : cardinal) : string;
 begin
   if Win32MajorVersion<6 then begin

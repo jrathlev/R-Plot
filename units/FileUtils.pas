@@ -1525,13 +1525,16 @@ function GetExistingParentPath (const Path,DefPath : string) : string;
 var
   sd : string;
 begin
-  Result:=Path; sd:=ExtractFileDrive(Path);
-  if not DirectoryExists(Result) then begin
-    if (copy(Path,1,2)='\\') then Result:=''
-    else while (length(Result)>0) and not DirectoryExists(Result) do begin
-      if AnsiSameText(Result,sd) then Result:='' else Result:=ExtractParentPath(Result);
+  if length(Path)=0 then Result:=DefPath
+  else begin
+    Result:=Path; sd:=ExtractFileDrive(Path);
+    if not DirectoryExists(Result) then begin
+      if (copy(Path,1,2)='\\') then Result:=''
+      else while (length(Result)>0) and not DirectoryExists(Result) do begin
+        if AnsiSameText(Result,sd) then Result:='' else Result:=ExtractParentPath(Result);
+        end;
+      if length(Result)=0 then Result:=DefPath;
       end;
-    if length(Result)=0 then Result:=DefPath;
     end;
   end;
 
