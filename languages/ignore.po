@@ -22,13 +22,13 @@ msgstr ""
 
 #  Seems like a Font.Name extract
 #. DataDialog..paData..seHeader..Font.Name
-#: DataDlg.dfm:549
+#: DataDlg.dfm:555
 #. DataDialog..paData..seHeader..Gutter.Font.Name
-#: DataDlg.dfm:556
+#: DataDlg.dfm:562
 #. DataDialog..paData..seData..Font.Name
-#: DataDlg.dfm:577
+#: DataDlg.dfm:583
 #. DataDialog..paData..seData..Gutter.Font.Name
-#: DataDlg.dfm:584
+#: DataDlg.dfm:590
 msgid "Courier New"
 msgstr ""
 
@@ -46,7 +46,7 @@ msgstr ""
 
 #  Seems like a Font.Name extract
 #. CurveDialog..gbMarker..sbNoSym..Font.Name
-#: CurveDlg.dfm:308
+#: CurveDlg.dfm:309
 #. FunctionDialog..gbFormula..Label15..Font.Name
 #: FunctionDlg.dfm:176
 #. ImportDialog..Font.Name
@@ -56,7 +56,7 @@ msgstr ""
 #. PlotFontDialog..edPreview..Font.Name
 #: PlotFontDlg.dfm:193
 #. PreferencesDialog..pcPrefs..tsText..Panel2..edPreview..Font.Name
-#: PrefsDlg.dfm:1079
+#: PrefsDlg.dfm:1075
 #. frmView..Font.Name
 #: RPlotView.dfm:11
 #. frmView..GraphBox..GraphArea..Font.Name
@@ -83,6 +83,11 @@ msgstr ""
 msgid "tsComment"
 msgstr ""
 
+#. AxisDialog..pcRange..tsDateTime..Caption
+#: AxisDlg.dfm:1402
+msgid "tsDateTime"
+msgstr ""
+
 #. DrawingDialog..pcProps..tsFill..Caption
 #: DrawingDlg.dfm:605
 msgid "tsFill"
@@ -99,7 +104,7 @@ msgid "tsHisto"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsLabels..Caption
-#: AxisDlg.dfm:1122
+#: AxisDlg.dfm:1027
 msgid "tsLabels"
 msgstr ""
 
@@ -118,18 +123,23 @@ msgstr ""
 msgid "tsMode"
 msgstr ""
 
+#. AxisDialog..pcRange..tsNormal..Caption
+#: AxisDlg.dfm:1313
+msgid "tsNormal"
+msgstr ""
+
 #. AxisDialog..pcLabels..tsProps..gbLabels..pcNotate..tsNumber..Caption
-#: AxisDlg.dfm:822
+#: AxisDlg.dfm:727
 msgid "tsNumber"
 msgstr ""
 
 #. GraphDialog..pcType..tsPie..Caption
-#: GraphDlg.dfm:585
+#: GraphDlg.dfm:589
 msgid "tsPie"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..Caption
-#: AxisDlg.dfm:685
+#: AxisDlg.dfm:590
 msgid "tsProps"
 msgstr ""
 
@@ -149,7 +159,7 @@ msgid "tsText"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbLabels..pcNotate..tsUser..Caption
-#: AxisDlg.dfm:858
+#: AxisDlg.dfm:763
 msgid "tsUser"
 msgstr ""
 
@@ -168,7 +178,7 @@ msgstr ""
 #. DrawingDialog..edDescription..EditLabel.Caption
 #: DrawingDlg.dfm:162
 #. GraphDialog..paTop..edDescription..EditLabel.Caption
-#: GraphDlg.dfm:619
+#: GraphDlg.dfm:623
 #. TextDialog..edDescription..EditLabel.Caption
 #: TextDlg.dfm:162
 msgid "xxx"
