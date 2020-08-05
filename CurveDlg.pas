@@ -514,7 +514,7 @@ begin
         with ParentChart.Item[ParentChart.IndexOf(XAxID)] as TAxisItem do begin
           x:=0.05*(pmax.X-pmin.X);
           MinVal:=pmin.X-x; MaxVal:=pmax.X+x;
-          if ScaleType=stLin then begin
+          if (ScaleType=stLin) then begin
             with Properties do begin
               GridWidth:=GetGrid; GridTicks:=GetFGrid(GridWidth);
               end;

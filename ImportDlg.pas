@@ -136,48 +136,11 @@ type
 var
   ImportDialog: TImportDialog;
 
-function TryStringToDateTime (s : string; var dt : TDateTime) : boolean;
-
 implementation
 
 {$R *.DFM}
 
-uses System.DateUtils, StringUtils, FileUtils, GnuGetText;
-
-function TryStringToDateTime (s : string; var dt : TDateTime) : boolean;
-var
-  j1,j2,j3 : integer;
-  err : boolean;
-begin
-  err:=false;
-  s:=Trim(s);
-  if length(s)>0 then begin
-    if Pos('-',s)>0 then begin // mit Datum
-      j1:=ReadNxtInt(s,'-',YearOf(Now),err);
-      j2:=ReadNxtInt(s,'-',MonthOf(Now),err);
-      j3:=ReadNxtInt(s,' ',DayOf(Now),err);
-      try dt:=EncodeDate(j1,j2,j3); except err:=true; end;
-      end
-    else begin
-      j1:=Pos(':',s); j2:=Pos('.',s);
-      if ((j1=0) and (j2>0)) or ((j2>0) and (j2<j1)) then begin
-        j3:=ReadNxtInt(s,'.',DayOf(Now),err);
-        j2:=ReadNxtInt(s,'.',MonthOf(Now),err);
-        j1:=ReadNxtInt(s,' ',YearOf(Now),err);
-        try dt:=EncodeDate(j1,j2,j3); except err:=true; end;
-        end
-      else dt:=Date;
-      end;
-    if not err and (length(s)>0) then begin  // Zeit
-      j1:=ReadNxtInt(s,':',HourOf(Now),err);
-      j2:=ReadNxtInt(s,':',MinuteOf(Now),err);
-      j3:=ReadNxtInt(s,'.',SecondOf(Now),err);
-      dt:=dt+j1*OneHour+j2*OneMinute+j3*OneSecond;
-      end;
-    end
-  else dt:=Date;
-  Result:=not err;
-  end;
+uses System.DateUtils, StringUtils, FileUtils, NumberUtils, GnuGetText;
 
 procedure TImportDialog.FormCreate(Sender: TObject);
 begin
@@ -189,29 +152,26 @@ var
   n,j : integer;
   s,t : string;
 
-  function CHeckDateTime (s : String) : boolean;
+  function CheckDateTime (const s : String) : boolean;
   var
     dt : TDateTime;
   begin
-    Result:=TryStringToDateTime(s,dt);
+    Result:=TryStringToDateTime(s,dt,FormatSettings.TimeSeparator,FFormat.DecSeparator);
     end;
 
   function CheckFloat (s : String) : boolean;
   var
-    i,ic : integer;
-    x    : double;
+    i : integer;
+    x : double;
   begin
-    s:=RemSp(ReplChars(s,FFormat.DecSeparator,Period));
+    s:=RemoveSpaces(Trim(s));
     if length(s)=0 then Result:=false
     else begin
       i:=1;
       while (i<=length(s)) and CharInSet(s[i],FloatChars) do inc(i);
-      if (i<length(s)) and CharInSet(s[i+1],FloatChars) then Result:=false
-      else begin
-        val(copy(s,1,pred(i)),x,ic);
-        Result:=ic=0;
-        end;
-      end;
+      if (i<length(s)) then Result:=PrefixStrToVal(s,x,FFormat.DecSeparator)
+      else Result:=TryStringToFloat(s,x,FFormat.DecSeparator);
+      end
     end;
 
 begin
@@ -238,10 +198,8 @@ begin
   if FTimeSeries then siX.Indicate:=not CheckDateTime(edX.Text)
   else siX.Indicate:=not CheckFloat(edX.Text);
   siY.Indicate:=not CheckFloat(edY.Text);
-  with rgDecimal do if (pos(Period,edX.Text)>0) or (pos(Period,edY.Text)>0) then begin
-    ItemIndex:=0; Enabled:=false;
-    end
-  else Enabled:=true;
+  if ((pos(Period,edX.Text)>0) and not FTimeSeries)
+    or (pos(Period,edY.Text)>0) then rgDecimal.ItemIndex:=0;
   with siXP do if Enabled then Indicate:=not CheckFloat(edXP.Text);
   with siXM do if Enabled then Indicate:=not CheckFloat(edXM.Text);
   with siYP do if Enabled then Indicate:=not CheckFloat(edYP.Text);
@@ -392,7 +350,7 @@ begin
       end;
     end;
   ColVal:=1;
-  EnableControls(dcValX in ADataCols,1);
+  EnableControls((dcValX in ADataCols) or (dcTime in ADataCols),1);
   EnableControls((dcErrSX in ADataCols) or (dcErrAX in ADataCols),2);
   EnableControls(dcErrAX in ADataCols,3);
   EnableControls(dcValY in ADataCols,4);

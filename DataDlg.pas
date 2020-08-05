@@ -59,6 +59,7 @@ type
     udTab: TUpDown;
     sbSort: TSpeedButton;
     cxRange: TCheckBox;
+    laLines: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure edTabChange(Sender: TObject);
     procedure rgErrClick(Sender: TObject);
@@ -74,6 +75,7 @@ type
     procedure FindNext(Sender: TObject);
     procedure sbSortClick(Sender: TObject);
     procedure seDataKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure seDataChange(Sender: TObject);
   private
     { Private-Deklarationen }
     FIniName,
@@ -81,8 +83,10 @@ type
     FData     : TDataArray;
     FDataCols : TDataCols;
     FoImp     : TCsvFormatSettings;
-    timser,
+    FTimeSeries,
+    ShowDate,
     xcol,ycol : boolean;
+    procedure UpdateHeader;
     function CompareVals (const arg1,arg2) : boolean;
     procedure ShowData;
     procedure SaveData;
@@ -102,7 +106,7 @@ implementation
 {$R *.dfm}
 
 uses GnuGetText, StringUtils, WinUtils, RPlotMain, ExtSysUtils, ExtStreams,
-  System.Math, System.IniFiles, FileUtils, FindReplDlg, SynEditTypes;
+  System.Math, System.IniFiles, FileUtils, NumberUtils, FindReplDlg, SynEditTypes;
 
 const
   DefColSep = ';';
@@ -132,7 +136,7 @@ begin
 procedure TDataDialog.FormKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
-  if ((ssCtrl in Shift) and (Key=ord('V'))) or ((ssShift in Shift) and (Key=VK_INSERT)) then begin
+  if ((ssCtrl in Shift) and (Key=ord('B'))) then begin
     sbPasteClick(Sender);
     Key:=0;
     end
@@ -165,23 +169,30 @@ begin
   FindReplDialog.LoadFromIni(AIniName);
   end;
 
-procedure TDataDialog.ShowData;
+procedure TDataDialog.UpdateHeader;
 var
-  i   : integer;
   s,t : string;
+  n   : integer;
 begin
+  n:=Pos(Tab,seData.LineText);     // real width of first column
   with seHeader do begin
+    n:=(n div TabWidth+1)*TabWidth;
     Clear;
     FDataCols:=[];
     TabWidth:=udTab.Position;
     if xcol then begin
-      if timser then s:=_('Date/Time') else s:=_('X-Values');
-      include(FDataCols,dcValX);
+      if FTimeSeries then begin
+        s:=_('Date/Time'); include(FDataCols,dcTime);
+        end
+      else begin
+        s:=_('X-Values'); include(FDataCols,dcValX);
+        end;
+      s:=s+FillSpace(n-length(s));
       if rbXSymErr.Checked then begin
-        s:=s+Tab+_('X-Errors'); include(FDataCols,dcErrSX);
+        s:=s+_('X-Errors'); include(FDataCols,dcErrSX);
         end
       else if rbXAsymErr.Checked then begin
-        s:=s+Tab+'+'+_('X-Errors')+Tab+'-'+_('X-Errors'); include(FDataCols,dcErrAX);
+        s:=s+'+'+_('X-Errors')+Tab+'-'+_('X-Errors'); include(FDataCols,dcErrAX);
         end
       end
     else s:='';
@@ -190,7 +201,7 @@ begin
         s:=_('Values'); t:=_('Errors');
         end
       else begin
-        s:=s+Tab+_('Y-Values'); t:=_('Y-Errors');
+        s:=s+_('Y-Values'); t:=_('Y-Errors');
         end;
       include(FDataCols,dcValY);
       if rbYSymErr.Checked then begin
@@ -202,13 +213,27 @@ begin
       end;
     Lines.Add(s);
     end;
+  laLines.Caption:=GetPluralString(_('No data sets'),_('1 data set'),_('%u data sets'),seData.Lines.Count);
+  end;
+
+procedure TDataDialog.ShowData;
+var
+  i   : integer;
+  s   : string;
+begin
   with seData do begin
     Clear;
     TabWidth:=udTab.Position;
+    BeginUpdate;
+    end;
+  if FTimeSeries and (length(FData)>0) then begin
+    ShowDate:=FData[High(FData)].Val.x-FData[0].Val.x>1;  // show date
     end;
   for i:=0 to length(FData)-1 do with FData[i] do begin
     if xcol then begin
-    if timser then s:=DateTimeToStr(Val.X)
+      if FTimeSeries then begin
+        if ShowDate then s:=DateTimeToStr(Val.X) else s:=TimeToStr(Val.X)
+        end
       else s:=FloatToStrF(Val.X,DataForm,DataPrec,DataDig);
       if rbXSymErr.Checked then s:=s+Tab+FloatToStrF(PErr.X,DataForm,DataPrec,DataDig)
       else if rbXAsymErr.Checked then s:=s+Tab+FloatToStrF(PErr.X,DataForm,DataPrec,DataDig)
@@ -224,14 +249,10 @@ begin
       end;
     seData.Lines.Add(s);
     end;
-  end;
-
-function ReadNxtDateTime (var s : String; Del : char; Default : TDateTime) : TDateTime;
-var
-  sd : string;
-begin
-  sd:=ReadNxtStr(s,Del);
-  if not TryStringToDateTime(sd,Result) then Result:=Default;
+  with seData do begin
+    EndUpdate; CaretX:=1;
+    end;
+  UpdateHeader;
   end;
 
 procedure TDataDialog.SaveData;
@@ -243,10 +264,10 @@ begin
     SetLength(FData,Lines.Count);
     n:=0;
     for i:=0 to Lines.Count-1 do with FData[n] do begin
-      s:=DelSp(Lines[i]);
+      s:=Lines[i];
       if length(s)>0 then begin
         if xcol then begin
-          if timser then Val.X:=ReadNxtDateTime(s,Tab,Date)
+          if FTimeSeries then Val.X:=ReadNxtDateTime(s,Tab,Date)
           else Val.X:=ReadNxtDbl(s,Tab,0);
           if dcErrSX in FDataCols then PErr.X:=ReadNxtDbl(s,Tab,0)
           else if dcErrAX in FDataCols then begin
@@ -378,10 +399,15 @@ begin
   ShowData;
   end;
 
+procedure TDataDialog.seDataChange(Sender: TObject);
+begin
+  UpdateHeader;
+  end;
+
 procedure TDataDialog.seDataKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
-  if Key=VK_Space then Key:=VK_Tab;
+//  if Key=VK_Space then Key:=VK_Tab;
   end;
 
 procedure TDataDialog.bbImportClick(Sender: TObject);
@@ -398,7 +424,7 @@ var
                          Default : TDateTime;
                          var err : boolean) : TDateTime;
   begin
-    err:=not TryStringToDateTime(s,Result);
+    err:=not TryStringToDateTime(s,Result,FormatSettings.TimeSeparator,FoImp.DecSeparator);
     if err then Result:=Default;
     end;
 
@@ -406,21 +432,16 @@ var
                       Default : double;
                       var err : boolean) : double;
   var
-    i,ic : integer;
-    x    : double;
+    i : integer;
   begin
-    s:=RemSp(ReplChars(s,FoImp.DecSeparator,DecSep));
+    s:=RemoveSpaces(Trim(s));
     if length(s)=0 then Result:=0
     else begin
       i:=1;
-      while (i<=length(s)) and (s[i] in FloatChars) do inc(i);
-      val(copy(s,1,pred(i)),x,ic);
-      if ic=0 then Result:=x
-      else begin
-        Result:=Default;
-        err:=true;
-        end;
-      end;
+      while (i<=length(s)) and CharInSet(s[i],FloatChars) do inc(i);
+      if (i<length(s)) then err:=err or PrefixStrToVal(s,Result,FoImp.DecSeparator)
+      else err:=err or TryStringToFloat(s,Result,FoImp.DecSeparator);
+      end
     end;
 
   function MeanValues(Data : TDataArray; n,dn : integer) : TData;
@@ -478,7 +499,7 @@ begin
         Path:=ExtractFilePath(Filename);
         Ext:=GetExt(Filename);
         end;
-      if ImportDialog.Execute(Filename,timser,FoImp,FDataCols,ImpSet) then begin
+      if ImportDialog.Execute(Filename,FTimeSeries,FoImp,FDataCols,ImpSet) then begin
         ft:=TReadTextFile.Create(Filename,fmShareDenyRead);
         n:=0; line:=0;
         with ft do while not Eof do begin
@@ -503,7 +524,7 @@ begin
                 if length(t)>0 then begin
                   with XCols do begin
                     if j=icV then begin
-                      if timser then Val.X:=ReadDateTime(t,Date,err)
+                      if FTimeSeries then Val.X:=ReadDateTime(t,Date,err)
                       else Val.X:=ReadFloat(t,0,err);
                       end;
                     if j=icP then PErr.X:=ReadFloat(t,0,err);
@@ -544,6 +565,8 @@ begin
 
 procedure TDataDialog.edTabChange(Sender: TObject);
 begin
+  seHeader.TabWidth:=udTab.Position;
+  seData.TabWidth:=udTab.Position;
   ShowData;
   end;
 
@@ -560,10 +583,10 @@ begin
   Caption:=_('Edit data for ')+ATitle;
   FTitle:=ATitle;
   paTop.Visible:=ShowErrors;
-  timser:=TimeSeries;
-  gbxErr.Visible:=not timser;
+  FTimeSeries:=TimeSeries; ShowDate:=true;
+  gbxErr.Visible:=not FTimeSeries;
   with ADataTable do begin
-    xcol:=dcValX in DataCols ; ycol:=dcValY in DataCols ;
+    xcol:=(dcValX in DataCols) or (dcTime in DataCols); ycol:=dcValY in DataCols;
     rbXNoerr.Checked:=true;
     rbXSymErr.Checked:=dcErrSX in DataCols;
     rbXAsymErr.Checked:=dcErrAX in DataCols;

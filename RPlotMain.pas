@@ -1041,6 +1041,7 @@ begin
     if ChartDialog.Execute(false,FChart) then begin
       FChart.SetInnerArea;
       Sheet.Chart[ItemIndex]:=FChart;
+      Sheet.AdjustSize;
       UpdateSheet(-1);
       frmView.UpdateView;
       SetChangeStatus;

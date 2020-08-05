@@ -34,7 +34,7 @@ type
     gbPos: TGroupBox;
     rbBottomLeft: TRadioButton;
     rbTopRight: TRadioButton;
-    Label4: TLabel;
+    laPrecision: TLabel;
     cbPrec: TComboBox;
     gbLabels: TGroupBox;
     gbLine: TGroupBox;
@@ -192,6 +192,7 @@ type
     FDateFormat      : string;
     XMin,XMax,XInt,
     AxBegin,AxLength : double;  // Achse in cm/inch
+    IsTimeScale,
     ValErr           : boolean;
     CFont,LFont      : TPLotFont;
     BitMap           : TBitMap;
@@ -334,6 +335,7 @@ begin
   bbInterval.Visible:=edTicks.Visible;
   cbLess.Visible:=rgScale.ItemIndex=2;
   cbPrec.Visible:=rgType.ItemIndex<>2;
+  laPrecision.Visible:=cbPrec.Visible;
   with pcNotate do begin
     Visible:=cbPrec.Visible;
     if (cbPrec.ItemIndex=1) then ActivePageIndex:=1 else ActivePageIndex:=0;
@@ -358,32 +360,6 @@ begin
   else Result:=FloatToStrF(Value,ffGeneral,6,1);
   end;
 
-function TryStringToDateTime (s : string; var dt : TDateTime) : boolean;
-var
-  j1,j2,j3 : integer;
-  err : boolean;
-begin
-  err:=false;
-  s:=Trim(s);
-  if length(s)>0 then begin
-    if Pos('-',s)>0 then begin // mit Datum
-      j1:=ReadNxtInt(s,'-',YearOf(Now),err);
-      j2:=ReadNxtInt(s,'-',MonthOf(Now),err);
-      j3:=ReadNxtInt(s,' ',DayOf(Now),err);
-      try dt:=EncodeDate(j1,j2,j3); except err:=true; end;
-      end
-    else dt:=Date;
-    if not err and (length(s)>0) then begin  // Zeit
-      j1:=ReadNxtInt(s,':',HourOf(Now),err);
-      j2:=ReadNxtInt(s,':',MinuteOf(Now),err);
-      j3:=ReadNxtInt(s,'.',SecondOf(Now),err);
-      dt:=dt+j1*OneHour+j2*OneMinute+j3*OneSecond;
-      end;
-    end
-  else dt:=Date;
-  Result:=not err;
-  end;
-
 function TAxisDialog.CheckValue (Edit : TEdit; var Val : double) : boolean;
 var
   ok : boolean;
@@ -391,11 +367,7 @@ var
 begin
   Result:=true;
   if ModalResult=mrCancel then Exit;
-  with Edit do if rgScale.ItemIndex=3 then begin
-    Result:=TryStringToDateTime(Text,dt);  // Datum,Zeit
-    if Result then Val:=dt;
-    end
-  else Result:=TryStrToFloat(Text,Val);
+  with Edit do Result:=TryStrToFloat(Text,Val);
   if not Result then begin
     if Visible then with Edit do begin
       Beep; SetFocus; SelectAll;
@@ -471,9 +443,15 @@ begin
   if Visible then begin
     with FAxis do if rgType.ItemIndex=2 then begin  // date/time
       AxType:=atHorz; ScaleType:=stTime;
+      if not IsTimeScale then begin
+        MinVal:=Date; MaxVal:=Date+1; IsTimeScale:=true;
+        end;
       end
     else begin
       AxType:=TAxisType(rgType.ItemIndex); ScaleType:=stLin;
+      if IsTimeScale then begin
+        MinVal:=0; MaxVal:=10; IsTimeScale:=false;
+        end;
       end;
     ShowData(FAxis);
     UpdateView;
@@ -654,15 +632,15 @@ begin
       pcRange.ActivePage:=tsDateTime;
       dtpMinD.Date:=DateOf(XMin);
       dtpMinT.Time:=TimeOf(XMin);
-      dtpMaxT.Date:=DateOf(XMax);
+      dtpMaxD.Date:=DateOf(XMax);
       dtpMaxT.Time:=TimeOf(XMax);
       end
     else begin
       ItemIndex:=integer(AxType);
       pcRange.ActivePage:=tsNormal;
       rgScale.ItemIndex:=integer(ScaleType);     // scale (lin, log, invers)
-      edMinVal.Text:=SetValue(MinVal);
-      edMaxVal.Text:=SetValue(MaxVal);
+      edMinVal.Text:=SetValue(XMin);
+      edMaxVal.Text:=SetValue(XMax);
       end;
     with ParentChart.Area do begin
       if AxType=atHorz then begin
@@ -852,6 +830,7 @@ begin
     if IsNew then s:=TryFormat(_('Create %s for %s'),[s,ParentChart.ChartDesc])
     else s:=GetItemName(itAxis)+TryFormat(_('Edit %s of %s'),[Description,ParentChart.ChartDesc]);
     metr:=AAxis.ParentChart.ParentSheet.PlotUnit=puMetric;
+    IsTimeScale:=ScaleType=stTime;
     end;
   Caption:=s;
   if metr then s:='cm' else s:='inch';

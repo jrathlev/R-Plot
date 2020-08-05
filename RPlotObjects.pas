@@ -19,9 +19,9 @@ unit RPlotObjects;
 
 interface
 
-uses System.Classes, Winapi.Windows, Vcl.Graphics, System.Contnrs, System.IniFiles,
-  Vcl.Buttons, Types, Xml.XMLIntf, Xml.XMLDoc, RWinFit, Vcl.Forms, Vcl.Controls,
-  Vcl.ExtCtrls, System.Zip, WinUtils, StringUtils, MathExp;
+uses System.Classes, System.SysUtils, Winapi.Windows, System.Contnrs, System.IniFiles,
+  Vcl.Graphics, Vcl.Buttons, Types, Xml.XMLIntf, Xml.XMLDoc, RWinFit, Vcl.Forms,
+  Vcl.Controls, Vcl.ExtCtrls, System.Zip, WinUtils, StringUtils, MathExp;
 
 const
   DecSep = Period;
@@ -607,7 +607,7 @@ const
 type
   TPenStat = (psLast,psMove,psDraw);
 
-  TDataCol = (dcValX,dcValY,dcErrSX,dcErrAX,dcErrSY,dcErrAY); // Daten + symm./asymm. Fehler
+  TDataCol = (dcValX,dcValY,dcErrSX,dcErrAX,dcErrSY,dcErrAY,dcTime); // Daten + symm./asymm. Fehler
   TDataCols = set of TDataCol;
   TErrBarDirection = (ebHorz,ebVert);
 
@@ -805,6 +805,7 @@ type
   TAxisItem = class (TChartItem)
   private
     FFactor,FOffset  : double;
+  protected
     function GetDesc : string; override;
     function GetAxPos : double;   // abs. Position
     function GetOutline : TFRect; override;
@@ -822,7 +823,7 @@ type
     Properties    : TAxisProperties;  // Achseneigenschaften
     constructor Create (AChart : TChart; AAxType : TAxisType; AProps : TAxisProperties);
     constructor CreateFrom (AAxis : TaxisItem);
-    destructor Destroy;
+    destructor Destroy; override;
     procedure Assign (AAxis : TAxisItem);
     procedure LoadData (XmlNode : IXMLNode; DataOptions : TDataOptions); override;
     procedure SaveData (XmlNode : IXMLNode; DataOptions : TDataOptions); override;
@@ -840,7 +841,7 @@ type
   TTextOptions = set of TTextOption;
 
   TCurveItem = class (TChartItem)
-  private
+  protected
     function GetDesc : string; override;
     function GetOutline : TFRect; override;
     function CompareVals (const arg1,arg2) : boolean;
@@ -862,7 +863,7 @@ type
     end;
 
   TFitItem = class (TChartItem)
-  private
+  protected
     function GetDesc : string; override;
     function GetOutline : TFRect; override;
   protected
@@ -891,7 +892,7 @@ type
     end;
 
   TGraphItem = class (TChartItem)
-  private
+  protected
     function GetDesc : string; override;
     function GetTypeName : string; override;
     function GetOutline : TFRect; override;
@@ -913,7 +914,7 @@ type
     end;
 
   TFunctionItem = class (TChartItem)
-  private
+  protected
     function GetDesc : string; override;
     function GetOutline : TFRect; override;
   public
@@ -934,6 +935,7 @@ type
   TTextItem = class (TChartItem)
   private
     FPosition        : TFPoint;
+  protected
     function GetDesc : string; override;
     function GetTypeName : string; override;
     function GetOutline : TFRect; override;
@@ -958,6 +960,7 @@ type
   private
     FArea            : TFloatArea;
     FImage           : TBitmap;
+  protected
     function GetDesc : string; override;
     function GetOutline : TFRect; override;
     function GetArea : TFloatArea;
@@ -973,7 +976,7 @@ type
     LColor           : TColor;      // Farbe - Linien
     constructor Create (AChart : TChart);
     constructor CreateFrom (AImage : TImageItem);
-    destructor Destroy;
+    destructor Destroy; override;
     procedure Assign (AImage : TImageItem);
     procedure LoadData (XmlNode : IXMLNode; DataOptions : TDataOptions); override;
     procedure SaveData (XmlNode : IXMLNode; DataOptions : TDataOptions); override;
@@ -986,6 +989,7 @@ type
   TDrawingItem = class (TChartItem)
   private
     FStartPt,FEndPt  : TFPoint;
+  protected
     function GetDesc : string; override;
     function GetOutline : TFRect; override;
     function GetPoint (Index : integer) : TFPoint;
@@ -1137,6 +1141,7 @@ type
     procedure DeleteChart (Index : integer);
     function GetDefaultChartArea : TFloatArea;
     procedure AdjustChartAreas;
+    procedure AdjustSize;
 
     property PlotUnit : TPlotUnit read FPlotUnit write SetUnit;             // Maßeinheit
     property Properties : TSheetProperties read FProperties write SetProperties;
@@ -1178,12 +1183,20 @@ function MoveRect (re : TFRect; off : TFPoint) : TFRect;
 function MoveArea (ar : TFloatArea; off : TFPoint) : TFloatArea;
 function AreaToRect (ar : TFloatArea) : TFRect;
 
+function TryStringToFloat(ValStr : string; var Value : double; DecSep : Char = #0) : boolean;
+function TryStringToDateTime (s : string; var dt : TDateTime;
+                              TimeSep : Char = #0; DecSep : Char = #0) : boolean;
+function ReadNxtDateTime (var s : String; Del : char; Default : TDateTime;
+                          TimeSep : Char = #0; DecSep : Char = #0) : TDateTime;
+function StringToFloat (const s : string; Default : extended) : extended;
+function FloatToString (Value : extended; Format: TFloatFormat; Precision, Digits: Integer) : string;
+
 function NumberToPlotString (const s : string) : string;
 
 implementation
 
 uses GnuGetText, ExtSysUtils, NumberUtils, MathUtils, StrUtils, XMLUtils, FileUtils,
-  System.SysUtils, System.DateUtils, System.Math, Vcl.Imaging.jpeg, RPlotUtils;
+  System.DateUtils, System.Math, Vcl.Imaging.jpeg, RPlotUtils;
 
 { ------------------------------------------------------------------- }
 const
@@ -1325,6 +1338,59 @@ begin
   end;
 
 { ------------------------------------------------------------------- }
+function TryStringToFloat(ValStr : string; var Value : double; DecSep : Char) : boolean;
+var
+  fs   : TFormatSettings;
+begin
+  fs:=FormatSettings;
+  if DecSep<>#0 then fs.DecimalSeparator:=DecSep;
+  Result:=TryStrToFloat(ValStr,Value,fs);
+  end;
+
+function TryStringToDateTime (s : string; var dt : TDateTime; TimeSep,DecSep : Char) : boolean;
+var
+  j1,j2,j3 : integer;
+  err : boolean;
+  tm : TDateTime;
+  xs : double;
+begin
+  err:=false;
+  if TimeSep=#0 then TimeSep:=FormatSettings.TimeSeparator;
+  s:=Trim(s);
+  if length(s)>0 then begin
+    if Pos('-',s)>0 then begin // mit Datum
+      j1:=ReadNxtInt(s,'-',YearOf(Now),err);
+      j2:=ReadNxtInt(s,'-',MonthOf(Now),err);
+      j3:=ReadNxtInt(s,' ',DayOf(Now),err);
+      try dt:=EncodeDate(j1,j2,j3); except err:=true; end;
+      end
+    else begin
+      j1:=Pos(TimeSep,s); j2:=Pos('.',s);
+      if ((j1=0) and (j2>0)) or ((j2>0) and (j2<j1)) then begin
+        j3:=ReadNxtInt(s,'.',DayOf(Now),err);
+        j2:=ReadNxtInt(s,'.',MonthOf(Now),err);
+        j1:=ReadNxtInt(s,' ',YearOf(Now),err);
+        try dt:=EncodeDate(j1,j2,j3); except err:=true; end;
+        end
+      else dt:=Date;   // no date specified, take current
+      end;
+    if not err then begin
+      if (length(s)>0) then begin  // Zeit
+        if Pos(TimeSep,s)>0 then err:=not TryStrToTime(s,tm)
+        else begin
+          err:=not TryStringToFloat(s,xs,DecSep);
+          tm:=xs*OneSecond;
+          end;
+        if not err then dt:=DateOf(dt)+TimeOf(tm);
+        end;
+      end
+    else dt:=Now;
+    end
+  else dt:=Now;
+  Result:=not err;
+  end;
+
+{ ------------------------------------------------------------------- }
 function NumberToPlotString (const s : string) : string;
 var
   i : integer;
@@ -1335,13 +1401,6 @@ begin
     if (i=2) and (s[1]='1') then Delete(Result,1,2); // 1Ex = Ex
     end
   else Result:=s;
-  end;
-
-function GetFuncPoints (d,w : double; AStyle : TLineStyle) : integer;
-begin
-  if AStyle=lsDotted then Result:=round(d/(3*w))
-  else if AStyle=lsDashed then Result:=round(d/(6*w))
-  else Result:=FuncPoints;
   end;
 
 // Read Integer or Float from string s until next delimiter
@@ -1383,6 +1442,29 @@ begin
   delete(s,1,i);
   end;
 
+function ReadNxtDateTime (var s : String; Del : char; Default : TDateTime; TimeSep,DecSep : char) : TDateTime;
+var
+  sd : string;
+begin
+  sd:=ReplChars(ReadNxtStr(s,Del),'_',Space);
+  if not TryStringToDateTime(sd,Result,TimeSep,DecSep) then Result:=Default;
+  end;
+
+function StringToFloat (const s : string; Default : extended) : extended;
+var
+  fs : TFormatSettings;
+  v  : extended;
+begin
+  fs:=FormatSettings; fs.DecimalSeparator:=DecSep;
+  if TryStrToFloat(s,v,fs) then Result:=v else Result:=Default;
+  end;
+
+// Double-Zahl in String mit Punkt als Dezimaltrenner
+function FloatToString (Value : extended; Format: TFloatFormat; Precision, Digits: Integer) : string;
+begin
+  Result:=FloatToStrG(Value,Format,Precision,Digits,DecSep);
+  end;
+
 { ------------------------------------------------------------------- }
 // all dimensions in 1/100 cm/inch
 function DimensionsToStr (Vals : array of double; Delim : char) : string;
@@ -1410,6 +1492,13 @@ begin
     Width:=ReadNextInteger(s,Delim,round(100*Width))/100;
     Height:=ReadNextInteger(s,Delim,round(100*Height))/100;
     end;
+  end;
+
+function GetFuncPoints (d,w : double; AStyle : TLineStyle) : integer;
+begin
+  if AStyle=lsDotted then Result:=round(d/(3*w))
+  else if AStyle=lsDashed then Result:=round(d/(6*w))
+  else Result:=FuncPoints;
   end;
 
 { ------------------------------------------------------------------- }
@@ -1852,13 +1941,11 @@ begin
 
 procedure TSheet.AdjustChartAreas;
 var
-  dx,dy,y : double;
+  dy,y : double;
   i     : integer;
 begin
   with FProperties do begin
-    with FMargin do begin
-      dx:=Left+Right; dy:=Bottom+Top;
-      end;
+    with FMargin do dy:=Bottom+Top;
     if ChartCount>0 then begin
       dy:=(FSize.Height-dy)/ChartCount; y:=0;
       for i:=0 to ChartCount-1 do with Chart[i] do begin
@@ -1866,6 +1953,23 @@ begin
         SetInnerArea;
         y:=y+dy;
         end;
+      end;
+    end;
+  end;
+
+procedure TSheet.AdjustSize;
+var
+  x,y : double;
+  i   : integer;
+begin
+  with FProperties do if ChartCount>0 then begin
+    x:=0; y:=0;
+    for i:=0 to ChartCount-1 do with Chart[i].Area do begin
+      x:=x+Left+Width; y:=y+ Bottom+Height;
+      end;
+    with FSize do begin
+      if x>Width then Width:=x;
+      if y>Height then Height:=y;
       end;
     end;
   end;
@@ -1999,8 +2103,9 @@ begin
     itText      : ci:=TTextItem.CreateFrom(AChart.Item[i] as TTextItem);
     itImage     : ci:=TImageItem.CreateFrom(AChart.Item[i] as TImageItem);
     itDrawing   : ci:=TDrawingItem.CreateFrom(AChart.Item[i] as TDrawingItem);
+    else ci:=nil;
       end;
-    with ci do begin
+    if assigned(ci) then with ci do begin
       FChart:=self;
       AddToList(FItems);
       FID:=AChart.Item[i].ItemID;
@@ -2377,8 +2482,6 @@ begin
   if n=0 then n:=round(100*XChartSpace);
   XChartSpace:=XMLReadInteger(Xmlnode,iniXChSpace,n)/100;
   YChartSpace:=XMLReadInteger(Xmlnode,iniYChSpace,round(100*YChartSpace))/100;
-  n:=XMLReadInteger(Xmlnode,iniAxSpace,0);
-  if n=0 then n:=round(100*XAxisSpace);
   XAxisSpace:=XMLReadInteger(Xmlnode,iniXAxSpace,round(100*XAxisSpace))/100;
   YAxisSpace:=XMLReadInteger(Xmlnode,iniYAxSpace,round(100*YAxisSpace))/100;
   FBColor:=XMLReadInteger(Xmlnode,iniBakCol,FBColor);
@@ -2597,18 +2700,21 @@ var
 begin
   if FileExists(AName) then begin
     fs:=TFileStream.Create(aName,fmOpenRead);
-    XDoc:=TXMLDocument.Create(Application);
-    with XDoc do begin
-      LoadFromStream(fs);
-      if AnsiSameText(Id,DocumentElement.NodeName) then begin
-        lnode:=XMLReadNode(DocumentElement,Section);
-        if assigned(lnode) then LoadData(lnode,[]);
-        end
-      else ErrorDialog(TryFormat(_('Invalid template file: %s'),[AName]));
-      Free;
+    try
+      XDoc:=TXMLDocument.Create(Application);
+      with XDoc do begin
+        LoadFromStream(fs);
+        if AnsiSameText(Id,DocumentElement.NodeName) then begin
+          lnode:=XMLReadNode(DocumentElement,Section);
+          if assigned(lnode) then LoadData(lnode,[]);
+          end
+        else ErrorDialog(TryFormat(_('Invalid template file: %s'),[AName]));
+        Free;
+        end;
+    finally
+      fs.Free;
       end;
     end;
-  fs.Free;
   end;
 
 procedure TChartItem.SaveTemplate (const AName,Id,Section : string);
@@ -2642,6 +2748,7 @@ begin
         Result:=Result+ValDelim+FloatToString(PErr.X,ffGeneral,6,0)+ValDelim
                +FloatToString(MErr.X,ffGeneral,6,0);
       end
+    else if dcTime in ADataCols then Result:=FormatDateTime('yyyy-mm-dd_hh:nn:ss',Val.X)
     else Result:='';
     if dcValY in ADataCols then begin
       if length(Result)>0 then Result:=Result+ValDelim;
@@ -2667,7 +2774,8 @@ begin
       else if dcErrAX in ADataCols then begin  // asymm. X error
         PErr.X:=ReadNextFloat(s,ValDelim,0); MErr.X:=ReadNextFloat(s,ValDelim,0);
         end;
-      end;
+      end
+    else if dcTime in ADataCols then Val.X:=ReadNxtDateTime(s,ValDelim,Now,':');
     if dcValY in ADataCols then begin
       Val.Y:=ReadNextFloat(s,ValDelim,0);
       if dcErrSY in ADataCols then begin // symm. Y error
@@ -3909,7 +4017,7 @@ var
   stx,sty     : TScaleType;
   XMax,XMin,
   YMax,YMin,
-  xls,yls,
+  xls,
   x0,dx,xw    : double;
   ok          : boolean;
 begin
@@ -3939,7 +4047,6 @@ begin
       xw:=abs(Scale(XMin)-Scale(XMax));
       end;
     x0:=XMin; dx:=XMax-x0;
-    if sty=stLog then yls:=lg(YMax/YMin);
     with Properties do begin
       with Properties do np:=GetFuncPoints(xw,LWidth,LStyle);
       SetLength(FuncData.Data,np+1); ok:=false;
@@ -4275,8 +4382,6 @@ begin
   end;
 
 procedure TImageItem.SaveData (XmlNode : IXMLNode; DataOptions : TDataOptions);
-var
-  s     : string;
 begin
   inherited SaveData (XmlNode,DataOptions);
   ImgName:=DelExt(ImgName);   // nur für Kompatibiltät zu JPG

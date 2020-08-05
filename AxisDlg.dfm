@@ -594,9 +594,9 @@ object AxisDialog: TAxisDialog
         Top = 170
         Width = 311
         Height = 161
-        Caption = 'Labels'
+        Caption = 'Labels at tick marks'
         TabOrder = 0
-        object Label4: TLabel
+        object laPrecision: TLabel
           Left = 13
           Top = 20
           Width = 46
@@ -720,7 +720,7 @@ object AxisDialog: TAxisDialog
           Top = 12
           Width = 166
           Height = 51
-          ActivePage = tsUser
+          ActivePage = tsNumber
           Style = tsFlatButtons
           TabOrder = 1
           object tsNumber: TTabSheet

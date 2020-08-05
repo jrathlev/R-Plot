@@ -257,9 +257,6 @@ type
     procedure OutputText (Pos,Offs : TPoint; const AText : string); override;
     end;
 
-function StringToFloat (const s : string; Default : extended) : extended;
-function FloatToString (Value : extended; Format: TFloatFormat; Precision, Digits: Integer) : string;
-
 procedure ResetMinMax (var PMin,PMax : TFPoint);
 procedure MinMax (Val : TFPoint; var PMin,PMax : TFPoint); overload;
 procedure MinMax (Val : TFuncSet; var PMin,PMax : TFPoint); overload;
@@ -279,22 +276,6 @@ implementation
 
 uses GnuGetText, ExtSysUtils, MathUtils, MathExp, StrUtils, XMLUtils, NumberUtils,
   System.DateUtils, System.Math, Vcl.Imaging.jpeg;
-
-{ ------------------------------------------------------------------- }
-function StringToFloat (const s : string; Default : extended) : extended;
-var
-  fs : TFormatSettings;
-  v  : extended;
-begin
-  fs:=FormatSettings; fs.DecimalSeparator:=DecSep;
-  if TryStrToFloat(s,v,fs) then Result:=v else Result:=Default;
-  end;
-
-// Double-Zahl in String mit Punkt als Dezimaltrenner
-function FloatToString (Value : extended; Format: TFloatFormat; Precision, Digits: Integer) : string;
-begin
-  Result:=FloatToStrG(Value,Format,Precision,Digits,DecSep);
-  end;
 
 { ------------------------------------------------------------------- }
 function PlusOrigin (ARect : TFRect) : TFPoint; overload;
@@ -1453,6 +1434,9 @@ begin
   alRightTop : begin
       dx:=-CosTextRot*xd-0.1*SinTextRot*yd; dy:=-SinTextRot*xd+0.1*CosTextRot*yd;
       end;
+  else begin
+      dx:=0; dy:=0;
+      end;
     end;
   if Invers then begin
     x:=x-dx; y:=y-dy;
@@ -1607,7 +1591,7 @@ var
   ShowRect      : boolean;
 begin
   TextFont:=AProps.Font;
-  TextTransparency:=true;
+  TextTransparency:=true; ls:=lsNone; ac:=clBlack;
   with PlotField do begin
     x:=Left+APos.X; y:=Bottom+APos.Y;
     end;
@@ -2046,9 +2030,9 @@ const
               y:=xp+ys;
               NewTextColor(LabFont.FontColor);
               if PlotTime (X+xs,y,xt) then y:=y-1.2*LabFont.FontSize;
-              if (asDate in AxStyles) and (First or (abs(frac(xt))<OneSecond)) then begin
+              if (asDate in AxStyles) and (First or (abs(round(xt)-xt)<OneMinute)) then begin
                 PlotDate (x+xs,y,xt,asWeekday in AxStyles);
-                first:=false;
+                First:=false;
                 end;
               end;
             end
@@ -2642,10 +2626,11 @@ begin
                       end;
                     end;
                   // Punkte
-                  with DataTable do for k:=0 to Count-1 do with Data[k].Val do begin
+                  Clip:=true;
+                  if SymType<>stNone then with DataTable do for k:=0 to Count-1 do with Data[k].Val do begin
                     pt:=FloatPoint(Scale(ix,X),Scale(iy,Y));
                     MinMax(pt,pmin,pmax); mmvalid:=true;
-                    if SymType<>stNone then PlotMark(pt,SymType,SymSize,LWidth,MColor,ChartColor);
+                    PlotMark(pt,SymType,SymSize,LWidth,MColor,ChartColor);
                     end;
                   if mmvalid then Outline:=MoveRect(FloatRect(pmin.X,pmin.Y,pmax.X,pmax.Y),MinusOrigin(PlotField));
                   // Positionen für Erkennung bei Mausbewegung berechnen
@@ -2669,16 +2654,18 @@ begin
                   else with DataTable do if Count>0 then begin
                     HitData.Available:=true;
                     if length(Data)>HitPoints then begin
-                      SetLength(HitData.Data,HitPoints);
-                      k0:=0; xl:=Count/HitPoints;
-                      for k:=0 to Count-1 do with DataTable.Data[k].Val do begin
+                      SetLength(HitData.Data,length(Data));
+                      k1:=0; k:=0; k0:=Count div HitPoints;
+                      while k<Count do with Data[k].Val do begin
                         pt:=FloatPoint(Scale(ix,X),Scale(iy,Y));
                         HitData.Data[k1]:=MovePoint(pt,MinusOrigin(PlotField));
+                        inc(k1); inc(k,k0);
                         end;
+                      SetLength(HitData.Data,k1);
                       end
                     else begin
                       SetLength(HitData.Data,Count);
-                      for k:=0 to Count-1 do with DataTable.Data[k].Val do begin
+                      for k:=0 to Count-1 do with Data[k].Val do begin
                         pt:=FloatPoint(Scale(ix,X),Scale(iy,Y));
                         HitData.Data[k]:=MovePoint(pt,MinusOrigin(PlotField));
                         end;

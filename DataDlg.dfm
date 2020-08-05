@@ -251,7 +251,7 @@ object DataDialog: TDataDialog
       Top = 5
       Width = 26
       Height = 26
-      Hint = 'Paste from clipboard (Ctrl+V)'
+      Hint = 'Paste from clipboard (Ctrl+B)'
       Glyph.Data = {
         76010000424D7601000000000000760000002800000020000000100000000100
         04000000000000010000130B0000130B00001000000000000000000000000000
@@ -322,6 +322,12 @@ object DataDialog: TDataDialog
       ParentShowHint = False
       ShowHint = True
       OnClick = sbSortClick
+    end
+    object laLines: TLabel
+      Left = 205
+      Top = 0
+      Width = 3
+      Height = 13
     end
     object bbImport: TBitBtn
       Left = 10
@@ -592,6 +598,7 @@ object DataDialog: TDataDialog
       ScrollBars = ssVertical
       SearchEngine = SynEditSearch
       WantTabs = True
+      OnChange = seDataChange
       FontSmoothing = fsmNone
     end
   end
