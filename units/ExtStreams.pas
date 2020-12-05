@@ -1,6 +1,6 @@
 (* Read and write standard types from / to stream
 
-   © Dr. J. Rathlev, D-24222 Schwentinental (info(a)rathlev-home.de)
+   © Dr. J. Rathlev, D-24222 Schwentinental (kontakt(a)rathlev-home.de)
 
    The contents of this file may be used under the terms of the
    Mozilla Public License ("MPL") or

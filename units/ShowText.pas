@@ -13,7 +13,7 @@
    the specific language governing rights and limitations under the License.
 
    Vers. 1 - Sep. 2001
-   last changed: Dec. 2015
+   last modified December 2020
    *)
 
 unit ShowText;
@@ -74,6 +74,9 @@ type
     FName           : string;
   public
     { Public-Deklarationen }
+{$IFDEF HDPI}   // scale glyphs and images for High DPI
+    procedure AfterConstruction; override;
+{$EndIf}
     procedure LoadFromIni(IniName, Section : string);
     procedure Execute (APos            : TPoint;
                        const ATitle,AName : string;
@@ -161,6 +164,16 @@ begin
   TranslateComponent (self,'dialogs');
   Memo.Clear;
   end;
+
+{$IFDEF HDPI}   // scale glyphs and images for High DPI
+procedure TShowtextDialog.AfterConstruction;
+begin
+  inherited;
+  if Application.Tag=0 then begin
+    ScaleButtonGlyphs(self,PixelsPerInchOnDesign,Monitor.PixelsPerInch);
+    end;
+  end;
+{$EndIf}
 
 { ------------------------------------------------------------------- }
 const

@@ -18,7 +18,7 @@ unit Eps;
 
 interface
 
-uses Winapi.Windows, System.Classes, System.SysUtils, Vcl.Graphics, Tiff;
+uses Winapi.Windows, System.Classes, System.SysUtils, Vcl.Graphics;
 
 const
   EpsExt = '.eps';
@@ -280,7 +280,7 @@ const
   psTit = '%%%%Title: %s';
   psDte = '%%%%CreationDate: %s';
   psCre = '%%Creator: ';
-  psCop = '%%Copyright: Copyright (C) 2012 - J. Rathlev, IEAP, Uni-Kiel';
+  psCop = '%%Copyright: Copyright (C) 2012-2020 - J. Rathlev, D-24222 Schwentinental';
   psDat = '%%DocumentData: Clean7Bit';
   psLev = '%%%%LanguageLevel: %s';
   psPgs = '%%Pages: 1';
@@ -432,7 +432,7 @@ var
   fEps      : TextFile;
 begin
   AssignFile(fEps,Filename); rewrite(fEps);
-  FImgName:=Filename;
+  if length(FImgName)=0 then FImgName:=Filename;
   Result:=Output (fEps,Bitmap);
   CloseFile(fEps);
   end;

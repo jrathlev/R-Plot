@@ -1,30 +1,38 @@
-object CharTableDialog: TCharTableDialog
-  Left = 382
-  Top = 206
-  Caption = 'Character table'
-  ClientHeight = 255
-  ClientWidth = 401
+object DateFormatDialog: TDateFormatDialog
+  Left = 349
+  Top = 341
+  BorderStyle = bsDialog
+  Caption = 'Date format settings'
+  ClientHeight = 96
+  ClientWidth = 195
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = True
+  OldCreateOrder = False
   Position = poScreenCenter
   OnCreate = FormCreate
   DesignSize = (
-    401
-    255)
+    195
+    96)
   PixelsPerInch = 96
   TextHeight = 13
+  object Label1: TLabel
+    Left = 15
+    Top = 10
+    Width = 68
+    Height = 13
+    Caption = 'Select format:'
+  end
   object OKBtn: TBitBtn
-    Left = 179
-    Top = 219
-    Width = 101
+    Left = 13
+    Top = 60
+    Width = 71
     Height = 26
     Anchors = [akRight, akBottom]
-    Caption = 'Select'
+    Caption = 'OK'
     Default = True
     Glyph.Data = {
       BE060000424DBE06000000000000360400002800000024000000120000000100
@@ -87,8 +95,8 @@ object CharTableDialog: TCharTableDialog
     TabOrder = 0
   end
   object CancelBtn: TBitBtn
-    Left = 294
-    Top = 219
+    Left = 88
+    Top = 60
     Width = 101
     Height = 26
     Anchors = [akRight, akBottom]
@@ -154,36 +162,11 @@ object CharTableDialog: TCharTableDialog
     NumGlyphs = 2
     TabOrder = 1
   end
-  object CharGrid: TDrawGrid
-    Left = 10
-    Top = 10
-    Width = 382
-    Height = 195
-    Anchors = [akLeft, akTop, akRight, akBottom]
-    ColCount = 17
-    DefaultColWidth = 20
-    DefaultRowHeight = 20
-    RowCount = 17
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'Tahoma'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 2
-    OnDblClick = CharGridDblClick
-    OnDrawCell = CharGridDrawCell
-  end
-  object leValue: TLabeledEdit
-    Left = 10
-    Top = 224
-    Width = 61
+  object cbDateFormats: TComboBox
+    Left = 15
+    Top = 25
+    Width = 171
     Height = 21
-    Anchors = [akLeft, akBottom]
-    EditLabel.Width = 52
-    EditLabel.Height = 13
-    EditLabel.Caption = 'Hex value:'
-    TabOrder = 3
-    OnChange = leValueChange
+    TabOrder = 2
   end
 end

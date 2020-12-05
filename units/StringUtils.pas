@@ -309,8 +309,8 @@ function ReadNxtQuotedStr (var s : string;
                            ADelim,AQuote : char) : string;
 
 function MakeQuotedStr (const s : string; CheckChars : array of char) : string;
-
 function ExtractEnclosedString(const AString : string; EncChar : Char; var Pos : integer) : string;
+
 function ReplaceEnvString(const AString,AEnv : string) : string;
 function ReplaceEnvVariables (const ALine : string) : string;
 
@@ -1326,6 +1326,7 @@ begin
     end
   end;
 
+{ ------------------------------------------------------------------- }
 // replace environment variable
 function ReplaceEnvString(const AString,AEnv : string) : string;
 var

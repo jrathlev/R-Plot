@@ -13,7 +13,7 @@
 
    Vers. 1 - Sep. 2002
    Vers. 2 - April 2016: IFileOperation added
-   last updated: Dec. 2018
+   last updated: June 2020
    *)
 
 unit WinShell;
@@ -97,7 +97,7 @@ type
     pfProgramFiles64,pfCommonProgramFiles64);
 
 // exe file types
-  TFileExeType = (etError, etMsDos, etWin16, etWin32Gui, etWin32Con);
+  TFileExeType = (etError, etLink, etMsDos, etWin16, etWin32Gui, etWin32Con);
 
 (*   IID_ITaskbarList: TGUID = '{56FDF342-FD6D-11d0-958A-006097C9A090}';
   IID_ITaskbarList2: TGUID = '{602D4995-B13A-429b-A66E-1935E44F4317}';
@@ -152,6 +152,9 @@ function GetDesktopFolder (Typ : integer) : string;
 function GetKnownFolder (rfId : TGUID) : string;
 function GetProgramFolder (pfType : TProgramFolder) : string;
 
+function GetPersonalFolder : string;
+function GetAppDataFolder : string;
+
 procedure RefreshDesktop;
 
 { Dialog Verzeichnisauswahl }
@@ -161,12 +164,12 @@ function GetDirectory (Title      : string;
                        var ImgNdx : integer) : boolean;
 
 function MakeLink (const LinkObj,ProgName,IconLocation,Arg,WorkDir,Desc: string;
-                   RunAs : boolean = false) : boolean; overload;
+                   RunAs : boolean = false) : HResult; overload;
 function MakeLink (const LinkObj,ProgName,Arg,WorkDir,Desc: string;
-                   RunAs : boolean = false) : boolean; overload;
+                   RunAs : boolean = false) : HResult; overload;
 
 function GetLink (const LinkObj : string; var ProgName,Arg,WorkDir,Desc: string;
-                  var RunAs : boolean) : boolean; overload;
+                  var RunAs : boolean) : HResult; overload;
 function GetLink (const LinkObj : string; var ProgName,Arg,WorkDir,Desc: string) : boolean; overload;
 
 { ---------------------------------------------------------------- }
@@ -314,7 +317,6 @@ begin
 function GetKnownFolder (rfId : TGUID) : string;  // available since Vista
 var
   ppszPath : PWideChar;
-  hr       : hresult;
 begin
   Result:='';
   if (Win32Platform=VER_PLATFORM_WIN32_NT) and (Win32MajorVersion>=6) and
@@ -349,6 +351,16 @@ begin
   pfCommonProgramFiles : Result:=GetDesktopFolder(CSIDL_PROGRAM_FILES_COMMON);
   else Result:=GetDesktopFolder(CSIDL_PROGRAM_FILES);
     end;
+  end;
+
+function GetPersonalFolder : string;
+begin
+  Result:=GetDesktopFolder(CSIDL_PERSONAL);
+  end;
+
+function GetAppDataFolder : string;
+begin
+  Result:=GetDesktopFolder(CSIDL_APPDATA);
   end;
 
 { ---------------------------------------------------------------- }
@@ -413,36 +425,37 @@ begin
 
 { ---------------------------------------------------------------- }
 function MakeLink (const LinkObj,ProgName,IconLocation,Arg,WorkDir,Desc: string;
-                   RunAs : boolean = false) : boolean;
+                   RunAs : boolean = false) : HResult;
 var
   psl : IShellLink;
   ppf : IPersistFile;
   pdl : IShellLinkDataList;
   dwFlags : DWORD;
 begin
-  Result:=false;
-  if SUCCEEDED(CoCreateInstance(CLSID_ShellLink,     // ID von ShellLink (Typ TGUID)
-                      nil,
-                      CLSCTX_INPROC_SERVER,
-                      IID_IShellLinkW,     // Referenz auf die Funktion
-                      psl)) then with psl do begin
-    if SUCCEEDED(SetPath(pChar(ProgName))) then begin
+  Result:=CoCreateInstance(CLSID_ShellLink,     // ID von ShellLink (Typ TGUID)
+                      nil,CLSCTX_INPROC_SERVER,
+                      IID_IShellLinkW,          // Referenz auf die Funktion
+                      psl);
+  if SUCCEEDED(Result) then with psl do begin
+    Result:=SetPath(pChar(ProgName));
+    if SUCCEEDED(Result) then begin
       SetArguments(PChar(Arg));
       if length(ProgName)>0 then SetIconLocation(PChar(IconLocation),0);
       if length(WorkDir)>0 then SetWorkingDirectory(PChar(WorkDir));
       if length(Desc)>0 then SetDescription(PChar(Desc));
-      if SUCCEEDED(QueryInterface(IID_IPersistFile,ppf)) then begin
+      Result:=QueryInterface(IID_IPersistFile,ppf);
+      if SUCCEEDED(Result) then begin
         if RunAs then begin
-          Result:=SUCCEEDED(QueryInterface(IID_IShellLinkDataList,pdl));
-          if Result then begin
-            Result:=SUCCEEDED(pdl.GetFlags(dwFlags));
-            if Result and ((SLDF_RUNAS_USER and dwFlags)=0) then
-                Result:=SUCCEEDED(pdl.SetFlags(SLDF_RUNAS_USER or dwFlags));
+          Result:=QueryInterface(IID_IShellLinkDataList,pdl);
+          if SUCCEEDED(Result) then begin
+            Result:=pdl.GetFlags(dwFlags);
+            if SUCCEEDED(Result) and ((SLDF_RUNAS_USER and dwFlags)=0) then
+                Result:=pdl.SetFlags(SLDF_RUNAS_USER or dwFlags);
             end
           end
-        else Result:=true;
-        if Result then Result:=SUCCEEDED(ppf.Save(PChar(LinkObj),true));
-        if Result then Result:=SUCCEEDED(ppf.SaveCompleted(nil));
+        else Result:=S_OK;
+        if SUCCEEDED(Result) then Result:=ppf.Save(PChar(LinkObj),true);
+        if SUCCEEDED(Result) then ppf.SaveCompleted(nil);
         end;
 //      ppf:=nil;
       end;
@@ -450,53 +463,60 @@ begin
     end;
   end;
 
-function MakeLink(const LinkObj,ProgName,Arg,WorkDir,Desc: string; RunAs : boolean = false) : boolean;
+function MakeLink(const LinkObj,ProgName,Arg,WorkDir,Desc: string; RunAs : boolean = false) : HResult;
 begin
   Result:=MakeLink(LinkObj,ProgName,ProgName,Arg,WorkDir,Desc,RunAs);
   end;
 
 function GetLink (const LinkObj : string; var ProgName,Arg,WorkDir,Desc: string;
-                  var RunAs : boolean) : boolean;
+                  var RunAs : boolean) : HResult;
 var
   psl : IShellLink;
   ppf : IPersistFile;
   sb  : PChar;
   pdl : IShellLinkDataList;
-  dwFlags : DWORD;
   pfd : TWin32FindData;
+  dwFlags : DWORD;
 begin
-  Result:=false; RunAs:=false;
-  if FileExists(LinkObj) and
-     SUCCEEDED(CoCreateInstance(CLSID_ShellLink,     // ID von ShellLink (Typ TGUID)
-                      nil,
-                      CLSCTX_INPROC_SERVER,
+  RunAs:=false; ProgName:=''; Arg:=''; WorkDir:=''; Desc:='';
+  if FileExists(LinkObj) then begin
+    Result:=CoCreateInstance(CLSID_ShellLink,     // ID von ShellLink (Typ TGUID)
+                      nil,CLSCTX_INPROC_SERVER,
                       IID_IShellLinkW,     // Referenz auf die Funktion
-                      psl)) then with psl do begin
-    if SUCCEEDED(QueryInterface(IID_IPersistFile,ppf)) then begin
-      ppf.Load(PChar(LinkObj),STGM_READ);
-      if SUCCEEDED(QueryInterface(IID_IShellLinkDataList,pdl)) then begin
-        if SUCCEEDED(pdl.GetFlags(dwFlags)) then RunAs:=(SLDF_RUNAS_USER and dwFlags)<>0;
+                      psl);
+    if SUCCEEDED(Result) then with psl do begin
+      Result:=QueryInterface(IID_IPersistFile,ppf);
+      if SUCCEEDED(Result) then begin
+        ppf.Load(PChar(LinkObj),STGM_READ);
+        Result:=QueryInterface(IID_IShellLinkDataList,pdl);
+        if SUCCEEDED(Result) then begin
+          Result:=pdl.GetFlags(dwFlags);
+          if SUCCEEDED(Result) then RunAs:=(SLDF_RUNAS_USER and dwFlags)<>0;
+          end;
+        if SUCCEEDED(Result) then begin
+          sb:=StrAlloc(MAX_PATH+1);
+          Result:=GetPath(sb,MAX_PATH,pfd,SLGP_UNCPRIORITY);
+          if succeeded(Result) then begin
+            ProgName:=sb;
+            if succeeded(GetArguments(sb,MAX_PATH)) then Arg:=sb;
+            if succeeded(GetWorkingDirectory(sb,MAX_PATH)) then WorkDir:=sb;
+            if succeeded(GetDescription(sb,MAX_PATH)) then Desc:=sb;
+            end;
+          StrDispose(sb);
+//          ppf:=nil;
+          end;
         end;
-      sb:=StrAlloc(MAX_PATH+1);
-      with psl do if succeeded(GetPath(sb,MAX_PATH,pfd,SLGP_UNCPRIORITY)) then begin
-        ProgName:=sb;
-        if succeeded(GetArguments(sb,MAX_PATH)) then Arg:=sb;
-        if succeeded(GetWorkingDirectory(sb,MAX_PATH)) then WorkDir:=sb;
-        if succeeded(GetDescription(sb,MAX_PATH)) then Desc:=sb;
-        Result:=true;
-        end;
-      StrDispose(sb);
-      ppf:=nil;
       end;
-    psl:=nil;
+//    psl:=nil;
     end
+  else Result:=ERROR_FILE_NOT_FOUND;
   end;
 
 function GetLink (const LinkObj : string; var ProgName,Arg,WorkDir,Desc: string) : boolean;
 var
   ra : boolean;
 begin
-  Result:=GetLink (LinkObj,ProgName,Arg,WorkDir,Desc,ra)
+  Result:=SUCCEEDED(GetLink (LinkObj,ProgName,Arg,WorkDir,Desc,ra));
   end;
 
 { ---------------------------------------------------------------- }
@@ -819,17 +839,21 @@ var
   FileInfo: TSHFileInfo;
   rv : DWORD;
 begin
+  Result:=etError;
   FileInfo.dwAttributes := 0;
   rv:=SHGetFileInfo(PChar(FileName),0,FileInfo,SizeOf(FileInfo),SHGFI_EXETYPE);
-  case LoWord(rv) of
-  IMAGE_DOS_SIGNATURE: Result:=etMsDos;        // MZ
-  IMAGE_OS2_SIGNATURE: Result:=etWin16;        // NE
-  Word(IMAGE_NT_SIGNATURE):                    // PE
-    if HiWord(rv)=0 then Result:=etWin32Con
-    else Result:=etWin32Gui;
-  else Result:=etError;
+  if rv=0 then begin
+    if (SHGetFileInfo(PChar(FileName),0,FileInfo,SizeOf(FileInfo),SHGFI_ATTRIBUTES)<>0)
+      and (fileInfo.dwAttributes and SFGAO_LINK <>0) then Result:=etLink;
+    end
+  else case LoWord(rv) of
+    IMAGE_DOS_SIGNATURE: Result:=etMsDos;        // MZ
+    IMAGE_OS2_SIGNATURE: Result:=etWin16;        // NE
+    Word(IMAGE_NT_SIGNATURE):                    // PE
+      if HiWord(rv)=0 then Result:=etWin32Con
+      else Result:=etWin32Gui;
+      end;
   end;
-end;
 
 function IsConsoleApp (const Filename : string) : boolean;
 begin

@@ -19,7 +19,7 @@
 
    Vers. 1 - Jun. 1989
    Vers. 2 - May 2015
-   last modified:  Feb. 2017
+   last modified:  April 2020
    *)
 
 unit NumberUtils;
@@ -92,7 +92,8 @@ function ISign (x,y : integer) : integer;
 function ASign (x,y : double) : double;
 
 (* Typumwandlung prüfen *)
-function CheckValue (s     : string) : boolean;
+function CheckValue (s : string;
+                     DecSep : char = #0) : boolean;
 
 (* an Dezimalstelle runden *)
 function DecimalRound (Value : double; Decimal : integer) : double;
@@ -354,12 +355,17 @@ begin
   end;
 
 (* ----------PROCEDURE-CheckValue---------------------------------------- *)
-function CheckValue (s     : string) : boolean;
+function CheckValue (s : string;
+                     DecSep : char = #0) : boolean;
+var
+  fs   : TFormatSettings;
 begin
+  fs:=FormatSettings;
+  if DecSep<>#0 then fs.DecimalSeparator:=DecSep;
   Result:=true;
   if length(s)>0 then begin
     try
-      StrToFloat(s);
+      StrToFloat(s,fs);
     except
       on EConvertError do Result:=false;
       end;
@@ -657,13 +663,13 @@ begin
     else begin
       k:=Digits div 100; Digits:=Digits mod 100;
       if k=0 then begin
-        if abs(Value)<MinDouble then k:=1 else k:=round(aint(ln(abs(Value)/ln(10))))+1;
-        if k<=0 then begin
-          if k+Digits>0 then begin
+        if abs(Value)<MinDouble then k:=1 else k:=round(aint(Log10(abs(Value))))+1;
+        if k<0 then begin
+          if k+Digits>=0 then begin
             k:=Digits; inc(Digits);
             end;
           end
-        else if Digits>k then k:=Digits-k
+        else if Digits>=k then k:=Digits-k
         else k:=0;
         end;
       if k>=0 then Result:=FloatToStrF (Value,ffFixed,Digits,k,fs)
