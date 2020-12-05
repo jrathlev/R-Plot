@@ -539,6 +539,7 @@ begin
 procedure THistoryCombo.UpdateList;
 begin
   Items:=FHistoryList;
+  if Items.Count=0 then Style:=csSimple else Style:=csDropDown;
   end;
 
 procedure THistoryCombo.DoEnter;

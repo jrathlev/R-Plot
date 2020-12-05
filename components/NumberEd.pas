@@ -225,12 +225,12 @@ type
     procedure CMExit(var Message: TCMExit); message CM_EXIT;
   public
     constructor Create(AOwner: TComponent); override;
+    property RangeError : boolean read FRangeError;
   published
     { Published declarations }
     property MinValue : int64 read FMinValue write SetMinValue;
     property MaxValue : int64 read FMaxValue write SetMaxValue;
     property RangeCheck : boolean read FRangeCheck write FRangeCheck default true;
-    property RangeError : boolean read FRangeError;
   end;
 
   TFloatEdit = class(TCustomNumEdit)
@@ -317,12 +317,12 @@ type
     procedure CMExit(var Message: TCMExit);   message CM_EXIT;
   public
     constructor Create(AOwner: TComponent); override;
+    property RangeError : boolean read FRangeError;
   published
     { Published declarations }
     property MinValue : extended read FMinValue write SetMinValue;
     property MaxValue : extended read FMaxValue write SetMaxValue;
     property RangeCheck : boolean read FRangeCheck write FRangeCheck default true;
-    property RangeError : boolean read FRangeError;
   end;
 
   TDegreeEdit = class (TFloatEdit)
