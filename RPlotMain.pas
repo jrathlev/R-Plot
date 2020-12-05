@@ -16,11 +16,13 @@
    WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License for
    the specific language governing rights and limitations under the License.
 
-   Vers. 1.0, July 2012    - Basic version
-         1.1, June 2015    - Bug fixes
-         1.2, June 2016    - Implementation to Delphi 10
-         1.3: January 2020 - Enhancements
-   last modified January 2020
+   Vers. 1.0, July 2012     - Basic version
+         1.1, June 2015     - Bug fixes
+         1.2, June 2016     - Implementation to Delphi 10
+         1.3: January 2020  - Enhancements
+         1.4 - 1.7 2020 - several bug fixes and enhancements, 64 bit version
+         2.0: December 2020 - Enhanced DOPI awareness
+   last modified December 2020
    *)
 
 unit RPlotMain;
@@ -34,7 +36,7 @@ uses Winapi.Windows, System.SysUtils, System.Classes, Vcl.Graphics, Vcl.Forms,
 
 const
   ProgName='R-Plot';
-  Vers=' - Vers. 1.3';
+  Vers=' - Vers. 2.0';
   CopRgt='© 2012-2020 - J. Rathlev, D-24222 Schwentinental';
   EMailAdr='kontakt(a)rathlev-home.de';
 
@@ -265,8 +267,10 @@ type
   public
     { Public-Deklarationen }
     Sheet      : TSheet;
-    DefSheet   : TDefaultSheet;
     UserPath   : string;
+{$IFDEF HDPI}   // scale glyphs and images for High DPI
+    procedure AfterConstruction; override;
+{$EndIf}
     procedure UpdateSheet (ChartIndex : integer; ObjectIndex : integer = 0);
     procedure SetChangeStatus (Status : boolean = true);
     procedure SelectItem (AItemIndex : TChartItemIndex);
@@ -331,10 +335,6 @@ begin
   ImagePath:=SetDirName(SheetPath)+defImgPath;
   TmpPath:=TempDirectory;
   if not DirectoryExists(TemplPath) then ForceDirectories(TemplPath);
-  with DefSheet do begin  // set to program default preferences
-    MetricSheet:=MetricSheetProps;
-    InchSheet:=InchSheetProps
-    end;
   UserSheet:=DefSheet;
   FIniName:='';
   ReadOptions;
@@ -386,6 +386,16 @@ begin
   SelChart:=-1; SetChangeStatus(false); DelCount:=0;
   end;
 
+{$IFDEF HDPI}   // scale glyphs and images for High DPI
+procedure TfrmSheet.AfterConstruction;
+begin
+  inherited;
+  if Application.Tag=0 then begin
+    ScaleButtonGlyphs(self,PixelsPerInchOnDesign,Monitor.PixelsPerInch);
+    end;
+  end;
+{$EndIf}
+
 procedure TfrmSheet.FormDestroy(Sender : TObject);
 begin
   SaveSheetProperties (FiniName,puMetric,UserSheet.MetricSheet);
@@ -418,9 +428,18 @@ begin
   end;
 
 procedure TfrmSheet.FormResize(Sender: TObject);
+var
+  w : integer;
 begin
-  with lvCharts do Columns[0].Width:=Width-Columns[1].Width-21;
-  with lvItems do Columns[0].Width:=Width-Columns[1].Width-21;
+  w:=MulDiv(21,Monitor.PixelsPerInch,PixelsPerInchOnDesign);
+  with lvCharts do begin
+    Columns[0].Width:=Width-Columns[1].Width-w;
+    Invalidate;
+    end;
+  with lvItems do begin
+    Columns[0].Width:=Width-Columns[1].Width-w;
+    Invalidate;
+    end;
   end;
 
 procedure TfrmSheet.FormShow(Sender : TObject);

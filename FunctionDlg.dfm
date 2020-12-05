@@ -7,7 +7,11 @@ object FunctionDialog: TFunctionDialog
   ClientHeight = 366
   ClientWidth = 541
   Color = clBtnFace
-  ParentFont = True
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
   OldCreateOrder = True
   Position = poDesigned
   OnCloseQuery = FormCloseQuery

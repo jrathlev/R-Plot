@@ -7,7 +7,11 @@ object ChartDialog: TChartDialog
   ClientHeight = 336
   ClientWidth = 441
   Color = clBtnFace
-  ParentFont = True
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
   OldCreateOrder = True
   Position = poDesigned
   OnCreate = FormCreate
@@ -156,7 +160,6 @@ object ChartDialog: TChartDialog
     ModalResult = 1
     NumGlyphs = 2
     TabOrder = 0
-    ExplicitTop = 302
   end
   object CancelBtn: TBitBtn
     Left = 337
@@ -225,7 +228,6 @@ object ChartDialog: TChartDialog
     ModalResult = 2
     NumGlyphs = 2
     TabOrder = 1
-    ExplicitTop = 302
   end
   object bbLoadTemplate: TBitBtn
     Left = 182
@@ -252,7 +254,6 @@ object ChartDialog: TChartDialog
     ShowHint = True
     TabOrder = 10
     OnClick = bbLoadTemplateClick
-    ExplicitTop = 296
   end
   object bbSaveTemplate: TBitBtn
     Left = 217
@@ -344,7 +345,6 @@ object ChartDialog: TChartDialog
     ShowHint = True
     TabOrder = 11
     OnClick = bbSaveTemplateClick
-    ExplicitTop = 296
   end
   object cbShow: TCheckBox
     Left = 10
@@ -356,7 +356,6 @@ object ChartDialog: TChartDialog
     Checked = True
     State = cbChecked
     TabOrder = 9
-    ExplicitTop = 308
   end
   object gbColor: TGroupBox
     Left = 280

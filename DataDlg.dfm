@@ -6,7 +6,11 @@ object DataDialog: TDataDialog
   ClientHeight = 369
   ClientWidth = 546
   Color = clBtnFace
-  ParentFont = True
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
   KeyPreview = True
   OldCreateOrder = True
   Position = poDesigned

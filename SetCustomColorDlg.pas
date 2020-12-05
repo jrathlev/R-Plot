@@ -12,7 +12,7 @@
    the specific language governing rights and limitations under the License.
 
    Jul. 2012
-   last modified January 2020
+   last modified December 2020
    *)
 
 unit SetCustomColorDlg;
@@ -39,6 +39,9 @@ type
     procedure SelectColClick(Sender: TObject);
   public
     { Public-Deklarationen }
+{$IFDEF HDPI}   // scale glyphs and images for High DPI
+    procedure AfterConstruction; override;
+{$EndIf}
     function Execute (AColor : TColor; var AColorStr : string) : boolean;
   end;
 
@@ -51,7 +54,7 @@ implementation
 
 {$R *.dfm}
 
-uses GnuGetText, StringUtils, RPlotUtils;
+uses GnuGetText, StringUtils, WinUtils, RPlotUtils;
 
 const
   BitMapHeight = 21;
@@ -81,6 +84,16 @@ begin
       end;
     end;
   end;
+
+{$IFDEF HDPI}   // scale glyphs and images for High DPI
+procedure TSetCustomColorDialog.AfterConstruction;
+begin
+  inherited;
+  if Application.Tag=0 then begin
+    ScaleButtonGlyphs(self,PixelsPerInchOnDesign,Monitor.PixelsPerInch);
+    end;
+  end;
+{$EndIf}
 
 procedure TSetCustomColorDialog.FormDestroy(Sender: TObject);
 var

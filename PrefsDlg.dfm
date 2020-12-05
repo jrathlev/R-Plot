@@ -6,7 +6,11 @@ object PreferencesDialog: TPreferencesDialog
   ClientHeight = 311
   ClientWidth = 421
   Color = clBtnFace
-  ParentFont = True
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
   OldCreateOrder = True
   Position = poDesigned
   OnCreate = FormCreate

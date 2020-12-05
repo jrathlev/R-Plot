@@ -6,7 +6,11 @@ object ImageDialog: TImageDialog
   ClientHeight = 397
   ClientWidth = 621
   Color = clBtnFace
-  ParentFont = True
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
   OldCreateOrder = True
   Position = poDesigned
   OnCloseQuery = FormCloseQuery
@@ -570,7 +574,7 @@ object ImageDialog: TImageDialog
       'mf)|*.gif;*.png;*.jpg;*.jpeg;*.bmp;*.tif;*.tiff;*.emf;*.wmf|GIF ' +
       'image (*.gif)|*.gif|Portable Network Graphics (*.png)|*.png|JPEG' +
       ' image (*.jpg;*.jpeg)|*.jpg;*.jpeg|Windows bitmap (*.bmp)|*.bmp|' +
-      'TIFF image (*.tif;*.tiff)|*.tif;*.tiff|Extenden metafile (*.emf)' +
+      'TIFF image (*.tif;*.tiff)|*.tif;*.tiff|Extended metafile (*.emf)' +
       '|*.emf|Metafile (*.wmf)|*.wmf'
     Left = 115
     Top = 285

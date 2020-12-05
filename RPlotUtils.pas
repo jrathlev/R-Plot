@@ -1895,7 +1895,7 @@ const
   begin
     Delta:=Ende-Anf+0.5*OneSecond;
     if Delta<0 then Delta:=1.0;
-    if Delta>350 then begin   (* mehr als 35 Tage *)
+    if Delta>35 then begin   (* mehr als 35 Tage *)
       end
     else if Delta>10 then begin   (* mehr als 10 Tage *)
       dec:=pwr(10.0,aint(lg(Delta)-0.05)); xa:=Anf/dec;

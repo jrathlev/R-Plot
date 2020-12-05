@@ -6,7 +6,11 @@ object AxisDialog: TAxisDialog
   ClientHeight = 546
   ClientWidth = 565
   Color = clBtnFace
-  ParentFont = True
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
   OldCreateOrder = True
   Position = poDesigned
   OnCloseQuery = FormCloseQuery
@@ -763,6 +767,10 @@ object AxisDialog: TAxisDialog
             Caption = 'tsUser'
             ImageIndex = 1
             TabVisible = False
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 0
+            ExplicitHeight = 0
             object paUser: TPanel
               Left = 0
               Top = 0

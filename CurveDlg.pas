@@ -12,7 +12,7 @@
    the specific language governing rights and limitations under the License.
 
    Jul. 2012
-   last modified January 2020
+   last modified December 2020
    *)
 
 unit CurveDlg;
@@ -115,6 +115,9 @@ type
     procedure UpdateView;
   public
     { Public-Deklarationen }
+{$IFDEF HDPI}   // scale glyphs and images for High DPI
+    procedure AfterConstruction; override;
+{$EndIf}
     procedure LoadFromIni (const AIniName : string);
     function Execute (ACurve : TCurveItem) : boolean;
   end;
@@ -143,6 +146,16 @@ begin
     end;
   LastTemplate:='';
   end;
+
+{$IFDEF HDPI}   // scale glyphs and images for High DPI
+procedure TCurveDialog.AfterConstruction;
+begin
+  inherited;
+  if Application.Tag=0 then begin
+    ScaleButtonGlyphs(self,PixelsPerInchOnDesign,Monitor.PixelsPerInch);
+    end;
+  end;
+{$EndIf}
 
 procedure TCurveDialog.LoadFromIni (const AIniName : string);
 begin

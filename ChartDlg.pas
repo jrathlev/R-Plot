@@ -12,7 +12,7 @@
    the specific language governing rights and limitations under the License.
 
    Jul. 2012
-   last modified January 2020
+   last modified December 2020
    *)
 
 unit ChartDlg;
@@ -93,6 +93,9 @@ type
     procedure UpdateView;
   public
     { Public-Deklarationen }
+{$IFDEF HDPI}   // scale glyphs and images for High DPI
+    procedure AfterConstruction; override;
+{$EndIf}
     procedure LoadFromIni (const AIniName : string);
     function Execute (New : boolean; AChart : TChart) : boolean;
   end;
@@ -104,7 +107,7 @@ implementation
 
 {$R *.dfm}
 
-uses GnuGetText, IniFiles;
+uses GnuGetText, IniFiles, WinUtils;
 
 const
   BitMapHeight=8;
@@ -119,6 +122,16 @@ begin
     end;
   LastTemplate:='';
   end;
+
+{$IFDEF HDPI}   // scale glyphs and images for High DPI
+procedure TChartDialog.AfterConstruction;
+begin
+  inherited;
+  if Application.Tag=0 then begin
+    ScaleButtonGlyphs(self,PixelsPerInchOnDesign,Monitor.PixelsPerInch);
+    end;
+  end;
+{$EndIf}
 
 procedure TChartDialog.LoadFromIni (const AIniName : string);
 begin

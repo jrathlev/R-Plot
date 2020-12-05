@@ -12,7 +12,7 @@
    the specific language governing rights and limitations under the License.
 
    Jul. 2012
-   last modified January 2020
+   last modified December 2020
    *)
 
 unit GraphDlg;
@@ -91,6 +91,9 @@ type
     procedure ShowAxis(ComboBox : TComboBox; AItemID : integer);
   public
     { Public-Deklarationen }
+{$IFDEF HDPI}   // scale glyphs and images for High DPI
+    procedure AfterConstruction; override;
+{$EndIf}
     procedure LoadFromIni (const AIniName : string);
     function Execute (AGraph : TGraphItem) : boolean;
   end;
@@ -138,6 +141,16 @@ begin
     end;
   LastTemplate:='';
   end;
+
+{$IFDEF HDPI}   // scale glyphs and images for High DPI
+procedure TGraphDialog.AfterConstruction;
+begin
+  inherited;
+  if Application.Tag=0 then begin
+    ScaleButtonGlyphs(self,PixelsPerInchOnDesign,Monitor.PixelsPerInch);
+    end;
+  end;
+{$EndIf}
 
 procedure TGraphDialog.LoadFromIni (const AIniName : string);
 begin

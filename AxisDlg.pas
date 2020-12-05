@@ -12,7 +12,7 @@
    the specific language governing rights and limitations under the License.
 
    Jul. 2012
-   last modified January 2020
+   last modified December 2020
    *)
 
 unit AxisDlg;
@@ -210,6 +210,9 @@ type
     function GetFGrid (Grid  : double) : integer;
   public
     { Public-Deklarationen }
+{$IFDEF HDPI}   // scale glyphs and images for High DPI
+    procedure AfterConstruction; override;
+{$EndIf}
     procedure LoadFromIni (const AIniName : string);
     function Execute (AAxis: TAxisItem) : boolean;
   end;
@@ -241,6 +244,16 @@ begin
   LastTemplate:=''; GridStyle:=lsNone; DateFormats:='';
   LabList:=TStringList.Create;
   end;
+
+{$IFDEF HDPI}   // scale glyphs and images for High DPI
+procedure TAxisDialog.AfterConstruction;
+begin
+  inherited;
+  if Application.Tag=0 then begin
+    ScaleButtonGlyphs(self,PixelsPerInchOnDesign,Monitor.PixelsPerInch);
+    end;
+  end;
+{$EndIf}
 
 procedure TAxisDialog.LoadFromIni (const AIniName : string);
 var

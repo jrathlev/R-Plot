@@ -7,7 +7,11 @@ object frmSheet: TfrmSheet
   ClientWidth = 471
   Color = clBtnFace
   DefaultMonitor = dmDesktop
-  ParentFont = True
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
   KeyPreview = True
   Menu = MainMenu
   OldCreateOrder = False
@@ -687,6 +691,11 @@ object frmSheet: TfrmSheet
       Height = 31
       Hint = 'Edit sheet properties'
       Anchors = [akTop, akRight]
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
       Glyph.Data = {
         F6000000424DF600000000000000760000002800000010000000100000000100
         0400000000008000000000000000000000001000000000000000000000000000
@@ -697,6 +706,7 @@ object frmSheet: TfrmSheet
         F08880FFFFFF02A2008880FFFFFFF02A208880FFFFFFFF02A00880FFFFFFFF00
         091080FFFFFFFF0F019080FFFFFFFF0080088000000000088888}
       ParentDoubleBuffered = True
+      ParentFont = False
       ParentShowHint = False
       ShowHint = True
       TabOrder = 1
@@ -1742,7 +1752,7 @@ object frmSheet: TfrmSheet
     Left = 80
     Top = 185
     Bitmap = {
-      494C010103000800E40010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010103000800000110001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

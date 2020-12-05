@@ -12,7 +12,7 @@
    the specific language governing rights and limitations under the License.
 
    Jul. 2012
-   last modified January 2020
+   last modified December 2020
    *)
 
 unit SelectAxisDlg;
@@ -37,6 +37,9 @@ type
     FSheet : TSheet;
   public
     { Public-Deklarationen }
+{$IFDEF HDPI}   // scale glyphs and images for High DPI
+    procedure AfterConstruction; override;
+{$EndIf}
     function Execute (APos : TPoint; ASheet : TSheet; var AChartItem,AItemID : integer) : boolean;
   end;
 
@@ -55,6 +58,16 @@ procedure TSelectAxisDialog.FormCreate(Sender: TObject);
 begin
   TranslateComponent(self);
   end;
+
+{$IFDEF HDPI}   // scale glyphs and images for High DPI
+procedure TSelectAxisDialog.AfterConstruction;
+begin
+  inherited;
+  if Application.Tag=0 then begin
+    ScaleButtonGlyphs(self,PixelsPerInchOnDesign,Monitor.PixelsPerInch);
+    end;
+  end;
+{$EndIf}
 
 procedure TSelectAxisDialog.lbChartsClick(Sender: TObject);
 var

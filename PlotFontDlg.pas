@@ -12,7 +12,7 @@
    the specific language governing rights and limitations under the License.
 
    Jul. 2012
-   last modified January 2020
+   last modified December 2020
    *)
 
 unit PlotFontDlg;
@@ -41,6 +41,9 @@ type
     procedure UpdateView;
   public
     { Public-Deklarationen }
+{$IFDEF HDPI}   // scale glyphs and images for High DPI
+    procedure AfterConstruction; override;
+{$EndIf}
     function Execute (APos : TPoint; var APlotFont : TPlotFont) : boolean;
   end;
 
@@ -95,6 +98,16 @@ begin
     ReleaseDC(0,dc);  { release device context }
     end;
   end;
+
+{$IFDEF HDPI}   // scale glyphs and images for High DPI
+procedure TPlotFontDialog.AfterConstruction;
+begin
+  inherited;
+  if Application.Tag=0 then begin
+    ScaleButtonGlyphs(self,PixelsPerInchOnDesign,Monitor.PixelsPerInch);
+    end;
+  end;
+{$EndIf}
 
 procedure TPlotFontDialog.lbFontsClick(Sender: TObject);
 begin

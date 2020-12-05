@@ -12,7 +12,7 @@
    the specific language governing rights and limitations under the License.
 
    Jul. 2012
-   last modified January 2020
+   last modified December 2020
    *)
 
 unit DataDlg;
@@ -92,6 +92,9 @@ type
     procedure SaveData;
   public
     { Public-Deklarationen }
+{$IFDEF HDPI}   // scale glyphs and images for High DPI
+    procedure AfterConstruction; override;
+{$EndIf}
     procedure LoadFromIni (AIniName : string);
     function Execute (const ATitle : string; ShowErrors,TimeSeries : boolean;
                       var AutoAlign : boolean;
@@ -117,6 +120,16 @@ begin
   TranslateComponent (self);
   FIniName:='';
   end;
+
+{$IFDEF HDPI}   // scale glyphs and images for High DPI
+procedure TDataDialog.AfterConstruction;
+begin
+  inherited;
+  if Application.Tag=0 then begin
+    ScaleButtonGlyphs(self,PixelsPerInchOnDesign,Monitor.PixelsPerInch);
+    end;
+  end;
+{$EndIf}
 
 procedure TDataDialog.FormDestroy(Sender: TObject);
 begin

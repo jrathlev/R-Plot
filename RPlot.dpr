@@ -1,8 +1,8 @@
 program RPlot;
 
 uses
-  GnuGetText in '..\..\Bibliotheken\Units\GnuGetText.pas',
-  LangUtils in '..\..\Bibliotheken\Units\LangUtils.pas',
+  GnuGetText in 'units\GnuGetText.pas',
+  LangUtils in 'units\LangUtils.pas',
   Vcl.Forms,
   Vcl.Graphics,
   RPlotMain in 'RPlotMain.pas' {frmSheet},
@@ -18,9 +18,9 @@ uses
   DrawingDlg in 'DrawingDlg.pas' {DrawingDialog},
   RPlotObjects in 'RPlotObjects.pas',
   PsPlot in 'PsPlot.pas',
-  FindReplDlg in '..\..\Bibliotheken\dialogs\FindReplDlg.pas' {FindReplDialog},
+  FindReplDlg in 'units\FindReplDlg.pas' {FindReplDialog},
   PrefsDlg in 'PrefsDlg.pas' {PreferencesDialog},
-  RadioDials in '..\..\Bibliotheken\Components\RadioDials.pas',
+  RadioDials in 'units\RadioDials.pas',
   PlotFontDlg in 'PlotFontDlg.pas' {PlotFontDialog},
   GraphDlg in 'GraphDlg.pas' {GraphDialog},
   SetCustomColorDlg in 'SetCustomColorDlg.pas' {SetCustomColorDialog},
@@ -28,7 +28,7 @@ uses
   TextFormatDlg in 'TextFormatDlg.pas' {TextFormatDialog},
   FitDlg in 'FitDlg.pas' {FitDialog},
   RPlotUtils in 'RPlotUtils.pas',
-  DateFormatDlg in '..\..\Bibliotheken\Dialogs\DateFormatDlg.pas' {DateFormatDialog};
+  DateFormatDlg in 'units\DateFormatDlg.pas' {DateFormatDialog};
 
 {$R *.res}
 

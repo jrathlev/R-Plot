@@ -12,7 +12,7 @@
    the specific language governing rights and limitations under the License.
 
    Jul. 2012
-   last modified January 2020
+   last modified December 2020
    *)
 
 unit ImageDlg;
@@ -86,6 +86,9 @@ type
     procedure ScaleImage;
   public
     { Public-Deklarationen }
+{$IFDEF HDPI}   // scale glyphs and images for High DPI
+    procedure AfterConstruction; override;
+{$EndIf}
     procedure LoadFromIni (const AIniName : string);
     function Execute(const APath : string; AImage : TImageItem) : boolean;
   end;
@@ -112,6 +115,16 @@ begin
     TransparentMode:=tmFixed;
     end;
   end;
+
+{$IFDEF HDPI}   // scale glyphs and images for High DPI
+procedure TImageDialog.AfterConstruction;
+begin
+  inherited;
+  if Application.Tag=0 then begin
+    ScaleButtonGlyphs(self,PixelsPerInchOnDesign,Monitor.PixelsPerInch);
+    end;
+  end;
+{$EndIf}
 
 procedure TImageDialog.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
 var

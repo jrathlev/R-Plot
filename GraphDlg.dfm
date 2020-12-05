@@ -6,7 +6,11 @@ object GraphDialog: TGraphDialog
   ClientHeight = 303
   ClientWidth = 510
   Color = clBtnFace
-  ParentFont = True
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
   OldCreateOrder = True
   Position = poDesigned
   OnCloseQuery = FormCloseQuery

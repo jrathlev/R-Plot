@@ -1183,7 +1183,7 @@ function MoveRect (re : TFRect; off : TFPoint) : TFRect;
 function MoveArea (ar : TFloatArea; off : TFPoint) : TFloatArea;
 function AreaToRect (ar : TFloatArea) : TFRect;
 
-function TryStringToFloat(ValStr : string; var Value : double; DecSep : Char = #0) : boolean;
+function TryStringToFloat(const ValStr : string; var Value : double; DecSep : Char = #0) : boolean;
 function TryStringToDateTime (s : string; var dt : TDateTime;
                               TimeSep : Char = #0; DecSep : Char = #0) : boolean;
 function ReadNxtDateTime (var s : String; Del : char; Default : TDateTime;
@@ -1338,7 +1338,7 @@ begin
   end;
 
 { ------------------------------------------------------------------- }
-function TryStringToFloat(ValStr : string; var Value : double; DecSep : Char) : boolean;
+function TryStringToFloat(const ValStr : string; var Value : double; DecSep : Char) : boolean;
 var
   fs   : TFormatSettings;
 begin
@@ -1362,7 +1362,9 @@ begin
       j1:=ReadNxtInt(s,'-',YearOf(Now),err);
       j2:=ReadNxtInt(s,'-',MonthOf(Now),err);
       j3:=ReadNxtInt(s,' ',DayOf(Now),err);
-      try dt:=EncodeDate(j1,j2,j3); except err:=true; end;
+      if not err then begin
+        try dt:=EncodeDate(j1,j2,j3); except err:=true; end;
+        end;
       end
     else begin
       j1:=Pos(TimeSep,s); j2:=Pos('.',s);
@@ -1370,7 +1372,9 @@ begin
         j3:=ReadNxtInt(s,'.',DayOf(Now),err);
         j2:=ReadNxtInt(s,'.',MonthOf(Now),err);
         j1:=ReadNxtInt(s,' ',YearOf(Now),err);
-        try dt:=EncodeDate(j1,j2,j3); except err:=true; end;
+        if not err then begin
+          try dt:=EncodeDate(j1,j2,j3); except err:=true; end;
+          end;
         end
       else dt:=Date;   // no date specified, take current
       end;

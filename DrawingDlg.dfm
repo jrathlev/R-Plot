@@ -6,7 +6,11 @@ object DrawingDialog: TDrawingDialog
   ClientHeight = 250
   ClientWidth = 544
   Color = clBtnFace
-  ParentFont = True
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
   OldCreateOrder = True
   Position = poDesigned
   OnCreate = FormCreate
@@ -397,6 +401,10 @@ object DrawingDialog: TDrawingDialog
       Caption = 'tsRect'
       ImageIndex = 1
       TabVisible = False
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object gbRect: TGroupBox
         Left = 10
         Top = 5
@@ -534,6 +542,10 @@ object DrawingDialog: TDrawingDialog
     object tsArrow: TTabSheet
       Caption = 'tsArrow'
       TabVisible = False
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object gbHead: TGroupBox
         Left = 2
         Top = 0

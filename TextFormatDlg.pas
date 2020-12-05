@@ -12,7 +12,7 @@
    the specific language governing rights and limitations under the License.
 
    Jul. 2012
-   last modified January 2020
+   last modified December 2020
    *)
 
 unit TextFormatDlg;
@@ -36,6 +36,9 @@ type
     { Private-Deklarationen }
   public
     { Public-Deklarationen }
+{$IFDEF HDPI}   // scale glyphs and images for High DPI
+    procedure AfterConstruction; override;
+{$EndIf}
     function Execute (APos : TPoint; var fs : string) : boolean;
   end;
 
@@ -54,6 +57,16 @@ procedure TTextFormatDialog.FormCreate(Sender: TObject);
 begin
   TranslateComponent(self);
   end;
+
+{$IFDEF HDPI}   // scale glyphs and images for High DPI
+procedure TTextFormatDialog.AfterConstruction;
+begin
+  inherited;
+  if Application.Tag=0 then begin
+    ScaleButtonGlyphs(self,PixelsPerInchOnDesign,Monitor.PixelsPerInch);
+    end;
+  end;
+{$EndIf}
 
 procedure TTextFormatDialog.rgFormatClick(Sender: TObject);
 begin

@@ -12,7 +12,7 @@
    the specific language governing rights and limitations under the License.
 
    Jul. 2012
-   last modified January 2020
+   last modified December 2020
    *)
 
 unit PrefsDlg;
@@ -169,6 +169,9 @@ type
     function SaveData : TSheetProperties;
   public
     { Public-Deklarationen }
+{$IFDEF HDPI}   // scale glyphs and images for High DPI
+    procedure AfterConstruction; override;
+{$EndIf}
     function Preferences (APos : TPoint; var APlotUnit : TPlotUnit;
                           var ASheet : TDefaultSheet) : boolean;
     function SheetProperties (APos : TPoint; const FName: string; ASheet : TSheet) : boolean;
@@ -187,12 +190,15 @@ procedure SaveSheetProperties (const Filename : string; APlotUnit : TPlotUnit;
 
 var
   PreferencesDialog: TPreferencesDialog;
+  DefSheet   : TDefaultSheet;
 
 implementation
 
 {$R *.dfm}
 
-uses GnuGetText, RPlotMain, WinUtils, ExtSysUtils, System.IniFiles;
+uses GnuGetText,
+//  RPlotMain,
+  WinUtils, ExtSysUtils, System.IniFiles;
 
 const
   BitMapHeight=8;
@@ -355,6 +361,16 @@ begin
     end;
   end;
 
+{$IFDEF HDPI}   // scale glyphs and images for High DPI
+procedure TPreferencesDialog.AfterConstruction;
+begin
+  inherited;
+  if Application.Tag=0 then begin
+    ScaleButtonGlyphs(self,PixelsPerInchOnDesign,Monitor.PixelsPerInch);
+    end;
+  end;
+{$EndIf}
+
 procedure TPreferencesDialog.FormDestroy(Sender: TObject);
 begin
   Bitmap.Free;
@@ -480,7 +496,7 @@ begin
 
 procedure TPreferencesDialog.bbDefaultClick(Sender: TObject);
 begin
-  with frmSheet.DefSheet do
+  with DefSheet do
     if PUnit=puMetric then ShowData(MetricSheet) else ShowData(InchSheet);
   end;
 
@@ -798,5 +814,11 @@ begin
   Result:=PreferencesDialog.SheetProperties(APos,FName,ASheet);
   FreeAndNil(PreferencesDialog);
   end;
+
+initialization
+  with DefSheet do begin  // set to program default preferences
+    MetricSheet:=MetricSheetProps;
+    InchSheet:=InchSheetProps
+    end;
 
 end.

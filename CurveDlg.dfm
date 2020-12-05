@@ -7,7 +7,11 @@ object CurveDialog: TCurveDialog
   ClientHeight = 374
   ClientWidth = 516
   Color = clBtnFace
-  ParentFont = True
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
   OldCreateOrder = True
   Position = poDesigned
   OnCloseQuery = FormCloseQuery
