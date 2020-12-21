@@ -452,8 +452,8 @@ var
     else begin
       i:=1;
       while (i<=length(s)) and CharInSet(s[i],FloatChars) do inc(i);
-      if (i<length(s)) then err:=err or PrefixStrToVal(s,Result,FoImp.DecSeparator)
-      else err:=err or TryStringToFloat(s,Result,FoImp.DecSeparator);
+      if (i<length(s)) then err:=err or not PrefixStrToVal(s,Result,FoImp.DecSeparator)
+      else err:=err or not TryStringToFloat(s,Result,FoImp.DecSeparator);
       end
     end;
 
@@ -503,6 +503,15 @@ begin
     with FoImp do begin
       InitialDir:=Path;
       Filename:='*.'+Ext;
+      end;
+    with ImpSet do begin
+      FirstLine:=1; Reduce:=1;
+      with XCols do begin
+        icV:=1; icP:=0; icM:=0;
+        end;
+      with YCols do begin
+        icV:=1; icP:=0; icM:=0;
+        end;
       end;
     DefaultExt:='';
     Filter:=_('CSV files')+'|*.'+CsvExt+'|'+_('Text files')+'|*.'+TxtExt+'|'+_('all')+'|*.*';
