@@ -12,7 +12,7 @@
    the specific language governing rights and limitations under the License.
 
    Sep. 2012
-   last modified January 2020
+   last modified December 2020
    *)
 
 unit RPlotUtils;
@@ -1651,7 +1651,7 @@ var
   c1,c2,f1,f2,Grid,axbl,axtr,
   XX,AFEIN,XS,YS,Y,axp              : double;
   ScText,Rot,Frame,tmm,LBU,
-  VSW,RSW,ATR,MSW,Txt,ShowLn        : boolean;
+  VSW,RSW,ATR,MSW,Txt,ShowLn,dr     : boolean;
   Align                             : TTextAlign;
 
   function MakeLabel (x : double; np : integer; nt : TNotation) : string;
@@ -1880,22 +1880,38 @@ const
       end;
     end;
 
-  procedure TimeGrid (Anf,Ende : TDateTime);
+  function TimeGrid (Anf,Ende : TDateTime) : boolean;
   (*  Anf,Ende  : Zeitbereich im TDateTime-Format
       Ende muß größer sein als Anf
       es wird berechnet:
       Grid  - 1. Rasterpunkt
-      Zwg   - Abstand der Rasterpunkte
+      Zwg   - Abstand der Rasterpunkte / Anzahl der Tage
       AFein - 1. Feinrasterpunkt
       Zwf   - Feinrasterabstand
-      IFein - Anzahl der Feinrasterpunkte *)
+      IFein - Anzahl der Feinrasterpunkte
+      Result = false: > 35 Tage, keine Rasterberechnung *)
   var
     Delta,XG,XF,Fein : TDateTime;
     xa,xb,dec        : double;
   begin
     Delta:=Ende-Anf+0.5*OneSecond;
+    Result:=false;
     if Delta<0 then Delta:=1.0;
     if Delta>35 then begin   (* mehr als 35 Tage *)
+      if Delta<=93 then begin
+        Zwg:=15; Zwf:=1; IFein:=1;
+        AFein:=DateOf(Anf)+1; Grid:=AFein+Zwg;
+        end
+      else if Delta<=189 then begin
+        Zwg:=30; Zwf:=2; IFein:=2;
+        AFein:=DateOf(Anf)+2; Grid:=AFein+Zwg;
+        end
+      else begin
+        Zwg:=60; Zwf:=5; IFein:=3;
+        AFein:=DateOf(Anf)+5; Grid:=AFein+Zwg;
+        end;
+      Result:=true;
+      Exit;
       end
     else if Delta>10 then begin   (* mehr als 10 Tage *)
       dec:=pwr(10.0,aint(lg(Delta)-0.05)); xa:=Anf/dec;
@@ -2008,68 +2024,128 @@ const
         cm1:=-cm1; cm2:=-cm2; fm1:=-fm1; fm2:=-fm2;
         end;
       first:=true; ng:=Grid;
-      for i:=0 to IFein do begin
-        XT:=AFein+i*Zwf; X:=Scale(XT);
-        NewLineColor(LnColor);
-        if IFein*Zwf>35 then begin
-          n:=DayOfTheMonth(XT)-1;
-          mark:=(n<Zwf) or ((n>=14) and (n<14+Zwf));
-          end
-        else mark:=ABS((XT-ng)/Zwf)<=0.5;
-        if mark then begin
-          if NOT VSW then begin (* horizontale Achse *)
-         (*  zeichne die groben Skalierungen mit Beschriftung und
-            das vertikale Raster der Hor. Achse *)
-            if ShowGrid and XInside(X) then with ChartField do begin
-            (* vert. Raster *)
-              PlotLine (X,Bottom,X,Top,GrWidth,GrStyle);
-              end;
-          (* grobe Skalenmarken und Beschriftung *)
-            if TmStyle<>tmNone then PlotLine (x,xp+cm1,X,xp+cm2,IvWidth);
-            if ShowText then begin
-              y:=xp+ys;
-              NewTextColor(LabFont.FontColor);
-              if PlotTime (X+xs,y,xt) then y:=y-1.2*LabFont.FontSize;
-              if (asDate in AxStyles) and (First or (abs(round(xt)-xt)<OneMinute)) then begin
-                PlotDate (x+xs,y,xt,asWeekday in AxStyles);
-                First:=false;
-                end;
+      if dr then begin  // > 35 Tage
+        XT:=AFein;
+        while (XT>=MinVal) and (XT<MaxVal) do begin  // grobe Skalierung
+          if IFein=1 then begin
+            Grid:=StartOfTheMonth(XT);
+            dr:=(XT-Grid<Zwf);
+            if not dr then begin
+              Grid:=Grid+15;
+              dr:=(XT-Grid<Zwf);
               end;
             end
-          else begin // vertikale Achse
-         (*  zeichne die groben Skalierungen mit Beschriftung und
-            das vertikale Raster der Hor. Achse *)
-            if ShowGrid and YInside(X) then with ChartField do begin
-            (* vert. Raster *)
-              PlotLine (Left,X,Right,X,GrWidth,GrStyle);
-              end;
-          (* grobe Skalenmarken und Beschriftung *)
-            if TmStyle<>tmNone then PlotLine (xp+cm1,x,xp+cm2,X,IvWidth);
-            if ShowText then begin
-              y:=x+ys; x:=xp+xs;
-              NewTextColor(LabFont.FontColor);
-              if PlotTime (x,y,xt) then begin
-                if asRotate in AxStyles then x:=x-1.2*LabFont.FontSize else y:=y-1.2*LabFont.FontSize;
-                end;
-              if (asDate in AxStyles) and (First or (abs(frac(xt))<OneSecond)) then begin
-                PlotDate (x,y,xt,asWeekday in AxStyles);
-                first:=false;
-                end;
-              end;
+          else if IFein=2 then begin
+            Grid:=StartOfTheMonth(XT);
+            dr:=(XT-Grid<Zwf);
+            end
+          else begin
+            Grid:=StartOfTheMonth(XT);
+            dr:=(XT-Grid<Zwf) and (MonthOf(XT) mod 2=1);
             end;
-          ng:=ng+Zwg;
-          end;
-        end;
-    (* feine Skalenmarken *)
-      ng:=ng-ZWG;
-      NewLineColor(LnColor);
-      if TmStyle<>tmNone then for i:=IFein downto 0 do begin
-        XT:=AFEIN+i*ZWF;
-        if ABS((XT-ng)/ZWF) <= 0.5 then ng:=ng-ZWG
-        else begin
+          NewLineColor(LnColor);
+          if dr then begin // Monatsmarke
+            X:=Scale(Grid);
+            if NOT VSW then begin (* horizontale Achse *)
+              if ShowGrid and XInside(X) then with ChartField do begin
+              (* vert. Raster *)
+                PlotLine (X,Bottom,X,Top,GrWidth,GrStyle);
+                end;
+            (* grobe Skalenmarken und Beschriftung *)
+              if TmStyle<>tmNone then PlotLine (x,xp+cm1,x,xp+cm2,IvWidth);
+              if ShowText then begin
+                y:=xp+ys;
+                NewTextColor(LabFont.FontColor);
+                PlotDate (x+xs,y,Grid,asWeekday in AxStyles);
+                end
+              end
+            else begin
+              if ShowGrid and YInside(X) then with ChartField do begin
+              (* vert. Raster *)
+                PlotLine (Left,X,Right,X,GrWidth,GrStyle);
+                end;
+            (* grobe Skalennmarken und Beschriftung *)
+              if TmStyle<>tmNone then PlotLine (xp+cm1,x,xp+cm2,X,IvWidth);
+              if ShowText then begin
+                y:=x+ys;
+                NewTextColor(LabFont.FontColor);
+                PlotDate (xp+xs,y,xt,asWeekday in AxStyles);
+                end;
+              end
+            end;
+      (* feine Skalenmarken *)
           X:=Scale(XT);
+          NewLineColor(LnColor);
           if NOT VSW then PlotLine (X,xp+fm1,X,xp+fm2,TmWidth)
           else PlotLine (xp+fm1,X,xp+fm2,X,TmWidth);
+          XT:=XT+Zwf;
+          end;
+        end
+      else begin
+        for i:=0 to IFein do begin
+          XT:=AFein+i*Zwf; X:=Scale(XT);
+          NewLineColor(LnColor);
+//          if IFein*Zwf>35 then begin
+//            n:=DayOfTheMonth(XT)-1;
+//            mark:=(n<Zwf) or ((n>=14) and (n<14+Zwf));
+//            end
+//          else
+          mark:=ABS((XT-ng)/Zwf)<=0.5;
+          if mark then begin
+            if NOT VSW then begin (* horizontale Achse *)
+           (*  zeichne die groben Skalierungen mit Beschriftung und
+              das vertikale Raster der Hor. Achse *)
+              if ShowGrid and XInside(X) then with ChartField do begin
+              (* vert. Raster *)
+                PlotLine (X,Bottom,X,Top,GrWidth,GrStyle);
+                end;
+            (* grobe Skalenmarken und Beschriftung *)
+              if TmStyle<>tmNone then PlotLine (x,xp+cm1,X,xp+cm2,IvWidth);
+              if ShowText then begin
+                y:=xp+ys;
+                NewTextColor(LabFont.FontColor);
+                if PlotTime (X+xs,y,xt) then y:=y-1.2*LabFont.FontSize;
+                if (asDate in AxStyles) and (First or (abs(round(xt)-xt)<OneMinute)) then begin
+                  PlotDate (x+xs,y,xt,asWeekday in AxStyles);
+                  First:=false;
+                  end;
+                end;
+              end
+            else begin // vertikale Achse
+           (*  zeichne die groben Skalierungen mit Beschriftung und
+              das vertikale Raster der Hor. Achse *)
+              if ShowGrid and YInside(X) then with ChartField do begin
+              (* vert. Raster *)
+                PlotLine (Left,X,Right,X,GrWidth,GrStyle);
+                end;
+            (* grobe Skalenmarken und Beschriftung *)
+              if TmStyle<>tmNone then PlotLine (xp+cm1,x,xp+cm2,X,IvWidth);
+              if ShowText then begin
+                y:=x+ys; x:=xp+xs;
+                NewTextColor(LabFont.FontColor);
+                if PlotTime (x,y,xt) then begin
+                  if asRotate in AxStyles then x:=x-1.2*LabFont.FontSize else y:=y-1.2*LabFont.FontSize;
+                  end;
+                if (asDate in AxStyles) and (First or (abs(frac(xt))<OneSecond)) then begin
+                  PlotDate (x,y,xt,asWeekday in AxStyles);
+                  first:=false;
+                  end;
+                end;
+              end;
+            ng:=ng+Zwg;
+            end;
+          end;
+      (* feine Skalenmarken *)
+        ng:=ng-ZWG;
+        NewLineColor(LnColor);
+        if TmStyle<>tmNone then for i:=IFein downto 0 do begin
+          XT:=AFEIN+i*ZWF;
+          if ABS((XT-ng)/ZWF) <= 0.5 then ng:=ng-ZWG
+          else begin
+            X:=Scale(XT);
+            if NOT VSW then PlotLine (X,xp+fm1,X,xp+fm2,TmWidth)
+            else PlotLine (xp+fm1,X,xp+fm2,X,TmWidth);
+            end;
           end;
         end;
       (* Achsenlinie*)
@@ -2381,7 +2457,7 @@ begin
     GetTickMarkPos (TmStyle,AxPos=apBottomLeft,CTmSize,c1,c2);
     GetTickMarkPos (TmStyle,AxPos=apBottomLeft,FTmSize,f1,f2);
     if ScaleType=stTime then begin // Zeitskala
-      TimeGrid (MinVal,MaxVal);
+      dr:=TimeGrid (MinVal,MaxVal);
       if ShowLn then TimeAxis(axp,c1,c2,f1,f2,ScText,RSW,tmm);
       if Frame then begin
         if AxPos<>apBottomLeft then TimeAxis(axbl,c1,c2,f1,f2,false,false,ATR);
