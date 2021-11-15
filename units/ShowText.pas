@@ -13,7 +13,7 @@
    the specific language governing rights and limitations under the License.
 
    Vers. 1 - Sep. 2001
-   last modified December 2020
+   last modified: Nov. 2021
    *)
 
 unit ShowText;
@@ -72,11 +72,11 @@ type
     LPos            : integer;
     FIniName,FIniSection,
     FName           : string;
-  public
-    { Public-Deklarationen }
 {$IFDEF HDPI}   // scale glyphs and images for High DPI
     procedure AfterConstruction; override;
 {$EndIf}
+  public
+    { Public-Deklarationen }
     procedure LoadFromIni(IniName, Section : string);
     procedure Execute (APos            : TPoint;
                        const ATitle,AName : string;
@@ -424,17 +424,7 @@ var
 begin
   if Visible then BringToFront
   else begin
-    with APos do begin
-      if (Y < 0) then begin
-        if (X < 0) then Position:=poScreenCenter else Position:=poDesigned;
-        end
-      else begin
-        if X<0 then X:=Left;
-        if Y<0 then Y:=Top;
-        CheckScreenBounds(Screen,x,y,Width,Height);
-        Left:=x; Top:=y;
-        end;
-      end;
+    AdjustFormPosition(Screen,self,APos);
     Caption:=ATitle; FName:=AName;
     LPos:=Line;
     x:=2;

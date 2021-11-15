@@ -13,7 +13,7 @@
    the specific language governing rights and limitations under the License.
 
    Vers. 1 - Sep. 2002 
-   last modified: Aug 2020
+   last modified: Nov. 2021
    *)
 
 unit InpText;
@@ -44,7 +44,7 @@ type
 {$EndIf}
     // History-Liste laden (optional)
     procedure LoadFromIni(AIniName,AIniSection : string);
-    function Execute (Pos        : TPoint;
+    function Execute (APos       : TPoint;
                       Titel,Desc : string;
                       ShowTable  : boolean;
                       AFontName  : TFontName;
@@ -52,7 +52,7 @@ type
   end;
 
 (* Text eingeben, Ergebnis: "true" bei "ok" *)
-function InputText(Pos        : TPoint;
+function InputText(APos       : TPoint;
                    Titel,Desc : string;
                    ShowTable  : boolean;
                    AFontName  : TFontName;
@@ -60,7 +60,7 @@ function InputText(Pos        : TPoint;
                    ASortHist  : boolean;
                    var AText  : string) : boolean; overload;
 
-function InputText(Pos        : TPoint;
+function InputText(APos       : TPoint;
                    Titel,Desc : string;
                    ShowTable  : boolean;
                    var AText  : string) : boolean; overload;
@@ -130,7 +130,7 @@ begin
   end;
 
 { ------------------------------------------------------------------- }
-function TInputTextDialog.Execute (Pos        : TPoint;
+function TInputTextDialog.Execute (APos       : TPoint;
                                    Titel,Desc : string;
                                    ShowTable  : boolean;
                                    AFontName  : TFontName;
@@ -138,16 +138,7 @@ function TInputTextDialog.Execute (Pos        : TPoint;
 var
   w : integer;
 begin
-  with Pos do begin
-    if (Y < 0) or (X < 0) then Position:=poScreenCenter
-    else begin
-      Position:=poDesigned;
-      if X<0 then X:=Left;
-      if Y<0 then Y:=Top;
-      CheckScreenBounds(Screen,x,y,Width,Height);
-      Left:=x; Top:=y;
-      end;
-    end;
+  AdjustFormPosition(Screen,self,APos);
   if length(Titel)>0 then Caption:=Titel;
   Descriptor.Caption:=Desc;
   CharTabBtn.Visible:=ShowTable;
@@ -170,7 +161,7 @@ begin
 
 { ------------------------------------------------------------------- }
 (* Txt eingeben, Ergebnis: "true" bei "ok" *)
-function InputText(Pos        : TPoint;
+function InputText(APos       : TPoint;
                    Titel,Desc : string;
                    ShowTable  : boolean;
                    AFontName  : TFontName;
@@ -184,19 +175,19 @@ begin
       Clear; Sorted:=ASortHist;
       Items.Assign(AHistory);
       end;
-    Result:=Execute(Pos,Titel,Desc,ShowTable,AFontName,AText);
+    Result:=Execute(APos,Titel,Desc,ShowTable,AFontName,AText);
     if Result and assigned(AHistory) then AHistory.Assign(TextFeld.Items);
     Release;
     end;
   InputTextDialog:=nil;
   end;
 
-function InputText(Pos        : TPoint;
+function InputText(APos       : TPoint;
                    Titel,Desc : string;
                    ShowTable  : boolean;
                    var AText  : string) : boolean; overload;
 begin
-  Result:=InputText(Pos,Titel,Desc,ShowTable,'',nil,false,AText);
+  Result:=InputText(APos,Titel,Desc,ShowTable,'',nil,false,AText);
   end;
 
 end.

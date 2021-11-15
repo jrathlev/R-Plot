@@ -2,7 +2,7 @@
    Find and replace for SynEdit
    ============================
    
-   © Dr. J. Rathlev, D-24222 Schwentinental (info(a)rathlev-home.de)
+   © Dr. J. Rathlev, D-24222 Schwentinental (kontakt(a)rathlev-home.de)
 
    The contents of this file may be used under the terms of the
    Mozilla Public License ("MPL") or
@@ -13,6 +13,7 @@
    the specific language governing rights and limitations under the License.
     
    Vers. 1 - June 2005
+   last modified: Nov. 2021
 
    Description:
    - Find and replace are combined in one dialog

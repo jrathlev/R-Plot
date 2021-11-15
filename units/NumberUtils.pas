@@ -161,7 +161,7 @@ function StrToDeg (s : string;
 
 // Integer-Zahl in String umsetzen
 function StrInt (x : int64;
-                 n : integer) : string;
+                 n : integer = 0) : string;
 
 // Integer-Zahl in String mit führenden Nullen umsetzen
 function ZStrInt (x : int64;
@@ -803,7 +803,7 @@ var
   i,j : integer;
 begin
   if n<>0 then begin
-    s:=Format('%'+IntToStr(n)+'d',[x]);
+    s:=Format('%'+IntToStr(abs(n))+'d',[x]);
     if n<0 then begin
       i:=succ(length(s));
       j:=i;
@@ -825,14 +825,14 @@ begin
   end;
 
 { ---------------------------------------------------------------- }
-function GroupDigits (s : string; Group : integer) : string;
+function GroupDigits (s : string; Group : integer; Sep : char = Space) : string;
 var
   i : integer;
 begin
   if (Group>0) then begin
     i:=length(s);
     while (i>Group) do begin
-      dec(i,Group); Insert(' ',s,i+1);
+      dec(i,Group); Insert(Sep,s,i+1);
       end;
     end;
   Result:=s;

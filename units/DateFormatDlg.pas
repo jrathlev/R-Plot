@@ -12,7 +12,7 @@
    the specific language governing rights and limitations under the License.
    
    Vers. 1 - June 2020
-   last modified December 2020
+   last modified: Nov. 2021
    *)
 
 unit DateFormatDlg;
@@ -84,15 +84,7 @@ var
   i,j1,j2,n : integer;
   sf  : string;
 begin
-  if APos.X<0 then Position:=poScreenCenter
-  else with APos do begin
-    Position:=poDesigned;
-    if X<0 then X:=Left;
-    if Y<0 then Y:=Top;
-    y:=Y-Height;
-    CheckScreenBounds(Screen,x,y,Width,Height);
-    Left:=x; Top:=y;
-    end;
+  AdjustFormPosition(Screen,self,APos);
   with cbDateFormats do begin
     Clear; n:=-1;
     if length(UserFormats)=0 then begin // use default formats
