@@ -10,6 +10,7 @@ object frmView: TfrmView
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  FormStyle = fsStayOnTop
   OldCreateOrder = False
   OnCreate = FormCreate
   OnDestroy = FormDestroy

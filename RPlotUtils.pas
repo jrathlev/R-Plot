@@ -1641,7 +1641,7 @@ begin
   end;
 
 (* ------------------------------------------------------------------------ *)
-procedure TSheetPlot.PlotAxis (AAxis : TaxisItem);
+procedure TSheetPlot.PlotAxis (AAxis : TAxisItem);
 (*  AxNr:      Nummer der Achse für diese Achse *)
 var
   NDek,ND,ifein,md,
@@ -1889,7 +1889,7 @@ const
       AFein - 1. Feinrasterpunkt
       Zwf   - Feinrasterabstand
       IFein - Anzahl der Feinrasterpunkte
-      Result = false: > 35 Tage, keine Rasterberechnung *)
+      Result = true: ein Monat oder > 35 Tage, keine Rasterberechnung *)
   var
     Delta,XG,XF,Fein : TDateTime;
     xa,xb,dec        : double;
@@ -1897,7 +1897,13 @@ const
     Delta:=Ende-Anf+0.5*OneSecond;
     Result:=false;
     if Delta<0 then Delta:=1.0;
-    if Delta>35 then begin   (* mehr als 35 Tage *)
+    if (DaysBetween(Anf,Ende)=DaysInMonth(Anf)) then begin // 1 Monat
+      Zwg:=10; Zwf:=1; IFein:=0;
+      AFein:=DateOf(Anf)+1; Grid:=AFein+Zwg;
+      Result:=true;
+      Exit;
+      end
+    else if (Delta>35) then begin   (* mehr als 35 Tage *)
       if Delta<=93 then begin
         Zwg:=15; Zwf:=1; IFein:=1;
         AFein:=DateOf(Anf)+1; Grid:=AFein+Zwg;
@@ -1913,14 +1919,11 @@ const
       Result:=true;
       Exit;
       end
+    else if Delta>20 then begin   (* mehr als 10 Tage *)
+      Zwg:=5.0; Zwf:=12*OneHour;   (* 5 d, 12 h *)
+      end
     else if Delta>10 then begin   (* mehr als 10 Tage *)
-      dec:=pwr(10.0,aint(lg(Delta)-0.05)); xa:=Anf/dec;
-      if xa<=2.1 then xb:=0.5 else
-        if xa<=5.1 then xb:=1.0 else xb:=2.0;
-      Zwg:=round(xb*dec);
-      if Delta<=20 then Zwf:=0.25      (* 6 h *)
-      else if Delta<=50 then Zwf:=0.5  (* 12 h *)
-        else Zwf:=Zwg/10.0;
+      Zwg:=2.0; Zwf:=6*OneHour;   (* 2 d, 6 h *)
       end
     else if Delta>5 then begin
       Zwg:=1.0; Zwf:=2*OneHour;   (* 1 d, 2 h *)
@@ -2018,60 +2021,67 @@ const
     XT           : TDateTime;
     X,Y,ng       : double;
     first,mark   : boolean;
+
+    procedure PlotScaleMark(xt : double);
+    begin
+      X:=AAxis.Scale(xt);
+      with AAxis.Properties do begin
+        if NOT VSW then begin (* horizontale Achse *)
+          if ShowGrid and XInside(X) then with ChartField do begin
+          (* vert. Raster *)
+            PlotLine (X,Bottom,X,Top,GrWidth,GrStyle);
+            end;
+        (* grobe Skalenmarken und Beschriftung *)
+          if TmStyle<>tmNone then PlotLine (x,xp+cm1,x,xp+cm2,IvWidth);
+          if ShowText then begin
+            y:=xp+ys;
+            NewTextColor(LabFont.FontColor);
+            PlotDate (x+xs,y,xt,asWeekday in AxStyles);
+            end
+          end
+        else begin
+          if ShowGrid and YInside(X) then with ChartField do begin
+          (* vert. Raster *)
+            PlotLine (Left,X,Right,X,GrWidth,GrStyle);
+            end;
+        (* grobe Skalennmarken und Beschriftung *)
+          if TmStyle<>tmNone then PlotLine (xp+cm1,x,xp+cm2,X,IvWidth);
+          if ShowText then begin
+            y:=x+ys;
+            NewTextColor(LabFont.FontColor);
+            PlotDate (xp+xs,y,xt,asWeekday in AxStyles);
+            end;
+          end
+        end;
+      end;
+
+    procedure SetNextGrid;
+    begin
+      if IFein=0 then Grid:=IncDay(Grid,10)  // 1 Monat
+      else if IFein=1 then Grid:=IncDay(Grid,15)   // < 94 Tage
+      else if IFein=2 then Grid:=IncMonth(Grid,1)  // <= 189 Tage
+      else Grid:=IncMonth(Grid,2)  // > 189 Tage
+      end;
+
   begin
     with AAxis,Properties do begin
       if Mirror and (TmStyle<>tmBoth) then begin  // Markierungen an der Achse spiegeln
         cm1:=-cm1; cm2:=-cm2; fm1:=-fm1; fm2:=-fm2;
         end;
-      first:=true; ng:=Grid;
-      if dr then begin  // > 35 Tage
-        XT:=AFein;
-        while (XT>=MinVal) and (XT<MaxVal) do begin  // grobe Skalierung
-          if IFein=1 then begin
-            Grid:=StartOfTheMonth(XT);
-            dr:=(XT-Grid<Zwf);
-            if not dr then begin
-              Grid:=Grid+15;
-              dr:=(XT-Grid<Zwf);
-              end;
-            end
-          else if IFein=2 then begin
-            Grid:=StartOfTheMonth(XT);
-            dr:=(XT-Grid<Zwf);
-            end
-          else begin
-            Grid:=StartOfTheMonth(XT);
-            dr:=(XT-Grid<Zwf) and (MonthOf(XT) mod 2=1);
-            end;
+      first:=true;
+      if dr then begin  // > 35 Tage oder genau ein Monat
+        XT:=AFein; Zwg:=Zwf/2;       // erste feine Markierung
+        Grid:=StartOfTheMonth(XT);   // zugehöriger Monatsanfang
+        if MinVal<=Grid then PlotScaleMark(Grid);     // Monatsmarke am Anfang
+        SetNextGrid;
+        ng:=Grid;
+        while (XT>=MinVal) and (XT<MaxVal) do begin
+          dr:=(Grid-XT<Zwg);
+          if dr then SetNextGrid;
           NewLineColor(LnColor);
-          if dr then begin // Monatsmarke
-            X:=Scale(Grid);
-            if NOT VSW then begin (* horizontale Achse *)
-              if ShowGrid and XInside(X) then with ChartField do begin
-              (* vert. Raster *)
-                PlotLine (X,Bottom,X,Top,GrWidth,GrStyle);
-                end;
-            (* grobe Skalenmarken und Beschriftung *)
-              if TmStyle<>tmNone then PlotLine (x,xp+cm1,x,xp+cm2,IvWidth);
-              if ShowText then begin
-                y:=xp+ys;
-                NewTextColor(LabFont.FontColor);
-                PlotDate (x+xs,y,Grid,asWeekday in AxStyles);
-                end
-              end
-            else begin
-              if ShowGrid and YInside(X) then with ChartField do begin
-              (* vert. Raster *)
-                PlotLine (Left,X,Right,X,GrWidth,GrStyle);
-                end;
-            (* grobe Skalennmarken und Beschriftung *)
-              if TmStyle<>tmNone then PlotLine (xp+cm1,x,xp+cm2,X,IvWidth);
-              if ShowText then begin
-                y:=x+ys;
-                NewTextColor(LabFont.FontColor);
-                PlotDate (xp+xs,y,xt,asWeekday in AxStyles);
-                end;
-              end
+          if dr then begin         // grobe Skalierung
+            PlotScaleMark(ng);     // Monatsmarke
+            ng:=Grid;
             end;
       (* feine Skalenmarken *)
           X:=Scale(XT);
@@ -2081,7 +2091,8 @@ const
           XT:=XT+Zwf;
           end;
         end
-      else begin
+      else begin  // < 35 Tage und kein ganzer Monat
+        ng:=Grid;
         for i:=0 to IFein do begin
           XT:=AFein+i*Zwf; X:=Scale(XT);
           NewLineColor(LnColor);

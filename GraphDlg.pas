@@ -40,7 +40,6 @@ type
     Label6: TLabel;
     Label5: TLabel;
     Label2: TLabel;
-    laBakCol: TLabel;
     cbTrans: TCheckBox;
     ColorDialog: TColorDialog;
     OpenDialog: TOpenDialog;
@@ -179,7 +178,6 @@ procedure TGraphDialog.UpdateView;
 begin
   with bbBgColor do begin
     Enabled:=not cbTrans.Checked;
-    laBakCol.Visible:=Visible;
     with shBackground.Brush do if Enabled then begin
       Style:=bsSolid; Color:=bbBgColor.Tag;
       end
