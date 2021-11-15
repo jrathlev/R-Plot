@@ -1,9 +1,13 @@
 R-Plot
 ======
-(c) 2012-2020, Dr. J. Rathlev, 24222 Schwentinental, Germany
+(c) 2012-2021, Dr. J. Rathlev, 24222 Schwentinental, Germany
 
 Revision History:
 -----------------
+
+2.0.2 (2021-10-23)
+  - Changes:
+    - Improved design
 
 2.0.1 (2020-12-29)
   - Changes:
