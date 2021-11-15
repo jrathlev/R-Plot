@@ -34,6 +34,7 @@ AllowNoIcons=yes
 OutputDir=.
 OutputBaseFilename=rp-setup-x64
 SetupIconFile=RPlot.ico
+UninstallDisplayIcon={app}\RPlot-u.ico
 WizardImageFile=..\..\Common\WizImage-JR.bmp
 WizardSmallImageFile=RPlot-Install-small.bmp
 Compression=lzma
@@ -79,9 +80,10 @@ Root: HKCR; Subkey: "R-Plot\shell\open\command"; ValueType: string; ValueName: "
 Source: "..\Release\Win64\RPlot.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\Release\Win64\locale\*.mo"; DestDir: "{app}\locale"; Flags: recursesubdirs ignoreversion restartreplace
 Source: "..\Release\Win64\language.cfg"; DestDir: "{app}"; Flags: recursesubdirs ignoreversion restartreplace
-Source: "..\Dokumentation\R-Plot.chm"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\Dokumentation\rp-help-*.chm"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\..\Common\license-*.rtf"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\Dokumentation\changelog.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\Dokumentation\changelog*.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "RPlot-u.ico"; DestDir: "{app}"; Flags: ignoreversion
 ; samples
 Source: "..\Samples\*.xrp"; DestDir: "{commondocs}\RPlot\Samples"; Flags: ignoreversion
 
