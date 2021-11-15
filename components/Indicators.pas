@@ -53,9 +53,13 @@ type
     end;
 
   TSpotIndicator = class (TCustomIndicator)
+  private
+    FBorder : integer;
   protected
+    procedure SetBorder (value : integer);
     procedure Paint; override;
   published
+    property Border : integer read FBorder write SetBorder default 2;
     property ColorOff : TColor read FColorOff write SetColorOff default clWhite;
     property ColorOn  : TColor read FColorOn write SetColorOn default clRed;
     property Indicate : boolean read FIndicate write SetIndicate default false;
@@ -168,9 +172,18 @@ begin
   inherited Create(AOwner);
   FColorOff:=clWhite;
   FColorOn:=clRed;
+  FBorder:=2;
+  end;
+
+procedure TSpotIndicator.SetBorder (value : integer);
+begin
+  FBorder:=value;
+  Invalidate;
   end;
 
 procedure TSpotIndicator.Paint;
+var
+  b : integer;
 begin
   with Canvas do begin
     Brush.Color:=clWhite;
@@ -186,7 +199,8 @@ begin
       else Brush.Color:=FColorOff;
       end 
     else Brush.Color:=clBtnface;
-    Ellipse (3,3,Height-3,Height-3);
+    b:=Border+1;
+    Ellipse (b,b,Height-b,Height-b);
     end;
   end;
 
