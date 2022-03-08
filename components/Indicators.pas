@@ -12,7 +12,7 @@
    the specific language governing rights and limitations under the License.
 
    Vers. 1 - Feb. 2002
-   letzte Änderung: Feb. 2008
+   letzte Änderung: Feb. 2022
    *)
 
 unit Indicators;
@@ -48,6 +48,11 @@ type
   public
     constructor Create(AOwner: TComponent); override;
   published
+    property Anchors;
+    property ParentShowHint;
+    property PopupMenu;
+    property ShowHint;
+    property Visible;
     property OnClick;
     property OnDblClick;
     end;
@@ -65,7 +70,6 @@ type
     property Indicate : boolean read FIndicate write SetIndicate default false;
     property Enabled;
     property ParentColor;
-    property ShowHint;
   public
     constructor Create(AOwner: TComponent); override;
     end;

@@ -133,6 +133,7 @@ type
   THistoryCombo = class(TComboBox)
   private
     FSaveText    : string;
+    FReadOnly,
     FModified,
     FAutoUpdate  : boolean; // JR - siehe DoExit
     property Items;
@@ -148,6 +149,7 @@ type
     procedure DoExit; override; { hier wird die Liste aktualisiert }
     function GetMaxItems : integer;
     procedure SetMaxItems (n : integer);
+    procedure SetReadOnly (Value : boolean);
 
   public
     procedure LoadFromIni(IniName,IniSection : string);
@@ -162,6 +164,7 @@ type
       die Liste der Strings (automatische Längenbeschränkung etc) }
     { Eintrag wurde geändert }
     property Modified : boolean read FModified write FModified;
+    property ReadOnly : boolean read FReadOnly write SetReadOnly;
 
   published
     { automatisches Update der Liste }
@@ -511,6 +514,14 @@ begin
   FHistoryList.SetMaxLen(n);
   end;
 
+procedure THistoryCombo.SetReadOnly (Value : boolean);
+begin
+  if FReadOnly<>Value then begin
+    FReadOnly:=Value;
+    UpdateList;
+    end;
+  end;
+
 procedure THistoryCombo.AddItem (s : string);
 begin
   FHistoryList.AddString(s);
@@ -539,7 +550,7 @@ begin
 procedure THistoryCombo.UpdateList;
 begin
   Items:=FHistoryList;
-  if Items.Count=0 then Style:=csSimple else Style:=csDropDown;
+  if (Items.Count=0) or FReadOnly then Style:=csSimple else Style:=csDropDown;
   end;
 
 procedure THistoryCombo.DoEnter;
