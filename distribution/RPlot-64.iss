@@ -35,7 +35,7 @@ OutputDir=.
 OutputBaseFilename=rp-setup-x64
 SetupIconFile=RPlot.ico
 UninstallDisplayIcon={app}\RPlot-u.ico
-WizardImageFile=..\..\Common\WizImage-JR.bmp
+WizardImageFile=RPlot-Install.bmp
 WizardSmallImageFile=RPlot-Install-small.bmp
 Compression=lzma
 SolidCompression=yes
@@ -46,8 +46,8 @@ DisableDirPage=auto
 DisableProgramGroupPage=auto
 
 [Languages]
-Name: "en"; MessagesFile: "compiler:Default.isl"; LicenseFile:"..\..\Common\license-en.rtf";
-Name: "de"; MessagesFile: "compiler:Languages\German.isl"; LicenseFile:"..\..\Common\license-de.rtf";
+Name: "en"; MessagesFile: "compiler:Default.isl"; LicenseFile:"license-en.rtf";
+Name: "de"; MessagesFile: "compiler:Languages\German.isl"; LicenseFile:"license-de.rtf";
 
 [CustomMessages]
 en.FileAssoc=File association:
@@ -81,11 +81,11 @@ Source: "..\Release\Win64\RPlot.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\Release\Win64\locale\*.mo"; DestDir: "{app}\locale"; Flags: recursesubdirs ignoreversion restartreplace
 Source: "..\Release\Win64\language.cfg"; DestDir: "{app}"; Flags: recursesubdirs ignoreversion restartreplace
 Source: "..\Dokumentation\rp-help-*.chm"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\..\Common\license-*.rtf"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\Dokumentation\changelog*.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "license-*.rtf"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\docs\changelog*.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "RPlot-u.ico"; DestDir: "{app}"; Flags: ignoreversion
 ; samples
-Source: "..\Samples\*.xrp"; DestDir: "{commondocs}\RPlot\Samples"; Flags: ignoreversion
+Source: "..\samples\*.xrp"; DestDir: "{commondocs}\RPlot\Samples"; Flags: ignoreversion
 
 [Icons]
 Name: "{group}\R-Plot"; Filename: "{app}\R-Plot.exe"
