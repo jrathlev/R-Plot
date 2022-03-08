@@ -361,7 +361,7 @@ procedure QuickSort (var SList; Count,RSize : Integer; Compare : TCompFunction);
 
 implementation
 
-uses System.StrUtils, System.Masks, System.Classes, ExtSysUtils;
+uses System.StrUtils, System.Masks, System.Classes, UnitConsts;
 
 { ---------------------------------------------------------------- }
 (* Umwandeln eines Zeichens in eines Großbuchstaben (auch Umlaute)
@@ -1481,25 +1481,34 @@ begin
   end;
 
 { ------------------------------------------------------------------- }
+function SafeFormat(const AFormat: string; const Args: array of const): string;
+begin
+  try
+    Result:=Format(AFormat,Args);
+  except
+    on E:Exception do Result:=rsFormatError+AFormat;
+    end;
+  end;
+
 function GetPluralString (const sNo,sOne,sMany : string; n : integer; ThSep : boolean) : string;
 begin
   if n=1 then Result:=sOne
   else if (n=0) and (length(sNo)>0) then Result:=sNo
   else begin
     ThSep:=ThSep and (n>=10000);
-    if ThSep then Result:=TryFormat(ReplaceStr(sMany,'%u','%.0n'),[1.0*n])
-    else Result:=TryFormat(sMany,[n]);
+    if ThSep then Result:=SafeFormat(ReplaceStr(sMany,'%u','%.0n'),[1.0*n])
+    else Result:=SafeFormat(sMany,[n]);
     end;
   end;
 
 function GetPluralString (const sNo,sOne,sMany : string; n : integer; const s : string; ThSep : boolean) : string;
 begin
-  if n=1 then Result:=TryFormat(sOne,[s])
+  if n=1 then Result:=SafeFormat(sOne,[s])
   else if (n=0) and (length(sNo)>0) then Result:=sNo
   else begin
     ThSep:=ThSep and (n>=10000);
-    if ThSep then Result:=TryFormat(ReplaceStr(sMany,'%u','%.0n'),[1.0*n,s])
-    else Result:=TryFormat(sMany,[n,s]);
+    if ThSep then Result:=SafeFormat(ReplaceStr(sMany,'%u','%.0n'),[1.0*n,s])
+    else Result:=SafeFormat(sMany,[n,s]);
     end;
   end;
 
@@ -1508,7 +1517,7 @@ begin
   if n=1 then Result:='1 '+sOne
   else begin
     ThSep:=ThSep and (n>=10000);
-    if ThSep then Result:=TryFormat('%.0n',[1.0*n])+Space+sMany
+    if ThSep then Result:=SafeFormat('%.0n',[1.0*n])+Space+sMany
     else Result:=IntToStr(n)+Space+sMany;
     end;
   end;

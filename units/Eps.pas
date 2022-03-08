@@ -29,6 +29,8 @@ const
   emCompress = 4;
   emSwap     = 8;
 
+  emColComp = emColor+emCompress;
+
 type
   TRotate = (trNone,trLeft,trTurn,trRight);
 
@@ -433,7 +435,7 @@ var
 begin
   AssignFile(fEps,Filename); rewrite(fEps);
   if length(FImgName)=0 then FImgName:=Filename;
-  Result:=Output (fEps,Bitmap);
+  Result:=Output(fEps,Bitmap);
   CloseFile(fEps);
   end;
 
@@ -527,7 +529,7 @@ begin
     sImg:=sLzw;
     end;
   WriteLn (fEps,psBCm);      // Comments
-  WriteLn (fEps,Format(psBbx,[Wd-1,Hg-1]));
+  WriteLn (fEps,Format(psBbx,[Wd+1,Hg+1]));
   if length(FImgName)>0 then WriteLn (fEps,Format(psTit,[ExtractFileName(FImgName)]));
   WriteLn (fEps,Format(psDte,[FormatDateTime('yyyy-mm-dd hh:nn',Now)]));
   WriteLn (fEps,psCre+FCreator);
