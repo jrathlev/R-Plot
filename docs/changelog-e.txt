@@ -1,0 +1,81 @@
+R-Plot
+======
+(c) 2012-2021, Dr. J. Rathlev, 24222 Schwentinental, Germany
+
+Revision History:
+-----------------
+
+2.0.2 (2021-10-23)
+  - Changes:
+    - Improved design
+
+2.0.1 (2020-12-29)
+  - Changes:
+    - Time axis for more than 1 month
+  - Bug fixes:
+    - Importing tables of values in csv format
+
+2.0.0 (2020-12-04)
+  - Changes:
+    - Enhancements for high DPI scalings
+  - Bug fixes:
+    - Incorrect scaling of fonts on HDPI
+
+1.7.0 (2020-06-15)
+  - Changes:
+    - Input, evaluation and storing of date/time values
+  - Bug fixes:
+    - Import of time series
+    - Scaling of time series
+
+1.6.1 (2020-06-15)
+  - Changes:
+    - Selectable date format for axis labelling
+
+1.6.0 (2020-06-14)
+  - Changes:
+    - Zip routines from ExtFileTools replaced bay Delphi library System.Zip
+    - Dialog for time axis
+  - Bug fixes:
+    - Data input and import of time series (x values as date/time)
+
+1.5.0 (2020-04-24)
+  - New:
+    - Also available as 64 bit version
+    - English help file
+  - Changes:
+    - Additional prefernces for axes (line with and tick mark length)
+    - Revised desktop captions
+    - Many enhamcements in detail
+  - Bug fixes:
+    - Insertion of TIFF files
+    - Formatting of decimal numbers
+    - Display of axes
+    - Text input
+
+1.3.0 (2020-01-12)
+  - Changes:
+    - Optional use of constants for functins
+    - Saving page format, e.g. A4
+    - Display of units in presettings
+  - Bug fixes:
+    - Entry of angles for text
+    - Saving the properties of functions
+
+1.2.1 (2016-06-28)
+  - Changes:
+    - Adaption to Delphi 10
+
+1.1.0 (2015-06-10)
+  - Several bug fixes
+
+1.0.5 (2013-12-25)
+  - Changes:
+    - Additional hints
+    - Samples added to distribution
+  - Bug fixes:
+    - Selection of diagram objects 
+
+1.0.2 (2012-11-22)
+-----
+  - Basic version
