@@ -7,119 +7,119 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-07-31 12:22\n"
-"PO-Revision-Date: 2020-07-31 12:22\n"
+"POT-Creation-Date: 2021-10-24 18:01\n"
+"PO-Revision-Date: 2021-10-24 18:01\n"
 "Last-Translator: Somebody <your.email@address.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: GgtTranslate 2.7.0\n"
+"X-Generator: GgtTranslate 2.8.0\n"
 
 #. AxisDialog..OKBtn..Caption
-#: AxisDlg.dfm:26
+#: AxisDlg.dfm:30
 #. ChartDialog..OKBtn..Caption
-#: ChartDlg.dfm:98
+#: ChartDlg.dfm:102
 #. CurveDialog..OKBtn..Caption
-#: CurveDlg.dfm:27
+#: CurveDlg.dfm:31
 #. DataDialog..paBottom..OKBtn..Caption
-#: DataDlg.dfm:429
+#: DataDlg.dfm:588
 #. DrawingDialog..OKBtn..Caption
-#: DrawingDlg.dfm:25
+#: DrawingDlg.dfm:29
 #. FitDialog..OKBtn..Caption
-#: FitDlg.dfm:26
+#: FitDlg.dfm:30
 #. FunctionDialog..OKBtn..Caption
-#: FunctionDlg.dfm:27
+#: FunctionDlg.dfm:31
 #. GraphDialog..paBottom..OKBtn..Caption
-#: GraphDlg.dfm:230
+#: GraphDlg.dfm:242
 #. ImageDialog..OKBtn..Caption
-#: ImageDlg.dfm:27
+#: ImageDlg.dfm:31
 #. ImportDialog..OKBtn..Caption
 #: ImportDlg.dfm:36
 #. PlotFontDialog..OKBtn..Caption
-#: PlotFontDlg.dfm:25
+#: PlotFontDlg.dfm:29
 #. PreferencesDialog..paBottom..OKBtn..Caption
-#: PrefsDlg.dfm:1239
+#: PrefsDlg.dfm:1281
 #. SelectAxisDialog..OKBtn..Caption
-#: SelectAxisDlg.dfm:38
+#: SelectAxisDlg.dfm:42
 #. SetCustomColorDialog..OKBtn..Caption
-#: SetCustomColorDlg.dfm:42
+#: SetCustomColorDlg.dfm:46
 #. TextDialog..OKBtn..Caption
-#: TextDlg.dfm:25
+#: TextDlg.dfm:29
 #. TextFormatDialog..OKBtn..Caption
-#: TextFormatDlg.dfm:26
+#: TextFormatDlg.dfm:30
 msgid "OK"
 msgstr ""
 
 #. AxisDialog..CancelBtn..Caption
-#: AxisDlg.dfm:95
+#: AxisDlg.dfm:94
 #. ChartDialog..CancelBtn..Caption
-#: ChartDlg.dfm:168
+#: ChartDlg.dfm:166
 #. CurveDialog..CancelBtn..Caption
-#: CurveDlg.dfm:96
+#: CurveDlg.dfm:95
 #. DataDialog..paBottom..CancelBtn..Caption
-#: DataDlg.dfm:362
+#: DataDlg.dfm:526
 #. DrawingDialog..CancelBtn..Caption
-#: DrawingDlg.dfm:94
+#: DrawingDlg.dfm:93
 #. FitDialog..CancelBtn..Caption
 #: FitDlg.dfm:95
 #. FunctionDialog..CancelBtn..Caption
-#: FunctionDlg.dfm:96
+#: FunctionDlg.dfm:95
 #. GraphDialog..paBottom..CancelBtn..Caption
-#: GraphDlg.dfm:152
+#: GraphDlg.dfm:169
 #. ImageDialog..CancelBtn..Caption
-#: ImageDlg.dfm:96
+#: ImageDlg.dfm:95
 #. ImportDialog..CancelBtn..Caption
-#: ImportDlg.dfm:105
+#: ImportDlg.dfm:100
 #. PlotFontDialog..CancelBtn..Caption
-#: PlotFontDlg.dfm:94
+#: PlotFontDlg.dfm:93
 #. PreferencesDialog..paBottom..CancelBtn..Caption
-#: PrefsDlg.dfm:1172
+#: PrefsDlg.dfm:1219
 #. SelectAxisDialog..CancelBtn..Caption
-#: SelectAxisDlg.dfm:107
+#: SelectAxisDlg.dfm:106
 #. SetCustomColorDialog..CancelBtn..Caption
-#: SetCustomColorDlg.dfm:111
+#: SetCustomColorDlg.dfm:110
 #. TextDialog..CancelBtn..Caption
-#: TextDlg.dfm:94
+#: TextDlg.dfm:93
 #. TextFormatDialog..CancelBtn..Caption
-#: TextFormatDlg.dfm:95
+#: TextFormatDlg.dfm:94
 msgid "Cancel"
 msgstr ""
 
 #. AxisDialog..gbPos..Caption
-#: AxisDlg.dfm:161
+#: AxisDlg.dfm:155
 #. ChartDialog..gbPosition..Caption
-#: ChartDlg.dfm:25
+#: ChartDlg.dfm:29
 #. TextDialog..gbPos..Caption
-#: TextDlg.dfm:427
+#: TextDlg.dfm:446
 msgid "Position"
 msgstr ""
 
 #. AxisDialog..gbPos..laPlotUnit1..Caption
-#: AxisDlg.dfm:169
+#: AxisDlg.dfm:163
 #. AxisDialog..gbLine..laUnit3..Caption
-#: AxisDlg.dfm:241
+#: AxisDlg.dfm:235
 #. AxisDialog..gbCaption..laUnit4..Caption
-#: AxisDlg.dfm:299
+#: AxisDlg.dfm:293
 #. AxisDialog..gbCaption..laUnit5..Caption
-#: AxisDlg.dfm:307
+#: AxisDlg.dfm:301
 #. AxisDialog..pcLabels..tsProps..gbLabels..laUnit6..Caption
-#: AxisDlg.dfm:612
+#: AxisDlg.dfm:642
 #. AxisDialog..pcLabels..tsProps..gbLabels..laUnit7..Caption
-#: AxisDlg.dfm:634
+#: AxisDlg.dfm:664
 #. AxisDialog..pcLabels..tsProps..gbTickMarks..laPlotUnit2..Caption
-#: AxisDlg.dfm:852
+#: AxisDlg.dfm:911
 #. AxisDialog..pcLabels..tsProps..gbTickMarks..laUnit2..Caption
-#: AxisDlg.dfm:881
+#: AxisDlg.dfm:940
 #. AxisDialog..pcLabels..tsProps..gbTickMarks..Label22..Caption
-#: AxisDlg.dfm:889
+#: AxisDlg.dfm:948
 #. AxisDialog..pcLabels..tsProps..gbTickMarks..Label23..Caption
-#: AxisDlg.dfm:897
+#: AxisDlg.dfm:956
 #. AxisDialog..gbGrid..Label20..Caption
-#: AxisDlg.dfm:1211
+#: AxisDlg.dfm:1340
 #. ChartDialog..gbPosition..laUnit..Caption
-#: ChartDlg.dfm:47
+#: ChartDlg.dfm:51
 #. ChartDialog..gbPosition..Label14..Caption
-#: ChartDlg.dfm:55
+#: ChartDlg.dfm:59
 #. ChartDialog..gbBorder..laUnit3..Caption
 #: ChartDlg.dfm:467
 #. ChartDialog..gbSpace..laUnitD..Caption
@@ -135,794 +135,796 @@ msgstr ""
 #. ChartDialog..gbSize..Label16..Caption
 #: ChartDlg.dfm:687
 #. CurveDialog..gbMarker..laSymbolUnit..Caption
-#: CurveDlg.dfm:334
+#: CurveDlg.dfm:328
 #. CurveDialog..gbConn..Label5..Caption
-#: CurveDlg.dfm:491
+#: CurveDlg.dfm:485
 #. CurveDialog..gbErrBars..Label9..Caption
-#: CurveDlg.dfm:646
+#: CurveDlg.dfm:640
 #. DrawingDialog..gbLine..laBUnit..Caption
-#: DrawingDlg.dfm:189
+#: DrawingDlg.dfm:183
 #. DrawingDialog..pcType..tsLine..gbBegin..Label2..Caption
-#: DrawingDlg.dfm:265
+#: DrawingDlg.dfm:259
 #. DrawingDialog..pcType..tsLine..gbBegin..Label4..Caption
-#: DrawingDlg.dfm:280
+#: DrawingDlg.dfm:274
 #. DrawingDialog..pcType..tsLine..gbEnd..Label7..Caption
-#: DrawingDlg.dfm:340
+#: DrawingDlg.dfm:334
 #. DrawingDialog..pcType..tsLine..gbEnd..Label9..Caption
-#: DrawingDlg.dfm:355
+#: DrawingDlg.dfm:349
 #. DrawingDialog..pcType..tsRect..gbRect..Label14..Caption
-#: DrawingDlg.dfm:420
+#: DrawingDlg.dfm:418
 #. DrawingDialog..pcType..tsRect..gbRect..Label16..Caption
-#: DrawingDlg.dfm:435
+#: DrawingDlg.dfm:433
 #. DrawingDialog..pcType..tsRect..gbRect..Label18..Caption
-#: DrawingDlg.dfm:450
+#: DrawingDlg.dfm:448
 #. DrawingDialog..pcType..tsRect..gbRect..Label20..Caption
-#: DrawingDlg.dfm:465
+#: DrawingDlg.dfm:463
 #. DrawingDialog..pcProps..tsArrow..gbHead..Label10..Caption
-#: DrawingDlg.dfm:557
+#: DrawingDlg.dfm:559
 #. DrawingDialog..pcProps..tsArrow..gbHead..Label12..Caption
-#: DrawingDlg.dfm:572
+#: DrawingDlg.dfm:574
 #. FitDialog..gbLine..laBUnit..Caption
-#: FitDlg.dfm:477
+#: FitDlg.dfm:487
 #. FunctionDialog..gbLine..laUnit..Caption
-#: FunctionDlg.dfm:211
+#: FunctionDlg.dfm:205
 #. GraphDialog..pcType..tsScaled..gbDesign..Label5..Caption
-#: GraphDlg.dfm:324
+#: GraphDlg.dfm:335
 #. GraphDialog..pcType..tsScaled..gbDesign..pcSubType..tsBar..Label4..Caption
-#: GraphDlg.dfm:467
+#: GraphDlg.dfm:472
 #. GraphDialog..pcType..tsScaled..gbDesign..pcSubType..tsBar..Label8..Caption
-#: GraphDlg.dfm:481
+#: GraphDlg.dfm:486
 #. ImageDialog..gbBorder..laBUnit..Caption
-#: ImageDlg.dfm:209
+#: ImageDlg.dfm:203
 #. ImageDialog..gbPos..Label7..Caption
-#: ImageDlg.dfm:273
+#: ImageDlg.dfm:267
 #. ImageDialog..gbPos..Label9..Caption
-#: ImageDlg.dfm:288
+#: ImageDlg.dfm:282
 #. ImageDialog..gbPos..Label2..Caption
-#: ImageDlg.dfm:303
+#: ImageDlg.dfm:297
 #. ImageDialog..gbPos..Label4..Caption
-#: ImageDlg.dfm:318
+#: ImageDlg.dfm:312
 #. PreferencesDialog..pcPrefs..tsSheet..Panel1..gbSize..Label21..Caption
-#: PrefsDlg.dfm:82
+#: PrefsDlg.dfm:86
 #. PreferencesDialog..pcPrefs..tsSheet..Panel1..gbSize..Label22..Caption
-#: PrefsDlg.dfm:90
+#: PrefsDlg.dfm:94
 #. PreferencesDialog..pcPrefs..tsSheet..Panel1..gbMargin..Label23..Caption
-#: PrefsDlg.dfm:267
+#: PrefsDlg.dfm:298
 #. PreferencesDialog..pcPrefs..tsSheet..Panel1..gbMargin..Label24..Caption
-#: PrefsDlg.dfm:275
+#: PrefsDlg.dfm:306
 #. PreferencesDialog..pcPrefs..tsSheet..Panel1..gbMargin..Label25..Caption
-#: PrefsDlg.dfm:283
+#: PrefsDlg.dfm:314
 #. PreferencesDialog..pcPrefs..tsSheet..Panel1..gbMargin..Label26..Caption
-#: PrefsDlg.dfm:291
+#: PrefsDlg.dfm:322
 #. PreferencesDialog..pcPrefs..tsCharts..Panel3..Label27..Caption
-#: PrefsDlg.dfm:386
+#: PrefsDlg.dfm:421
 #. PreferencesDialog..pcPrefs..tsCharts..Panel3..Label28..Caption
-#: PrefsDlg.dfm:394
+#: PrefsDlg.dfm:429
 #. PreferencesDialog..pcPrefs..tsAxes..Panel6..Label37..Caption
-#: PrefsDlg.dfm:548
+#: PrefsDlg.dfm:587
 #. PreferencesDialog..pcPrefs..tsAxes..Panel6..Label40..Caption
-#: PrefsDlg.dfm:572
-#. PreferencesDialog..pcPrefs..tsAxes..Panel6..gbLabels..Label29..Caption
 #: PrefsDlg.dfm:611
+#. PreferencesDialog..pcPrefs..tsAxes..Panel6..gbLabels..Label29..Caption
+#: PrefsDlg.dfm:650
 #. PreferencesDialog..pcPrefs..tsAxes..Panel6..gbLabels..Label30..Caption
-#: PrefsDlg.dfm:619
+#: PrefsDlg.dfm:658
 #. PreferencesDialog..pcPrefs..tsAxes..Panel6..gbCaption..Label31..Caption
-#: PrefsDlg.dfm:675
+#: PrefsDlg.dfm:714
 #. PreferencesDialog..pcPrefs..tsAxes..Panel6..gbCaption..Label32..Caption
-#: PrefsDlg.dfm:683
+#: PrefsDlg.dfm:722
 #. PreferencesDialog..pcPrefs..tsLines..Panel4..gbLines..Label33..Caption
-#: PrefsDlg.dfm:809
+#: PrefsDlg.dfm:852
 #. PreferencesDialog..pcPrefs..tsLines..Panel4..gbSymbols..Label34..Caption
-#: PrefsDlg.dfm:883
+#: PrefsDlg.dfm:926
 #. PreferencesDialog..pcPrefs..tsText..Panel2..Label35..Caption
-#: PrefsDlg.dfm:1053
+#: PrefsDlg.dfm:1100
 #. PreferencesDialog..paBottom..rgUnit....Items.Strings
-#: PrefsDlg.dfm:1335
+#: PrefsDlg.dfm:1410
 #. TextDialog..gbBorder..laBUnit..Caption
-#: TextDlg.dfm:269
+#: TextDlg.dfm:263
 #. TextDialog..gbProps..laUnit5..Caption
-#: TextDlg.dfm:322
+#: TextDlg.dfm:316
 #. TextDialog..gbPos..Label7..Caption
-#: TextDlg.dfm:442
+#: TextDlg.dfm:461
 #. TextDialog..gbPos..Label9..Caption
-#: TextDlg.dfm:457
+#: TextDlg.dfm:476
 msgid "cm"
 msgstr ""
 
 #. AxisDialog..gbPos..Label21..Caption
-#: AxisDlg.dfm:177
+#: AxisDlg.dfm:171
 msgid "Offset:"
 msgstr ""
 
 #. AxisDialog..gbPos..rbBottomLeft..Caption
-#: AxisDlg.dfm:184
+#: AxisDlg.dfm:178
 #. horizontal, date/time
-#: AxisDlg.pas:310
+#: AxisDlg.pas:323
 msgid "At bottom"
 msgstr ""
 
 #. AxisDialog..gbPos..rbTopRight..Caption
-#: AxisDlg.dfm:195
-#: AxisDlg.pas:311
+#: AxisDlg.dfm:189
+#: AxisDlg.pas:324
 msgid "At top"
 msgstr ""
 
 #. AxisDialog..gbPos..cxBorder..Caption
-#: AxisDlg.dfm:204
+#: AxisDlg.dfm:198
 msgid "Enframe with axes"
 msgstr ""
 
 #. AxisDialog..gbPos..cbHide..Caption
-#: AxisDlg.dfm:224
+#: AxisDlg.dfm:218
 msgid "Hide"
 msgstr ""
 
 #. AxisDialog..gbLine..Caption
-#: AxisDlg.dfm:233
+#: AxisDlg.dfm:227
 #. frmSheet..paMain..gbObjects..bbAddDrawing..Hint
-#: RPlotMain.dfm:1166
-#: DrawingDlg.pas:234
+#: RPlotMain.dfm:2013
+#: DrawingDlg.pas:247
 #: RPlotObjects.pas:4439
 msgid "Line"
 msgstr ""
 
 #. AxisDialog..gbLine..Label7..Caption
-#: AxisDlg.dfm:248
+#: AxisDlg.dfm:242
 #. ChartDialog..gbBorder..Label7..Caption
 #: ChartDlg.dfm:459
 #. ChartDialog..gbSize..Label2..Caption
 #: ChartDlg.dfm:671
 #. DrawingDialog..gbLine..laBWidth..Caption
-#: DrawingDlg.dfm:196
+#: DrawingDlg.dfm:190
 #. DrawingDialog..pcType..tsRect..gbRect..Label17..Caption
-#: DrawingDlg.dfm:442
+#: DrawingDlg.dfm:440
 #. DrawingDialog..pcProps..tsArrow..gbHead..Label11..Caption
-#: DrawingDlg.dfm:564
+#: DrawingDlg.dfm:566
 #. FitDialog..gbLine..laBWidth..Caption
-#: FitDlg.dfm:484
+#: FitDlg.dfm:494
 #. FunctionDialog..gbLine..laBWidth..Caption
-#: FunctionDlg.dfm:218
+#: FunctionDlg.dfm:212
 #. ImageDialog..gbPos..Label1..Caption
-#: ImageDlg.dfm:295
+#: ImageDlg.dfm:289
 #. PreferencesDialog..pcPrefs..tsSheet..Panel1..gbSize..Label2..Caption
-#: PrefsDlg.dfm:49
+#: PrefsDlg.dfm:53
 #. PreferencesDialog..pcPrefs..tsLines..Panel4..gbLines..Label10..Caption
-#: PrefsDlg.dfm:778
+#: PrefsDlg.dfm:821
 msgid "Width:"
 msgstr ""
 
 #. AxisDialog..gbCaption..Caption
-#: AxisDlg.dfm:277
+#: AxisDlg.dfm:271
 #. PreferencesDialog..pcPrefs..tsAxes..Panel6..gbCaption..Caption
-#: PrefsDlg.dfm:651
+#: PrefsDlg.dfm:690
 msgid "Caption"
 msgstr ""
 
 #. AxisDialog..gbCaption..Label2..Caption
-#: AxisDlg.dfm:284
+#: AxisDlg.dfm:278
 #. AxisDialog..pcLabels..tsProps..gbLabels..Label6..Caption
-#: AxisDlg.dfm:619
+#: AxisDlg.dfm:649
 msgid "Distance from axis:"
 msgstr ""
 
 #. AxisDialog..gbCaption..Label3..Caption
-#: AxisDlg.dfm:291
+#: AxisDlg.dfm:285
 #. AxisDialog..pcLabels..tsProps..gbLabels..Label9..Caption
-#: AxisDlg.dfm:626
+#: AxisDlg.dfm:656
 msgid "Text size:"
 msgstr ""
 
 #. AxisDialog..gbCaption..paPositon..Label17..Caption
-#: AxisDlg.dfm:329
+#: AxisDlg.dfm:323
 msgid "Position:"
 msgstr ""
 
 #. AxisDialog..gbCaption..paPositon..Label18..Caption
-#: AxisDlg.dfm:336
+#: AxisDlg.dfm:330
 msgid "Left"
 msgstr ""
 
 #. AxisDialog..gbCaption..paPositon..Label19..Caption
-#: AxisDlg.dfm:344
+#: AxisDlg.dfm:338
 msgid "Right"
 msgstr ""
 
 #. AxisDialog..gbCaption..bbCapFont..Caption
-#: AxisDlg.dfm:391
+#: AxisDlg.dfm:385
 #. AxisDialog..pcLabels..tsProps..gbLabels..bbLabFont..Caption
-#: AxisDlg.dfm:792
+#: AxisDlg.dfm:826
 #. TextDialog..gbProps..Caption
-#: TextDlg.dfm:307
+#: TextDlg.dfm:301
 msgid "Font"
 msgstr ""
 
 #. AxisDialog..gbCaption..edUnit..EditLabel.Caption
-#: AxisDlg.dfm:429
+#: AxisDlg.dfm:448
 #. PreferencesDialog..paBottom..rgUnit..Caption
-#: PrefsDlg.dfm:1331
+#: PrefsDlg.dfm:1406
 msgid "Unit"
 msgstr ""
 
 #. AxisDialog..gbCaption..cbLabUnit..Caption
-#: AxisDlg.dfm:438
+#: AxisDlg.dfm:457
 msgid "Show between tick marks"
 msgstr ""
 
 #. AxisDialog..edDescription..EditLabel.Caption
-#: AxisDlg.dfm:450
+#: AxisDlg.dfm:469
 msgid "Name of axis:"
 msgstr ""
 
 #. AxisDialog..bbLoadTemplate..Hint
-#: AxisDlg.dfm:458
+#: AxisDlg.dfm:477
 #. CurveDialog..bbLoadTemplate..Hint
-#: CurveDlg.dfm:709
+#: CurveDlg.dfm:703
 #. FitDialog..bbLoadTemplate..Hint
-#: FitDlg.dfm:298
+#: FitDlg.dfm:295
 #. FunctionDialog..bbLoadTemplate..Hint
-#: FunctionDlg.dfm:321
+#: FunctionDlg.dfm:315
 #. GraphDialog..paBottom..bbLoadTemplate..Hint
-#: GraphDlg.dfm:33
+#: GraphDlg.dfm:39
 msgid "Load settings from template"
 msgstr ""
 
 #. AxisDialog..bbSaveTemplate..Hint
-#: AxisDlg.dfm:484
+#: AxisDlg.dfm:541
 #. CurveDialog..bbSaveTemplate..Hint
-#: CurveDlg.dfm:735
+#: CurveDlg.dfm:767
 #. FitDialog..bbSaveTemplate..Hint
-#: FitDlg.dfm:324
+#: FitDlg.dfm:360
 #. FunctionDialog..bbSaveTemplate..Hint
-#: FunctionDlg.dfm:347
+#: FunctionDlg.dfm:379
 #. GraphDialog..paBottom..bbSaveTemplate..Hint
-#: GraphDlg.dfm:59
+#: GraphDlg.dfm:103
 msgid "Save settings as template"
 msgstr ""
 
 #. AxisDialog..cxShow..Caption
-#: AxisDlg.dfm:576
+#: AxisDlg.dfm:606
 #. ChartDialog..cbShow..Caption
-#: ChartDlg.dfm:355
+#: ChartDlg.dfm:356
 #. ChartDialog..gbBorder..cbBorder..Caption
 #: ChartDlg.dfm:501
 #. CurveDialog..cbShow..Caption
-#: CurveDlg.dfm:699
+#: CurveDlg.dfm:693
 #. DrawingDialog..cbShow..Caption
-#: DrawingDlg.dfm:171
+#: DrawingDlg.dfm:165
 #. FitDialog..cbShow..Caption
-#: FitDlg.dfm:288
+#: FitDlg.dfm:284
 #. FunctionDialog..cbShow..Caption
-#: FunctionDlg.dfm:261
+#: FunctionDlg.dfm:255
 #. GraphDialog..paBottom..cbShow..Caption
-#: GraphDlg.dfm:219
+#: GraphDlg.dfm:231
 #. ImageDialog..gbBorder..cbBorder..Caption
-#: ImageDlg.dfm:216
+#: ImageDlg.dfm:210
 #. ImageDialog..cbShow..Caption
-#: ImageDlg.dfm:247
+#: ImageDlg.dfm:241
 #. TextDialog..gbBorder..cbBorder..Caption
-#: TextDlg.dfm:276
+#: TextDlg.dfm:270
 #. TextDialog..cbShow..Caption
-#: TextDlg.dfm:781
+#: TextDlg.dfm:800
 msgid "Visible"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbLabels..Caption
-#: AxisDlg.dfm:597
+#: AxisDlg.dfm:627
 msgid "Labels at tick marks"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbLabels..laPrecision..Caption
-#: AxisDlg.dfm:604
+#: AxisDlg.dfm:634
 msgid "Precision:"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbLabels..cbPrec..Text
-#: AxisDlg.dfm:644
+#: AxisDlg.dfm:674
 #. AxisDialog..pcLabels..tsProps..gbLabels..cbPrec....Items.Strings
-#: AxisDlg.dfm:647
+#: AxisDlg.dfm:677
 msgid "Automatic"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbLabels..cbPrec....Items.Strings
-#: AxisDlg.dfm:648
+#: AxisDlg.dfm:678
 msgid "Integer value"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbLabels..cbPrec....Items.Strings
-#: AxisDlg.dfm:649
+#: AxisDlg.dfm:679
 msgid "Float with 2 digits"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbLabels..cbPrec....Items.Strings
-#: AxisDlg.dfm:650
+#: AxisDlg.dfm:680
 msgid "Float with 3 digits"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbLabels..cbPrec....Items.Strings
-#: AxisDlg.dfm:651
+#: AxisDlg.dfm:681
 msgid "Float with 4 digits"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbLabels..cbPrec....Items.Strings
-#: AxisDlg.dfm:652
+#: AxisDlg.dfm:682
 msgid "Float with 5 digits"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbLabels..cbPrec....Items.Strings
-#: AxisDlg.dfm:653
+#: AxisDlg.dfm:683
 msgid "Float with 6 digits"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbLabels..cbPrec....Items.Strings
-#: AxisDlg.dfm:654
+#: AxisDlg.dfm:684
 msgid "Float with 7 digits"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbLabels..cbPrec....Items.Strings
-#: AxisDlg.dfm:655
+#: AxisDlg.dfm:685
 msgid "Float with 8 digits"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbLabels..cxNoLabels..Caption
-#: AxisDlg.dfm:663
+#: AxisDlg.dfm:693
 msgid "No labels"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbLabels..cxRotate..Caption
-#: AxisDlg.dfm:697
+#: AxisDlg.dfm:727
 msgid "Rotate"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbLabels..cxDate..Caption
-#: AxisDlg.dfm:705
+#: AxisDlg.dfm:735
 msgid "Show date"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbLabels..cxDayOfWeek..Caption
-#: AxisDlg.dfm:714
+#: AxisDlg.dfm:744
 msgid "Show day of week"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbLabels..pcNotate..tsNumber..paNumber..laNotation..Caption
-#: AxisDlg.dfm:743
+#: AxisDlg.dfm:773
 msgid "Notation:"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbLabels..pcNotate..tsNumber..paNumber..cbNotation..Text
-#: AxisDlg.dfm:753
+#: AxisDlg.dfm:783
 #. AxisDialog..pcLabels..tsProps..gbLabels..pcNotate..tsNumber..paNumber..cbNotation....Items.Strings
-#: AxisDlg.dfm:755
+#: AxisDlg.dfm:785
 msgid "Fixed"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbLabels..pcNotate..tsNumber..paNumber..cbNotation....Items.Strings
-#: AxisDlg.dfm:756
+#: AxisDlg.dfm:786
 msgid "Scientific"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbLabels..pcNotate..tsNumber..paNumber..cbNotation....Items.Strings
-#: AxisDlg.dfm:757
+#: AxisDlg.dfm:787
 msgid "Engineering"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbLabels..pcNotate..tsNumber..paNumber..cbNotation....Items.Strings
-#: AxisDlg.dfm:758
+#: AxisDlg.dfm:788
 msgid "Unit prefixes"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbLabels..pcNotate..tsUser..paUser..bbLabels..Caption
-#: AxisDlg.dfm:780
+#: AxisDlg.dfm:814
 #. AxisDialog..pcLabels..tsLabels..gbUserLabels..Caption
-#: AxisDlg.dfm:1036
+#: AxisDlg.dfm:1095
 msgid "User defined labels"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbTickMarks..Caption
-#: AxisDlg.dfm:830
+#: AxisDlg.dfm:889
 msgid "Tick marks"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbTickMarks..Label8..Caption
-#: AxisDlg.dfm:837
+#: AxisDlg.dfm:896
 msgid "Major ticks:"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbTickMarks..Label10..Caption
-#: AxisDlg.dfm:844
+#: AxisDlg.dfm:903
 #. AxisDialog..gbGrid..Label15..Caption
-#: AxisDlg.dfm:1203
+#: AxisDlg.dfm:1332
 #. CurveDialog..gbConn..Label6..Caption
-#: CurveDlg.dfm:498
+#: CurveDlg.dfm:492
 #. CurveDialog..gbErrBars..Label8..Caption
-#: CurveDlg.dfm:638
+#: CurveDlg.dfm:632
 #. GraphDialog..pcType..tsScaled..gbDesign..Label6..Caption
-#: GraphDlg.dfm:317
+#: GraphDlg.dfm:328
 #. PreferencesDialog..pcPrefs..tsAxes..Panel6..Label36..Caption
-#: PrefsDlg.dfm:540
+#: PrefsDlg.dfm:579
 msgid "Line width:"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbTickMarks..Label14..Caption
-#: AxisDlg.dfm:859
+#: AxisDlg.dfm:918
 msgid "Minor ticks:"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbTickMarks..Label1..Caption
-#: AxisDlg.dfm:866
+#: AxisDlg.dfm:925
 msgid "Length at each side:"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbTickMarks..Label16..Caption
-#: AxisDlg.dfm:873
+#: AxisDlg.dfm:932
 msgid "Major interval:"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbTickMarks..rbInner..Caption
-#: AxisDlg.dfm:904
+#: AxisDlg.dfm:963
 msgid "On inner side"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbTickMarks..rbOuter..Caption
-#: AxisDlg.dfm:914
+#: AxisDlg.dfm:973
 msgid "On outer side"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbTickMarks..rbBoth..Caption
-#: AxisDlg.dfm:922
+#: AxisDlg.dfm:981
 msgid "On both sides"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbTickMarks..edTicks..EditLabel.Caption
-#: AxisDlg.dfm:973
+#: AxisDlg.dfm:1032
 msgid "Steps:"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbTickMarks..cbLess..Caption
-#: AxisDlg.dfm:992
+#: AxisDlg.dfm:1051
 msgid "Reduced number of steps"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbTickMarks..rbNoTicks..Caption
-#: AxisDlg.dfm:1008
+#: AxisDlg.dfm:1067
 msgid "No tick marks"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsLabels..gbUserLabels..Label5..Caption
-#: AxisDlg.dfm:1047
+#: AxisDlg.dfm:1106
 msgid "Position between tick marks"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsLabels..gbUserLabels..Label13..Caption
-#: AxisDlg.dfm:1055
+#: AxisDlg.dfm:1114
 msgid "Label:"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsLabels..gbUserLabels..btnEdit..Caption
-#: AxisDlg.dfm:1082
+#: AxisDlg.dfm:1141
 msgid "Replace"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsLabels..gbUserLabels..lvLabels......Caption
-#: AxisDlg.dfm:1108
+#: AxisDlg.dfm:1232
 msgid "Nr."
 msgstr ""
 
 #. AxisDialog..pcLabels..tsLabels..gbUserLabels..lvLabels......Caption
-#: AxisDlg.dfm:1112
+#: AxisDlg.dfm:1236
 msgid "Label"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsLabels..gbUserLabels..cbShowLabel..Caption
-#: AxisDlg.dfm:1127
+#: AxisDlg.dfm:1251
 msgid "Show"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsLabels..gbUserLabels..bbDone..Caption
-#: AxisDlg.dfm:1137
+#: AxisDlg.dfm:1261
 msgid "Done"
 msgstr ""
 
 #. AxisDialog..gbGrid..Caption
-#: AxisDlg.dfm:1196
+#: AxisDlg.dfm:1325
 msgid "Grid lines"
 msgstr ""
 
 #. AxisDialog..gbGrid..rbNoGrid..Caption
-#: AxisDlg.dfm:1218
+#: AxisDlg.dfm:1347
 #. DataDialog..paTop..gbXErr..rbXNoErr..Caption
-#: DataDlg.dfm:38
+#: DataDlg.dfm:42
 #. DataDialog..paTop..gbYErr..rbYNoErr..Caption
-#: DataDlg.dfm:75
+#: DataDlg.dfm:79
 msgid "No"
 msgstr ""
 
 #. AxisDialog..gbGrid..rbSolidGrid..Caption
-#: AxisDlg.dfm:1229
+#: AxisDlg.dfm:1358
 #. ChartDialog..gbBorder..cxStyle..Text
 #: ChartDlg.dfm:513
 #. ChartDialog..gbBorder..cxStyle....Items.Strings
 #: ChartDlg.dfm:515
 #. CurveDialog..gbConn..cxStyle..Text
-#: CurveDlg.dfm:573
+#: CurveDlg.dfm:567
 #. CurveDialog..gbConn..cxStyle....Items.Strings
-#: CurveDlg.dfm:575
+#: CurveDlg.dfm:569
 #. DrawingDialog..gbLine..cxStyle..Text
-#: DrawingDlg.dfm:219
+#: DrawingDlg.dfm:213
 #. DrawingDialog..gbLine..cxStyle....Items.Strings
-#: DrawingDlg.dfm:221
+#: DrawingDlg.dfm:215
 #. FitDialog..gbLine..cxStyle..Text
-#: FitDlg.dfm:507
+#: FitDlg.dfm:517
 #. FitDialog..gbLine..cxStyle....Items.Strings
-#: FitDlg.dfm:509
+#: FitDlg.dfm:519
 #. FunctionDialog..gbLine..cxStyle..Text
-#: FunctionDlg.dfm:240
+#: FunctionDlg.dfm:234
 #. FunctionDialog..gbLine..cxStyle....Items.Strings
-#: FunctionDlg.dfm:242
+#: FunctionDlg.dfm:236
 #. PreferencesDialog..pcPrefs..tsLines..Panel4..gbLines..cxStyle..Text
-#: PrefsDlg.dfm:819
+#: PrefsDlg.dfm:862
 #. PreferencesDialog..pcPrefs..tsLines..Panel4..gbLines..cxStyle....Items.Strings
-#: PrefsDlg.dfm:821
+#: PrefsDlg.dfm:864
 msgid "Solid"
 msgstr ""
 
 #. AxisDialog..gbGrid..rbDashedGrid..Caption
-#: AxisDlg.dfm:1238
+#: AxisDlg.dfm:1367
 #. ChartDialog..gbBorder..cxStyle....Items.Strings
 #: ChartDlg.dfm:516
 #. CurveDialog..gbConn..cxStyle....Items.Strings
-#: CurveDlg.dfm:576
+#: CurveDlg.dfm:570
 #. DrawingDialog..gbLine..cxStyle....Items.Strings
-#: DrawingDlg.dfm:222
+#: DrawingDlg.dfm:216
 #. FitDialog..gbLine..cxStyle....Items.Strings
-#: FitDlg.dfm:510
+#: FitDlg.dfm:520
 #. FunctionDialog..gbLine..cxStyle....Items.Strings
-#: FunctionDlg.dfm:243
+#: FunctionDlg.dfm:237
 #. PreferencesDialog..pcPrefs..tsLines..Panel4..gbLines..cxStyle....Items.Strings
-#: PrefsDlg.dfm:822
+#: PrefsDlg.dfm:865
 msgid "Dashed"
 msgstr ""
 
 #. AxisDialog..gbGrid..rbDottedGrid..Caption
-#: AxisDlg.dfm:1247
+#: AxisDlg.dfm:1376
 #. ChartDialog..gbBorder..cxStyle....Items.Strings
 #: ChartDlg.dfm:517
 #. CurveDialog..gbConn..cxStyle....Items.Strings
-#: CurveDlg.dfm:577
+#: CurveDlg.dfm:571
 #. DrawingDialog..gbLine..cxStyle....Items.Strings
-#: DrawingDlg.dfm:223
+#: DrawingDlg.dfm:217
 #. FitDialog..gbLine..cxStyle....Items.Strings
-#: FitDlg.dfm:511
+#: FitDlg.dfm:521
 #. FunctionDialog..gbLine..cxStyle....Items.Strings
-#: FunctionDlg.dfm:244
+#: FunctionDlg.dfm:238
 #. PreferencesDialog..pcPrefs..tsLines..Panel4..gbLines..cxStyle....Items.Strings
-#: PrefsDlg.dfm:823
+#: PrefsDlg.dfm:866
 msgid "Dotted"
 msgstr ""
 
 #. AxisDialog..bbTextFormat..Hint
-#: AxisDlg.dfm:1270
+#: AxisDlg.dfm:1399
 #. TextDialog..bbTextFormat..Hint
-#: TextDlg.dfm:814
+#: TextDlg.dfm:872
 #. TextFormatDialog..Caption
 #: TextFormatDlg.dfm:7
 msgid "Insert formatted text"
 msgstr ""
 
 #. AxisDialog..bbTextFormat..Caption
-#: AxisDlg.dfm:1271
+#: AxisDlg.dfm:1400
 #. TextDialog..bbTextFormat..Caption
-#: TextDlg.dfm:815
+#: TextDlg.dfm:873
 msgid "Formatted text"
 msgstr ""
 
 #. AxisDialog..pcRange..tsNormal..rgScale..Caption
-#: AxisDlg.dfm:1324
+#: AxisDlg.dfm:1474
 msgid "Scaling"
 msgstr ""
 
 #. AxisDialog..pcRange..tsNormal..rgScale....Items.Strings
-#: AxisDlg.dfm:1328
+#: AxisDlg.dfm:1478
 #. FitDialog..gbFitType..rbLinear..Caption
-#: FitDlg.dfm:438
+#: FitDlg.dfm:448
 #. FitDialog..rgXScale....Items.Strings
-#: FitDlg.dfm:531
+#: FitDlg.dfm:541
 #. FitDialog..rgYScale....Items.Strings
-#: FitDlg.dfm:545
+#: FitDlg.dfm:555
 msgid "Linear"
 msgstr ""
 
 #. AxisDialog..pcRange..tsNormal..rgScale....Items.Strings
-#: AxisDlg.dfm:1329
+#: AxisDlg.dfm:1479
 #. FitDialog..rgXScale....Items.Strings
-#: FitDlg.dfm:532
+#: FitDlg.dfm:542
 #. FitDialog..rgYScale....Items.Strings
-#: FitDlg.dfm:546
+#: FitDlg.dfm:556
 msgid "Logarith."
 msgstr ""
 
 #. AxisDialog..pcRange..tsNormal..rgScale....Items.Strings
-#: AxisDlg.dfm:1330
+#: AxisDlg.dfm:1480
 #. FitDialog..rgXScale....Items.Strings
-#: FitDlg.dfm:533
+#: FitDlg.dfm:543
 #. FitDialog..rgYScale....Items.Strings
-#: FitDlg.dfm:547
+#: FitDlg.dfm:557
 msgid "Inverse"
 msgstr ""
 
 #. AxisDialog..pcRange..tsNormal..gbRange..Caption
-#: AxisDlg.dfm:1340
+#: AxisDlg.dfm:1490
 msgid "Range"
 msgstr ""
 
 #. AxisDialog..pcRange..tsNormal..gbRange..Label11..Caption
-#: AxisDlg.dfm:1347
+#: AxisDlg.dfm:1497
 #. AxisDialog..pcRange..tsDateTime..gbTimeRange..Label24..Caption
-#: AxisDlg.dfm:1417
+#: AxisDlg.dfm:1567
 #. FitDialog..gbFitrange..FromLabel..Caption
-#: FitDlg.dfm:197
+#: FitDlg.dfm:193
 #. FunctionDialog..gbFuncRange..FromLabel..Caption
-#: FunctionDlg.dfm:447
+#: FunctionDlg.dfm:452
 msgid "from:"
 msgstr ""
 
 #. AxisDialog..pcRange..tsNormal..gbRange..Label12..Caption
-#: AxisDlg.dfm:1354
+#: AxisDlg.dfm:1504
 #. AxisDialog..pcRange..tsDateTime..gbTimeRange..Label25..Caption
-#: AxisDlg.dfm:1424
+#: AxisDlg.dfm:1574
 #. FitDialog..gbFitrange..ToLabel..Caption
-#: FitDlg.dfm:206
+#: FitDlg.dfm:202
 #. FunctionDialog..gbFuncRange..ToLabel..Caption
-#: FunctionDlg.dfm:456
+#: FunctionDlg.dfm:461
 msgid "to:"
 msgstr ""
 
 #. AxisDialog..pcRange..tsNormal..gbRange..bbInterval..Hint
-#: AxisDlg.dfm:1377
+#: AxisDlg.dfm:1527
 msgid "Compute interval settings"
 msgstr ""
 
 #. AxisDialog..pcRange..tsDateTime..gbTimeRange..Caption
-#: AxisDlg.dfm:1410
+#: AxisDlg.dfm:1560
 msgid "Time range"
 msgstr ""
 
 #. AxisDialog..pcRange..tsDateTime..gbTimeRange..bbMinTSet..Hint
-#: AxisDlg.dfm:1473
+#: AxisDlg.dfm:1623
 msgid "Set tp begin of day"
 msgstr ""
 
 #. AxisDialog..pcRange..tsDateTime..gbTimeRange..bbMaxTSet..Hint
-#: AxisDlg.dfm:1510
+#: AxisDlg.dfm:1685
 msgid "Set to end of day"
 msgstr ""
 
 #. AxisDialog..pcRange..tsDateTime..gbTimeRange..bbDateFormat..Hint
-#: AxisDlg.dfm:1548
-#: AxisDlg.pas:471
+#: AxisDlg.dfm:1748
+#: AxisDlg.pas:484
 #. Schreibweise der Zahlen
-#: AxisDlg.pas:670
+#: AxisDlg.pas:683
 msgid "Select date format"
 msgstr ""
 
 #. AxisDialog..rgType..Caption
-#: AxisDlg.dfm:1582
+#: AxisDlg.dfm:1782
 #. frmSheet..paMain..lvItems......Caption
-#: RPlotMain.dfm:1322
+#: RPlotMain.dfm:2207
 msgid "Type"
 msgstr ""
 
 #. AxisDialog..rgType....Items.Strings
-#: AxisDlg.dfm:1586
+#: AxisDlg.dfm:1786
 msgid "Horizontal"
 msgstr ""
 
 #. AxisDialog..rgType....Items.Strings
-#: AxisDlg.dfm:1587
+#: AxisDlg.dfm:1787
 msgid "Vertical"
 msgstr ""
 
 #. AxisDialog..rgType....Items.Strings
-#: AxisDlg.dfm:1588
+#: AxisDlg.dfm:1788
 #. real width of first column
-#: DataDlg.pas:185
+#: DataDlg.pas:198
 msgid "Date/Time"
 msgstr ""
 
 #. ChartDialog..Caption
 #: ChartDlg.dfm:6
 #. frmSheet..paMain..bbEditChart..Caption
-#: RPlotMain.dfm:625
-#: ChartDlg.pas:282
+#: RPlotMain.dfm:1271
+#: ChartDlg.pas:295
 msgid "Edit chart"
 msgstr ""
 
 #. ChartDialog..gbPosition..Label3..Caption
-#: ChartDlg.dfm:32
+#: ChartDlg.dfm:36
 #. PreferencesDialog..pcPrefs..tsSheet..Panel1..gbMargin..Label4..Caption
-#: PrefsDlg.dfm:243
+#: PrefsDlg.dfm:274
 msgid "Bottom:"
 msgstr ""
 
 #. ChartDialog..gbPosition..Label4..Caption
-#: ChartDlg.dfm:39
+#: ChartDlg.dfm:43
 #. PreferencesDialog..pcPrefs..tsSheet..Panel1..gbMargin..Label3..Caption
-#: PrefsDlg.dfm:235
+#: PrefsDlg.dfm:266
 msgid "Left:"
 msgstr ""
 
 #. ChartDialog..edDesc..EditLabel.Caption
-#: ChartDlg.dfm:89
+#: ChartDlg.dfm:93
 msgid "Name of chart:"
 msgstr ""
 
 #. ChartDialog..bbLoadTemplate..Hint
-#: ChartDlg.dfm:235
+#: ChartDlg.dfm:227
 msgid "Load chart settings from template"
 msgstr ""
 
 #. ChartDialog..bbSaveTemplate..Hint
-#: ChartDlg.dfm:262
+#: ChartDlg.dfm:291
 msgid "Save chart settings as template"
 msgstr ""
 
 #. ChartDialog..gbColor..Caption
 #: ChartDlg.dfm:366
+#. GraphDialog..pcType..tsScaled..gbDesign..bbBgColor..Hint
+#: GraphDlg.dfm:393
 msgid "Background color"
 msgstr ""
 
 #. ChartDialog..gbColor..cbTransparent..Caption
 #: ChartDlg.dfm:380
 #. DrawingDialog..pcProps..tsFill..gbBackground..cbTrans..Caption
-#: DrawingDlg.dfm:627
+#: DrawingDlg.dfm:629
 #. GraphDialog..pcType..tsScaled..gbDesign..cbTrans..Caption
-#: GraphDlg.dfm:372
+#: GraphDlg.dfm:376
 #. ImageDialog..cbTrans..Caption
-#: ImageDlg.dfm:392
+#: ImageDlg.dfm:386
 #. PreferencesDialog..pcPrefs..tsCharts..Panel3..gbBackground..cxTranspChart..Caption
-#: PrefsDlg.dfm:513
+#: PrefsDlg.dfm:548
 #. PreferencesDialog..pcPrefs..tsLines..Panel4..GroupBox1..cxNoFill..Caption
-#: PrefsDlg.dfm:953
+#: PrefsDlg.dfm:996
 #. TextDialog..gbBackground..cbTrans..Caption
-#: TextDlg.dfm:184
+#: TextDlg.dfm:178
 msgid "Transparent"
 msgstr ""
 
 #. ChartDialog..gbBorder..Caption
 #: ChartDlg.dfm:452
 #. ImageDialog..gbBorder..Caption
-#: ImageDlg.dfm:194
+#: ImageDlg.dfm:188
 #. TextDialog..gbBorder..Caption
-#: TextDlg.dfm:254
+#: TextDlg.dfm:248
 #. Farbe - Linien
-#: DrawingDlg.pas:248
+#: DrawingDlg.pas:261
 msgid "Border"
 msgstr ""
 
 #. ChartDialog..gbBorder..Label5..Caption
 #: ChartDlg.dfm:475
 #. CurveDialog..gbConn..Label1..Caption
-#: CurveDlg.dfm:521
+#: CurveDlg.dfm:515
 #. PreferencesDialog..pcPrefs..tsLines..Panel4..gbLines..Label11..Caption
-#: PrefsDlg.dfm:786
+#: PrefsDlg.dfm:829
 msgid "Style:"
 msgstr ""
 
 #. ChartDialog..gbBorder..Label6..Caption
 #: ChartDlg.dfm:482
 #. CurveDialog..gbMarker..laSymbolColor..Caption
-#: CurveDlg.dfm:319
+#: CurveDlg.dfm:313
 #. CurveDialog..gbConn..Label2..Caption
-#: CurveDlg.dfm:513
+#: CurveDlg.dfm:507
 #. CurveDialog..gbErrBars..Label3..Caption
-#: CurveDlg.dfm:653
+#: CurveDlg.dfm:647
 #. PreferencesDialog..pcPrefs..tsCharts..Panel3..gbBackground..laChartColor..Caption
-#: PrefsDlg.dfm:438
+#: PrefsDlg.dfm:473
 #. PreferencesDialog..pcPrefs..tsLines..Panel4..gbLines..Label12..Caption
-#: PrefsDlg.dfm:794
+#: PrefsDlg.dfm:837
 #. PreferencesDialog..pcPrefs..tsLines..Panel4..gbSymbols..Label14..Caption
-#: PrefsDlg.dfm:868
+#: PrefsDlg.dfm:911
 #. PreferencesDialog..pcPrefs..tsLines..Panel4..GroupBox1..laFillColor..Caption
-#: PrefsDlg.dfm:938
+#: PrefsDlg.dfm:981
 msgid "Color:"
 msgstr ""
 
@@ -953,18 +955,18 @@ msgstr ""
 #. ChartDialog..gbSize..Caption
 #: ChartDlg.dfm:657
 #. PreferencesDialog..pcPrefs..tsSheet..Panel1..gbSize..Caption
-#: PrefsDlg.dfm:40
+#: PrefsDlg.dfm:44
 msgid "Size"
 msgstr ""
 
 #. ChartDialog..gbSize..Label1..Caption
 #: ChartDlg.dfm:664
 #. DrawingDialog..pcType..tsRect..gbRect..Label19..Caption
-#: DrawingDlg.dfm:457
+#: DrawingDlg.dfm:455
 #. ImageDialog..gbPos..Label3..Caption
-#: ImageDlg.dfm:310
+#: ImageDlg.dfm:304
 #. PreferencesDialog..pcPrefs..tsSheet..Panel1..gbSize..Label1..Caption
-#: PrefsDlg.dfm:58
+#: PrefsDlg.dfm:62
 msgid "Height:"
 msgstr ""
 
@@ -974,355 +976,355 @@ msgid "Properties of data curve"
 msgstr ""
 
 #. CurveDialog..gbXAxis..Caption
-#: CurveDlg.dfm:162
+#: CurveDlg.dfm:156
 #. FunctionDialog..gbXAxis..Caption
-#: FunctionDlg.dfm:281
+#: FunctionDlg.dfm:275
 #. GraphDialog..pcType..tsScaled..gbXAxis..Caption
-#: GraphDlg.dfm:544
+#: GraphDlg.dfm:545
 msgid "Select X axis"
 msgstr ""
 
 #. CurveDialog..gbXAxis..cxXRange..Caption
-#: CurveDlg.dfm:178
+#: CurveDlg.dfm:172
 #. CurveDialog..gbYAxis..cxYRange..Caption
-#: CurveDlg.dfm:202
+#: CurveDlg.dfm:196
 #. FunctionDialog..gbYAxis..cxYRange..Caption
-#: FunctionDlg.dfm:312
+#: FunctionDlg.dfm:306
 #. GraphDialog..pcType..tsScaled..gbXAxis..cxXRange..Caption
-#: GraphDlg.dfm:559
+#: GraphDlg.dfm:560
 #. GraphDialog..pcType..tsScaled..gbYAxis..cxYRange..Caption
-#: GraphDlg.dfm:583
+#: GraphDlg.dfm:584
 msgid "Align range"
 msgstr ""
 
 #. CurveDialog..gbYAxis..Caption
-#: CurveDlg.dfm:187
+#: CurveDlg.dfm:181
 #. FunctionDialog..gbYAxis..Caption
-#: FunctionDlg.dfm:297
+#: FunctionDlg.dfm:291
 #. GraphDialog..pcType..tsScaled..gbYAxis..Caption
-#: GraphDlg.dfm:568
+#: GraphDlg.dfm:569
 msgid "Select Y axis"
 msgstr ""
 
 #. CurveDialog..gbMarker..Caption
-#: CurveDlg.dfm:211
+#: CurveDlg.dfm:205
 #. TextFormatDialog..rgFormat....Items.Strings
-#: TextFormatDlg.dfm:170
+#: TextFormatDlg.dfm:164
 msgid "Symbol"
 msgstr ""
 
 #. CurveDialog..gbMarker..sbNoSym..Caption
-#: CurveDlg.dfm:305
+#: CurveDlg.dfm:299
 msgid "No symbol"
 msgstr ""
 
 #. CurveDialog..gbMarker..laSymbolSize..Caption
-#: CurveDlg.dfm:326
+#: CurveDlg.dfm:320
 #. PreferencesDialog..pcPrefs..tsLines..Panel4..gbSymbols..laSymbolSize..Caption
-#: PrefsDlg.dfm:860
+#: PrefsDlg.dfm:903
 #. PreferencesDialog..pcPrefs..tsText..Panel2..Label9..Caption
-#: PrefsDlg.dfm:1038
+#: PrefsDlg.dfm:1085
 #. TextDialog..gbProps..Label3..Caption
-#: TextDlg.dfm:314
+#: TextDlg.dfm:308
 msgid "Size:"
 msgstr ""
 
 #. CurveDialog..gbConn..Caption
-#: CurveDlg.dfm:484
+#: CurveDlg.dfm:478
 msgid "Connect points"
 msgstr ""
 
 #. CurveDialog..gbConn..laSmooth..Caption
-#: CurveDlg.dfm:505
+#: CurveDlg.dfm:499
 msgid "Smoothing:"
 msgstr ""
 
 #. CurveDialog..gbConn..rbConnect..Caption
-#: CurveDlg.dfm:541
+#: CurveDlg.dfm:535
 msgid "Linear connections"
 msgstr ""
 
 #. CurveDialog..gbConn..rbSpline..Caption
-#: CurveDlg.dfm:550
+#: CurveDlg.dfm:544
 msgid "Spline function"
 msgstr ""
 
 #. CurveDialog..gbConn..rbNoLine..Caption
-#: CurveDlg.dfm:559
+#: CurveDlg.dfm:553
 msgid "No connections"
 msgstr ""
 
 #. CurveDialog..edDescription..EditLabel.Caption
-#: CurveDlg.dfm:614
+#: CurveDlg.dfm:608
 msgid "Name of curve:"
 msgstr ""
 
 #. CurveDialog..bbData..Caption
-#: CurveDlg.dfm:622
+#: CurveDlg.dfm:616
 #. GraphDialog..paTop..bbData..Caption
-#: GraphDlg.dfm:631
+#: GraphDlg.dfm:633
 msgid "Edit data"
 msgstr ""
 
 #. CurveDialog..gbErrBars..Caption
-#: CurveDlg.dfm:631
+#: CurveDlg.dfm:625
 msgid "Show error bars"
 msgstr ""
 
 #. CurveDialog..gbErrBars..cbXErr..Caption
-#: CurveDlg.dfm:673
+#: CurveDlg.dfm:667
 msgid "X error bars"
 msgstr ""
 
 #. CurveDialog..gbErrBars..cbYErr..Caption
-#: CurveDlg.dfm:681
+#: CurveDlg.dfm:675
 msgid "Y error bars"
 msgstr ""
 
 #. DataDialog..paTop..gbXErr..Caption
-#: DataDlg.dfm:31
+#: DataDlg.dfm:35
 msgid "X error values"
 msgstr ""
 
 #. DataDialog..paTop..gbXErr..rbXSymErr..Caption
-#: DataDlg.dfm:49
+#: DataDlg.dfm:53
 #. DataDialog..paTop..gbYErr..rbYSymerr..Caption
-#: DataDlg.dfm:86
+#: DataDlg.dfm:90
 msgid "Symmetric"
 msgstr ""
 
 #. DataDialog..paTop..gbXErr..rbXAsymErr..Caption
-#: DataDlg.dfm:58
+#: DataDlg.dfm:62
 #. DataDialog..paTop..gbYErr..rbYAsymerr..Caption
-#: DataDlg.dfm:95
+#: DataDlg.dfm:99
 msgid "Asymmetric"
 msgstr ""
 
 #. DataDialog..paTop..gbYErr..Caption
-#: DataDlg.dfm:68
+#: DataDlg.dfm:72
 msgid "Y error values"
 msgstr ""
 
 #. DataDialog..paBottom..sbCol..Hint
-#: DataDlg.dfm:117
+#: DataDlg.dfm:121
 msgid "Toggle select mode (F4)"
 msgstr ""
 
 #. DataDialog..paBottom..sbNext..Hint
-#: DataDlg.dfm:197
+#: DataDlg.dfm:185
 msgid "Find / Replace next (F3)"
 msgstr ""
 
 #. DataDialog..paBottom..sbReplace..Hint
-#: DataDlg.dfm:216
+#: DataDlg.dfm:247
 msgid "Replace text (Ctrl+R)"
 msgstr ""
 
 #. DataDialog..paBottom..sbFind..Hint
-#: DataDlg.dfm:235
+#: DataDlg.dfm:309
 msgid "Find text (Ctrl+F)"
 msgstr ""
 
 #. DataDialog..paBottom..sbPaste..Hint
-#: DataDlg.dfm:254
+#: DataDlg.dfm:371
 msgid "Paste from clipboard (Ctrl+B)"
 msgstr ""
 
 #. DataDialog..paBottom..sbSort..Hint
-#: DataDlg.dfm:278
+#: DataDlg.dfm:433
 msgid "Sort data by X values (Ctrl+S)"
 msgstr ""
 
 #. DataDialog..paBottom..bbImport..Caption
-#: DataDlg.dfm:337
+#: DataDlg.dfm:501
 msgid "Import data"
 msgstr ""
 
 #. DataDialog..paBottom..paTab..Label1..Caption
-#: DataDlg.dfm:503
+#: DataDlg.dfm:657
 msgid "Tabwidth:"
 msgstr ""
 
 #. DataDialog..paBottom..cxRange..Caption
-#: DataDlg.dfm:531
+#: DataDlg.dfm:685
 msgid "Align ranges"
 msgstr ""
 
 #. DrawingDialog..gbLine..Caption
-#: DrawingDlg.dfm:181
+#: DrawingDlg.dfm:175
 #. FitDialog..gbLine..Caption
-#: FitDlg.dfm:469
+#: FitDlg.dfm:479
 #. FunctionDialog..gbLine..Caption
-#: FunctionDlg.dfm:204
+#: FunctionDlg.dfm:198
 #. Farbe - Linien
-#: DrawingDlg.pas:232
+#: DrawingDlg.pas:245
 msgid "Line properties"
 msgstr ""
 
 #. DrawingDialog..pcType..tsLine..gbBegin..Caption
-#: DrawingDlg.dfm:250
+#: DrawingDlg.dfm:244
 msgid "Start point"
 msgstr ""
 
 #. DrawingDialog..pcType..tsLine..gbBegin..Label1..Caption
-#: DrawingDlg.dfm:257
+#: DrawingDlg.dfm:251
 #. DrawingDialog..pcType..tsLine..gbEnd..Label6..Caption
-#: DrawingDlg.dfm:332
+#: DrawingDlg.dfm:326
 #. ImageDialog..gbPos..Label6..Caption
-#: ImageDlg.dfm:265
+#: ImageDlg.dfm:259
 #. ImportDialog..gbColumns..Label1..Caption
-#: ImportDlg.dfm:200
+#: ImportDlg.dfm:190
 msgid "X:"
 msgstr ""
 
 #. DrawingDialog..pcType..tsLine..gbBegin..Label3..Caption
-#: DrawingDlg.dfm:272
+#: DrawingDlg.dfm:266
 #. DrawingDialog..pcType..tsLine..gbEnd..Label8..Caption
-#: DrawingDlg.dfm:347
+#: DrawingDlg.dfm:341
 #. ImageDialog..gbPos..Label8..Caption
-#: ImageDlg.dfm:280
+#: ImageDlg.dfm:274
 #. ImportDialog..gbColumns..Label6..Caption
-#: ImportDlg.dfm:227
+#: ImportDlg.dfm:217
 msgid "Y:"
 msgstr ""
 
 #. DrawingDialog..pcType..tsLine..gbBegin..cbStartArrow..Caption
-#: DrawingDlg.dfm:315
+#: DrawingDlg.dfm:309
 #. DrawingDialog..pcType..tsLine..gbEnd..cbEndArrow..Caption
-#: DrawingDlg.dfm:390
+#: DrawingDlg.dfm:384
 msgid "With arrow head"
 msgstr ""
 
 #. DrawingDialog..pcType..tsLine..gbEnd..Caption
-#: DrawingDlg.dfm:325
+#: DrawingDlg.dfm:319
 msgid "End point"
 msgstr ""
 
 #. DrawingDialog..pcType..tsRect..gbRect..Caption
-#: DrawingDlg.dfm:405
+#: DrawingDlg.dfm:403
 #. ImageDialog..gbPos..Caption
-#: ImageDlg.dfm:258
+#: ImageDlg.dfm:252
 msgid "Position and size"
 msgstr ""
 
 #. DrawingDialog..pcType..tsRect..gbRect..Label13..Caption
-#: DrawingDlg.dfm:412
+#: DrawingDlg.dfm:410
 #. TextDialog..gbPos..Label6..Caption
-#: TextDlg.dfm:434
+#: TextDlg.dfm:453
 msgid "From left:"
 msgstr ""
 
 #. DrawingDialog..pcType..tsRect..gbRect..Label15..Caption
-#: DrawingDlg.dfm:427
+#: DrawingDlg.dfm:425
 #. TextDialog..gbPos..Label8..Caption
-#: TextDlg.dfm:449
+#: TextDlg.dfm:468
 msgid "From bottom:"
 msgstr ""
 
 #. DrawingDialog..pcProps..tsArrow..gbHead..Caption
-#: DrawingDlg.dfm:542
+#: DrawingDlg.dfm:544
 msgid "Arrow head"
 msgstr ""
 
 #. DrawingDialog..pcProps..tsArrow..gbHead..Label5..Caption
-#: DrawingDlg.dfm:549
+#: DrawingDlg.dfm:551
 msgid "Length:"
 msgstr ""
 
 #. DrawingDialog..pcProps..tsFill..gbBackground..Caption
-#: DrawingDlg.dfm:613
+#: DrawingDlg.dfm:615
 #. PreferencesDialog..pcPrefs..tsCharts..Panel3..gbBackground..Caption
-#: PrefsDlg.dfm:425
+#: PrefsDlg.dfm:460
 #. TextDialog..gbBackground..Caption
-#: TextDlg.dfm:170
+#: TextDlg.dfm:164
 msgid "Background"
 msgstr ""
 
 #. DrawingDialog..pcProps..tsFill..cbBorder..Caption
-#: DrawingDlg.dfm:697
+#: DrawingDlg.dfm:699
 msgid "Visible border"
 msgstr ""
 
 #. FitDialog..edDescription..EditLabel.Caption
-#: FitDlg.dfm:163
+#: FitDlg.dfm:159
 msgid "Name of best-fit curve:"
 msgstr ""
 
 #. FitDialog..gbCurve..Caption
-#: FitDlg.dfm:171
+#: FitDlg.dfm:167
 msgid "Select data curve"
 msgstr ""
 
 #. FitDialog..gbFitrange..Caption
-#: FitDlg.dfm:188
+#: FitDlg.dfm:184
 msgid "X values for fit"
 msgstr ""
 
 #. FitDialog..gbFitrange..rbAll..Caption
-#: FitDlg.dfm:213
+#: FitDlg.dfm:209
 msgid "Data  range"
 msgstr ""
 
 #. FitDialog..gbFitrange..rbRange..Caption
-#: FitDlg.dfm:224
+#: FitDlg.dfm:220
 #. FunctionDialog..gbFuncRange..rbRange..Caption
-#: FunctionDlg.dfm:474
+#: FunctionDlg.dfm:479
 msgid "Section"
 msgstr ""
 
 #. FitDialog..gbFitrange..buSetMin..Caption
-#: FitDlg.dfm:233
+#: FitDlg.dfm:229
 #. FunctionDialog..gbFuncRange..buSetMin..Caption
-#: FunctionDlg.dfm:483
+#: FunctionDlg.dfm:488
 msgid "Min"
 msgstr ""
 
 #. FitDialog..gbFitrange..buSetMax..Caption
-#: FitDlg.dfm:242
+#: FitDlg.dfm:238
 #. FunctionDialog..gbFuncRange..buSetMax..Caption
-#: FunctionDlg.dfm:492
+#: FunctionDlg.dfm:497
 msgid "Max"
 msgstr ""
 
 #. FitDialog..rgAnzeige..Caption
-#: FitDlg.dfm:274
+#: FitDlg.dfm:270
 msgid "Show best-fit function for"
 msgstr ""
 
 #. FitDialog..rgAnzeige....Items.Strings
-#: FitDlg.dfm:278
+#: FitDlg.dfm:274
 msgid "Data range"
 msgstr ""
 
 #. FitDialog..rgAnzeige....Items.Strings
-#: FitDlg.dfm:279
+#: FitDlg.dfm:275
 #. FunctionDialog..gbFuncRange..rbAll..Caption
-#: FunctionDlg.dfm:463
+#: FunctionDlg.dfm:468
 msgid "Axis range"
 msgstr ""
 
 #. FitDialog..gbFitType..Caption
-#: FitDlg.dfm:415
+#: FitDlg.dfm:425
 msgid "Best-fit function"
 msgstr ""
 
 #. FitDialog..gbFitType..laDegree..Caption
-#: FitDlg.dfm:422
+#: FitDlg.dfm:432
 msgid "Degree:"
 msgstr ""
 
 #. FitDialog..gbFitType..rbPoly..Caption
-#: FitDlg.dfm:429
+#: FitDlg.dfm:439
 msgid "Polynomial"
 msgstr ""
 
 #. FitDialog..rgXScale..Caption
-#: FitDlg.dfm:527
+#: FitDlg.dfm:537
 msgid "X scaling"
 msgstr ""
 
 #. FitDialog..rgYScale..Caption
-#: FitDlg.dfm:541
+#: FitDlg.dfm:551
 msgid "Y scaling"
 msgstr ""
 
@@ -1332,144 +1334,139 @@ msgid "Function properties"
 msgstr ""
 
 #. FunctionDialog..gbFormula..Caption
-#: FunctionDlg.dfm:162
+#: FunctionDlg.dfm:156
 msgid "Formula"
 msgstr ""
 
 #. FunctionDialog..gbFormula..Label15..Caption
-#: FunctionDlg.dfm:172
+#: FunctionDlg.dfm:166
 msgid "y ="
 msgstr ""
 
 #. FunctionDialog..gbFormula..Label2..Caption
-#: FunctionDlg.dfm:185
+#: FunctionDlg.dfm:179
 msgid "Constants:"
 msgstr ""
 
 #. FunctionDialog..gbFormula..edFormula..Hint
-#: FunctionDlg.dfm:192
+#: FunctionDlg.dfm:186
 msgid "Insert f(x), e.g. x^2+3*x+1"
 msgstr ""
 
 #. FunctionDialog..edDescription..EditLabel.Caption
-#: FunctionDlg.dfm:273
+#: FunctionDlg.dfm:267
 msgid "Name of function:"
 msgstr ""
 
 #. FunctionDialog..gbFuncRange..Caption
-#: FunctionDlg.dfm:438
+#: FunctionDlg.dfm:443
 msgid "X range for function"
 msgstr ""
 
 #. FunctionDialog..gbAngUnit..Label1..Caption
-#: FunctionDlg.dfm:530
+#: FunctionDlg.dfm:535
 msgid "Angular unit:"
 msgstr ""
 
 #. FunctionDialog..gbAngUnit..cbAngUnit..Text
-#: FunctionDlg.dfm:539
+#: FunctionDlg.dfm:544
 #. FunctionDialog..gbAngUnit..cbAngUnit....Items.Strings
-#: FunctionDlg.dfm:542
+#: FunctionDlg.dfm:547
 msgid "Degree (°)"
 msgstr ""
 
 #. FunctionDialog..gbAngUnit..cbAngUnit....Items.Strings
-#: FunctionDlg.dfm:541
+#: FunctionDlg.dfm:546
 msgid "Radiant (rad)"
 msgstr ""
 
 #. FunctionDialog..gbAngUnit..cbAngUnit....Items.Strings
-#: FunctionDlg.dfm:543
+#: FunctionDlg.dfm:548
 msgid "Gradian (gon)"
 msgstr ""
 
 #. GraphDialog..pcType..tsScaled..gbDesign..Caption
-#: GraphDlg.dfm:310
+#: GraphDlg.dfm:321
 msgid "Design"
 msgstr ""
 
 #. GraphDialog..pcType..tsScaled..gbDesign..Label2..Caption
-#: GraphDlg.dfm:331
+#: GraphDlg.dfm:342
 msgid "Border:"
 msgstr ""
 
-#. GraphDialog..pcType..tsScaled..gbDesign..laBakCol..Caption
-#: GraphDlg.dfm:338
-msgid "Background:"
-msgstr ""
-
 #. GraphDialog..pcType..tsScaled..gbDesign..Label1..Caption
-#: GraphDlg.dfm:352
+#: GraphDlg.dfm:356
 msgid "Colors:"
 msgstr ""
 
 #. GraphDialog..pcType..tsScaled..gbDesign..pcSubType..tsBar..Label3..Caption
-#: GraphDlg.dfm:460
+#: GraphDlg.dfm:465
 msgid "Bar width:"
 msgstr ""
 
 #. GraphDialog..pcType..tsScaled..gbDesign..pcSubType..tsBar..Label7..Caption
-#: GraphDlg.dfm:474
+#: GraphDlg.dfm:479
 msgid "Bar offset:"
 msgstr ""
 
 #. GraphDialog..pcType..tsScaled..gbDesign..pcSubType..tsHisto..Label9..Caption
-#: GraphDlg.dfm:523
+#: GraphDlg.dfm:524
 msgid "Number of stripes for histogram:"
 msgstr ""
 
 #. GraphDialog..pcType..tsPie..gbPie..Caption
-#: GraphDlg.dfm:602
+#: GraphDlg.dfm:601
 #. Torte
-#: GraphDlg.pas:366
-#: RPlotObjects.pas:3742
+#: GraphDlg.pas:377
+#: RPlotObjects.pas:3745
 msgid "Pie chart"
 msgstr ""
 
 #. ImageDialog..edDescription..EditLabel.Caption
-#: ImageDlg.dfm:185
+#: ImageDlg.dfm:179
 msgid "Name of image:"
 msgstr ""
 
 #. ImageDialog..gbBorder..laBWidth..Caption
-#: ImageDlg.dfm:201
+#: ImageDlg.dfm:195
 #. TextDialog..gbBorder..laBWidth..Caption
-#: TextDlg.dfm:261
+#: TextDlg.dfm:255
 msgid "Border width:"
 msgstr ""
 
 #. ImageDialog..gbPos..cbRatio..Caption
-#: ImageDlg.dfm:379
+#: ImageDlg.dfm:373
 msgid "Retain aspect ratio"
 msgstr ""
 
 #. ImageDialog..bbLoadImage..Caption
-#: ImageDlg.dfm:402
+#: ImageDlg.dfm:396
 msgid "Load image"
 msgstr ""
 
 #. ImageDialog..bbPaste..Caption
-#: ImageDlg.dfm:465
+#: ImageDlg.dfm:459
 msgid "Paste image"
 msgstr ""
 
 #. ImageDialog..gbImgSize..Caption
-#: ImageDlg.dfm:530
+#: ImageDlg.dfm:551
 msgid "Original size"
 msgstr ""
 
 #. ImageDialog..gbImgSize..cbReduce..Caption
-#: ImageDlg.dfm:544
+#: ImageDlg.dfm:565
 msgid "Downsize image to"
 msgstr ""
 
 #. ImageDialog..OpenPictureDialog....Filter
-#: ImageDlg.dfm:574
+#: ImageDlg.dfm:595
 msgid "All (*.gif;*.png;*.jpg;*.jpeg;*.bmp;*.tif;*.tiff;*.ico;*.emf;*.wmf)|*."
 "gif;*.png;*.jpg;*.jpeg;*.bmp;*.tif;*.tiff;*.emf;*.wmf|GIF image "
 "(*.gif)|*.gif|Portable Network Graphics (*.png)|*.png|JPEG image "
 "(*.jpg;*.jpeg)|*.jpg;*.jpeg|Windows bitmap (*.bmp)|*.bmp|TIFF image "
-"(*.tif;*.tiff)|*.tif;*.tiff|Extenden metafile (*.emf)|*.emf|Metafile "
+"(*.tif;*.tiff)|*.tif;*.tiff|Extended metafile (*.emf)|*.emf|Metafile "
 "(*.wmf)|*.wmf"
 msgstr ""
 
@@ -1484,114 +1481,114 @@ msgid "Reduce data by factor"
 msgstr ""
 
 #. ImportDialog..rgDecimal..Caption
-#: ImportDlg.dfm:177
+#: ImportDlg.dfm:167
 msgid "Decimal separator"
 msgstr ""
 
 #. ImportDialog..rgDecimal....Items.Strings
-#: ImportDlg.dfm:181
+#: ImportDlg.dfm:171
 #. PreferencesDialog..pcPrefs..tsAxes..Panel6..cbDecSep....Items.Strings
-#: PrefsDlg.dfm:734
+#: PrefsDlg.dfm:773
 msgid "Point"
 msgstr ""
 
 #. ImportDialog..rgDecimal....Items.Strings
-#: ImportDlg.dfm:182
+#: ImportDlg.dfm:172
 #. ImportDialog..gbDelim..rbComma..Caption
-#: ImportDlg.dfm:633
+#: ImportDlg.dfm:623
 #. PreferencesDialog..pcPrefs..tsAxes..Panel6..cbDecSep..Text
-#: PrefsDlg.dfm:732
+#: PrefsDlg.dfm:771
 #. PreferencesDialog..pcPrefs..tsAxes..Panel6..cbDecSep....Items.Strings
-#: PrefsDlg.dfm:735
+#: PrefsDlg.dfm:774
 msgid "Comma"
 msgstr ""
 
 #. ImportDialog..gbColumns..Caption
-#: ImportDlg.dfm:191
+#: ImportDlg.dfm:181
 msgid "Columns"
 msgstr ""
 
 #. ImportDialog..gbColumns..laXM..Caption
-#: ImportDlg.dfm:209
+#: ImportDlg.dfm:199
 msgid "-X-Err.:"
 msgstr ""
 
 #. ImportDialog..gbColumns..laXP..Caption
-#: ImportDlg.dfm:218
+#: ImportDlg.dfm:208
 msgid "+X-Err.:"
 msgstr ""
 
 #. ImportDialog..gbColumns..laYM..Caption
-#: ImportDlg.dfm:268
+#: ImportDlg.dfm:258
 msgid "-Y-Err.:"
 msgstr ""
 
 #. ImportDialog..gbColumns..laYP..Caption
-#: ImportDlg.dfm:277
+#: ImportDlg.dfm:267
 msgid "+Y-Err.:"
 msgstr ""
 
 #. ImportDialog..gbLine..Caption
-#: ImportDlg.dfm:487
+#: ImportDlg.dfm:477
 msgid "Read data from"
 msgstr ""
 
 #. ImportDialog..gbLine..Label4..Caption
-#: ImportDlg.dfm:494
+#: ImportDlg.dfm:484
 msgid "First line:"
 msgstr ""
 
 #. ImportDialog..paPreview..Label3..Caption
-#: ImportDlg.dfm:529
+#: ImportDlg.dfm:519
 msgid "Data of import file:"
 msgstr ""
 
 #. ImportDialog..gbQuote..Caption
-#: ImportDlg.dfm:553
+#: ImportDlg.dfm:543
 msgid "Quote character"
 msgstr ""
 
 #. ImportDialog..gbQuote..rbNoQuote..Caption
-#: ImportDlg.dfm:560
+#: ImportDlg.dfm:550
 #. PreferencesDialog..pcPrefs..tsLines..Panel4..gbSymbols..cxSymbols....Items.Strings
-#: PrefsDlg.dfm:907
+#: PrefsDlg.dfm:950
 msgid "None"
 msgstr ""
 
 #. ImportDialog..gbQuote..rbQuote..Caption
-#: ImportDlg.dfm:571
+#: ImportDlg.dfm:561
 msgid "Double quote"
 msgstr ""
 
 #. ImportDialog..gbQuote..rbOtherQuote..Caption
-#: ImportDlg.dfm:580
+#: ImportDlg.dfm:570
 #. ImportDialog..gbDelim..rbOtherDel..Caption
-#: ImportDlg.dfm:642
+#: ImportDlg.dfm:632
 msgid "Other"
 msgstr ""
 
 #. ImportDialog..gbDelim..Caption
-#: ImportDlg.dfm:597
+#: ImportDlg.dfm:587
 msgid "Column separator"
 msgstr ""
 
 #. ImportDialog..gbDelim..rbSpace..Caption
-#: ImportDlg.dfm:604
+#: ImportDlg.dfm:594
 msgid "Space"
 msgstr ""
 
 #. ImportDialog..gbDelim..rbTab..Caption
-#: ImportDlg.dfm:613
+#: ImportDlg.dfm:603
 msgid "Tab"
 msgstr ""
 
 #. ImportDialog..gbDelim..rbSemi..Caption
-#: ImportDlg.dfm:624
+#: ImportDlg.dfm:614
 msgid "Semicolon"
 msgstr ""
 
 #. ImportDialog..gbDelim..rbSlash..Caption
-#: ImportDlg.dfm:659
+#: ImportDlg.dfm:649
 msgid "Slash"
 msgstr ""
 
@@ -1601,815 +1598,815 @@ msgid "Select font"
 msgstr ""
 
 #. PlotFontDialog..cbBold..Caption
-#: PlotFontDlg.dfm:171
+#: PlotFontDlg.dfm:165
 #. PreferencesDialog..pcPrefs..tsText..Panel2..cbBold..Caption
-#: PrefsDlg.dfm:1095
+#: PrefsDlg.dfm:1142
 #. TextDialog..gbProps..cbBold..Caption
-#: TextDlg.dfm:343
+#: TextDlg.dfm:337
 #. TextFormatDialog..rgFormat....Items.Strings
-#: TextFormatDlg.dfm:166
+#: TextFormatDlg.dfm:160
 msgid "Bold"
 msgstr ""
 
 #. PlotFontDialog..cbItalic..Caption
-#: PlotFontDlg.dfm:180
+#: PlotFontDlg.dfm:174
 #. PreferencesDialog..pcPrefs..tsText..Panel2..cbItalic..Caption
-#: PrefsDlg.dfm:1086
+#: PrefsDlg.dfm:1133
 #. TextDialog..gbProps..cbItalic..Caption
-#: TextDlg.dfm:352
+#: TextDlg.dfm:346
 #. TextFormatDialog..rgFormat....Items.Strings
-#: TextFormatDlg.dfm:167
+#: TextFormatDlg.dfm:161
 msgid "Italic"
 msgstr ""
 
 #. PlotFontDialog..bbColor..Hint
-#: PlotFontDlg.dfm:204
+#: PlotFontDlg.dfm:198
 #. PreferencesDialog..pcPrefs..tsText..Panel2..bbColor..Hint
-#: PrefsDlg.dfm:1117
+#: PrefsDlg.dfm:1164
 #. TextDialog..gbProps..bbColor..Hint
-#: TextDlg.dfm:387
+#: TextDlg.dfm:381
 msgid "Select color"
 msgstr ""
 
 #. PlotFontDialog..bbColor..Caption
-#: PlotFontDlg.dfm:205
+#: PlotFontDlg.dfm:199
 #. PreferencesDialog..pcPrefs..tsText..Panel2..bbColor..Caption
-#: PrefsDlg.dfm:1118
+#: PrefsDlg.dfm:1165
 #. TextDialog..gbProps..bbColor..Caption
-#: TextDlg.dfm:388
+#: TextDlg.dfm:382
 msgid "Color"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsSheet..Caption
-#: PrefsDlg.dfm:26
+#: PrefsDlg.dfm:30
 msgid "Sheet"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsSheet..Panel1..gbSize..Label5..Caption
-#: PrefsDlg.dfm:66
+#: PrefsDlg.dfm:70
 msgid "Background color:"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsSheet..Panel1..gbSize..cbForms..Text
-#: PrefsDlg.dfm:100
+#: PrefsDlg.dfm:104
 #. PreferencesDialog..pcPrefs..tsSheet..Panel1..gbSize..cbForms....Items.Strings
-#: PrefsDlg.dfm:105
+#: PrefsDlg.dfm:109
 msgid "ISO A4"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsSheet..Panel1..gbSize..cbForms....Items.Strings
-#: PrefsDlg.dfm:103
-#: PrefsDlg.pas:335
+#: PrefsDlg.dfm:107
+#: PrefsDlg.pas:341
 msgid "User defined"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsSheet..Panel1..gbSize..cbForms....Items.Strings
-#: PrefsDlg.dfm:104
+#: PrefsDlg.dfm:108
 msgid "ISO A3"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsSheet..Panel1..gbSize..cbForms....Items.Strings
-#: PrefsDlg.dfm:106
+#: PrefsDlg.dfm:110
 msgid "ISO A5"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsSheet..Panel1..gbSize..cbForms....Items.Strings
-#: PrefsDlg.dfm:107
+#: PrefsDlg.dfm:111
 msgid "ISO A6"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsSheet..Panel1..gbSize..cbForms....Items.Strings
-#: PrefsDlg.dfm:108
+#: PrefsDlg.dfm:112
 msgid "Letter"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsSheet..Panel1..gbSize..cbForms....Items.Strings
-#: PrefsDlg.dfm:109
+#: PrefsDlg.dfm:113
 msgid "Legal"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsSheet..Panel1..gbSize..rbPortrait..Caption
-#: PrefsDlg.dfm:146
+#: PrefsDlg.dfm:150
 msgid "Portrait"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsSheet..Panel1..gbSize..rbLandscape..Caption
-#: PrefsDlg.dfm:157
+#: PrefsDlg.dfm:161
 msgid "Landscape"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsSheet..Panel1..gbMargin..Caption
-#: PrefsDlg.dfm:227
+#: PrefsDlg.dfm:258
 msgid "Margins"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsSheet..Panel1..gbMargin..Label6..Caption
-#: PrefsDlg.dfm:251
+#: PrefsDlg.dfm:282
 msgid "Right:"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsSheet..Panel1..gbMargin..Label7..Caption
-#: PrefsDlg.dfm:259
+#: PrefsDlg.dfm:290
 msgid "Top:"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsCharts..Caption
-#: PrefsDlg.dfm:353
+#: PrefsDlg.dfm:384
 msgid "Charts"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsCharts..Panel3..Label8..Caption
-#: PrefsDlg.dfm:370
+#: PrefsDlg.dfm:405
 msgid "Default space around chart:"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsCharts..Panel3..Label15..Caption
-#: PrefsDlg.dfm:378
+#: PrefsDlg.dfm:413
 msgid "Space for axis labeling:"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsAxes..Caption
-#: PrefsDlg.dfm:523
+#: PrefsDlg.dfm:558
 msgid "Axes"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsAxes..Panel6..Label38..Caption
-#: PrefsDlg.dfm:556
+#: PrefsDlg.dfm:595
 msgid "Decimal separator:"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsAxes..Panel6..Label39..Caption
-#: PrefsDlg.dfm:564
+#: PrefsDlg.dfm:603
 msgid "Tick length:"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsAxes..Panel6..cxBorder..Caption
-#: PrefsDlg.dfm:579
+#: PrefsDlg.dfm:618
 msgid "Enframe chart with axes"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsAxes..Panel6..gbLabels..Caption
-#: PrefsDlg.dfm:587
+#: PrefsDlg.dfm:626
 msgid "Labels"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsAxes..Panel6..gbLabels..Label16..Caption
-#: PrefsDlg.dfm:595
+#: PrefsDlg.dfm:634
 #. PreferencesDialog..pcPrefs..tsAxes..Panel6..gbCaption..Label17..Caption
-#: PrefsDlg.dfm:659
+#: PrefsDlg.dfm:698
 msgid "Distance to axis:"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsAxes..Panel6..gbLabels..Label19..Caption
-#: PrefsDlg.dfm:603
+#: PrefsDlg.dfm:642
 #. PreferencesDialog..pcPrefs..tsAxes..Panel6..gbCaption..Label20..Caption
-#: PrefsDlg.dfm:667
+#: PrefsDlg.dfm:706
 msgid "Font size:"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsLines..Caption
-#: PrefsDlg.dfm:755
+#: PrefsDlg.dfm:794
 msgid "Lines and symbols"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsLines..Panel4..gbLines..Caption
-#: PrefsDlg.dfm:770
+#: PrefsDlg.dfm:813
 msgid "Lines"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsLines..Panel4..gbSymbols..Caption
-#: PrefsDlg.dfm:844
+#: PrefsDlg.dfm:887
 msgid "Symbols"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsLines..Panel4..gbSymbols..Label13..Caption
-#: PrefsDlg.dfm:852
+#: PrefsDlg.dfm:895
 msgid "Type:"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsLines..Panel4..gbSymbols..cxSymbols..Text
-#: PrefsDlg.dfm:893
+#: PrefsDlg.dfm:936
 #. PreferencesDialog..pcPrefs..tsLines..Panel4..gbSymbols..cxSymbols....Items.Strings
-#: PrefsDlg.dfm:895
+#: PrefsDlg.dfm:938
 msgid "Dot"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsLines..Panel4..gbSymbols..cxSymbols....Items.Strings
-#: PrefsDlg.dfm:896
+#: PrefsDlg.dfm:939
 msgid "Diamond - solid"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsLines..Panel4..gbSymbols..cxSymbols....Items.Strings
-#: PrefsDlg.dfm:897
+#: PrefsDlg.dfm:940
 msgid "Triangle - solid"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsLines..Panel4..gbSymbols..cxSymbols....Items.Strings
-#: PrefsDlg.dfm:898
+#: PrefsDlg.dfm:941
 msgid "Square - solid"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsLines..Panel4..gbSymbols..cxSymbols....Items.Strings
-#: PrefsDlg.dfm:899
+#: PrefsDlg.dfm:942
 msgid "Delta - solid"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsLines..Panel4..gbSymbols..cxSymbols....Items.Strings
-#: PrefsDlg.dfm:900
+#: PrefsDlg.dfm:943
 msgid "Circle"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsLines..Panel4..gbSymbols..cxSymbols....Items.Strings
-#: PrefsDlg.dfm:901
+#: PrefsDlg.dfm:944
 msgid "Diamond - outline"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsLines..Panel4..gbSymbols..cxSymbols....Items.Strings
-#: PrefsDlg.dfm:902
+#: PrefsDlg.dfm:945
 msgid "Triangle - outline"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsLines..Panel4..gbSymbols..cxSymbols....Items.Strings
-#: PrefsDlg.dfm:903
+#: PrefsDlg.dfm:946
 msgid "Square - outline"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsLines..Panel4..gbSymbols..cxSymbols....Items.Strings
-#: PrefsDlg.dfm:904
+#: PrefsDlg.dfm:947
 msgid "Delta - outline"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsLines..Panel4..gbSymbols..cxSymbols....Items.Strings
-#: PrefsDlg.dfm:905
+#: PrefsDlg.dfm:948
 msgid "Plus"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsLines..Panel4..gbSymbols..cxSymbols....Items.Strings
-#: PrefsDlg.dfm:906
+#: PrefsDlg.dfm:949
 msgid "Cross"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsLines..Panel4..GroupBox1..Caption
-#: PrefsDlg.dfm:930
+#: PrefsDlg.dfm:973
 msgid "Fill color"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsText..Caption
-#: PrefsDlg.dfm:1023
+#: PrefsDlg.dfm:1066
 #. frmSheet..paMain..gbObjects..bbAddText..Hint
-#: RPlotMain.dfm:1030
-#: RPlotObjects.pas:4117
+#: RPlotMain.dfm:1877
+#: RPlotObjects.pas:4119
 msgid "Text"
 msgstr ""
 
 #. PreferencesDialog..pcPrefs..tsText..Panel2..Label18..Caption
-#: PrefsDlg.dfm:1045
+#: PrefsDlg.dfm:1092
 msgid "Font:"
 msgstr ""
 
 #. PreferencesDialog..paBottom..bbDefault..Hint
-#: PrefsDlg.dfm:1306
+#: PrefsDlg.dfm:1343
 msgid "Reset to program defaults"
 msgstr ""
 
 #. PreferencesDialog..paBottom..rgUnit....Items.Strings
-#: PrefsDlg.dfm:1336
+#: PrefsDlg.dfm:1411
 msgid "inch"
 msgstr ""
 
 #. PreferencesDialog..paBottom..bbLoadTemplate..Hint
-#: PrefsDlg.dfm:1345
+#: PrefsDlg.dfm:1420
 msgid "Load preferences from file"
 msgstr ""
 
 #. PreferencesDialog..paBottom..bbSavePrefs..Hint
-#: PrefsDlg.dfm:1371
+#: PrefsDlg.dfm:1484
 msgid "Save preferences to file"
 msgstr ""
 
 #. PreferencesDialog..paDesc..edDesc..EditLabel.Caption
-#: PrefsDlg.dfm:1473
+#: PrefsDlg.dfm:1559
 #. frmSheet..paMain..edDesc..EditLabel.Caption
-#: RPlotMain.dfm:679
+#: RPlotMain.dfm:1401
 msgid "Description:"
 msgstr ""
 
 #. frmSheet..paLeft..sbCopy..Hint
-#: RPlotMain.dfm:39
+#: RPlotMain.dfm:43
 msgid "Copy to clipboard"
 msgstr ""
 
 #. frmSheet..paLeft..sbEps..Hint
-#: RPlotMain.dfm:63
+#: RPlotMain.dfm:105
 msgid "Export as EPS"
 msgstr ""
 
 #. frmSheet..paLeft..sbLoad..Hint
-#: RPlotMain.dfm:100
+#: RPlotMain.dfm:142
 msgid "Load sheet"
 msgstr ""
 
 #. frmSheet..paLeft..sbNewSheet..Hint
-#: RPlotMain.dfm:123
+#: RPlotMain.dfm:204
 #. ***
-#: RPlotMain.pas:459
-#: RPlotMain.pas:523
+#: RPlotMain.pas:478
+#: RPlotMain.pas:542
 msgid "New sheet"
 msgstr ""
 
 #. frmSheet..paLeft..sbPrint..Hint
-#: RPlotMain.dfm:142
+#: RPlotMain.dfm:266
 msgid "Print sheet"
 msgstr ""
 
 #. frmSheet..paLeft..sbQuit..Hint
-#: RPlotMain.dfm:166
+#: RPlotMain.dfm:328
 msgid "Quit program"
 msgstr ""
 
 #. frmSheet..paLeft..sbRefresh..Hint
-#: RPlotMain.dfm:228
+#: RPlotMain.dfm:419
 msgid "Refresh graphic"
 msgstr ""
 
 #. frmSheet..paLeft..sbSaveSheet..Hint
-#: RPlotMain.dfm:247
+#: RPlotMain.dfm:481
 msgid "Save sheet"
 msgstr ""
 
 #. frmSheet..paLeft..sbSaveSheetAs..Hint
-#: RPlotMain.dfm:276
+#: RPlotMain.dfm:543
 msgid "Save sheet as .."
 msgstr ""
 
 #. frmSheet..paLeft..sbZoomIn..Hint
-#: RPlotMain.dfm:299
+#: RPlotMain.dfm:605
 msgid "Zoom in"
 msgstr ""
 
 #. frmSheet..paLeft..sbZoomOut..Hint
-#: RPlotMain.dfm:318
+#: RPlotMain.dfm:667
 msgid "Zoom out"
 msgstr ""
 
 #. frmSheet..paLeft..sbPipette..Hint
-#: RPlotMain.dfm:337
+#: RPlotMain.dfm:729
 msgid "Pick up color from sheet"
 msgstr ""
 
 #. frmSheet..paLeft..sbLoadHist..Hint
-#: RPlotMain.dfm:376
+#: RPlotMain.dfm:793
 msgid "Recently used sheets"
 msgstr ""
 
 #. frmSheet..paLeft..itViewAll..Hint
-#: RPlotMain.dfm:400
+#: RPlotMain.dfm:855
 msgid "Align size"
 msgstr ""
 
 #. frmSheet..paMain..Label3..Caption
-#: RPlotMain.dfm:434
+#: RPlotMain.dfm:928
 msgid "Charts:"
 msgstr ""
 
 #. frmSheet..paMain..sbItemUp..Hint
-#: RPlotMain.dfm:447
+#: RPlotMain.dfm:941
 msgid "Send object backward"
 msgstr ""
 
 #. frmSheet..paMain..sbItemDown..Hint
-#: RPlotMain.dfm:473
+#: RPlotMain.dfm:1005
 msgid "Bring object forward"
 msgstr ""
 
 #. frmSheet..paMain..sbChartUp..Hint
-#: RPlotMain.dfm:499
+#: RPlotMain.dfm:1069
 msgid "Send chart backward"
 msgstr ""
 
 #. frmSheet..paMain..sbChartDown..Hint
-#: RPlotMain.dfm:525
+#: RPlotMain.dfm:1133
 msgid "Bring chart forward"
 msgstr ""
 
 #. frmSheet..paMain..laArea..Caption
-#: RPlotMain.dfm:551
+#: RPlotMain.dfm:1197
 #. sheet was changed
-#: RPlotMain.pas:717
+#: RPlotMain.pas:736
 msgid "Provided area:"
 msgstr ""
 
 #. frmSheet..paMain..bbNewChart..Hint
-#: RPlotMain.dfm:558
+#: RPlotMain.dfm:1204
 msgid "Add new chart to sheet"
 msgstr ""
 
 #. frmSheet..paMain..bbNewChart..Caption
-#: RPlotMain.dfm:560
+#: RPlotMain.dfm:1206
 msgid "New chart"
 msgstr ""
 
 #. frmSheet..paMain..bbEditChart..Hint
-#: RPlotMain.dfm:623
+#: RPlotMain.dfm:1269
 msgid "Edit selected chart"
 msgstr ""
 
 #. frmSheet..paMain..bbRemoveChart..Hint
-#: RPlotMain.dfm:649
+#: RPlotMain.dfm:1333
 msgid "Remove selected chart from sheet"
 msgstr ""
 
 #. frmSheet..paMain..bbRemoveChart..Caption
-#: RPlotMain.dfm:651
+#: RPlotMain.dfm:1335
 #. frmSheet..paMain..bbRemoveItem..Caption
-#: RPlotMain.dfm:739
+#: RPlotMain.dfm:1548
 msgid "Remove"
 msgstr ""
 
 #. frmSheet..paMain..bbEditSheet..Hint
-#: RPlotMain.dfm:688
+#: RPlotMain.dfm:1410
 msgid "Edit sheet properties"
 msgstr ""
 
 #. frmSheet..paMain..bbEditItem..Hint
-#: RPlotMain.dfm:710
+#: RPlotMain.dfm:1481
 msgid "Edit selected object"
 msgstr ""
 
 #. frmSheet..paMain..bbEditItem..Caption
-#: RPlotMain.dfm:712
+#: RPlotMain.dfm:1483
 msgid "Edit"
 msgstr ""
 
 #. frmSheet..paMain..bbRemoveItem..Hint
-#: RPlotMain.dfm:737
+#: RPlotMain.dfm:1546
 msgid "Remove selected object from chart"
 msgstr ""
 
 #. frmSheet..paMain..gbObjects..Caption
-#: RPlotMain.dfm:765
+#: RPlotMain.dfm:1612
 msgid "Add to chart"
 msgstr ""
 
 #. frmSheet..paMain..gbObjects..bbAddAxis..Hint
-#: RPlotMain.dfm:772
+#: RPlotMain.dfm:1619
 #. SelectAxisDialog..Label2..Caption
-#: SelectAxisDlg.dfm:30
-#: RPlotObjects.pas:2838
+#: SelectAxisDlg.dfm:34
+#: RPlotObjects.pas:2841
 msgid "Axis"
 msgstr ""
 
 #. frmSheet..paMain..gbObjects..bbAddCurve..Hint
-#: RPlotMain.dfm:833
-#: RPlotObjects.pas:3162
+#: RPlotMain.dfm:1680
+#: RPlotObjects.pas:3165
 msgid "Data curve"
 msgstr ""
 
 #. frmSheet..paMain..gbObjects..bbAddFunction..Hint
-#: RPlotMain.dfm:894
-#: FunctionDlg.pas:373
-#: RPlotObjects.pas:3940
+#: RPlotMain.dfm:1741
+#: FunctionDlg.pas:386
+#: RPlotObjects.pas:3943
 msgid "Function"
 msgstr ""
 
 #. frmSheet..paMain..gbObjects..bbAddImage..Hint
-#: RPlotMain.dfm:955
-#: ImageDlg.pas:328
-#: RPlotObjects.pas:4265
+#: RPlotMain.dfm:1802
+#: ImageDlg.pas:341
+#: RPlotObjects.pas:4267
 msgid "Image"
 msgstr ""
 
 #. frmSheet..paMain..gbObjects..bbAddFit..Hint
-#: RPlotMain.dfm:1105
-#: FitDlg.pas:383
-#: RPlotObjects.pas:3406
+#: RPlotMain.dfm:1952
+#: FitDlg.pas:396
+#: RPlotObjects.pas:3409
 msgid "Best-fit curve"
 msgstr ""
 
 #. frmSheet..paMain..gbObjects..bbAddGraph..Hint
-#: RPlotMain.dfm:1227
+#: RPlotMain.dfm:2074
 msgid "Data graph"
 msgstr ""
 
 #. frmSheet..paMain..bbDupChart..Hint
-#: RPlotMain.dfm:1289
+#: RPlotMain.dfm:2136
 msgid "Duplicate selected chart"
 msgstr ""
 
 #. frmSheet..paMain..lvItems......Caption
-#: RPlotMain.dfm:1318
+#: RPlotMain.dfm:2203
 #. frmSheet..paMain..lvCharts......Caption
-#: RPlotMain.dfm:1343
+#: RPlotMain.dfm:2228
 msgid "Name"
 msgstr ""
 
 #. frmSheet..paMain..lvCharts......Caption
-#: RPlotMain.dfm:1347
+#: RPlotMain.dfm:2232
 msgid "Contents"
 msgstr ""
 
 #. frmSheet..paMain..bbUndoItem..Hint
-#: RPlotMain.dfm:1365
+#: RPlotMain.dfm:2250
 msgid "Undo removal of object"
 msgstr ""
 
 #. frmSheet..paMain..bbUndoChart..Hint
-#: RPlotMain.dfm:1386
+#: RPlotMain.dfm:2314
 msgid "Undo removal of chart"
 msgstr ""
 
 #. frmSheet..paMain..bbDupItem..Hint
-#: RPlotMain.dfm:1407
+#: RPlotMain.dfm:2378
 msgid "Duplicate object"
 msgstr ""
 
 #. frmSheet..MainMenu..itSheet..Caption
-#: RPlotMain.dfm:1446
+#: RPlotMain.dfm:2417
 #. frmSheet..MainMenu..itPreferences..itSheetPrefs..Caption
-#: RPlotMain.dfm:1620
+#: RPlotMain.dfm:2591
 msgid "&Sheet"
 msgstr ""
 
 #. frmSheet..MainMenu..itSheet..itNewSheet..Caption
-#: RPlotMain.dfm:1448
+#: RPlotMain.dfm:2419
 #. frmSheet..MainMenu..itChart..otNewChart..Caption
-#: RPlotMain.dfm:1507
+#: RPlotMain.dfm:2478
 msgid "&New .."
 msgstr ""
 
 #. frmSheet..MainMenu..itSheet..itLoadSheet..Caption
-#: RPlotMain.dfm:1452
+#: RPlotMain.dfm:2423
 msgid "&Load .."
 msgstr ""
 
 #. frmSheet..MainMenu..itSheet..itRecent..Caption
-#: RPlotMain.dfm:1457
+#: RPlotMain.dfm:2428
 msgid "&Recently used"
 msgstr ""
 
 #. frmSheet..MainMenu..itSheet..itSaveSheet..Caption
-#: RPlotMain.dfm:1463
+#: RPlotMain.dfm:2434
 msgid "&Save"
 msgstr ""
 
 #. frmSheet..MainMenu..itSheet..itSaveSheetAs..Caption
-#: RPlotMain.dfm:1468
+#: RPlotMain.dfm:2439
 msgid "Save &as .."
 msgstr ""
 
 #. frmSheet..MainMenu..itSheet..Edit1..Caption
-#: RPlotMain.dfm:1475
+#: RPlotMain.dfm:2446
 msgid "&Properties .."
 msgstr ""
 
 #. frmSheet..MainMenu..itSheet..itPrint..Caption
-#: RPlotMain.dfm:1482
+#: RPlotMain.dfm:2453
 msgid "&Print .."
 msgstr ""
 
 #. frmSheet..MainMenu..itSheet..itExport..Caption
-#: RPlotMain.dfm:1486
+#: RPlotMain.dfm:2457
 msgid "E&xport"
 msgstr ""
 
 #. frmSheet..MainMenu..itSheet..itExport..itPostscript..Caption
-#: RPlotMain.dfm:1488
+#: RPlotMain.dfm:2459
 msgid "as &Postscript .."
 msgstr ""
 
 #. frmSheet..MainMenu..itSheet..itExport..itClipboard..Caption
-#: RPlotMain.dfm:1492
+#: RPlotMain.dfm:2463
 msgid "to &Clipboard"
 msgstr ""
 
 #. frmSheet..MainMenu..itSheet..itQuit..Caption
-#: RPlotMain.dfm:1500
+#: RPlotMain.dfm:2471
 msgid "&Quit"
 msgstr ""
 
 #. frmSheet..MainMenu..itChart..Caption
-#: RPlotMain.dfm:1505
+#: RPlotMain.dfm:2476
 msgid "&Chart"
 msgstr ""
 
 #. frmSheet..MainMenu..itChart..itEditChart..Caption
-#: RPlotMain.dfm:1512
+#: RPlotMain.dfm:2483
 #. frmSheet..MainMenu..itComponent..itEditComp..Caption
-#: RPlotMain.dfm:1608
+#: RPlotMain.dfm:2579
 msgid "&Edit .."
 msgstr ""
 
 #. frmSheet..MainMenu..itChart..itRemoveChart..Caption
-#: RPlotMain.dfm:1516
+#: RPlotMain.dfm:2487
 #. frmSheet..MainMenu..itComponent..itRemoveComp..Caption
-#: RPlotMain.dfm:1613
+#: RPlotMain.dfm:2584
 msgid "&Remove .."
 msgstr ""
 
 #. frmSheet..MainMenu..itComponent..Caption
-#: RPlotMain.dfm:1521
+#: RPlotMain.dfm:2492
 msgid "&Object"
 msgstr ""
 
 #. frmSheet..MainMenu..itComponent..itAddComp..Caption
-#: RPlotMain.dfm:1523
+#: RPlotMain.dfm:2494
 msgid "&Add"
 msgstr ""
 
 #. frmSheet..MainMenu..itComponent..itAddComp..itAddAxis..Caption
-#: RPlotMain.dfm:1525
+#: RPlotMain.dfm:2496
 msgid "&Axis .."
 msgstr ""
 
 #. frmSheet..MainMenu..itComponent..itAddComp..itAddAxis..itAddXAxis..Caption
-#: RPlotMain.dfm:1527
+#: RPlotMain.dfm:2498
 msgid "&X"
 msgstr ""
 
 #. frmSheet..MainMenu..itComponent..itAddComp..itAddAxis..itAddYAxis..Caption
-#: RPlotMain.dfm:1532
+#: RPlotMain.dfm:2503
 msgid "&Y"
 msgstr ""
 
 #. frmSheet..MainMenu..itComponent..itAddComp..itAddCurve..Caption
-#: RPlotMain.dfm:1538
+#: RPlotMain.dfm:2509
 msgid "&Curve .."
 msgstr ""
 
 #. frmSheet..MainMenu..itComponent..itAddComp..itAddFit..Caption
-#: RPlotMain.dfm:1543
+#: RPlotMain.dfm:2514
 msgid "Best-&fit curve .."
 msgstr ""
 
 #. frmSheet..MainMenu..itComponent..itAddComp..itAddGraph..Caption
-#: RPlotMain.dfm:1548
+#: RPlotMain.dfm:2519
 msgid "&Graph"
 msgstr ""
 
 #. frmSheet..MainMenu..itComponent..itAddComp..itAddGraph..itAddBarGraph..Caption
-#: RPlotMain.dfm:1550
+#: RPlotMain.dfm:2521
 msgid "&Bar graph .."
 msgstr ""
 
 #. frmSheet..MainMenu..itComponent..itAddComp..itAddGraph..itAddHisto..Caption
-#: RPlotMain.dfm:1555
+#: RPlotMain.dfm:2526
 msgid "&Histogram .."
 msgstr ""
 
 #. frmSheet..MainMenu..itComponent..itAddComp..itAddFunction..Caption
-#: RPlotMain.dfm:1561
+#: RPlotMain.dfm:2532
 msgid "F&unction .."
 msgstr ""
 
 #. frmSheet..MainMenu..itComponent..itAddComp..itAddText..Caption
-#: RPlotMain.dfm:1566
+#: RPlotMain.dfm:2537
 msgid "&Text"
 msgstr ""
 
 #. frmSheet..MainMenu..itComponent..itAddComp..itAddText..itAddTextBox..Caption
-#: RPlotMain.dfm:1568
+#: RPlotMain.dfm:2539
 msgid "&Box .."
 msgstr ""
 
 #. frmSheet..MainMenu..itComponent..itAddComp..itAddText..itAddComment..Caption
-#: RPlotMain.dfm:1573
+#: RPlotMain.dfm:2544
 msgid "&Comment .."
 msgstr ""
 
 #. frmSheet..MainMenu..itComponent..itAddComp..itAddText..itAddLegend..Caption
-#: RPlotMain.dfm:1578
+#: RPlotMain.dfm:2549
 msgid "&Legend .."
 msgstr ""
 
 #. frmSheet..MainMenu..itComponent..itAddComp..itAddText..itAddFitResult..Caption
-#: RPlotMain.dfm:1583
+#: RPlotMain.dfm:2554
 msgid "Best-&fit result .."
 msgstr ""
 
 #. frmSheet..MainMenu..itComponent..itAddComp..itAddImage..Caption
-#: RPlotMain.dfm:1589
+#: RPlotMain.dfm:2560
 msgid "&Image .."
 msgstr ""
 
 #. frmSheet..MainMenu..itComponent..itAddComp..itAddOther..Caption
-#: RPlotMain.dfm:1594
+#: RPlotMain.dfm:2565
 msgid "&Other"
 msgstr ""
 
 #. frmSheet..MainMenu..itComponent..itAddComp..itAddOther..itAddLine..Caption
-#: RPlotMain.dfm:1596
+#: RPlotMain.dfm:2567
 msgid "&Line .."
 msgstr ""
 
 #. frmSheet..MainMenu..itComponent..itAddComp..itAddOther..itAddRect..Caption
-#: RPlotMain.dfm:1601
+#: RPlotMain.dfm:2572
 msgid "&Rectangle .."
 msgstr ""
 
 #. frmSheet..MainMenu..itPreferences..Caption
-#: RPlotMain.dfm:1618
+#: RPlotMain.dfm:2589
 msgid "&Preferences"
 msgstr ""
 
 #. frmSheet..MainMenu..itPreferences..itLanguage..Caption
-#: RPlotMain.dfm:1624
+#: RPlotMain.dfm:2595
 msgid "&Language"
 msgstr ""
 
 #. frmSheet..MainMenu..itInfo..Caption
-#: RPlotMain.dfm:1628
+#: RPlotMain.dfm:2599
 msgid "&Help"
 msgstr ""
 
 #. frmSheet..MainMenu..itInfo..itHelp..Caption
-#: RPlotMain.dfm:1630
+#: RPlotMain.dfm:2601
 msgid "&Documentation"
 msgstr ""
 
 #. frmSheet..MainMenu..itInfo..itAbout..Caption
-#: RPlotMain.dfm:1638
+#: RPlotMain.dfm:2609
 msgid "&About"
 msgstr ""
 
 #. frmSheet..MainMenu..itInfo..itRef..Caption
-#: RPlotMain.dfm:1642
+#: RPlotMain.dfm:2613
 msgid "&References"
 msgstr ""
 
 #. frmSheet..MainMenu..itInfo..itWeb..Caption
-#: RPlotMain.dfm:1649
+#: RPlotMain.dfm:2620
 msgid "&Homepage"
 msgstr ""
 
 #. frmSheet..MainMenu..itInfo..itChangelog..Caption
-#: RPlotMain.dfm:1653
+#: RPlotMain.dfm:2624
 msgid "&Changelog"
 msgstr ""
 
 #. frmSheet..pmNewText..piAddText..Caption
-#: RPlotMain.dfm:1676
-#: TextDlg.pas:436
+#: RPlotMain.dfm:2647
+#: TextDlg.pas:449
 msgid "Text box"
 msgstr ""
 
 #. frmSheet..pmNewText..piAddComment..Caption
-#: RPlotMain.dfm:1680
-#: RPlotObjects.pas:4116
-#: TextDlg.pas:456
+#: RPlotMain.dfm:2651
+#: RPlotObjects.pas:4118
+#: TextDlg.pas:469
 msgid "Comment"
 msgstr ""
 
 #. frmSheet..pmNewText..piAddLegend..Caption
-#: RPlotMain.dfm:1684
-#: RPlotObjects.pas:4115
-#: TextDlg.pas:514
+#: RPlotMain.dfm:2655
+#: RPlotObjects.pas:4117
+#: TextDlg.pas:527
 msgid "Legend"
 msgstr ""
 
 #. frmSheet..pmNewText..piAddResult..Caption
-#: RPlotMain.dfm:1688
-#: RPlotObjects.pas:4114
-#: TextDlg.pas:505
+#: RPlotMain.dfm:2659
+#: RPlotObjects.pas:4116
+#: TextDlg.pas:518
 msgid "Best-fit result"
 msgstr ""
 
 #. frmSheet..pmNewGraph..piAddBarchart..Caption
-#: RPlotMain.dfm:1696
+#: RPlotMain.dfm:2667
 msgid "Bar graph .."
 msgstr ""
 
 #. frmSheet..pmNewGraph..piAddHistogram..Caption
-#: RPlotMain.dfm:1700
+#: RPlotMain.dfm:2671
 msgid "Histogram .."
 msgstr ""
 
 #. frmSheet..pmNewGraph..piAddPieChart..Caption
-#: RPlotMain.dfm:1704
+#: RPlotMain.dfm:2675
 msgid "Pie chart .."
 msgstr ""
 
 #. frmSheet..pmAxis..piXAxis..Caption
-#: RPlotMain.dfm:1713
+#: RPlotMain.dfm:2684
 msgid "X axis .."
 msgstr ""
 
 #. frmSheet..pmAxis..piYAxis..Caption
-#: RPlotMain.dfm:1717
+#: RPlotMain.dfm:2688
 msgid "Y axis .."
 msgstr ""
 
 #. frmSheet..pmAxis..piCopyAxis..Caption
-#: RPlotMain.dfm:1721
+#: RPlotMain.dfm:2692
 msgid "Copy axis .."
 msgstr ""
 
 #. frmSheet..pmDrawing..piLine..Caption
-#: RPlotMain.dfm:1733
+#: RPlotMain.dfm:2704
 msgid "Line .."
 msgstr ""
 
 #. frmSheet..pmDrawing..piRectangle..Caption
-#: RPlotMain.dfm:1737
+#: RPlotMain.dfm:2708
 msgid "Rectangle .."
 msgstr ""
 
@@ -2419,7 +2416,7 @@ msgid "Select axis"
 msgstr ""
 
 #. SelectAxisDialog..Label1..Caption
-#: SelectAxisDlg.dfm:23
+#: SelectAxisDlg.dfm:27
 msgid "Chart:"
 msgstr ""
 
@@ -2430,607 +2427,612 @@ msgid "Add new color to list of user defined "
 msgstr ""
 
 #. SetCustomColorDialog..Label1..Caption
-#: SetCustomColorDlg.dfm:25
+#: SetCustomColorDlg.dfm:29
 msgid "New color:"
 msgstr ""
 
 #. SetCustomColorDialog..Label2..Caption
-#: SetCustomColorDlg.dfm:33
+#: SetCustomColorDlg.dfm:37
 msgid "Click a color button to replace the selected with new the "
 "color"
 msgstr ""
 
 #. SetCustomColorDialog..gbUserColors..Caption
-#: SetCustomColorDlg.dfm:186
+#: SetCustomColorDlg.dfm:180
 msgid "User defined colors"
 msgstr ""
 
+#. Form1..Button1..Caption
+#: TestMain.dfm:21
+msgid "Settings"
+msgstr ""
+
 #. TextDialog..pcType..tsText..Label1..Caption
-#: TextDlg.dfm:505
+#: TextDlg.dfm:524
 #. TextDialog..pcType..tsMode..pcMode..tsLegText..edLegendText..EditLabel.Caption
-#: TextDlg.dfm:600
+#: TextDlg.dfm:619
 #. TextFormatDialog..edText..EditLabel.Caption
-#: TextFormatDlg.dfm:181
+#: TextFormatDlg.dfm:175
 msgid "Text:"
 msgstr ""
 
 #. TextDialog..pcType..tsMode..gbCurve..Caption
-#: TextDlg.dfm:524
+#: TextDlg.dfm:543
 #. no symbol
-#: TextDlg.pas:499
+#: TextDlg.pas:512
 msgid "Select best-fit curve"
 msgstr ""
 
 #. TextDialog..pcType..tsMode..pcMode..tsFitResult..cbDesc..Caption
-#: TextDlg.dfm:556
+#: TextDlg.dfm:575
 msgid "Show name of curve"
 msgstr ""
 
 #. TextDialog..pcType..tsMode..pcMode..tsFitResult..cbSigma..Caption
-#: TextDlg.dfm:564
+#: TextDlg.dfm:583
 msgid "Show standard deviation"
 msgstr ""
 
 #. TextDialog..pcType..tsMode..pcMode..tsFitResult..cbUnits..Caption
-#: TextDlg.dfm:572
+#: TextDlg.dfm:591
 msgid "Show units"
 msgstr ""
 
 #. TextDialog..pcType..tsMode..pcMode..tsLegText..cbSymbol..Caption
-#: TextDlg.dfm:589
+#: TextDlg.dfm:608
 msgid "Show symbol"
 msgstr ""
 
 #. TextDialog..pcType..tsComment..Label10..Caption
-#: TextDlg.dfm:619
+#: TextDlg.dfm:638
 msgid "Alignment:"
 msgstr ""
 
 #. TextDialog..pcType..tsComment..Label2..Caption
-#: TextDlg.dfm:626
+#: TextDlg.dfm:645
 msgid "Rotation:"
 msgstr ""
 
 #. TextDialog..pcType..tsComment..Label4..Caption
-#: TextDlg.dfm:633
+#: TextDlg.dfm:652
 msgid "°"
 msgstr ""
 
 #. TextDialog..pcType..tsComment..edComment..EditLabel.Caption
-#: TextDlg.dfm:642
+#: TextDlg.dfm:661
 msgid "Comment:"
 msgstr ""
 
 #. TextDialog..bbCharTab..Caption
-#: TextDlg.dfm:791
+#: TextDlg.dfm:811
 #. TextFormatDialog..bbCharTab..Caption
-#: TextFormatDlg.dfm:189
+#: TextFormatDlg.dfm:183
 msgid "Character table"
 msgstr ""
 
 #. TextFormatDialog..rgFormat..Caption
-#: TextFormatDlg.dfm:161
+#: TextFormatDlg.dfm:155
 msgid "Style"
 msgstr ""
 
 #. TextFormatDialog..rgFormat....Items.Strings
-#: TextFormatDlg.dfm:165
+#: TextFormatDlg.dfm:159
 msgid "Normal"
 msgstr ""
 
 #. TextFormatDialog..rgFormat....Items.Strings
-#: TextFormatDlg.dfm:168
+#: TextFormatDlg.dfm:162
 msgid "Superscript"
 msgstr ""
 
 #. TextFormatDialog..rgFormat....Items.Strings
-#: TextFormatDlg.dfm:169
+#: TextFormatDlg.dfm:163
 msgid "Subscript"
 msgstr ""
 
 #. if CheckValue(edMinVal,x) and CheckValue(edMaxVal,x) then begin
-#: AxisDlg.pas:285
+#: AxisDlg.pas:298
 msgid "Invalid range selection"
 msgstr ""
 
 #. vertical
-#: AxisDlg.pas:315
+#: AxisDlg.pas:328
 msgid "At left"
 msgstr ""
 
-#: AxisDlg.pas:316
+#: AxisDlg.pas:329
 msgid "At right"
 msgstr ""
 
-#: AxisDlg.pas:331
+#: AxisDlg.pas:344
 msgid "<auto>"
 msgstr ""
 
 #. letzte grobe Marke
-#: AxisDlg.pas:510
+#: AxisDlg.pas:523
 msgid "Too many tick marks"
 msgstr ""
 
-#: AxisDlg.pas:511
+#: AxisDlg.pas:524
 msgid "No tick marks found"
 msgstr ""
 
-#: AxisDlg.pas:779
-#: AxisDlg.pas:797
+#: AxisDlg.pas:792
+#: AxisDlg.pas:810
 msgid "R-Plot axis template"
 msgstr ""
 
-#: AxisDlg.pas:779
-#: AxisDlg.pas:797
-#: ChartDlg.pas:248
-#: ChartDlg.pas:266
-#: CurveDlg.pas:387
-#: CurveDlg.pas:405
-#: DataDlg.pas:501
-#: FitDlg.pas:332
-#: FitDlg.pas:350
-#: FunctionDlg.pas:312
-#: FunctionDlg.pas:329
-#: GraphDlg.pas:271
-#: GraphDlg.pas:289
-#: PrefsDlg.pas:457
+#: AxisDlg.pas:792
+#: AxisDlg.pas:810
+#: ChartDlg.pas:261
+#: ChartDlg.pas:279
+#: CurveDlg.pas:400
+#: CurveDlg.pas:418
+#: DataDlg.pas:517
+#: FitDlg.pas:345
+#: FitDlg.pas:363
+#: FunctionDlg.pas:325
+#: FunctionDlg.pas:342
+#: GraphDlg.pas:282
+#: GraphDlg.pas:300
 #: PrefsDlg.pas:473
-#: RPlotMain.pas:553
-#: RPlotMain.pas:571
-#: RPlotMain.pas:910
+#: PrefsDlg.pas:489
+#: RPlotMain.pas:572
+#: RPlotMain.pas:590
+#: RPlotMain.pas:929
 msgid "all"
 msgstr ""
 
-#: AxisDlg.pas:780
+#: AxisDlg.pas:793
 msgid "Load R-Plot axis template"
 msgstr ""
 
-#: AxisDlg.pas:798
+#: AxisDlg.pas:811
 msgid "Save R-Plot axis template"
 msgstr ""
 
-#: AxisDlg.pas:829
+#: AxisDlg.pas:842
 #. Create new chart if not exists
-#: RPlotMain.pas:1251
+#: RPlotMain.pas:1270
 #. Create new chart if not exists
-#: RPlotMain.pas:1320
+#: RPlotMain.pas:1339
 #. Create new chart if not exists
-#: RPlotMain.pas:1383
+#: RPlotMain.pas:1402
 #. Create new chart if not exists
-#: RPlotMain.pas:1442
+#: RPlotMain.pas:1461
 msgid "X axis"
 msgstr ""
 
-#: AxisDlg.pas:829
+#: AxisDlg.pas:842
 #. Create new chart if not exists
-#: RPlotMain.pas:1270
-#: RPlotMain.pas:1329
-#: RPlotMain.pas:1392
-#: RPlotMain.pas:1450
+#: RPlotMain.pas:1289
+#: RPlotMain.pas:1348
+#: RPlotMain.pas:1411
+#: RPlotMain.pas:1469
 msgid "Y axis"
 msgstr ""
 
-#: AxisDlg.pas:830
-#: CurveDlg.pas:459
-#: DrawingDlg.pas:253
-#: FitDlg.pas:383
+#: AxisDlg.pas:843
+#: CurveDlg.pas:472
+#: DrawingDlg.pas:266
+#: FitDlg.pas:396
 #. Min und Max
-#: FunctionDlg.pas:373
-#: GraphDlg.pas:376
+#: FunctionDlg.pas:386
+#: GraphDlg.pas:387
 #. 50%
-#: ImageDlg.pas:328
-#: TextDlg.pas:517
+#: ImageDlg.pas:341
+#: TextDlg.pas:530
 msgid "Create %s for %s"
 msgstr ""
 
-#: AxisDlg.pas:831
-#: CurveDlg.pas:460
-#: DrawingDlg.pas:254
-#: FitDlg.pas:384
-#: GraphDlg.pas:377
-#: ImageDlg.pas:329
-#: TextDlg.pas:518
+#: AxisDlg.pas:844
+#: CurveDlg.pas:473
+#: DrawingDlg.pas:267
+#: FitDlg.pas:397
+#: GraphDlg.pas:388
+#: ImageDlg.pas:342
+#: TextDlg.pas:531
 msgid "Edit %s of %s"
 msgstr ""
 
-#: ChartDlg.pas:248
-#: ChartDlg.pas:266
+#: ChartDlg.pas:261
+#: ChartDlg.pas:279
 msgid "R-Plot chart template"
 msgstr ""
 
-#: ChartDlg.pas:249
+#: ChartDlg.pas:262
 msgid "Load R-Plot chart template"
 msgstr ""
 
-#: ChartDlg.pas:267
+#: ChartDlg.pas:280
 msgid "Save R-Plot chart template"
 msgstr ""
 
-#: ChartDlg.pas:282
+#: ChartDlg.pas:295
 msgid "Create new chart"
 msgstr ""
 
-#: CurveDlg.pas:172
-#: FunctionDlg.pas:176
-#: GraphDlg.pas:125
+#: CurveDlg.pas:185
+#: FunctionDlg.pas:189
+#: GraphDlg.pas:127
 msgid "Please select an axis for %s"
 msgstr ""
 
-#: CurveDlg.pas:387
-#: CurveDlg.pas:405
+#: CurveDlg.pas:400
+#: CurveDlg.pas:418
 msgid "R-Plot data curve template"
 msgstr ""
 
-#: CurveDlg.pas:388
+#: CurveDlg.pas:401
 msgid "Load R-Plot data curve template"
 msgstr ""
 
-#: CurveDlg.pas:406
+#: CurveDlg.pas:419
 msgid "Save R-Plot data curve template"
 msgstr ""
 
 #. Min und Max
-#: CurveDlg.pas:458
+#: CurveDlg.pas:471
 msgid "%s of %s"
 msgstr ""
 
-#: CurveDlg.pas:459
+#: CurveDlg.pas:472
 msgid "Curve"
 msgstr ""
 
-#: CurveDlg.pas:464
-#: CurveDlg.pas:468
-#: FitDlg.pas:388
-#: FunctionDlg.pas:378
-#: FunctionDlg.pas:382
+#: CurveDlg.pas:477
+#: CurveDlg.pas:481
+#: FitDlg.pas:401
+#: FunctionDlg.pas:391
+#: FunctionDlg.pas:395
 #. Min und Max
-#: GraphDlg.pas:348
-#: GraphDlg.pas:352
+#: GraphDlg.pas:359
+#: GraphDlg.pas:363
 #. fit or legend
-#: TextDlg.pas:463
+#: TextDlg.pas:476
 msgid "<not selected>"
 msgstr ""
 
-#: DataDlg.pas:188
+#: DataDlg.pas:201
 msgid "X-Values"
 msgstr ""
 
-#: DataDlg.pas:192
-#: DataDlg.pas:195
-#: DataDlg.pas:195
+#: DataDlg.pas:205
+#: DataDlg.pas:208
+#: DataDlg.pas:208
 msgid "X-Errors"
 msgstr ""
 
-#: DataDlg.pas:201
+#: DataDlg.pas:214
 msgid "Values"
 msgstr ""
 
-#: DataDlg.pas:201
+#: DataDlg.pas:214
 msgid "Errors"
 msgstr ""
 
-#: DataDlg.pas:204
+#: DataDlg.pas:217
 msgid "Y-Values"
 msgstr ""
 
-#: DataDlg.pas:204
+#: DataDlg.pas:217
 msgid "Y-Errors"
 msgstr ""
 
-#: DataDlg.pas:216
+#: DataDlg.pas:229
 msgid "No data sets"
 msgstr ""
 
-#: DataDlg.pas:216
+#: DataDlg.pas:229
 msgid "1 data set"
 msgstr ""
 
-#: DataDlg.pas:216
+#: DataDlg.pas:229
 msgid "%u data sets"
 msgstr ""
 
-#: DataDlg.pas:300
-#: DataDlg.pas:314
+#: DataDlg.pas:312
+#: DataDlg.pas:326
 msgid "\"%s\" not found!"
 msgstr ""
 
-#: DataDlg.pas:501
+#: DataDlg.pas:517
 msgid "CSV files"
 msgstr ""
 
-#: DataDlg.pas:501
+#: DataDlg.pas:517
 msgid "Text files"
 msgstr ""
 
-#: DataDlg.pas:502
+#: DataDlg.pas:518
 msgid "Import data for: %s"
 msgstr ""
 
 #. Zeilen zÃ¤hlen
-#: DataDlg.pas:548
+#: DataDlg.pas:564
 msgid "Error in"
 msgstr ""
 
-#: DataDlg.pas:549
+#: DataDlg.pas:565
 msgid " - Line:"
 msgstr ""
 
-#: DataDlg.pas:550
+#: DataDlg.pas:566
 msgid "Cancel import?"
 msgstr ""
 
-#: DataDlg.pas:589
+#: DataDlg.pas:605
 msgid "Edit data for "
 msgstr ""
 
-#: DrawingDlg.pas:233
+#: DrawingDlg.pas:246
 msgid "Name of line:"
 msgstr ""
 
-#: DrawingDlg.pas:249
+#: DrawingDlg.pas:262
 msgid "Name of rectangle:"
 msgstr ""
 
-#: DrawingDlg.pas:250
+#: DrawingDlg.pas:263
 #: RPlotObjects.pas:4440
 msgid "Rectangle"
 msgstr ""
 
-#: FitDlg.pas:135
+#: FitDlg.pas:148
 msgid "Please select the data curve!"
 msgstr ""
 
-#: FitDlg.pas:227
-#: FitDlg.pas:243
+#: FitDlg.pas:240
+#: FitDlg.pas:256
 msgid "No assigned axis found!"
 msgstr ""
 
-#: FitDlg.pas:229
-#: FitDlg.pas:245
+#: FitDlg.pas:242
+#: FitDlg.pas:258
 msgid "No assigned curve data found!"
 msgstr ""
 
-#: FitDlg.pas:332
-#: FitDlg.pas:350
+#: FitDlg.pas:345
+#: FitDlg.pas:363
 msgid "R-Plot best-fit curve template"
 msgstr ""
 
-#: FitDlg.pas:333
+#: FitDlg.pas:346
 msgid "Load R-Plot best-fit curve template"
 msgstr ""
 
-#: FitDlg.pas:351
+#: FitDlg.pas:364
 msgid "Save R-Plot best-fit curve template"
 msgstr ""
 
 #. Check formula
-#: FunctionDlg.pas:163
+#: FunctionDlg.pas:176
 msgid "Syntax error in formula!"
 msgstr ""
 
-#: FunctionDlg.pas:312
-#: FunctionDlg.pas:329
+#: FunctionDlg.pas:325
+#: FunctionDlg.pas:342
 msgid "R-Plot function template"
 msgstr ""
 
-#: FunctionDlg.pas:313
+#: FunctionDlg.pas:326
 msgid "Load R-Plot function template"
 msgstr ""
 
-#: FunctionDlg.pas:330
+#: FunctionDlg.pas:343
 msgid "Save R-Plot function template"
 msgstr ""
 
-#: GraphDlg.pas:271
-#: GraphDlg.pas:289
+#: GraphDlg.pas:282
+#: GraphDlg.pas:300
 msgid "R-Plot graph template"
 msgstr ""
 
-#: GraphDlg.pas:272
+#: GraphDlg.pas:283
 msgid "Load R-Plot graph template"
 msgstr ""
 
-#: GraphDlg.pas:290
+#: GraphDlg.pas:301
 msgid "Save R-Plot graph template"
 msgstr ""
 
-#: GraphDlg.pas:365
+#: GraphDlg.pas:376
 msgid "Name of pie chart:"
 msgstr ""
 
-#: GraphDlg.pas:369
+#: GraphDlg.pas:380
 msgid "Name of bar graph:"
 msgstr ""
 
 #. Balken
-#: GraphDlg.pas:370
-#: RPlotObjects.pas:3743
+#: GraphDlg.pas:381
+#: RPlotObjects.pas:3746
 msgid "Bar graph"
 msgstr ""
 
-#: GraphDlg.pas:373
+#: GraphDlg.pas:384
 msgid "Name of histogram:"
 msgstr ""
 
-#: GraphDlg.pas:374
-#: RPlotObjects.pas:3741
+#: GraphDlg.pas:385
+#: RPlotObjects.pas:3744
 msgid "Histogram"
 msgstr ""
 
-#: ImageDlg.pas:122
+#: ImageDlg.pas:135
 msgid "Invalid value for downsizing!"
 msgstr ""
 
-#: ImageDlg.pas:157
+#: ImageDlg.pas:170
 msgid "Original size in pixels:"
 msgstr ""
 
 #. TIFF
-#: ImageDlg.pas:192
+#: ImageDlg.pas:205
 msgid "Error loading image:"
 msgstr ""
 
-#: ImageDlg.pas:200
+#: ImageDlg.pas:213
 msgid "Image file not found:"
 msgstr ""
 
-#: ImportDlg.pas:321
+#: ImportDlg.pas:334
 msgid "lines of data"
 msgstr ""
 
-#: PrefsDlg.pas:457
 #: PrefsDlg.pas:473
+#: PrefsDlg.pas:489
 msgid "R-Plot sheet preferences"
 msgstr ""
 
-#: PrefsDlg.pas:458
+#: PrefsDlg.pas:474
 msgid "Load R-Plot sheet preferences"
 msgstr ""
 
-#: PrefsDlg.pas:474
+#: PrefsDlg.pas:490
 msgid "Save R-Plot sheet preferences"
 msgstr ""
 
-#: PrefsDlg.pas:721
+#: PrefsDlg.pas:737
 msgid "Preferred settings for new sheets"
 msgstr ""
 
-#: PrefsDlg.pas:760
+#: PrefsDlg.pas:776
 msgid "Create new sheet"
 msgstr ""
 
-#: PrefsDlg.pas:761
+#: PrefsDlg.pas:777
 msgid "Edit sheet properties [%s]"
 msgstr ""
 
 #. Abbruch
-#: RPlotMain.pas:493
+#: RPlotMain.pas:512
 msgid "Save changed sheet to %s?"
 msgstr ""
 
-#: RPlotMain.pas:495
+#: RPlotMain.pas:514
 msgid "Save new sheet?"
 msgstr ""
 
-#: RPlotMain.pas:553
+#: RPlotMain.pas:572
 #. LastSheet;
-#: RPlotMain.pas:571
+#: RPlotMain.pas:590
 msgid "R-Plot sheet"
 msgstr ""
 
-#: RPlotMain.pas:554
+#: RPlotMain.pas:573
 msgid "Load R-Plot sheet"
 msgstr ""
 
-#: RPlotMain.pas:572
+#: RPlotMain.pas:591
 msgid "Save R-Plot sheet"
 msgstr ""
 
-#: RPlotMain.pas:611
-#: RPlotMain.pas:679
+#: RPlotMain.pas:630
+#: RPlotMain.pas:698
 msgid "File not found:"
 msgstr ""
 
-#: RPlotMain.pas:627
+#: RPlotMain.pas:646
 msgid " Printer: "
 msgstr ""
 
-#: RPlotMain.pas:632
+#: RPlotMain.pas:651
 msgid " No printer available!"
 msgstr ""
 
-#: RPlotMain.pas:643
+#: RPlotMain.pas:662
 msgid "rp-help-en.chm"
 msgstr ""
 
-#: RPlotMain.pas:648
+#: RPlotMain.pas:667
 msgid "Help not available on this system!"
 msgstr ""
 
-#: RPlotMain.pas:651
+#: RPlotMain.pas:670
 msgid "Help file not found!"
 msgstr ""
 
-#: RPlotMain.pas:665
+#: RPlotMain.pas:684
 msgid "Editor from OpenSource project SynEdit\n"
 "Mathematical parser by J. Dankert\n"
 "Multilanguage system by Lars B. Dybdahl\n"
 "Installation program by Jordan Russell"
 msgstr ""
 
-#: RPlotMain.pas:670
+#: RPlotMain.pas:689
 msgid "https://www.rathlev-home.de/index-e.html?home-e.html#rplot"
 msgstr ""
 
-#: RPlotMain.pas:677
+#: RPlotMain.pas:696
 msgid "changelog-e.txt"
 msgstr ""
 
-#: RPlotMain.pas:719
+#: RPlotMain.pas:738
 msgid "Width x Height"
 msgstr ""
 
-#: RPlotMain.pas:725
+#: RPlotMain.pas:744
 msgid "no object"
 msgstr ""
 
-#: RPlotMain.pas:725
+#: RPlotMain.pas:744
 msgid "1 object"
 msgstr ""
 
-#: RPlotMain.pas:725
+#: RPlotMain.pas:744
 msgid "%u objects"
 msgstr ""
 
-#: RPlotMain.pas:745
+#: RPlotMain.pas:764
 msgid "Objects of %s"
 msgstr ""
 
 #. InitChart(SelChart);
-#: RPlotMain.pas:760
-#: RPlotMain.pas:791
-#: RPlotMain.pas:1094
-#: RPlotMain.pas:1124
+#: RPlotMain.pas:779
+#: RPlotMain.pas:810
+#: RPlotMain.pas:1113
+#: RPlotMain.pas:1143
 #. remove item from chart
-#: RPlotMain.pas:1173
-#: RPlotMain.pas:1193
-#: RPlotMain.pas:1298
-#: RPlotMain.pas:1355
+#: RPlotMain.pas:1192
+#: RPlotMain.pas:1212
+#: RPlotMain.pas:1317
+#: RPlotMain.pas:1374
 msgid "No chart selected!"
 msgstr ""
 
-#: RPlotMain.pas:910
+#: RPlotMain.pas:929
 msgid "EPS files"
 msgstr ""
 
-#: RPlotMain.pas:911
+#: RPlotMain.pas:930
 msgid "Export sheet to EPS"
 msgstr ""
 
 #. remove chart
-#: RPlotMain.pas:1008
+#: RPlotMain.pas:1027
 msgid "Remove selected chart?"
 msgstr ""
 
-#: RPlotMain.pas:1176
+#: RPlotMain.pas:1195
 msgid "Remove %s?"
 msgstr ""
 
-#: RPlotMain.pas:1366
+#: RPlotMain.pas:1385
 msgid "No curve defined yet!"
 msgstr ""
 
 #. load from compressed XML
-#: RPlotObjects.pas:1802
+#: RPlotObjects.pas:1810
 msgid "Error reading file: "
 msgstr ""
 
-#: RPlotObjects.pas:2432
+#: RPlotObjects.pas:2434
 msgid "Chart"
 msgstr ""
 
 #: RPlotObjects.pas:2556
-#: RPlotObjects.pas:2714
+#: RPlotObjects.pas:2715
 msgid "Invalid template file: %s"
 msgstr ""
 
@@ -3038,74 +3040,74 @@ msgstr ""
 msgid "Chart object"
 msgstr ""
 
-#: RPlotObjects.pas:3305
-#: RPlotObjects.pas:3310
+#: RPlotObjects.pas:3308
+#: RPlotObjects.pas:3313
 msgid "Computing of spline function is impossible:"
 msgstr ""
 
-#: RPlotObjects.pas:3305
+#: RPlotObjects.pas:3308
 msgid "No X axis specified!"
 msgstr ""
 
-#: RPlotObjects.pas:3310
+#: RPlotObjects.pas:3313
 msgid "No Y axis specified!"
 msgstr ""
 
-#: RPlotObjects.pas:3371
+#: RPlotObjects.pas:3374
 msgid "at least two points are required!"
 msgstr ""
 
-#: RPlotObjects.pas:3372
+#: RPlotObjects.pas:3375
 msgid "the X values must be sorted in ascending "
 "order!"
 msgstr ""
 
-#: RPlotObjects.pas:3373
+#: RPlotObjects.pas:3376
 msgid "Could not compute spline function:"
 msgstr ""
 
-#: RPlotObjects.pas:3517
-#: RPlotObjects.pas:3526
-#: RPlotObjects.pas:3530
+#: RPlotObjects.pas:3520
+#: RPlotObjects.pas:3529
+#: RPlotObjects.pas:3533
 msgid "Computing of polynom fit is impossible:"
 msgstr ""
 
-#: RPlotObjects.pas:3517
+#: RPlotObjects.pas:3520
 msgid "No data curve assigned!"
 msgstr ""
 
-#: RPlotObjects.pas:3526
-#: RPlotObjects.pas:3891
-#: RPlotObjects.pas:4029
+#: RPlotObjects.pas:3529
+#: RPlotObjects.pas:3894
+#: RPlotObjects.pas:4032
 msgid "No X axis assigned!"
 msgstr ""
 
-#: RPlotObjects.pas:3530
-#: RPlotObjects.pas:4034
+#: RPlotObjects.pas:3533
+#: RPlotObjects.pas:4037
 msgid "No Y axis assigned!"
 msgstr ""
 
-#: RPlotObjects.pas:3544
+#: RPlotObjects.pas:3547
 msgid "Insufficient number of points to compute the "
 "fit!"
 msgstr ""
 
-#: RPlotObjects.pas:3553
-#: RPlotObjects.pas:3570
+#: RPlotObjects.pas:3556
+#: RPlotObjects.pas:3573
 msgid "Error computing nonlinear scaling!"
 msgstr ""
 
 #. x -> log, y -> lin
-#: RPlotObjects.pas:3648
+#: RPlotObjects.pas:3651
 msgid "Could not compute polynomial fit!"
 msgstr ""
 
-#: RPlotObjects.pas:3891
+#: RPlotObjects.pas:3894
 msgid "Computing of histogram is impossible:"
 msgstr ""
 
-#: RPlotObjects.pas:4029
-#: RPlotObjects.pas:4034
+#: RPlotObjects.pas:4032
+#: RPlotObjects.pas:4037
 msgid "Computing of function is impossible:"
 msgstr ""
 
@@ -3139,37 +3141,37 @@ msgid "Su"
 msgstr ""
 
 #. no valid axis
-#: RPlotUtils.pas:2807
+#: RPlotUtils.pas:2886
 msgid "No best-fit from %s available!"
 msgstr ""
 
-#: SelectAxisDlg.pas:96
+#: SelectAxisDlg.pas:109
 msgid "No axes found on this sheet!"
 msgstr ""
 
-#: TextDlg.pas:169
+#: TextDlg.pas:172
 msgid "Please select a curve!"
 msgstr ""
 
 #. text box
-#: TextDlg.pas:435
+#: TextDlg.pas:448
 msgid "Name of text box:"
 msgstr ""
 
 #. comment
-#: TextDlg.pas:455
+#: TextDlg.pas:468
 msgid "Name of comment:"
 msgstr ""
 
-#: TextDlg.pas:504
+#: TextDlg.pas:517
 msgid "Name of best-fit result:"
 msgstr ""
 
-#: TextDlg.pas:510
+#: TextDlg.pas:523
 msgid "Select curve or function"
 msgstr ""
 
-#: TextDlg.pas:513
+#: TextDlg.pas:526
 msgid "Name of legend:"
 msgstr ""
 

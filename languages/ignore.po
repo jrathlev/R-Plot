@@ -1,35 +1,41 @@
 #  Doesn't have any letters
 #. frmSheet..MainMenu..itSheet..N3..Caption
-#: RPlotMain.dfm:1460
+#: RPlotMain.dfm:2431
 #. frmSheet..MainMenu..itSheet..N2..Caption
-#: RPlotMain.dfm:1472
+#: RPlotMain.dfm:2443
 #. frmSheet..MainMenu..itSheet..N5..Caption
-#: RPlotMain.dfm:1479
+#: RPlotMain.dfm:2450
 #. frmSheet..MainMenu..itSheet..N1..Caption
-#: RPlotMain.dfm:1497
+#: RPlotMain.dfm:2468
 #. frmSheet..MainMenu..itInfo..N4..Caption
-#: RPlotMain.dfm:1635
+#: RPlotMain.dfm:2606
 #. frmSheet..MainMenu..itInfo..N6..Caption
-#: RPlotMain.dfm:1646
+#: RPlotMain.dfm:2617
 msgid "-"
 msgstr ""
 
 #  Doesn't have any letters
 #. ImageDialog..gbImgSize..Label5..Caption
-#: ImageDlg.dfm:537
+#: ImageDlg.dfm:558
 msgid "%"
 msgstr ""
 
 #  Seems like a Font.Name extract
 #. DataDialog..paData..seHeader..Font.Name
-#: DataDlg.dfm:555
+#: DataDlg.dfm:709
 #. DataDialog..paData..seHeader..Gutter.Font.Name
-#: DataDlg.dfm:562
+#: DataDlg.dfm:716
 #. DataDialog..paData..seData..Font.Name
-#: DataDlg.dfm:583
+#: DataDlg.dfm:737
 #. DataDialog..paData..seData..Gutter.Font.Name
-#: DataDlg.dfm:590
+#: DataDlg.dfm:744
 msgid "Courier New"
+msgstr ""
+
+#  Doesn't look like text
+#. Form1..Caption
+#: TestMain.dfm:4
+msgid "Form1"
 msgstr ""
 
 #  Seems like a Font.Name extract
@@ -45,121 +51,157 @@ msgid "MS Sans Serif"
 msgstr ""
 
 #  Seems like a Font.Name extract
+#. AxisDialog..Font.Name
+#: AxisDlg.dfm:12
+#. ChartDialog..Font.Name
+#: ChartDlg.dfm:13
+#. CurveDialog..Font.Name
+#: CurveDlg.dfm:13
 #. CurveDialog..gbMarker..sbNoSym..Font.Name
-#: CurveDlg.dfm:309
+#: CurveDlg.dfm:303
+#. DataDialog..Font.Name
+#: DataDlg.dfm:12
+#. DrawingDialog..Font.Name
+#: DrawingDlg.dfm:12
+#. FitDialog..Font.Name
+#: FitDlg.dfm:12
+#. FunctionDialog..Font.Name
+#: FunctionDlg.dfm:13
 #. FunctionDialog..gbFormula..Label15..Font.Name
-#: FunctionDlg.dfm:176
+#: FunctionDlg.dfm:170
+#. GraphDialog..Font.Name
+#: GraphDlg.dfm:12
+#. ImageDialog..Font.Name
+#: ImageDlg.dfm:12
 #. ImportDialog..Font.Name
 #: ImportDlg.dfm:12
 #. ImportDialog..CancelBtn..Font.Name
-#: ImportDlg.dfm:109
+#: ImportDlg.dfm:104
+#. PlotFontDialog..Font.Name
+#: PlotFontDlg.dfm:12
 #. PlotFontDialog..edPreview..Font.Name
-#: PlotFontDlg.dfm:193
+#: PlotFontDlg.dfm:187
+#. PreferencesDialog..Font.Name
+#: PrefsDlg.dfm:12
 #. PreferencesDialog..pcPrefs..tsText..Panel2..edPreview..Font.Name
-#: PrefsDlg.dfm:1075
+#: PrefsDlg.dfm:1122
+#. frmSheet..Font.Name
+#: RPlotMain.dfm:13
+#. frmSheet..paMain..bbEditSheet..Font.Name
+#: RPlotMain.dfm:1415
 #. frmView..Font.Name
 #: RPlotView.dfm:11
 #. frmView..GraphBox..GraphArea..Font.Name
-#: RPlotView.dfm:63
+#: RPlotView.dfm:64
+#. SelectAxisDialog..Font.Name
+#: SelectAxisDlg.dfm:12
+#. SetCustomColorDialog..Font.Name
+#: SetCustomColorDlg.dfm:13
+#. Form1..Font.Name
+#: TestMain.dfm:11
+#. TextDialog..Font.Name
+#: TextDlg.dfm:11
 #. TextDialog..gbProps..edPreview..Font.Name
-#: TextDlg.dfm:376
+#: TextDlg.dfm:370
 #. TextDialog..pcType..tsComment..reAngle..Font.Name
-#: TextDlg.dfm:763
+#: TextDlg.dfm:782
+#. TextFormatDialog..Font.Name
+#: TextFormatDlg.dfm:14
 msgid "Tahoma"
 msgstr ""
 
 #. DrawingDialog..pcProps..tsArrow..Caption
-#: DrawingDlg.dfm:535
+#: DrawingDlg.dfm:533
 msgid "tsArrow"
 msgstr ""
 
 #. GraphDialog..pcType..tsScaled..gbDesign..pcSubType..tsBar..Caption
-#: GraphDlg.dfm:453
+#: GraphDlg.dfm:458
 msgid "tsBar"
 msgstr ""
 
 #. TextDialog..pcType..tsComment..Caption
-#: TextDlg.dfm:607
+#: TextDlg.dfm:626
 msgid "tsComment"
 msgstr ""
 
 #. AxisDialog..pcRange..tsDateTime..Caption
-#: AxisDlg.dfm:1402
+#: AxisDlg.dfm:1552
 msgid "tsDateTime"
 msgstr ""
 
 #. DrawingDialog..pcProps..tsFill..Caption
-#: DrawingDlg.dfm:605
+#: DrawingDlg.dfm:607
 msgid "tsFill"
 msgstr ""
 
 #. TextDialog..pcType..tsMode..pcMode..tsFitResult..Caption
-#: TextDlg.dfm:545
+#: TextDlg.dfm:564
 msgid "tsFitResult"
 msgstr ""
 
 #. GraphDialog..pcType..tsScaled..gbDesign..pcSubType..tsHisto..Caption
-#: GraphDlg.dfm:511
+#: GraphDlg.dfm:516
 msgid "tsHisto"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsLabels..Caption
-#: AxisDlg.dfm:1027
+#: AxisDlg.dfm:1086
 msgid "tsLabels"
 msgstr ""
 
 #. TextDialog..pcType..tsMode..pcMode..tsLegText..Caption
-#: TextDlg.dfm:577
+#: TextDlg.dfm:596
 msgid "tsLegText"
 msgstr ""
 
 #. DrawingDialog..pcType..tsLine..Caption
-#: DrawingDlg.dfm:243
+#: DrawingDlg.dfm:237
 msgid "tsLine"
 msgstr ""
 
 #. TextDialog..pcType..tsMode..Caption
-#: TextDlg.dfm:517
+#: TextDlg.dfm:536
 msgid "tsMode"
 msgstr ""
 
 #. AxisDialog..pcRange..tsNormal..Caption
-#: AxisDlg.dfm:1313
+#: AxisDlg.dfm:1467
 msgid "tsNormal"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbLabels..pcNotate..tsNumber..Caption
-#: AxisDlg.dfm:727
+#: AxisDlg.dfm:757
 msgid "tsNumber"
 msgstr ""
 
 #. GraphDialog..pcType..tsPie..Caption
-#: GraphDlg.dfm:589
+#: GraphDlg.dfm:590
 msgid "tsPie"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..Caption
-#: AxisDlg.dfm:590
+#: AxisDlg.dfm:620
 msgid "tsProps"
 msgstr ""
 
 #. DrawingDialog..pcType..tsRect..Caption
-#: DrawingDlg.dfm:397
+#: DrawingDlg.dfm:391
 msgid "tsRect"
 msgstr ""
 
 #. GraphDialog..pcType..tsScaled..Caption
-#: GraphDlg.dfm:303
+#: GraphDlg.dfm:312
 msgid "tsScaled"
 msgstr ""
 
 #. TextDialog..pcType..tsText..Caption
-#: TextDlg.dfm:497
+#: TextDlg.dfm:516
 msgid "tsText"
 msgstr ""
 
 #. AxisDialog..pcLabels..tsProps..gbLabels..pcNotate..tsUser..Caption
-#: AxisDlg.dfm:763
+#: AxisDlg.dfm:793
 msgid "tsUser"
 msgstr ""
 
@@ -176,11 +218,11 @@ msgid "UTF-8"
 msgstr ""
 
 #. DrawingDialog..edDescription..EditLabel.Caption
-#: DrawingDlg.dfm:162
+#: DrawingDlg.dfm:156
 #. GraphDialog..paTop..edDescription..EditLabel.Caption
-#: GraphDlg.dfm:623
+#: GraphDlg.dfm:625
 #. TextDialog..edDescription..EditLabel.Caption
-#: TextDlg.dfm:162
+#: TextDlg.dfm:156
 msgid "xxx"
 msgstr ""
 
