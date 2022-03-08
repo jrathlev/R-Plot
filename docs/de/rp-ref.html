@@ -1,0 +1,1240 @@
+<html>
+<head>
+<title>R-Plot - Referenz (c) 2012 &ndash; 2020, Dr. J. Rathlev, D-24222 Schwentinental</title>
+<meta name="description" content="R-Plot">
+<meta name="author" content="J. Rathlev">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1">
+<META HTTP-EQUIV="expires" content="0">
+<link rel=stylesheet type="text/css" href="styles.css">
+</head>
+
+<body>
+<table width="100%">
+<tr>
+  <td width="50px" rowspan="2">
+    <img src="images\rp-logo.png" width="36" height="36" align="left" border="0"></td>
+  <td><h1 style="margin-top:2pt;margin-bottom:2pt;">R-Plot Version 2.0</h1></td>
+</tr>
+<tr valign="top">
+  <td><a href="rp-help.html" title="Übersicht">
+    <img src="images/arrow-up.png" width="22" height="22" align="right" border="0" hspace="5"></a>
+  <b>&copy; 2012 &ndash; 2020, Dr. J. Rathlev, D-24222 Schwentinental</b>
+  </td>
+</tr>
+</table>
+
+<hr>
+<h2><a name="anfang">Übersicht</a></h2>
+
+<table width="50%">
+  <tr>
+    <td>
+      <ul>
+      <li><b><a href="#bild">Desktop</a></b>
+        <ul>
+          <li><b><a href="#menu">Hauptmenü</a></b></li>
+          <li><b><a href="#tools">Werkzeugleiste</a></b></li>
+          <li><b><a href="#keys">Funktionstasten</a></b></li>
+          <li><b><a href="#prefs">Voreinstellungen</a></b></li>
+        </ul>
+      </li>
+      <li><b>Sonstiges</b>
+        <ul>
+          <li><b><a href="#format">Textformatierung</a></b></li>
+          <li><b><a href="#symbols">Sonderzeichen</a></b></li>
+          <li><b><a href="#cmd">Befehlszeile</a></b></li>
+          <li><b><a href="rp-sample.html">Beispiele</a></b></li>
+        </ul>  
+      </li>  
+      </ul>
+    </td>
+    <td>
+      <ul>
+      <li><b><a href="#charts">Diagramme</a></b>
+        <ul>
+          <li><b><a href="#axis">Achsen</a></b></li>
+          <li><b><a href="#curve">Datenkurven</a></b></li>
+          <li><b><a href="#fit">Ausgleichskurven</a></b></li>
+          <li><b><a href="#function">Funktionskurven</a></b></li>
+          <li><b><a href="#bar">Balkendiagramme</a></b></li>
+          <li><b><a href="#histo">Histogramme</a></b></li>
+          <li><b><a href="#text">Textobjekte</a></b></li>
+          <li><b><a href="#line">Grafikobjekte</a></b></li>
+          <li><b><a href="#image">Bilder</a></b></li>
+        </ul>
+      </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<hr>
+<map name="Bild1">
+  <area shape="rect" coords="9,470,36,495" href="#quit" alt="Programm beenden">
+  <area shape="rect" coords="6,204,35,294" href="#zoom" alt="Zoom">
+  <area shape="rect" coords="7,356,37,416" href="#export" alt="Exportieren">
+  <area shape="rect" coords="6,425,33,450" href="#color" alt="Farbaufnehmer">
+  <area shape="rect" coords="56,280,252,499" href="#items" alt="Objekte eines Diagramms">
+  <area shape="rect" coords="55,126,253,275" href="#chart" alt="Diagramme">
+  <area shape="rect" coords="280,288,455,309" href="#newitem" alt="Neues Objekt einfügen">
+  <area shape="rect" coords="5,84,35,134" href="#load" alt="Arbeitsblatt laden">
+  <area shape="rect" coords="4,138,31,163" href="#save" alt="Arbeitsblatt speichern">
+  <area shape="rect" coords="6,170,33,195" href="#saveas" alt="Arbeitsblatt speichern als">
+  <area shape="rect" coords="53,55,455,117" href="#sheet" alt="Eigenschaften des Arbeitsblatts">
+  <area shape="rect" coords="7,57,34,82" href="#new" alt="Neues Arbeitsblatt">
+  <area shape="rect" coords="4,32,659,49" href="#menu" alt="Hauptmenü">
+  <area shape="rect" coords="7,294,34,319" href="#update" alt="Neu zeichnen">
+  <area shape="rect" coords="312,424,456,502" href="#edititem" alt="Objekt bearbeiten">
+  <area shape="rect" coords="279,424,315,499" href="#order" alt="Reihenfolge der Objekte">
+  <area shape="rect" coords="5,326,34,352" href="#print" alt="Drucken">
+  <area shape="rect" coords="282,140,417,172" href="newchart" alt="Neues Diagramm">
+  <area shape="rect" coords="425,141,456,169" href="clonechart" alt="Diagramm duplizieren">
+  <area shape="rect" coords="319,186,453,214" href="editchart" alt="Diagramm bearbeiten">
+  <area shape="rect" coords="320,230,455,260" href="delchart" alt="Diagramm löschen">
+  <area shape="rect" coords="282,186,313,260" href="chartorder" alt="Reihenfolge ändern">
+  <area shape="rect" coords="290,310,325,345" href="#axis" alt="Achse hinzufügen">
+  <area shape="rect" coords="290,350,325,385" href="#text" alt="Textobjekt hinzufügen">
+  <area shape="rect" coords="330,310,365,345" href="#curve" alt="Datenkurve hinzufügen">
+  <area shape="rect" coords="330,350,365,385" href="#image" alt="Bilde hinzufügen">
+  <area shape="rect" coords="370,310,405,345" href="#fit" alt="Ausgleichskurve hinzufügen">
+  <area shape="rect" coords="370,350,405,385" href="#function" alt="Funktionskurve hinzufügen">
+  <area shape="rect" coords="410,310,445,345" href="#bar" alt="Balkendiagramm hinzufügen">
+  <area shape="rect" coords="410,350,445,385" href="#line" alt="Grafikobjekt hinzufügen">
+</map>
+
+<a name="bild"><h2>Desktop</h2></a>
+  Klicken auf einen Bereich des Bildes führt zur dazugehörigen Information.<p>
+<img src="images/r-plot-1.png" width="466" height="508" align="left" border="0" usemap="#Bild1">
+<br clear="all">
+<br>
+
+<a href="#anfang"><img src="images/arrow-up.png" width="22" height="22" border="0" alt="Anfang" align="right"></a>
+<a name="menu"><h2>Hauptmenü</h2></a>
+<dl>
+  <dt><b>Arbeitsblatt</b></dt>
+  <dd><a href="#new"><i>Neu</i></a> - Neuanlegen eines Arbeitsblatts</dd>
+  <dd><a href="#load"><i>Laden ..</i></a> - Laden eines gespeicherten Arbeitsblatts <i>(F3)</i></dd>
+  <dd><a href="#load"><i>Zuletzt verwendet ..</i></a>  - Liste der zuletzt verwendeten Arbeitsblätter</dd>
+  <dd><a href="#dave"><i>Speichern</i></a> - Speichern eines geänderten Arbeitsblatts <i>(F2)</i></dd>
+  <dd><a href="#saveas"><i>Speichern als ..</i></a>  - Speichern eines Arbeitsblatts unter neuem Namen</dd>
+  <dd><a href="#sheet"><i>Eigenschaften ..</i></a> - Eigenschaften des Arbeitsblatts bearbeiten</dd>
+  <dd><a href="#print"><i>Drucken ..</i></a> - Arbeitsblatt ausdrucken</dd>
+  <dd><a href="#export"><i>Exportieren</i></a></dd>
+    <dl>
+    <dd><a href="#savemeta"><i>als Postscript</i></a> - Arbeitsblatt als EPS exportieren</dd>
+    <dd><a href="#copyclip"><i>in die Zwischenablage</i></a> - Arbeitsblatt in die Zwischenablage kopieren</dd>
+    </dl>
+  <dd><a href="#ende"><i>Beenden</i></a> - Programm beenden</dd>
+
+  <dt><a href="#chart">Diagramm</a></dt>
+  <dd><i><b>Neu ..</b></i> - Neues Diagramm einfügen (<i>Strg+D</i>)</dd>
+  <dd><i><b>Bearbeiten ..</b></i></a> - Eigenschaften (z.B. Größe und Hintergrundfarbe)
+    des Diagramms bearbeiten</dd>
+  <dd><i><b>Entfernen ..</b></i> - Diagramm löschen</dd>
+
+  <dt><b>Objekt</b></dt>
+  <dd><a href="#newitem"><i>Hinzufügen</i></a></dd>
+    <dl>
+    <dd><i><b>Achse</b></i></dd>  
+      <dl>
+      <dd><i><b>X-Achse</b></i> - Horizontale Achse hinzufügen (<i>Strg+X</i>)</dd>   
+      <dd><i><b>Y-Achse</b></i> - Vertikale Achse hinzufügen (<i>Strg+Y</i>)</dd>   
+      </dl>
+    <dd><i><b>Kurve</b></i> - Datenkurve hinzufügen (<i>Strg+C</i>)</dd>  
+    <dd><i><b>Ausgleichskurve</b></i> - Ausgleichskurve hinzufügen (<i>Strg+F</i>)</dd>  
+    <dd><i><b>Grafik</b></i></dd>  
+      <dl>
+      <dd><i><b>Balkendiagramm ..</b></i> - Balkendiagramm hinzufügen (<i>Strg+B</i>)</dd>   
+      <dd><i><b>Histogramm ..</b></i> - Histogramm hinzufügen (<i>Strg+H</i>)</dd>           
+      </dl>
+    <dd><i><b>Funktion ..</b></i> - Funktion hinzufügen (<i>Strg+U</i>)</dd>  
+    <dd><i><b>Text</b></i></dd>  
+      <dl>
+      <dd><i><b>Box ..</b></i> - mehrzeilige Textbox hinzufügen (<i>Strg+T</i>)</dd>   
+      <dd><i><b>Kommentar ..</b></i> - drehbaren einzeiligen Text hinzufügen (<i>Strg+M</i>)</dd>   
+      <dd><i><b>Legende ..</b></i> - Legende für Kurve hinzufügen (<i>Strg+G</i>)</dd>   
+      <dd><i><b>Ergebnis ..</b></i> - Ergebnisse einer Ausgleichskurve hinzufügen (<i>Strg+R</i>)</dd>   
+      </dl>
+    <dd><i><b>Bild ..</b></i> - Bild hinzufügen (z.B. <i>bmp, jpg, png</i>) (<i>Strg+I</i>)</dd>  
+    <dd><i><b>Andere</b></i></dd>  
+      <dl>
+      <dd><i><b>Linie ..</b></i> - Linie mit optionalen Pfeilenden hinzufügen (<i>Strg+L</i>)</dd>   
+      <dd><i><b>Rechteck ..</b></i> - Rechteck mit optionaler Füllung hinzufügen (<i>Strg+O</i>)</dd>           
+      </dl>
+    </dl>
+  <dd><b><i>Bearbeiten ..</i></b> - Eigenschaften des ausgewählten Objekts
+    bearbeiten (<i>Strg+E</i>)</dd>
+  <dd><b><i>Entfernen .. </i></b> - ausgewähltes Objekt entfernen</dd>
+
+  <dt><b>Einstellungen</b></dt>
+  <dd><a href="#prefs"><i>Arbeitsblatt</i></a> - Voreinstellungen für neue Arbeitsblätter bearbeiten</dd>
+  <dd><em>Sprache</em> - Sprache für die Benutzeroberfläche auswählen</dd>
+    <dl>
+    <dd><em>Systemstandard</em> - Es wird die Sprache des Windowsbetriebssystems verwendet.</dd>
+    <dd><em>Deutsch</em></dd>
+    <dd><em>Englisch</em></dd>
+    </dl>
+ 
+  <dt><b>Hilfe</b></dt>
+  <dd><em>Dokumentation</em> - diese Hilfe anzeigen (<i>F1</i>)</dd>
+  <dd><em>Info</em> - Informationen zum Programm</dd>
+  <dd><em>Referenzen ..</em> - Infos zu verwendeten Programmteilen anderer Autoren </dd>
+</dl>
+<hr>
+
+<a href="#anfang"><img src="images/arrow-up.png" width="22" height="22" border="0" alt="Anfang" align="right"></a>
+<a name="tools"><h2 class="header">Werkzeugleiste</h2></a>
+
+<a name="new"><h3><img src="images/new-sheet.png" width="31" height="31" border="0" hspace="5">
+  Neues Arbeitsblatt anlegen</h3></a> 
+<img src="images/r-plot-neu.png" width="423" height="338" align="right" border="0" hspace="5" vspace="5">
+<p>Nach einem Klick auf die Schaltfläche oder bei Auswahl von <em>Arbeitsblatt &rArr; Neu ..</em>
+  im Menü öffnet sich ein Dialog, in dem eine kurze Beschreibung, die Größe des Arbeitsblattes 
+  und die Breite der Ränder (nur für direktes Drucken erforderlich), die
+  zu verwendenden Einheiten (<i>cm</i> oder <i>Inch</i>), sowie die Grundeinstellungen für die 
+  noch anzulegenden Diagramme festgelegt werden. Die Vorgabewerte des Programms sind für ein Blatt
+  gedacht, das als Abbildung in einen Text eingefügt werden soll (10 x 10 cm<sup>2</sup>).<br>
+  Der Benutzer kann diese Werte jederzeit im Menü über 
+  <em><a href="#prefs">Einstellungen &rArr; Arbeitsblatt</a></em> seinen Wünschen anpassen.<br>
+  Das Programm erstellt danach automatisch das erste <a href="#newchart">Diagramm</a>.
+  Die Größe wird an die des Arbeitsblattes angepasst.</p>
+  
+<a name="sheet"><h3><img src="images/edit-sheet.png" width="31" height="31" border="0" hspace="5">
+  Arbeitsblatt bearbeiten</h3></a>
+<p>Mit einem Klick auf die Schaltfläche oder bei Auswahl von <em>Arbeitsblatt &rArr; Eigenschaften ..</em>
+  im Menü öffnet sich ein Dialog, in dem alle oben beschriebenen Eigenschaften des 
+  Arbeitsblatts (außer den Einheiten) jederzeit verändert werden können. Über die 
+  Schaltflächen in der Mitte unten können die Vorgabewerte aus einer Datei
+  geladen, in einer Datei gespeichert oder auf die Standardvorgabewerte des 
+  Programms zurückgesetzt werden. So kann man das Grunddesign an verschiedene
+  Projekte individuell anpassen. 
+  </p>
+
+<img src="images/r-plot-a4.png" width="423" height="338" align="right" border="0" hspace="5" vspace="5">
+<a name="load"><h3><img src="images/load-sheet.png" width="31" height="31" border="0" hspace="5">
+  Arbeitsblatt laden</h3> </a>
+<p>Mit einem Klick auf die Schaltfläche oder bei Auswahl von <em>Arbeitsblatt &rArr; Laden ..</em>
+  im Menü öffnet sich ein Dialogfenster, in dem ein als Datei gespeichertes Arbeitsblatt 
+  (Dateityp: <em>xrp</em>) ausgewählt wird. Das Blatt wird geladen und angezeigt.<br>
+  Alle zuletzt benutzten Arbeitsblätter werden vom Programm in einer Liste gespeichert,
+  aus der es zum schnellen Laden ausgewählt werden kann:<br>
+  Klick auf den Pfeil in der Werkzeugleiste 
+  <img src="images/pop.png" width="31" height="21" border="0"> oder über das 
+  <em>Menü &rArr; Arbeitsblatt &rArr; Zuletzt verwendet</em>
+  <b>Hinweis:</b> Die Arbeitsblätter werden als Zip-Archive gespeichert. Sie 
+  enthalten ein XML-Datei mit den Arbeitsblatt-Daten und die verwendeten Bilder (sofern
+  vorhanden) im <i>BMP</i>-Format.    
+  </p>
+ 
+<a name="save"><h3><img src="images/save-sheet.png" width="31" height="31" border="0" hspace="5">
+  Arbeitsblatt speichern</h3></a>
+<p>Mit einem Klick Klick auf die Schaltfläche in der Werkzeugleiste
+  oder bei Auswahl von <em>Arbeitsblatt &rArr; Speichern ..</em> 
+  wird das Arbeitsblatt mit allen Veränderungen ohne Nachfrage unter dem aktuellen
+  Dateinamen gespeichert.
+</p>
+
+<a name="saveas"><h3><img src="images/save-sheet-as.png" width="31" height="31" border="0" hspace="5">
+  Arbeitsblatt unter neuem Namen speichern</h3></a>
+<p>Mit einem Klick Klick auf die Schaltfläche in der Werkzeugleiste
+  oder bei Auswahl von <em>Arbeitsblatt &rArr; Speichern als ..</em> im Menü
+  wird das Arbeitsblatt mit den aktuellen Veränderungen unter einem neuen Dateinamen 
+  gespeichert.</p>
+<br clear="all">
+  
+<a name="zoom"><h3>Grafische Anzeige</h3></a>
+<h4><img src="images/zoom-fit.png" width="31" height="31" border="0"> Größe anpassen</h4>
+<p>Die Skalierung der grafischen Darstellung wird so eingestellt, dass das
+  Arbeitsblatt das Anzeigefenster voll ausfüllt.</p>
+  
+<h4><img src="images/zoom-in.png" width="31" height="31" border="0">Vergrößern</h4>
+<p>Die grafische Darstellung wird stufenweise um den Faktor 1,4 vergrößert. Der
+  angezeigte Ausschnitt kann durch Klick auf das Diagramm und verschieben bei 
+  gedrückter linker Maustaste oder durch Bewegen der Schiebebalken am Rand
+  angepasst werden.</p>
+
+<h4><img src="images/zoom-out.png" width="31" height="31" border="0">Verkleinern</h4>      
+  <p>Die grafische Darstellung wird stufenweise um den Faktor 1,4 verkleinert.</p>
+
+<a name="update"><h4><img src="images/refresh.png" width="31" height="31" border="0">
+  Anzeige aktualisieren</h4></a>
+<p>Durch Klick auf diese Schaltfläche wird die Grafik neu gezeichnet.</p>
+<br clear="all">
+
+<h3>Drucken und Exportieren</h3>
+<a name="print"><h4><img src="images/print.png" width="31" height="31" border="0">
+  Grafische Darstellung drucken</h4></a>
+<p>Mit einem Klick Klick auf die Schaltfläche in der Werkzeugleiste
+  oder über das <em>Menü &rArr; Arbeitsblatt &rArr; Drucken ..</em>
+  erfolgt die Auswahl eines Druckers und die anschließende Ausgabe der
+  grafischen Darstellung.</p>
+
+<a name="export"><h4><img src="images/eps.png" width="31" height="31" border="0">
+  Speichern als Encapsulated-Postscript-Datei (<i>EPS</i>)</h4></a>
+<p>Die grafische Darstellung wird in das Postscript-Format konvertiert und
+  als Datei gespeichert. Diese Datei kann dann z.B. als Abbildung in <i>LaTeX</i>-Dokumente
+  eingefügt werden.</p>
+  
+<h4><img src="images/copy.png" width="31" height="31" border="0">
+  Kopieren in die Windows-Zwischenablage</h4>
+<p>Die grafische Darstellung wird in die Windows-Zwischenablage kopiert und kann
+  von dort in jede andere geeignete Anwendung (z.B. für die Textbearbeitung) 
+  eingefügt werden.</p>
+<br clear="all">
+
+<a name="color"><h3><img src="images/color.png" width="31" height="31" border="0">
+  Farbe übernehmen</h3>  </a>
+<p>Nach einem Klick Klick auf die Schaltfläche in der Werkzeugleiste wandelt sich
+  der Cursor in einen Farbaufnehmer, wenn man ihn über die grafische Darstellung
+  bewegt. Die Farbe unter dem Cursor wird im Status-Fenster am unteren Rand
+  als RGB-Wert angezeigt. Mit einem Maus-Klick wird sie als benutzerdefinierte Farbe 
+  gespeichert und kann danach in den Dialogen für die Farbauswahl (z.B. für Linien
+  oder Hintergründe) ausgewählt werden.</p>
+<hr> 
+
+<a href="#anfang"><img src="images/arrow-up.png" width="22" height="22" border="0" alt="Anfang" align="right"></a>
+<a name="charts"><h2 class="header">Diagramme</h2></a>
+<img src="images/chart-dialog.png" width="443" height="363" align="right" border="0" hspace="5">
+
+<a name="newchart"><h3><img src="images/new-chart.png" width="136" height="31" border="0" hspace="5">
+  Neues Diagramm einfügen</h3></a>
+<p>Nach einem Klick auf die Schaltfläche oder bei Auswahl von <em>Diagramm &rArr; Neu</em>
+  im Menü wird der Dialog zur Bearbeitung der Einstellungen für das neue Diagramms geöffnet. 
+  Die Größe wird immer automatisch so berechnet, dass das erste Diagramm das Arbeitsblatt voll ausfüllt.
+  Werden weitere Diagramme hinzugefügt, werden sie automatisch vertikal angeordnet
+  und in der Größe angepasst. Für die Koordinatenachsen wird dabei ein
+  einstellbarer Randbereich freigehalten. Natürlich können Ort und Größe der Diagramme
+  auch auf individuelle Werte eingestellt werden. <br>
+  Optional kann eine Hintergrundfarbe gewählt, und eingestellt werden, ob das
+  Diagramm eine Umrandung erhalten soll.</p> 
+<p>Jedes Diagramm erhält vom Programm automatisch einen eindeutigen Namen, der 
+  vom Benutzer beliebig geändert werden kann. Unter diesen Namen werden die Diagramme
+  zusammen mit der Anzahl der untergeordneten Objekte in der Diagrammliste angezeigt. 
+  Ein grünes Häkchen bedeutet, dass das Diagramm in der grafischen Darstellung 
+  angezeigt wird. Fehlt dieses Häkchen, bleibt das Diagramm unsichtbar. Die 
+  Einstellung kann im jeweiligen Diagrammdialog vorgenommen werden. Wird 
+  stattdessen ein rotes Kreuz angezeigt, wurde dieses Diagramm zum 
+  <a href="#delchart">Entfernen</a> markiert.<br>
+  Das Zeichnen der Diagramme in der grafischen Darstellung erfolgt in der Reihenfolge
+  der Liste. Weiter unten stehende Diagramme überdecken weiter oben stehende. 
+  Zur Veränderung dieser Reihenfolge klickt man auf eine der Schaltflächen mit
+  den Pfeilen nach oben oder unten. Das ausgewählte Diagramm wird entsprechend 
+  verschoben.</p>
+  
+<a name="editchart"><h3><img src="images/edit-chart.png" width="136" height="31" border="0">
+  Diagramm bearbeiten</h3></a>
+<p>Mit einem Klick auf die Schaltfläche oder bei Auswahl von <em>Diagramm &rArr; Bearbeiten</em>
+  im Menü wird der Dialog für die Einstellungen des Diagramms geöffnet:</p>
+<ul>
+  <li><em>Name:</em> Name des Diagramms (automatisch oder benutzerdefiniert)</li>
+  <li><em>Position:</em> Hier wird die Position der linken unteren Ecke des 
+    Diagramms (das ist gleichzeitig die Position des Nullpunkts der jeweils ersten 
+    Koordinatenachsen) angegeben.</li>
+  <li><em>Größe:</em> Hier werden die Breite und Höhe des Diagramms angegeben 
+    (das sind gleichzeitig die Längen der jeweiligen Achsen).</li>
+  <li><em>Standard-Randbereich:</em> Dies ist die Breite des Streifens, der auf den
+    Seiten des Diagramms freigehalten werden soll, auf denen sich keine Achsen
+    befinden (Vorgabe: 0,25 cm).</li>
+  <li><em>Randbreite für Achsenbeschriftung:</em> Dies ist die Breite des Streifens,
+    der auf den Seiten des Diagramms für eine Achse frei gehalten werden soll
+    (Vorgabe: 1 cm). Befinden sich auf einer Seite des Diagramms mehrere Achsen 
+    wird dieser Bereich entsprechend vervielfacht.</li>
+  <li><em>Umrandung:</em> Normalerweise erfolgt die Umrandung mit den 
+    <a href="#axis">Achsen</a>. Alternativ kann auch eine in der Breite, im Stil
+    und der Farbe einstellbare Linie gezeichnet werden (siehe Abb. oben).</li>
+  <li><em>Hintergrundfarbe:</em> Ein Diagramm kann entweder einen transparenten
+    Hintergrund versehen oder mit einer auswählbaren Farbe hinterlegt werden.</li>
+</ul>      
+<p>Alle für ein Diagramm vorgenommenen Einstellungen, einschließlich der Einstellungen
+  für alle untergeordneten Objekte, können als Vorlage abgespeichert werden, um
+  sie für andere Diagramme wieder verwenden zu können:<br>
+<img src="images/temp-load.png" width="31" height="31" border="0"> Laden einer Diagramm-Vorlage<br>
+<img src="images/temp-save.png" width="31" height="31" border="0"> Speichern der aktuellen
+  Einstellungen als Diagramm-Vorlage<br>
+  </p> 
+
+<a name="delchart"><h3>Diagramm entfernen</h3></a>
+<p>Nach einem Klick auf die Schaltfläche oder über bei Auswahl von <em>Diagramm &rArr; Entfernen</em>
+  im Menü wird das ausgewählte Diagramm zum Löschen markiert. In der Liste der Diagramme
+  wird dies durch ein kleines rotes Kreuz angezeigt. Diese Markierung kann rückgängig 
+  gemacht werden, solange das Arbeitsblatt noch nicht gespeichert wurde.
+  Erst beim Abspeichern wird es endgültig gelöscht.</p>
+  
+<a name="clonechart"><h3>Diagramm duplizieren</h3></a>
+<p>Mit einem Klick auf die Schaltfläche wird ein Duplikat des ausgewählten Diagramms,
+  einschließlich aller seiner Objekte, angefertigt. Die Positionen und Größen
+  der anderen Diagramme wird automatisch angepasst.</p>     
+<br clear="all">
+
+<hr>
+<a name="newitem"><h2 class="header">Objekte in Diagrammen</h2></a>
+<p>Einem Diagramm können verschiedene Objekte hinzugefügt werden. Man klickt dazu
+  auf eine Schaltfläche der Auswahlpalette. Bei einigen Objekten kann über ein 
+  Untermenü eine spezielle Auswahl getroffen werden. Alle Objekte erhalten vom
+  Programm automatisch einen eindeutigen Namen, der vom Benutzer beliebig
+  geändert werden kann. Unter diesen Namen werden die Objekte zusammen mit ihrer
+  Typbezeichnung in der Objektliste angezeigt. Ein grünes Häkchen bedeutet,
+  dass das Objekt in der grafischen Darstellung angezeigt wird. Fehlt dieses
+  Häkchen, bleibt das Objekt unsichtbar. Die Einstellung kann im jeweiligen
+  Objektdialog vorgenommen werden. Wird stattdessen ein rotes Kreuz angezeigt,
+  wurde dieses Objekt zum <em>Entfernen</em> markiert. Diese Markierung kann
+  rückgängig gemacht werden, solange das Arbeitsblatt noch nicht gespeichert 
+  wurde.<br>
+  Das Zeichnen der Objekte in der grafischen Darstellung erfolgt in der Reihenfolge
+  der Liste. Weiter unten stehende Objekte überdecken weiter oben stehende. 
+  Zur Veränderung dieser Reihenfolge klickt man auf eine der Schaltflächen mit
+  den Pfeilen nach oben oder unten. Das ausgewählte Objekt wird entsprechend 
+  verschoben.<br></p>
+<p>Einige Dialoge bieten die Möglichkeit die vorgenommenen Einstellungen (z.B. bei
+  einer Achse) als Vorlage zu speichern. Aus dieser Vorlage können die 
+  Einstellungen dann für andere Objekte wieder geladen werden:<br>
+<img src="images/temp-load.png" width="31" height="31" border="0"> Laden einer Vorlage<br>
+<img src="images/temp-save.png" width="31" height="31" border="0"> Speichern der aktuellen
+  Einstellungen als Vorlage<br>
+ &nbsp;</p>
+ 
+<img src="images/axis-dialog.png" width="567" height="573" align="right" border="0" hspace="5">
+<a name="axis"><h3><img src="images/axis.png" width="36" height="36" border="0" hspace="5">
+  Koordinatenachse einfügen</h3> </a>
+<p>Das Auswahlmenü bietet die Möglichkeiten eine X- oder Y-Achse zu erstellen oder
+  eine bereits vorhandene Achse zu duplizieren.
+  Im Dialogfenster (siehe Abb. rechts) werden die Eigenschaften der neuen 
+  Achse angezeigt und können dort vom Benutzer angepasst werden:</p>
+<ul>
+  <li><em>Name:</em> Name der Achse (automatisch oder benutzerdefiniert)</li>
+  <li><em>Typ:</em> Achsentyp (Horizontal oder vertikal)</li>
+  <li><em>Bereich:</em> Bereich für die Achsenskalierung (Anfangs- und Endwert)<br>
+    Ein Klick auf die Schaltfläche mit der Skala berechnet automatisch die
+    groben und feinen Unterteilungen.</li>
+  <li><em>Skalierung:</em> Die Skalierung kann linear, logarithmisch, invers oder
+    linear mit einer Unterteilung mit Datums- und Zeitwerten sein.</li>
+  <li><em>Position:</em> Die Achse wird relativ zum linken oder rechten Rand (bzw.
+    unteren oder oberen Rand) des Diagramms angegeben. Beim Erstellen einer neuen 
+    Achse wird diese Position, abhängig davon wie viele weitere Achsen das Diagramm
+    enthält, automatisch berechnet.<br>
+    Optional kann eine Spiegelbild der Achse auf der jeweils anderen Seite des
+    Diagramms angezeigt oder die Achse ausgeblendet werden.</li>
+  <li><em>Linie:</em> Hier wird die Linienstärke und die Farbe eingestellt.</li>
+  <li><em>Rasterlinien:</em> Bei den groben Skalenmarkierung kann eine Linie
+    über das ganze Diagramms angezeigt werden. Die Breite und der
+    Stil sind einstellbar.</li>
+  <li><em>Skalenstriche:</em> Die Breite und Länge der groben und feinen
+    Skalenstriche ist getrennt einstellbar. Außerdem kann angegeben werden,
+    ob die Striche nur auf der Innen- oder Außenseite der Achse oder auf beiden
+    Seiten gezeichnet werden sollen.<br>
+    Die Intervallunterteilung kann automatisch berechnet (siehe oben unter 
+    <em>Bereich</em>) oder von Hand vorgenommen werden:
+    <ul id=level2>
+      <li><em>Grobes Intervall:</em> Angabe in den Bereichseinheiten</li>
+      <li><em>Schritte:</em> Anzahl der Unterteilungen des groben Intervalls</li>
+    </ul>
+    </li>
+  <li><img src="images/axis-user.png" width="321" height="341" align="right" border="0" hspace="5">
+    <em>Achsenbeschriftung mit Zahlen:</em> 
+    <ul id=level2>
+      <li><em>Genauigkeit:</em> Damit ist die Anzahl von anzuzeigenden relevanten 
+        Stellen (1 .. 8, automatisch oder ganzzahlig) gemeint. Das Programm rundet 
+        die Werte entsprechend. Bei der Auswahl von ganzzahligen Werten können
+        diese durch individuelle Texte ersetzt werden (siehe unten).</li>
+      <li><em>Notierung:</em> Es kann ausgewählt werden, wie die Zahlen angezeigt
+        werden sollen: Fest (12345,6), wissenschaftlich (1,23456&sdot;10<sup>4</sup>),
+        technisch (12,3456&sdot;10<sup>3</sup>) oder mit Vorsätzen (12,3456k)</li>
+      <li><em>Abstand von der Achse:</em> Abstand der den Achsen zugewandten Seite des
+        Textes zur Achse</li>
+      <li><em>Textgröße und -schrift:</em> Die Größe und die Schriftart können 
+        individuell gewählt werden.</li>
+      <li><em>Weitere Optionen:</em> Optional kann die Beschriftung unterdrückt 
+        werden und bei vertikalen Achsen um 90° gedreht werden.</li>
+    </ul>
+    </li>
+  <li><em>Achsenbeschriftung mit benutzerdefinierten Texten:</em> Wurde als 
+    Genauigkeit <em>ganzzahlig</em> ausgewählt, können über die Schaltfläche
+    <em>Benutzerdefiniert</em> individuelle Texte für die Beschriftung an den  
+    groben Skalenstrichen (in der Abb. die Monatsnamen) eingegeben werden.
+    Mit dem Schieberegler kann die Position innerhalb des Intervalls verschoben 
+    werden: Von zentriert am zugeordneten Skalenstrich bis zentriert am nachfolgenden
+    Skalenstrich. Bei Mittelstellung wird der Text in der Mitte des Intervalls
+    angezeigt. Damit der Alternativtext angezeigt wird (und nicht die zugeordneten 
+    Zahlen) muss das Häkchen bei <em>Anzeigen</em> gesetzt sein. Mit einem Klick
+    auf die Schaltfläche <em>Fertig</em> schließt man die Eingabe ab.</li>
+  <li><em>Beschriftung:</em>
+    <ul id=level2>
+      <li><em>Text und Einheit:</em> Hier wird der Beschreibungstext für die Achse
+        eingegeben. Die optional angegebene Einheit wird entweder dem Text mit 
+        einem Schrägstrich nachgestellt oder, wenn das Häkchen bei <em>In der
+        Skala anzeigen</em> gesetzt ist, zwischen den beiden letzten groben
+        Skalenstrichen (DIN 461) angezeigt.</li>
+      <li><em>Position:</em> Mit dem Schieberegler wird die Position der
+        Beschriftung entlang der Achse eingestellt. Außerdem kann der Abstand
+        zur Achse angepasst werden</li>
+      <li><em>Textgröße und -schrift:</em> Die Größe und die Schriftart können 
+        individuell gewählt werden.</li>
+    </ul>
+    </li>
+  <li><em>Individuelle Schriftgestaltung:</em> Einzelne Textteile können auf
+    Wunsch <i>fett</i> oder <i>kursiv</i>, <i>hoch-</i> oder <i>tiefgestellt</i> 
+    dargestellt werden und es können Sonderzeichen (wie z.B. griechische Buchstaben)
+    eingefügt werden (<a href="#format">Einzelheiten dazu</a>).
+  </li>
+</ul>  
+<p>&nbsp;</p>
+
+<a name="curve"><h3><img src="images/curve.png" width="36" height="36" border="0" hspace="5">
+  Datenkurve einfügen</h3></a>
+<img src="images/curve-dialog.png" width="518" height="401" align="right" border="0" hspace="5">
+<p>Wenn bei einem neuen Arbeitsblatt diese Schaltfläche angeklickt wird, wird 
+  automatisch ein Format füllendes Diagramm mit jeweils einer X- und einer Y-Achse 
+  angelegt. Die Bereiche werden nach der Eingabe der Datenpunkte automatisch angepasst.<br>
+  Im Dialogfenster (siehe Abb. rechts) werden die Eigenschaften der anzuzeigenden 
+  Kurve angezeigt und können dort vom Benutzer bearbeitet werden:</p>
+<ul>
+  <li><em>Name:</em> Name der Kurve (automatisch oder benutzerdefiniert)</li>
+  <li><em>X-Achse auswählen:</em> Wenn mehrere X-Achsen existieren, muss die
+    zu den Daten zugehörige aus der Liste ausgewählt werden, um eine richtige
+    Skalierung zu bewirken.<br>
+    Auf Wunsch kann eine automatische Anpassung des Achsenbereichs entsprechend
+    den Daten vorgenommen werden.</li>
+  <li><em>Y-Achse auswählen:</em> Wenn mehrere Y-Achsen existieren, muss die
+    zu den Daten zugehörige aus der Liste ausgewählt werden, um eine richtige
+    Skalierung zu bewirken.<br>
+    Auf Wunsch kann eine automatische Anpassung des Achsenbereichs entsprechend
+    den Daten vorgenommen werden.</li>
+  <li><em>Daten bearbeiten:</em> Ein Klick auf diese Schaltfläche öffnet einen
+    Dialog für die <a href="#editdata">Eingabe der Datenpunkte</a>.</li>
+  <li><em>Symbol:</em> Die Datenpunkte werden durch ein auswählbares Symbol markiert.
+    Die Form, Größe und Farbe sind einstellbar.</li>
+  <li><em>Punkte verbinden:</em> Auf Wunsch können die Datenpunkte durch gerade 
+    Linien verbunden oder eine Spline-Funktion als glatte Kurve
+    darüber gelegt werden. Die Stärke der Glättung ist einstellbar (0 = keine
+    Glättung, 100 = sehr starke Glättung)). Linienbreite, Stil (nur bei Linien)
+    und Farbe sind einstellbar.</li>
+  <li><em>Fehlerbalken anzeigen:</em> Wenn im Datensatz zu den Datenpunkte
+    Fehlerabweichungen angegeben werden, können diese als Fehlerbalken (für
+    X und Y getrennt) angezeigt werden. Linienbreite und Farbe sind einstellbar.</li>
+</ul>
+
+<a name="editdata"><h4>Dateneingabe</h4></a>
+<img src="images/data-1.png" width="548" height="401" align="right" border="0" hspace="5">
+<p>Die Dateneingabe erfolgt mit einem Texteditor zeilenweise (siehe Abb. rechts). 
+  Zur Spaltentrennung kann bei der Eingabe die Leer- oder die Tab-Taste verwendet 
+  werden. Oben wird ausgewählt, ob in dem Datensatz Fehlerangaben enthalten sind.
+  Entsprechend werden weitere Spalten angelegt (siehe Abb. rechts unten). 
+  Die Fehlerangaben werden immer als Differenz zum Nennwert angegeben und können 
+  auch asymmetrisch sein (Werte immer positiv).<br>
+  Unten links befindet sich eine Werkzeugleiste mit Schaltflächen für folgende 
+  Funktionen:<br>
+  <img src="images/paste.png" width="26" height="26" border="0"> Text aus der 
+    <em>Zwischenablage einfügen</em><br>
+  <img src="images/sort.png" width="26" height="26" border="0"> Tabelle nach
+    aufsteigenden X<em>-Werten sortieren</em><br>
+  <img src="images/edit-mode.png" width="26" height="26" border="0"> Umschalten
+    vom <em>Block- in den Spaltenmodus</em> beim Markieren von Texten<br>
+  <img src="images/find.png" width="26" height="26" border="0"> Nach Text 
+    <em>suchen</em><br>
+  <img src="images/replace.png" width="26" height="26" border="0"> Textstelle
+    <em>ersetzen</em><br>
+  <img src="images/find-next.png" width="26" height="26" border="0"> <em>Nächste
+    Textstelle</em> suchen oder ersetzten</p>
+<br clear="all">
+
+<img src="images/data-2.png" width="548" height="401" align="right" border="0" hspace="5">
+<ul>
+  <li><em>Daten importieren:</em> Zum Importieren von Daten im <i>CSV</i>-Format 
+  <a href="#import">siehe weiter unten</a></li>
+  <li><em>Bereiche anpassen:</em> Ist diese Feld markiert, werden nach dem Schließen
+    der Dateneingabe im Kurvendialogs (<a href="#curve">siehe oben</a>) die 
+    Markierungen für die automatische Skalierung gesetzt. </li>
+</ul>
+
+<p>&nbsp;</p>
+<h4>Eingabe von Datum und Zeit</h4>
+<p>Sowohl bei der Handeingabe als auch beim Import können folgende Formate
+  verwendet werden:</p>
+<ul>
+  <li><b>yyyy-mm-dd</b> nur Datum, z.B. <i>2020-07-21</i></li>
+  <li><b>[d]d.[m]m.yyyy</b> nur Datum, z.B. <i>21.7.2020</i></li>
+  <li><b>hh:mm[:ss]</b> nur Zeit. z.B. <i>12:30:15</i> oder <i>12:30</i></li>
+  <li><b>sss[,z]</b> Zeit in Sekunden, z.B. <i>125,5</i></li>
+  <li><b>yyyy-mm-dd hh:mm:ss</b> Datum und Zeit, z.B. <i>2020-07-21 12:30:15</i>
+  <li><b>[d]d.[m]m.yyyy hh:mm[:ss]</b> Datum und Zeit, z.B. <i>21.7.2020 12:30:15</i></li>
+</ul>
+
+<br clear="all">
+<p>&nbsp;</p>
+<a name="import"><h4>Daten importieren</h4></a>
+<img src="images/import.png" width="596" height="449" align="right" border="0" hspace="5">
+<p> Es können alle im <i>CSV</i>-Format (comma separated values) 
+  abgespeicherten Daten importiert werden. Da dieses Format von sehr vielen Anwendungen 
+  unterstützt wird, hat man eine universelle Datenschnittstelle. Die genauen
+  Formateinstellungen können, ebenso wie die Spaltenzuordnung angepasst werden
+  (siehe Abb. rechts). Kommentarzeilen am Anfang können übersprungen werden.<br>
+  Je nach zu importierender <i>CSV</i>-Datei müssen Spaltentrenner (z.B. Komma oder Semikolon),
+  Dezimaltrenner (Komma oder Punkt) ubd Feldbegrenzer (z.B. doppelte
+  Anführungszeichen) geeignet ausgewählt werden. Im unteren Fenster wird ein Ausschnitt
+  aus der zu importierende <i>CSV</i>-Datei zur Kontrolle angezeigt. Die Spalten werden
+  durch Klick auf die kleinen Pfeile neben den einzelnen Spaltenzählern ausgewählt. 
+  Ein grünes Signal zeigt an, dass
+  der jeweilige Wert fehlerfrei gelesen werden konnte. Ist das Signal rot,
+  ist entweder die Auswahl eines Trenners oder einer Spalte falsch.</p>
+<p><em>Daten reduzieren um Faktor ..:</em> Enthält die importierte Datentabelle
+  sehr viele Datensätze, kann diese Anzahl durch Angabe eines Faktors reduziert werden 
+  (z.B. 5 = Es wird jeweils über 5 Datensätze gemittelt).</p>
+
+<br clear="all">
+<p>&nbsp;</p>
+<a name="fit"><h3><img src="images/polfit.png" width="36" height="36" border="0" hspace="5">
+  Ausgleichskurve einfügen</h3></a>
+<img src="images/fit-dialog.png" width="514" height="345" align="right" border="0" hspace="5">
+<p>Die Berechnung der Ausgleichskurve (lineare Funktion oder Polynom bis max. 10 Grades)
+  erfolgt nach dem Prinzip der kleinsten Fehlerquadrate. In X- und Y-Richtung kann
+  unabhängig voneinander eine lineare, logarithmische oder inverse Skalierung
+  dabei berücksichtigt werden.</p>
+<ul>
+  <li><em>Name:</em> Name der Ausgleichskurve (automatisch oder benutzerdefiniert)</li>
+  <li><em>Datenkurve auswählen:</em> Auswahl der Daten, für die eine Ausgleichskurve
+    angezeigt werden soll.</li>
+  <li><em>Ausgleichsfunktion:</em> Es kann zwischen einer Geraden und einem Polynom
+    bis max. 10 Grades gewählt werden.</li>
+  <li><em>Linien-Eigenschaften:</em> Breite, Stil und Farbe sind einstellbar.</li>
+  <li><em>X-Werte für Näherung:</em> Für die Berechnung können entweder alle Werte
+    oder nur ein einstellbarer X-Bereich verwendet werden (z.B. wenn eine Datenkurve 
+    nur in einem Teilbereich durch eine Gerade approximiert werden kann).</li>
+  <li><em>Ausgleichsfunktion anzeigen für ..:</em> Es kann ausgewählt werden, ob die
+    Ausgleichskurve nur für den Bereich angezeigt werden soll, für den sie berechnet 
+    wurde, oder ob sie bis zu den Bereichsgrenzen der Achse extrapoliert werden soll.</li>
+  <li><em>X- und Y-Skalierung:</em> Vor der Berechnung werden X- oder Y-Werte entsprechend der 
+    Auswahl skaliert (z.B. zur Berechnung von Asymptoten in einer doppelt 
+    logarithmischen Darstellung).</li>
+</ul>  
+
+<a name="function"><h3><img src="images/function.png" width="36" height="36" border="0" hspace="5">
+  Funktionskurve einfügen</h3></a>
+<img src="images/function-dialog.png" width="543" height="393" align="right" border="0" hspace="5">
+<p>Es wird eine durch einen mathematischen Ausdruck beschriebene Funktion in das
+  Diagramm eingefügt. Wenn bei einem neuen Arbeitsblatt diese Schaltfläche angeklickt 
+  wird, wird automatisch ein Format füllendes Diagramm mit jeweils einer X- und 
+  einer Y-Achse angelegt. Für die X-Achse muss außerdem ein Bereich festgelegt werden:</p>
+<ul>
+  <li><em>Name:</em> Name der Funktion (automatisch oder benutzerdefiniert)</li>
+  <li><em>X-Achse auswählen:</em> Wenn mehrere X-Achsen existieren, muss die
+    der Funktion zuzuordnende aus der Liste ausgewählt werden, um einen
+    Bereich für die Berechnung vorzugeben.</li>
+  <li><em>Y-Achse auswählen:</em> Wenn mehrere Y-Achsen existieren, muss die
+    der Funktion zuzuordnende zugehörige aus der Liste ausgewählt werden, um eine richtige
+    Skalierung zu bewirken.<br>
+    Auf Wunsch kann eine automatische Anpassung des Achsenbereichs entsprechend
+    den Daten vorgenommen werden.</li>
+  <li><em>Linien-Eigenschaften:</em> Breite, Stil und Farbe sind einstellbar.</li>
+  <li><em>X-Bereich für die Funktion:</em> Es kann entweder der gesamte Bereich der
+    X-Achse oder auch nur ein Teilbereich (von .. bis) ausgewählt werden.</li>
+  <li><em>Winkeleinheiten:</em> Bei der Berechnung der Funktion können folgende
+    Winkeleinheiten verwendet werden: <em>Bogenmaß (rad)</em>, <em>Grad (&deg;)</em> oder 
+    <em>Neugrad (gon)</em>.</li>
+  <li><em>Formel:</em> Es muss der funktionale Zusammenhang <em>y&nbsp;=&nbsp;f(x)</em>
+    als Formel angegeben werden. Die Syntax ist ähnlich, wie sie bei den meisten
+    Programmiersprachen verwendet wird. Zwischen Groß- und Kleinschreibung wird nicht 
+    unterschieden. Die Argumente bei den trigonometrischen Funktionen werden
+    in der ausgewählten Winkeleinheit ausgewertet. Entsprechendes gilt für die 
+    Resultate bei den Arcus-Funktionen. In der Formel können außerdem bis zu 
+    6 frei definierbare Konstanten verwendet werden. Dadurch wird es sehr einfach, 
+    komplizierte Formeln durch Kopieren mehrfach in einem Diagramm zu verwenden. 
+    Es müssen dann jeweils nur die Werte der Konstanten entsprechend angepasst werden.
+    <dl>
+      <dt><strong>Zahlen:</strong></dt>
+      <dd>Zahlen dürfen ein führendes Vorzeichen, einen Dezimaltrenner (wie systemseitig
+       eingestellt, bei deutschen Windows-Installationen also das Komma) und einen
+       Exponenten enthalten.<br>
+       Beispiele: <em>3</em> ; <em>4,7</em> ; <em>-0,03</em> ; <em>1,2E-2</em></dd>
+      <dt><strong>Variable:</strong></dt>
+      <dd>Wert der ausgewählten X-Achse: <em>x</em></dd>
+      <dt><strong>Konstanten:</strong></dt>
+      <dd>Vordefinierte Konstanten: <em>Pi</em> und <em>e</em></dd>
+      <dd>Benutzerdefinierte Konstanten: <em>a</em>, <em>b</em>, <em>c</em>, <em>d</em>, <em>u</em> und <em>v</em></dd>
+      <dt><strong>Operatoren:</strong></dt>
+      <dd>Als Operatoren können die vier Grundrechenarten <em>+</em>, <em>-</em>,
+      <em>*</em> und <em>/</em> verwendet werden. Potenzen werden mit <em>^</em>
+      gekennzeichnet. Klammern, auch verschachtelt, sind erlaubt. Es gelten immer die in 
+      der Mathematik üblichen Vorrangregeln.<br>
+      Beispiel: 2,1 * x^2 + 3,5*(x-0,5) + e^x</dd>
+      <dt><strong>Funktionen:</strong></dt>
+      <dd>
+      - Trigonometrische Funktionen: <em>sin</em>, <em>cos</em>, <em>tan</em> und <em>cot</em><br>
+      - Arcus-Funktionen: <em>asin</em>, <em>acos</em>, <em>atan</em> und <em>acot</em><br>
+      - Hyperbelfunktionen: <em>sinh</em>, <em>cosh</em>, <em>tanh</em>, und <em>coth</em><br>
+      - Area-Funktionen: <em>asinh</em>, <em>acosh</em>, <em>atanh</em> und <em>acoth</em><br>
+      - Logarithmen: <em>ln</em> (natürlich) und <em>lg</em> (dekadisch)<br>
+      - <i>e</i>-Funktion: <em>exp</em> und Quadratwurzel: <em>sqrt</em><br>
+      - sonstige: <em>abs</em> (Absolutwert), <em>sign</em> (Signum) und <em>fak</em> (Fakultät)  
+      </dd>
+    </dl>
+  </li>
+</ul>  
+  
+<a name="bar"><h3><img src="images/diagram.png" width="36" height="36" border="0" hspace="5">
+  Besondere Diagrammformen</h3></a>
+<img src="images/bar-dialog.png" width="512" height="335" align="right" border="0" hspace="5">
+<h4>Balkendiagramm einfügen</h4>
+<p>Wenn bei einem neuen Arbeitsblatt diese Schaltfläche angeklickt wird, wird 
+  automatisch ein Format füllendes Diagramm mit jeweils einer X- und einer Y-Achse 
+  angelegt. Die Bereiche werden nach der Eingabe der Datenpunkte automatisch angepasst.<br>
+  Im Dialogfenster (siehe Abb. rechts) werden die Eigenschaften des anzuzeigenden 
+  Balkendiagramms angezeigt und können dort vom Benutzer bearbeitet werden:</p>
+<ul>
+  <li><em>Name:</em> Name des Balkendiagramms (automatisch oder benutzerdefiniert)</li>
+  <li><em>X-Achse auswählen:</em> Wenn mehrere X-Achsen existieren, muss die
+    zu den Daten zugehörige aus der Liste ausgewählt werden, um eine richtige
+    Skalierung zu bewirken.<br>
+    Auf Wunsch kann eine automatische Anpassung des Achsenbereichs entsprechend
+    den Daten vorgenommen werden.</li>
+  <li><em>Y-Achse auswählen:</em> Wenn mehrere Y-Achsen existieren, muss die
+    zu den Daten zugehörige aus der Liste ausgewählt werden, um eine richtige
+    Skalierung zu bewirken.<br>
+    Auf Wunsch kann eine automatische Anpassung des Achsenbereichs entsprechend
+    den Daten vorgenommen werden.</li>
+  <li><em>Daten bearbeiten:</em> Ein Klick auf diese Schaltfläche öffnet einen
+    Dialog für die <a href="#editdata">Eingabe der Datenwerte</a>.</li>
+  <li><em>Gestaltung:</em> Breite und Farbe der Umrandung, sowie die Farbe des
+    Hintergrunds der Balken sind einstellbar.</li>
+  <li><em>Balkenbreite:</em> Die Balken werden symmetrisch zum X-Wert in der
+    angegebenen Breite angezeigt.</li>
+  <li><em>Balkenversatz:</em> Wenn mehrere Datenreihen dargestellt werden sollen,
+    können die weiter hinter liegenden gegenüber dem X-Wert seitlich versetzt
+    werden.</li>
+</ul>
+
+<a name="histo"><h4>Histogramm einfügen</h4></a>
+<img src="images/histo-dialog.png" width="512" height="335" align="right" border="0" hspace="5">
+<p>Wenn bei einem neuen Arbeitsblatt diese Schaltfläche angeklickt wird, wird 
+  automatisch ein Format füllendes Diagramm mit jeweils einer X- und einer Y-Achse 
+  angelegt. Die Bereiche werden nach der Eingabe der Datenpunkte automatisch angepasst.<br>
+  Bei der Eingabe der Daten ist nur eine Wertereihe (X-Werte) erforderlich. Vor der Anzeige
+  wird automatisch ermittelt, wie viele Werte in den durch einen Streifen festgelegten 
+  Wertebereich fallen. 
+  Im Dialogfenster (siehe Abb. rechts) werden die Eigenschaften der anzuzeigenden 
+  Histogramms angezeigt und können dort vom Benutzer bearbeitet werden:</p>
+<ul>
+  <li><em>Name:</em> Name des Histogramms (automatisch oder benutzerdefiniert)</li>
+  <li><em>X-Achse auswählen:</em> Wenn mehrere X-Achsen existieren, muss die
+    zu den Daten zugehörige aus der Liste ausgewählt werden, um eine richtige
+    Skalierung zu bewirken.<br>
+    Auf Wunsch kann eine automatische Anpassung des Achsenbereichs entsprechend
+    den Daten vorgenommen werden.</li>
+  <li><em>Y-Achse auswählen:</em> Wenn mehrere Y-Achsen existieren, muss die
+    zu den Daten zugehörige aus der Liste ausgewählt werden, um eine richtige
+    Skalierung zu bewirken.<br>
+    Auf Wunsch kann eine automatische Anpassung des Achsenbereichs entsprechend
+    den Daten vorgenommen werden.</li>
+  <li><em>Daten bearbeiten:</em> Ein Klick auf diese Schaltfläche öffnet einen
+    Dialog für die <a href="#editdata">Eingabe der Datenwerte</a>.</li>
+  <li><em>Gestaltung:</em> Breite und Farbe der Umrandung, sowie die Farbe des
+    Hintergrunds der Balken sind einstellbar.</li>
+  <li><em>Anzahl der Streifen:</em> Die X-Achse wird linear in die angegebene
+    Anzahl von Streifen aufgeteilt. Zu jedem Streifen gehört entsprechend der
+    Skalierung der X-Achse ein Wertebereich. Die in diesen Bereich fallenden
+    Werte werden ausgezählt und durch eine entsprechende Balkenhöhe angezeigt.</li>
+</ul>
+
+<a name="text"><h3><img src="images/text.png" width="36" height="36" border="0" hspace="5">
+  Textobjekte einfügen</h3></a>
+<img src="images/text-dialog.png" width="531" height="381" align="right" border="0" hspace="5">
+<p>Mit dieser Funktion können dem Diagramm frei platzierbare Texte hinzugefügt
+  werden. Es gibt dabei vier verschiedene, nachfolgend beschriebene Varianten
+  (<em>Textkasten</em>, <em>Kommentar</em>, <em>Legende</em> und 
+  <em>Ergebnis einer Ausgleichskurve</em>). Allen gemeinsam sind folgende Einstellungen:</p>
+<ul>
+  <li><em>Name:</em> Name des Textobjektes (automatisch oder benutzerdefiniert)</li>
+  <li><em>Position:</em> Es wird die Position der linken unteren Ecke des 
+    Textobjektes relativ zur linken unteren Ecke des Arbeitsblatts eingegeben.
+    Das Textobjekt ist auf dem Diagramm mit der Maus frei verschiebbar.</li>
+  <li><em>Schriftart:</em> Die Schriftart kann aus den verfügbaren TrueType-Schriften
+    ausgewählt werden. Standard ist <em>Arial</em>. Größe und Farbe sind
+    einstellbar. Außerdem kann der Stil (fett und/oder kursiv) gewählt werden.
+    Wenn ein EPS-Export verwendet werden soll, wird empfohlen eine der dem
+    Postscript-Standard (Times, Helvetica und Courier) ähnliche Schrift 
+    (Times New Roman, Arial und Courier New) zu verwenden.
+    </li>
+  <li><em>Hintergrund:</em> Das Textobjekt (außer bei Kommentaren) kann entweder 
+    einen transparenten Hintergrund haben oder mit einer auswählbaren Farbe 
+    hinterlegt werden.</li>
+  <li><em>Umrandung:</em> Optional kann (außer bei Kommentaren) eine Umrandung 
+    mit einstellbarer Linienbreite und -farbe angezeigt werden.</li>
+  <li><em>Formatierter Text:</em> Markiert den ausgewählten Text für eine spezielle
+    Formatierung (z.B. fett) (<a href="#format">weitere Einzelheiten</a>).</li>
+  <li><em>Zeichentabelle:</em> Öffnete einen Dialog, um Zeichen einzugeben, 
+    die auf der Tastatur nicht verfügbar sind (<a href="#chartab">weitere Einzelheiten</a>).</li>
+</ul> 
+
+<a name="box"><h4>Textkasten</h4></a> 
+<p>Der Text kann mehrere Zeilen haben. Die Größe von Umrahmung und  
+  Hintergrund werden automatisch angepasst.</p> 
+<img src="images/comment.png" width="243" height="126" align="right" border="0" hspace="5">
+<ul>
+  <li><em>Individuelle Schriftgestaltung:</em> Einzelne Textteile können auf
+    Wunsch <i>fett</i> oder <i>kursiv</i>, <i>hoch-</i> oder <i>tiefgestellt</i> 
+    dargestellt werden und es können Sonderzeichen (wie z.B. griechische Buchstaben)
+    eingefügt werden (<a href="#format">Einzelheiten dazu</a>).
+  </li>
+</ul>
+
+<a name="comment"><h4>Kommentare</h4></a>
+<p>Der Text muss einzeilig sein, kann aber gedreht dargestellt werden. Der 
+  Bezugspunkt für die Drehung ist auswählbar.</p>
+<ul>
+  <li><em>Individuelle Schriftgestaltung:</em> Einzelne Textteile können auf
+    Wunsch <i>fett</i> oder <i>kursiv</i>, <i>hoch-</i> oder <i>tiefgestellt</i> 
+    dargestellt werden und es können Sonderzeichen (wie z.B. griechische Buchstaben)
+    eingefügt werden (<a href="#format">Einzelheiten dazu</a>).
+  </li>
+  <li><em>Drehung:</em> Drehwinkel in ° gegen den Uhrzeigersinn</li>
+  <li><em>Ausrichtung:</em> Relativer Bezugspunkt für die angegebene Position</li>
+</ul>
+
+<a name="legend"><h4>Legenden</h4></a>
+<img src="images/legende.png" width="251" height="136" align="right" border="0" hspace="5">
+<p>Eine Legende besteht aus einem kurzen Ausschnitt (Symbol + Linie) einer Kurve 
+  oder einer Funktion und einer kurzen Beschreibung des Benutzers.</p>
+<ul>
+  <li><em>Kurve oder Funktion auswählen:</em> Auswahl der <a href="#curve">Kurve</a>
+    oder <a href="#function">Funktion</a>, auf die sich die
+    Legende bezieht.</li>
+  <li><em>Individuelle Schriftgestaltung:</em> Einzelne Textteile können auf
+    Wunsch <i>fett</i> oder <i>kursiv</i>, <i>hoch-</i> oder <i>tiefgestellt</i> 
+    dargestellt werden und es können Sonderzeichen (wie z.B. griechische Buchstaben)
+    eingefügt werden (<a href="#format">Einzelheiten dazu</a>).
+  </li>
+  <li><em>Symbol anzeigen: </em> Anzeige des für die Datenpunkte der Kurve
+    verwendeten Symbols.</li> 
+</ul>
+
+<a name="result"><h4>Ergebnis einer Ausgleichskurve</h4></a>
+<img src="images/fit.png" width="251" height="136" align="right" border="0" hspace="5">
+<p>In einem Textkasten werden die Ergebnisse der Berechnung der Ausgleichskurve
+  (Polynomkoeffizienten) angezeigt.</p>
+<ul>
+  <li><em>Ausgleichskurve auswählen:</em> Auswahl der <a href="#fit">Ausgleichskurve</a>, 
+    deren Ergebnis angezeigt werden soll</li>
+  <li><em>Standardabweichung anzeigen:</em> Optionale Anzeige der Standardabweichung</li>
+  <li><em>Namen der Kurve anzeigen:</em> Optionale Anzeige des Namens der <a href="#Fit">Ausgleichskurve</a>
+    als Überschrift</li>
+  <li><em>Einheiten anzeigen:</em>Wenn bei den <a href="#axis">Achsen</a> Einheiten
+    angegeben wurden, werden die Koeffizienten entsprechend beschriftet.</li>
+</ul>
+<p>&nbsp;</p>
+
+<a name="line"><h3><img src="images/drawing.png" width="36" height="36" border="0" hspace="5">
+  Grafikelemente einfügen</h3></a>
+<p>Mit dieser Funktion können Linien (opt. mit Pfeilspitzen) und Rechtecke
+ (opt. mit Füllung) im Diagramm platziert werden. 
+ Alle Grafikobjekte können auf dem Diagramm mit der Maus frei verschoben und
+ skaliert werden.</p>
+
+<img src="images/line-dialog.png" width="546" height="282" align="right" border="0" hspace="5">
+<h4>Linie</h4>
+<ul>
+  <li><em>Name:</em> Name des Grafikobjektes (automatisch oder benutzerdefiniert)</li>
+  <li><em>Anfangspunkt:</em> 
+    <ul id=level2>
+      <li><em>X und Y:</em> Koordinaten des Anfangspunkts der Linie relativ zur 
+      linken unteren Ecke des Arbeitsblatts.</li>
+      <li><em>Mit Pfeilspitze:</em> Versieht den Anfangspunkt mit einer Pfeilspitze.</li>
+    </ul></li>
+  <li><em>Endpunkt:</em> 
+    <ul id=level2>
+      <li><em>X und Y:</em> Koordinaten des Endpunkts der Linie relativ zur 
+      linken unteren Ecke des Arbeitsblatts.</li>
+      <li><em>Mit Pfeilspitze:</em> Versieht den Endpunkt mit einer Pfeilspitze.</li>
+    </ul></li>
+  <li><em>Linien-Eigenschaften:</em> Breite, Stil und Farbe sind einstellbar.</li>
+  <li><em>Pfeilspitze:</em> Einstellungen für Breite und Länge der Pfeilspitze</li>
+</ul>
+<p>&nbsp;</p>
+
+<a name="rect"><h4>Rechteck</h4></a>
+<img src="images/rect-dialog.png" width="546" height="282" align="right" border="0" hspace="5">
+<ul>
+  <li><em>Name:</em> Name des Grafikobjektes (automatisch oder benutzerdefiniert)</li>
+  <li><em>Position und Größe:</em> Koordinaten der linken unteren Ecke relativ zur 
+    linken unteren Ecke des Arbeitsblatts und Breite und Höhe des Rechtecks.</li>
+  <li><em>Umrandung:</em> Breite, Stil und Farbe der Umrandung sind einstellbar.
+    Optional kann die Umrandung ausgeblendet werden.</li>
+  <li><em>Füllung:</em> Die Füllung kann entweder transparent sein oder
+    in einer auswählbaren Farbe dargestellt werden.</li>
+</ul>
+<br clear="all">
+<p>&nbsp;</p>
+
+<img src="images/img-dialog.png" width="509" height="429" align="right" border="0" hspace="5">
+<a name="image"><h3><img src="images/image.png" width="36" height="36" border="0" hspace="5">
+  Bild einfügen</h3></a>
+<p>Mit dieser Funktion kann ein beliebiges Bild (<i>jpg, bmp, gif, png, tif</i> oder <i>emf</i>)
+  in das Diagramm eingefügt werden. Die Position in dem Diagramm wird durch Verschieben
+  mit der Maus festgelegt.</p>
+<ul>
+  <li><em>Name:</em> Name des Bildes (automatisch oder benutzerdefiniert)</li>
+  <li><em>Bild laden:</em> Es öffnet sich ein Dateidialog zum Auswählen des Bildes.</li>
+  <li><em>Bild einfügen:</em> Es wird ein Bild aus der Zwischenablage eingefügt.</li>
+  <li><em>Position und Größe:</em>
+  <ul id=level2>
+    <li><em>X und Y:</em> Koordinaten des Anfangspunkts der linken unteren Ecke des
+      Bildes relativ zur linken unteren Ecke des Arbeitsblatts.</li>
+    <li><em>Breite und Höhe:</em> Größe des Bildes auf dem Diagramm</li>
+    <li><em>Seitenverhältnis beibehalten:</em> Beim Ändern der Breite wird die
+      Höhe automatisch so angepasst, dass das Seitenverhältnis des Ursprungsbildes
+      erhalten bleibt. Das gleiche für eine Änderung der Höhe.</li>
+    <li><em>Originalgröße:</em> Die Originalgröße des Bildes wird in Pixeln angezeigt.
+      Auf Wunsch kann es verkleinert werden, um den benötigten Speicherplatz zu reduzieren.</li> 
+    <li><em>Umrandung:</em> Breite, Stil und Farbe der Umrandung sind einstellbar.
+      Optional kann die Umrandung ausgeblendet werden.</li>
+    <li><em>Transparent:</em> Als transparente Farbe wird immer die Farbe der linken unteren 
+      Ecke des Bildes verwendet.
+      </li> 
+  </ul>
+  </li>
+</ul> 
+<hr>
+
+<a name="prefs"><h3 class="header">Voreinstellungen</h3></a>
+<p>Die Voreinstellungen legen fest, mit welchen Eigenschaften neue <a href="#new">Arbeitsblätter</a>,
+  <a href="#charts">Diagramme</a> und <a href="#newitem">Objekte</a> erstellt werden.
+  Voreinstellungen lassen sich in einer Datei speichern und wieder laden, so dass
+  man individuelle Vorgaben für verschiedene Projekte erstellen kann. Alle angezeigten 
+  Zahlenwerte beziehen sich immer auf die jeweils ausgewählte Einheit (cm oder Inch).</p>
+  
+<h4>Arbeitsblatt</h4>
+<img src="images/prefs-1.png" width="423" height="287" border="0">
+<img src="images/prefs-1a.png" width="423" height="287" border="0">
+<p>Die Vorgabewerte für die Größe des Arbeitsblattes sind für ein Blatt
+  gedacht, das als Abbildung in einen Text eingefügt werden soll (Vorgabe: 10 x 10 cm<sup>2</sup>,
+  kein Rand). Die Größe kann individuell angepasst werden. Außerdem ist es möglich, für die
+  Größe eines der gängigen Papierformate (z.B. ISO A4) auszuwählen.
+  Die Randeinstellungen sind für das Ausdrucken einen Blattes vorgesehen.<br> 
+  Außerdem können die Hintergrundfarbe und die zu verwendende Längeneinheit (<i>cm</i>
+  oder <i>inch</i>) ausgewählt werden.</p>
+
+<h4>Diagramme</h4> 
+<img src="images/prefs-2.png" width="423" height="287" border="0">
+<p>Die Hintergrundfarbe für Diagramme kann auf <i>transparent</i> (Farbe des 
+  Arbeitsblattes, s.o.) oder
+  eine beliebige auswählbare Farbe eingestellt werden. Außerdem können die
+  Breiten des Randes und der Bereiche für die Achsenbeschriftung eingestellt
+  werden.</p>
+   
+<h4>Achsen</h4>
+<img src="images/prefs-3.png" width="423" height="287" border="0">
+<p>Sowohl für die Achsenbeschriftung (Zahlenwerte an den Markierungen) als auch
+  für die allgemeine Beschriftung (z.B. die dargestellte Messgröße) können
+  der Abstand zur Achse und die Schriftgröße vorgewählt werden. Außerdem kann die
+  Linienbreite und die Länge der Markierungen, eingestellt werden, sowie, ob die 
+  Achsen an beiden Seiten des Diagramms (links und recht oder unten 
+  und oben) angezeigt werden sollen.</p>
+
+<h4>Linien und Symbole</h4>
+<img src="images/prefs-4.png" width="423" height="287" border="0">
+<p>Es wird die Voreinstellung für die Linienbreite, den Linienstil (z.B. durchgezogen
+  oder gestrichelt), die Linienfarbe, sowie die Größe der Markierungen der Messpunkte, 
+  ihre Form (z.B. Kreis oder Quadrat) und Farbe vorgenommen. Die Füllfarbe bezieht
+  sich auf das <a href="#rect">Grafikelement</a> <i>Rechteck</i>.</p>
+
+<h4>Text</h4>
+<img src="images/prefs-5.png" width="423" height="287" border="0">
+<p>Hier wird die Vorauswahl von Schriftart, Stil, Größe und Farbe für die Achsenbeschriftungen 
+  und sonstigen Texte eingestellt.</p>
+
+<hr>
+<a name="format"><h3>Individuelle Textformatierung:</h3></a>
+<a href="#anfang">
+<img src="images/arrow-up.png" width="22" height="22" border="0" alt="Anfang" align="right"></a>
+<p>Um Textteile in einem bestimmten Stil (z.B. fett oder kursiv), als hoch- oder
+  tiefgestellt oder als Sonderzeichen (z.B. griechische Buchstaben) darzustellen  
+  werden die folgenden Formatierungszeichen eingefügt:</p>
+  <ul>
+    <li><strong>*&lt;Text&gt;*:</strong> Der in Sternchen eingeschlossene Text wird <em>fett</em> 
+      dargestellt.</li>
+    <li><strong>\&lt;Text&gt;\:</strong> Der in rückwärtige Schrägstriche eingeschlossene Text 
+      wird <em>kursiv</em> dargestellt.</li>
+    <li><strong>^&lt;Text&gt;^:</strong> Der in Hochpfeile eingeschlossene Text wird 
+      <em> verkleinert und hochgestellt</em> dargestellt.</li>
+    <li><strong>_&lt;Text&gt;_:</strong> Der in Unterstriche eingeschlossene Text wird 
+      <em> verkleinert und tiefgestellt</em> dargestellt.</li>
+    <li><strong>!&lt;Text&gt;!:</strong> Der in Ausrufezeichen eingeschlossene Text wird  
+      mit <em>Sonderzeichen</em> aus dem Symbol-Zeichensatz dargestellt 
+      (siehe die <a href="#symbols"> nachfolgende Tabellen</a> für das jeweilige Ersatzzeichen).</li>
+  </ul>
+
+<a name="symbols"><h3>Sonderzeichen</h3></a>
+<h4>Griechische Buchstaben</h4>
+<table>
+  <tr>
+    <td>
+    <table id=rahmen>
+      <colgroup>
+        <col width="60px"><col width="50px">
+      </colgroup>
+      <tr><td id=ntitel><em>Griechisch</em></td><td id=ntitel><em>Zeichen</em></td></tr>
+      <tr id=reihe><td id=innen><strong>&Alpha;</strong></td><td id=innen><strong>A</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Beta;</strong></td><td id=innen><strong>B</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Chi;</strong></td><td id=innen><strong>C</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Delta;</strong></td><td id=innen><strong>D</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Epsilon;</strong></td><td id=innen><strong>E</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Phi;</strong></td><td id=innen><strong>F</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Gamma;</strong></td><td id=innen><strong>G</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Eta;</strong></td><td id=innen><strong>H</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Iota;</strong></td><td id=innen><strong>I</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&thetasym;</strong></td><td id=innen><strong>J</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Kappa;</strong></td><td id=innen><strong>K</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Lambda;</strong></td><td id=innen><strong>L</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Mu;</strong></td><td id=innen><strong>M</strong></td></tr>
+    </table>
+    </td>
+    <td width=10>&nbsp;</td>
+    <td>
+    <table id=rahmen>
+      <colgroup>
+        <col width="60px"><col width="50px">
+      </colgroup>
+      <tr><td id=ntitel><em>Griechisch</em></td><td id=ntitel><em>Zeichen</em></td></tr>
+      <tr id=reihe><td id=innen><strong>&Nu;</strong></td><td id=innen><strong>M</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Omicron;</strong></td><td id=innen><strong>O</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Pi;</strong></td><td id=innen><strong>P</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Theta;</strong></td><td id=innen><strong>Q</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Rho;</strong></td><td id=innen><strong>R</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Sigma;</strong></td><td id=innen><strong>S</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Tau;</strong></td><td id=innen><strong>T</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Upsilon;</strong></td><td id=innen><strong>U</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&sigmaf;</strong></td><td id=innen><strong>V</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Omega;</strong></td><td id=innen><strong>W</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Xi;</strong></td><td id=innen><strong>X</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Psi;</strong></td><td id=innen><strong>Y</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Zeta;</strong></td><td id=innen><strong>Z</strong></td></tr>
+    </table>
+    </td>
+    <td width=10>&nbsp;</td>
+    <td>
+    <table id=rahmen>
+      <colgroup>
+        <col width="60px"><col width="50px">
+      </colgroup>
+      <tr><td id=ntitel><em>Griechisch</em></td><td id=ntitel><em>Zeichen</em></td></tr>
+      <tr id=reihe><td id=innen><strong>&alpha;</strong></td><td id=innen><strong>a</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&beta;</strong></td><td id=innen><strong>b</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&chi;</strong></td><td id=innen><strong>c</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&delta;</strong></td><td id=innen><strong>d</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&epsilon;</strong></td><td id=innen><strong>e</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&phi;</strong></td><td id=innen><strong>f</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&gamma;</strong></td><td id=innen><strong>g</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&eta;</strong></td><td id=innen><strong>h</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&iota;</strong></td><td id=innen><strong>i</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&phi;</strong></td><td id=innen><strong>j</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&kappa;</strong></td><td id=innen><strong>k</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&lambda;</strong></td><td id=innen><strong>l</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&mu;</strong></td><td id=innen><strong>m</strong></td></tr>
+    </table>
+    </td>
+    <td width=10>&nbsp;</td>
+    <td>
+    <table id=rahmen>
+      <colgroup>
+        <col width="60px"><col width="50px">
+      </colgroup>
+      <tr><td id=ntitel><em>Griechisch</em></td><td id=ntitel><em>Zeichen</em></td></tr>
+      <tr id=reihe><td id=innen><strong>&nu;</strong></td><td id=innen><strong>m</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&omicron;</strong></td><td id=innen><strong>o</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&pi;</strong></td><td id=innen><strong>p</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&theta;</strong></td><td id=innen><strong>q</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&rho;</strong></td><td id=innen><strong>r</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&sigma;</strong></td><td id=innen><strong>s</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&tau;</strong></td><td id=innen><strong>t</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&upsilon;</strong></td><td id=innen><strong>u</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&piv;</strong></td><td id=innen><strong>v</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&omega;</strong></td><td id=innen><strong>w</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&xi;</strong></td><td id=innen><strong>x</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&psi;</strong></td><td id=innen><strong>y</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&zeta;</strong></td><td id=innen><strong>z</strong></td></tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+<a name="math"><h4>Mathematische Zeichen</h4></a>
+<table>
+  <tr>
+    <td>
+    <table id=rahmen>
+      <colgroup>
+        <col width="70px"><col width="20px"><col width="50px">
+      </colgroup>
+      <tr><td id=ntitel><em>Symbol</em></td><td id=ntitel colspan="2"><em>Zeichen</em></td></tr>
+      <tr id=reihe><td id=innen><strong>&cong;</strong></td><td id=innen><strong>@</strong></td><td id=innen>(0040)</td></tr>
+      <tr id=reihe><td id=innen><strong>&equiv;</strong></td><td id=innen><strong>°</strong></td><td id=innen>(00B0)</td></tr>
+      <tr id=reihe><td id=innen><strong>&asymp;</strong></td><td id=innen><strong>»</strong></td><td id=innen>(00BB)</td></tr>
+      <tr id=reihe><td id=innen><strong>&le;</strong></td><td id=innen><strong>£</strong></td><td id=innen>(00A3)</td></tr>
+      <tr id=reihe><td id=innen><strong>&ge;</strong></td><td id=innen><strong>³</strong></td><td id=innen>(00B3)</td></tr>
+      <tr id=reihe><td id=innen><strong>&infin;</strong></td><td id=innen><strong>¥</strong></td><td id=innen>(00A5)</td></tr>
+      <tr id=reihe><td id=innen><strong>&times;</strong></td><td id=innen><strong>´</strong></td><td id=innen>(00B4)</td></tr>
+      <tr id=reihe><td id=innen><strong>&otimes;</strong></td><td id=innen><strong>Ä</strong></td><td id=innen>(00C4)</td></tr>
+      <tr id=reihe><td id=innen><strong>&oplus;</strong></td><td id=innen><strong>Å</strong></td><td id=innen>(00C5)</td></tr>
+      <tr id=reihe><td id=innen><strong>&prod;</strong></td><td id=innen><strong>Õ</strong></td><td id=innen>(00D5)</td></tr>
+      <tr id=reihe><td id=innen><strong>&sum;</strong></td><td id=innen><strong>å</strong></td><td id=innen>(00E5)</td></tr>
+      <tr id=reihe><td id=innen><strong>&radic;</strong></td><td id=innen><strong>Ö</strong></td><td id=innen>(00D6)</td></tr>
+      <tr id=reihe><td id=innen><strong>&int;</strong></td><td id=innen><strong>ò</strong></td><td id=innen>(00F2)</td></tr>      
+      <tr id=reihe><td id=innen><strong>&lang;</strong></td><td id=innen><strong>á</strong></td><td id=innen>(00E1)</td></tr>
+      <tr id=reihe><td id=innen><strong>&rang;</strong></td><td id=innen><strong>ñ</strong></td><td id=innen>(00F1)</td></tr>
+    </table>
+    </td>
+    <td width=10>&nbsp;</td>
+    <td>
+    <table id=rahmen>
+      <colgroup>
+        <col width="70px"><col width="20px"><col width="50px">
+      </colgroup>
+      <tr><td id=ntitel><em>Symbol</em></td><td id=ntitel colspan="2"><em>Zeichen</em></td></tr>
+      <tr id=reihe><td id=innen><strong>&perp;</strong></td><td id=innen><strong>^</strong></td><td id=innen>(005E)</td></tr>
+      <tr id=reihe><td id=innen><strong>&harr;</strong></td><td id=innen><strong>«</strong></td><td id=innen>(00AB)</td></tr>
+      <tr id=reihe><td id=innen><strong>&rarr;</strong></td><td id=innen><strong>®</strong></td><td id=innen>(00AE)</td></tr>
+      <tr id=reihe><td id=innen><strong>&darr;</strong></td><td id=innen><strong>¯</strong></td><td id=innen>(00AF)</td></tr>
+      <tr id=reihe><td id=innen><strong>&crarr;</strong></td><td id=innen><strong>¿</strong></td><td id=innen>(00BF)</td></tr>
+      <tr id=reihe><td id=innen><strong>&hArr;</strong></td><td id=innen><strong>Û</strong></td><td id=innen>(00DB)</td></tr>
+      <tr id=reihe><td id=innen><strong>&lArr;</strong></td><td id=innen><strong>Ü</strong></td><td id=innen>(00DC)</td></tr>
+      <tr id=reihe><td id=innen><strong>&uArr;</strong></td><td id=innen><strong>Ý</strong></td><td id=innen>(00DD)</td></tr>
+      <tr id=reihe><td id=innen><strong>&rArr;</strong></td><td id=innen><strong>Þ</strong></td><td id=innen>(00DE)</td></tr>
+      <tr id=reihe><td id=innen><strong>&dArr;</strong></td><td id=innen><strong>ß</strong></td><td id=innen>(00DF)</td></tr>
+      <tr id=reihe><td id=innen><strong>&loz;</strong></td><td id=innen><strong>à</strong></td><td id=innen>(00E0)</td></tr>
+      <tr id=reihe><td id=innen><strong>&clubs;</strong></td><td id=innen><strong>§</strong></td><td id=innen>(00A7)</td></tr>
+      <tr id=reihe><td id=innen><strong>&spades;</strong></td><td id=innen><strong>ª</strong></td><td id=innen>(00AA)</td></tr>
+      <tr id=reihe><td id=innen><strong>&hearts;</strong></td><td id=innen><strong>©</strong></td><td id=innen>(00A9)</td></tr>
+      <tr id=reihe><td id=innen><strong>&diams;</strong></td><td id=innen><strong>¨</strong></td><td id=innen>(00A8)</td></tr>
+    </table>
+    </td>
+    <td width=10>&nbsp;</td>
+    <td>
+    <table id=rahmen>
+      <colgroup>
+        <col width="70px"><col width="20px"><col width="50px">
+      </colgroup>
+      <tr><td id=ntitel><em>Symbol</em></td><td id=ntitel colspan="2"><em>Zeichen</em></td></tr>
+      <tr id=reihe><td id=innen><strong>&alefsym;</strong></td><td id=innen><strong>À</strong></td><td id=innen>(00C0)</td></tr>
+      <tr id=reihe><td id=innen><strong>&image;</strong></td><td id=innen><strong>Á</strong></td><td id=innen>(00C1)</td></tr>
+      <tr id=reihe><td id=innen><strong>&real;</strong></td><td id=innen><strong>Â</strong></td><td id=innen>(00C2)</td></tr>
+      <tr id=reihe><td id=innen><strong>&weierp;</strong></td><td id=innen><strong>Ã</strong></td><td id=innen>(00C3)</td></tr>
+      <tr id=reihe><td id=innen><strong>&part;</strong></td><td id=innen><strong>¶</strong></td><td id=innen>(00B6)</td></tr>
+      <tr id=reihe><td id=innen><strong>&nabla;</strong></td><td id=innen><strong>Ñ</strong></td><td id=innen>(00D1)</td></tr>
+      <tr id=reihe><td id=innen><strong>&empty;</strong></td><td id=innen><strong>Æ</strong></td><td id=innen>(00C6)</td></tr>
+      <tr id=reihe><td id=innen><strong>&cap;</strong></td><td id=innen><strong>Ç</strong></td><td id=innen>(00C7)</td></tr>
+      <tr id=reihe><td id=innen><strong>&cup;</strong></td><td id=innen><strong>È</strong></td><td id=innen>(00C8()</td></tr>
+      <tr id=reihe><td id=innen><strong>&sup;</strong></td><td id=innen><strong>É</strong></td><td id=innen>(00C9))</td></tr>
+      <tr id=reihe><td id=innen><strong>&supe;</strong></td><td id=innen><strong>Ê</strong></td><td id=innen>(00CA)</td></tr>
+      <tr id=reihe><td id=innen><strong>&nsub;</strong></td><td id=innen><strong>Ë</strong></td><td id=innen>(00CB)</td></tr>
+      <tr id=reihe><td id=innen><strong>&sub;</strong></td><td id=innen><strong>Ì</strong></td><td id=innen>(00CC)</td></tr>
+      <tr id=reihe><td id=innen><strong>&sube;</strong></td><td id=innen><strong>Í</strong></td><td id=innen>(00CD)</td></tr>
+      <tr id=reihe><td id=innen><strong>&there4;</strong></td><td id=innen><strong>\</strong></td><td id=innen>(005C)</td></tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+<p><b>Beispiele:</b></p>
+<table width="100%" style="font-size:1.2em;margin-top:-10px;">
+  <tr>
+    <td><tt>y^2^</tt> &rArr; y<sup>2</sup></td>
+    <td><tt>x_1_^2^</tt> &rArr; x<sub>1</sub><sup>2</sup></td>
+    <td colspan="2"><tt>x_1_^2^ = y_4_^(a+b)^a^2^</tt> &rArr; x<sub>1</sub><sup>2</sup> = y<sub>4</sub><sup>(a+b)</sup> a<sup>2</sup></td>
+  </tr>
+  <tr>
+    <td><tt>*fetter* Text</tt> &rArr; <strong>fetter</strong> Text</td>
+    <td><tt>\Kursiver\ Text</tt> &rArr; <i>kursiver</i> Text</td>
+    <td><tt>!abcd!</tt>  &rArr; &alpha;&beta;&chi;&delta;</td>
+    <td><tt>!å@Â³!</tt> &rArr; &sum;&cong;&real;&ge;</td>
+  </tr>
+</table>
+<br>
+
+<a name="chartab"><h4>Eingabe von Sonderzeichen</h4></a>
+<p>Um Zeichen einzugeben, die auf der Tastatur nicht verfügbar sind, öffnet man
+  einen Dialog (siehe Abb. rechts), in dem man das gewünschte Zeichen mit der
+  Maus aus der Tabelle auswählen oder direkt als Hex-Wert in das Feld unten links
+  eingeben kann.</p>
+<hr>
+
+<hr>
+<a name="cmd"><h3 class="header">Befehlszeile</h3></a>
+<p>Beim Starten des Programms z.B. über einen Link auf dem Windows-Desktop oder durch 
+  ein anderes Programm kann sein Verhalten durch die nachfolgend beschriebenen Optionen 
+  gesteuert werden:</p> 
+<dl>
+  <dt><b>ohne</b></dt>
+  <dd>Das Programm startet mit dem zuletzt geöffneten Arbeitsblatt.</dd>
+  <dt>&nbsp;</dt>
+  <dt><b>[<em>Sheet</em>]</b></dt>
+  <dd>Das Arbeitsblatt <em>Sheet</em> wird geladen und angezeigt.</dd>
+  <dt>&nbsp;</dt>
+  <dt><b><a name="ini">/ini:[<em>IniFile</em>]</b></a></dt>
+  <dd>Das Programm speichert alle Benutzereinstellungen (z.B. auch die Voreinstellungen
+    für neue Arbeitsblätter) in einer Datei <em>RPlot.ini</em> ab, die sich
+    standardmäßig im Verzeichnis der Anwendungsdaten des Benutzers befindet:<br>
+    <ul>
+      <li><b>Vista, Windows 7,8 und 10:</b> <i>C:\Benutzer\&lt;Benutzername&gt;\AppData\Roaming</i>
+        oder <i>C:\Users\&lt;Benutzername&gt;\AppData\Roaming</i></li>
+      <li><b>Windows 2000 und XP:</b> <i>C:\Dokumente und Einstellungen\&lt;Benutzername&gt;\Anwendungsdaten</i></li>
+    </ul>
+    Mit der Ini-Option kann das Programm mit alternativen Voreinstellungen
+    gestartet werden, die sich auch in einem beliebigen anderen Verzeichnis 
+    befinden können.</dd>
+  <dt>&nbsp;</dt>
+
+<hr>
+<a name="keys"><h3>Tastaturkürzel</h3></a>
+<a href="#anfang"><img src="images/arrow-up.png" width="22" height="22" border="0" alt="Anfang" align="right"></a>
+<table>
+<tr valign="top">
+  <td width="20px">&nbsp;</td>
+  <td width="100px">
+        <b> 
+        F1<br>
+        F2<br>
+        F3<br>
+        Strg+B<br>
+        Strg+C<br>        
+        Strg+D<br>
+        Strg+E<br>
+        Strg+F<br>
+        Strg+H<br>
+        Strg+G<br>
+        Strg+I<br>
+        Strg+L<br>
+        Strg+M<br>
+        Strg+O<br>
+        Strg+R<br>
+        Strg+T<br>
+        Strg+U<br>
+        Strg+X<br>
+        Strg+Y<br>
+        </b>
+ </td>
+ <td>
+  diese Hilfe<br>
+  <a href="#save">Speichern des Arbeitsblatts</a><br>
+  <a href="#load">Laden eines Arbeitsblatts</a><br>
+  <a href="#bar">Balkendiagramm einfügen</a><br>
+  <a href="#curve">Datenkurve einfügen</a><br>
+  <a href="#newchart">Neues Diagramm</a><br> 
+  <a href="#edititem">Objekt bearbeiten</a><br> 
+  <a href="#fit">Ausgleichskurve einfügen</a><br>
+  <a href="#histo">Histogramm einfügen</a><br>
+  <a href="#legend">Legende einfügen</a><br>
+  <a href="#image">Bild einfügen</a><br>
+  <a href="#line">Linie einfügen</a><br>
+  <a href="#comment">Kommentar einfügen<br>
+  <a href="#rect">Rechteck einfügen<br>
+  <a href="#result">Ergebnis von Ausgleichskurve einfügen<br>
+  <a href="#text">Textbox einfügen<br>   
+  <a href="#function">Funktion einfügen</a><br>
+  <a href="#axis">X-Achse einfügen</a> <br>
+  <a href="#axis">Y-Achse einfügen</a><br>
+ </td>
+</tr>
+</table> 
+
+<hr>
+<i>Dr. J. Rathlev, D-24222 Schwentinental, April 2020</i>
+</body>
+</html>
