@@ -1,0 +1,273 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+	<param name="ImageType" value="Folder">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="R-Plot">
+		<param name="ImageNumber" value="1">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Overview">
+			<param name="Local" value="rp-help.html">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Introduction">
+				<param name="Local" value="rp-help.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Installation">
+				<param name="Local" value="rp-help.html#install">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Author">
+				<param name="Local" value="rp-help.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Licensing">
+				<param name="Local" value="rp-help.html#license">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Quickstart">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Create X-Y diagram">
+				<param name="Local" value="rp-quick.html#curve">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Display a function as X-Y diagram">
+				<param name="Local" value="rp-quick.html#function">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Create bar chart">
+				<param name="Local" value="rp-quick.html#barchart">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Reference">
+			<param name="Local" value="rp-ref.html">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Desktop">
+				<param name="Local" value="rp-ref.html#bild">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Menu">
+				<param name="Local" value="rp-ref.html#menu">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Toolbar">
+				<param name="Local" value="rp-ref.html#tools">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="New sheet">
+					<param name="Local" value="rp-ref.html#new">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Edit sheet">
+					<param name="Local" value="rp-ref.html#sheet">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Load sheet">
+					<param name="Local" value="rp-ref.html#load">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Save sheet">
+					<param name="Local" value="rp-ref.html#save">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Save sheet with new name">
+					<param name="Local" value="rp-ref.html#saveas">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Graphical display">
+					<param name="Local" value="rp-ref.html#zoom">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Print a sheet as graphic">
+					<param name="Local" value="rp-ref.html#print">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Save sheet as Encapsulated Postscript file (EPS)">
+					<param name="Local" value="rp-ref.html#export">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Copy sheet to Windows clipborad">
+					<param name="Local" value="rp-ref.html#export">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Pick up a color">
+					<param name="Local" value="rp-ref.html#color">
+					</OBJECT>
+			</UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Charts">
+				<param name="Local" value="rp-ref.html#charts">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Add new chart">
+					<param name="Local" value="rp-ref.html#newchart">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Edit chart">
+					<param name="Local" value="rp-ref.html#editchart">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Remove chart">
+					<param name="Local" value="rp-ref.html#delchart">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Duplicate chart">
+					<param name="Local" value="rp-ref.html#clonechart">
+					</OBJECT>
+			</UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Objects of a chart">
+				<param name="Local" value="rp-ref.html#newitem">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Coordinate axes">
+					<param name="Local" value="rp-ref.html#axis">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Data curve">
+					<param name="Local" value="rp-ref.html#curve">
+					</OBJECT>
+				<UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Edit data">
+						<param name="Local" value="rp-ref.html#editdata">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Import data">
+						<param name="Local" value="rp-ref.html#import">
+						</OBJECT>
+				</UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Best-fit curve">
+					<param name="Local" value="rp-ref.html#fit">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Function as curve">
+					<param name="Local" value="rp-ref.html#function">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Special charts">
+					<param name="Local" value="rp-ref.html#bar">
+					</OBJECT>
+				<UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Bar chart">
+						<param name="Local" value="rp-ref.html#bar">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Histogram">
+						<param name="Local" value="rp-ref.html#histo">
+						</OBJECT>
+				</UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Text">
+					<param name="Local" value="rp-ref.html#text">
+					</OBJECT>
+				<UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Text box">
+						<param name="Local" value="rp-ref.html#box">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Comment">
+						<param name="Local" value="rp-ref.html#comment">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Legend">
+						<param name="Local" value="rp-ref.html#legend">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Best-fit result">
+						<param name="Local" value="rp-ref.html#result">
+						</OBJECT>
+				</UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Graphic opjects">
+					<param name="Local" value="rp-ref.html#line">
+					</OBJECT>
+				<UL>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Line">
+						<param name="Local" value="rp-ref.html#line">
+						</OBJECT>
+					<LI> <OBJECT type="text/sitemap">
+						<param name="Name" value="Rectangle">
+						<param name="Local" value="rp-ref.html#rect">
+						</OBJECT>
+				</UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Image">
+					<param name="Local" value="rp-ref.html#image">
+					</OBJECT>
+			</UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Text formatting">
+				<param name="Local" value="rp-ref.html#format">
+				</OBJECT>
+			<UL>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Greek letters">
+					<param name="Local" value="rp-ref.html#symbols">
+					</OBJECT>
+				<LI> <OBJECT type="text/sitemap">
+					<param name="Name" value="Mathematical symbols">
+					<param name="Local" value="rp-ref.html#math">
+					</OBJECT>
+			</UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Command line">
+				<param name="Local" value="rp-ref.html#Cmd">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Keyboard shortcuts">
+				<param name="Local" value="rp-ref.html#Keys">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Examples">
+			<param name="Local" value="rp-sample.html">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Measurerment data with linear regression">
+				<param name="Local" value="rp-sample.html#reg">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Measurerment data with error bars">
+				<param name="Local" value="rp-sample.html#error">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Double-logarithmic scale">
+				<param name="Local" value="rp-sample.html#log">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Bar chart">
+				<param name="Local" value="rp-sample.html#bar">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Histogram">
+				<param name="Local" value="rp-sample.html#histo">
+				</OBJECT>
+		</UL>
+	</UL>
+</UL>
+</BODY></HTML>

@@ -1,0 +1,25 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=..\rp-help-en.chm
+Contents file=rpd-contents.hhc
+Default Window=Main
+Default topic=rp-help.html
+Display compile progress=Yes
+Full text search stop list file=rpd-help.stp
+Full-text search=Yes
+Index file=rpd-index.hhk
+Language=0x409 Englisch (Vereinigte Staaten)
+Title=R-Plot
+
+[WINDOWS]
+Main="R-Plot","rpd-contents.hhc",,"rp-help.html","rp-ref.html",,,,,0x42120,,0x304e,[50,50,690,530],,,,,,,0
+
+
+[FILES]
+rp-quick.html
+rp-ref.html
+rp-help.html
+rp-sample.html
+
+[INFOTYPES]
+

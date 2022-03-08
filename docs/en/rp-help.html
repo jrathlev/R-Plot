@@ -1,0 +1,249 @@
+<html>
+<head>
+<title>R-Plot - Overview (c) 2012 &ndash; 2020, Dr. J. Rathlev, 24222 Schwentinental, Germany</title>
+<meta name="description" content="R-Plot">
+<meta name="author" content="J. Rathlev">
+<meta http-equiv="Content-Type" content="text/html;CHARSET=iso-8859-1">
+<meta http-equiv="expires" content="0">
+<link rel=stylesheet type="text/css" href="styles.css">
+</head>
+
+<body>
+<table width="100%">
+<tr>
+  <td width="50px" rowspan="2">
+    <img src="images\rp-logo.png" width="36" height="36" align="left" border="0"></td>
+  <td><h1 style="margin-top:2pt;margin-bottom:2pt;">R-Plot Version 2.0</h1></td>
+</tr>
+<tr valign="top">
+  <td><b>&copy; 2012 &ndash; 2020, Dr. J. Rathlev, 24222 Schwentinental, Germany</b>
+  </td>
+</tr>
+</table>
+<hr>
+
+<h2>Overview</h2>
+<table width="80%">
+  <colgroup>
+    <col width="8%"><col width="23%"><col width="23%"><col width="23%"><col width="23%">
+  </colgroup>
+  <tr>
+    <td>&nbsp;</td>
+    <td><img src="images/ballblue.gif" alt="-" width="14" height="14" border="0">
+      <a href="#start" title="Introduction">Introduction</a></td>
+    <td><img src="images/ballblue.gif" alt="-" width="14" height="14" border="0">
+      <a href="rp-ref.html" title="Reference">Reference</a></td>
+    <td><img src="images/ballblue.gif" alt="-" width="14" height="14" border="0">
+      <a href="rp-quick.html" title="Quickstart">Quickstart</a></td>
+    <td><img src="images/ballblue.gif" alt="-" width="14" height="14" border="0">
+      <a href="rp-sample.html" title="Samples">Examples</a></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><img src="images/ballblue.gif" alt="-" width="14" height="14" border="0">
+      <a href="#install">Installation</a></td>
+    <td><img src="images/ballblue.gif" alt="-" width="14" height="14" border="0">
+      <a href="#author">Author</a></td>
+    <td><img src="images/ballblue.gif" alt="-" width="14" height="14" border="0">
+      <a href="#ack">Notes</a></td>
+    <td><img src="images/ballblue.gif" alt="-" width="14" height="14" border="0">
+      <a href="#license">License</a></td>
+  </tr>
+</table>
+<hr>
+<img src="images/r-plot-2.png" width="466" height="509" align="right" border="0" hspace="5" vspace="5">
+
+
+<a name="start"><h3>Introduction</h3></a>
+<p>R-Plot is a Windows program for presenting measuring data as X-Y diagrams, bar 
+  charts or histograms. Optionally you can add error bars, best-fit curves, computed 
+  functions, images, text and simple graphic objects. The number of charts per 
+  sheet and objects per chart is in theory unlimited.</p> 
+<p>On the desktop, two windows are displayed (as shown on the right). In the left 
+  one the graphical output is displayed. The right one is intended for editing the plot. 
+  The sheet can be sent to any Windows printer, inserted into another application 
+  using the clipboard and/or exported as <b>Encapsulated Postscript</b> (<i>EPS</i>) for insertion 
+  as an image into <i>LaTeX</i> documents.</p>
+
+<p>The following <b>objects</b> can be added to a chart:</p>
+<ul>
+  <li><a href="rp-ref.html#axis">X and Y axes</a>
+  <ul id=level2>
+    <li><em>Position:</em> Left or right, resp. top or bottom or at any other  
+      position</li>
+    <li><em>Labeling:</em> adjustable size and font</li>
+    <li><em>Tick marks:</em> adjustable length, width and color</li>
+    <li><em>Scaling:</em> linear, logarithmic and inverse</li>
+    <li><em>Grid:</em> optional for X and/or Y</li>
+  </ul> 
+  </li>
+  <li><a href="rp-ref.html#curve">Data curves</a>
+  <ul id=level2>
+    <li><em>Axes:</em> selectable</li>
+    <li><em>Measuring points:</em> 12 selectable symbols, adjustable size and color</li>
+    <li><em>Connections:</em> straight lines or spline function, adjustable line width
+      and color</li>
+    <li><em>Error bars:</em> separately selectable for X and Y, symmetric and
+      asymmetric error values, adjustable line width and color</li>
+    <li><em>Data:</em> either manual input or import in csv format</li>
+  </ul>
+  </li>
+<br clear="all">
+  <img src="images/r-plot-1.png" width="466" height="508" align="right" border="0" hspace="5" vspace="5">
+  <li><a href="rp-ref.html#fit">Best-fit curves</a>
+  <ul id=level2>
+    <li><em>Axes:</em> selectable</li>
+    <li><em>Data curve:</em> selectable</li>
+    <li><em>Approximation:</em> straight line and polynomial</li>
+    <li><em>Scaling:</em> linear, logarithmic and inverse</li>
+    <li><em>Lines:</em> adjustable line width, color and style</li>
+    <li><em>Range:</em> same as axis or restricted</li>
+  </ul>
+  </li>
+  <li><a href="rp-ref.html#function">Functions</a>
+  <ul id=level2>
+    <li><em>Axes:</em> selectable</li>
+    <li><em>Range:</em> same as axis or restricted</li>
+    <li><em>Lines:</em> adjustable line width, color and style</li>
+  </ul>
+  </li>
+  <li><a href="rp-ref.html#bar">Bar charts</a>
+  <ul id=level2>
+    <li><em>Axes:</em> selectable</li>
+    <li><em>Shape:</em> adjustable width, offset and color for bars, 
+      width and color for border</li>  
+  </ul>
+  </li>
+  <li><a href="rp-ref.html#histo">Histograms</a>
+  <ul id=level2>
+    <li><em>Axes:</em> selectable</li>
+    <li><em>Number of stripes:</em> selectable</li>
+    <li><em>Shape:</em> adjustable border width and color and fill color</li>  
+  </ul>
+  </li>
+  <li><a href="rp-ref.html#text">Text boxes</a>
+  <ul id=level2>
+    <li><em>Text:</em> any multi-line text containing special characters and simple
+      formattings (bold, italic, superscript and subscript)</li>
+    <li><em>Font:</em> selectable size, style and color</li>
+    <li><em>Background:</em> transparent or selectable color</li>
+    <li><em>Frame:</em> optional</li>
+    <li><em>Position:</em> adjustable by coordinates or free by mouse dragging</li> 
+  </ul>
+  </li>
+  <li><a href="rp-ref.html#text">Comments</a>
+  <ul id=level2>
+    <li><em>Text:</em> any single-line text containing special characters and simple
+      formattings </li>
+    <li><em>Rotation:</em> any angle between 0 and 360°, adjustable pivot relative to text</li>
+    <li><em>Position:</em> adjustable by coordinates or free by mouse dragging</li> 
+  </ul>
+  <li><a href="rp-ref.html#legend">Legends</a>
+  <ul id=level2>
+    <li><em>Association:</em> data curve, best-fit or function</li>
+    <li><em>Background:</em> transparent or selectable color</li>
+    <li><em>Frame:</em> optional</li>
+    <li><em>Position:</em> adjustable by coordinates or free by mouse dragging</li> 
+  </ul>
+  </li>
+  <li><a href="rp-ref.html#result">Result from fits</a>
+  <ul id=level2>
+    <li><em>Association:</em> best-fit curve</li>
+    <li><em>Background:</em> transparent or selectable color</li>
+    <li><em>Frame:</em> optional</li>
+    <li><em>Contents:</em> description, polynomial coefficients and standard deviation</li>
+    <li><em>Position:</em> adjustable by coordinates or free by mouse dragging</li> 
+  </ul>
+  </li>
+  <li><a href="rp-ref.html#image">Images</a>
+  <ul id=level2>
+    <li><em>Format:</em> <i>gif, png, jpg, jpeg, bmp, tif, tiff, emf</i> and <i>wmf</i></li>
+    <li><em>Size:</em> adjustable</li>
+    <li><em>Frame:</em> optional</li>
+    <li><em>Position:</em> adjustable by coordinates or free by mouse dragging</li> 
+  </ul>
+  </li>
+  <li><a href="rp-ref.html#line">Lines</a>
+  <ul id=level2>
+    <li><em>Shape:</em> adjustable width, color and style</li>
+    <li><em>Arrow heads:</em> at begin and/or at end of line, adjustable size</li>
+    <li><em>Position and length:</em> adjustable by coordinates or free by mouse dragging</li>
+  </ul>
+  <li><a href="rp-ref.html#rect">Rectangles</a>
+  <ul id=level2>
+    <li><em>Border:</em> adjustable width, color and style</li>
+    <li><em>Filling:</em> transparent or selectable color</li>
+    <li><em>Position and size:</em> adjustable by coordinates or free by mouse dragging</li>
+  </ul>
+  </li>
+  <li><a href="rp-ref.html#prefs">Preferences</a>
+  <ul id=level2>
+    <li><em>Units:</em> cm or inch</li>
+    <li><em>Sheet:</em> size/format and margins</li>
+    <li><em>Charts:</em> color/transparency and border area</li>
+    <li><em>Axes:</em> labeling, frames</li>
+    <li><em>Lines and symbols:</em> width, size and color</li>
+    <li><em>Text:</em> fonts and style</li>
+  </ul>
+  </li>
+</ul> 
+
+<hr>
+<h3><a name="install">Installation</a></h3>
+  <p>R-Plot is provided as executable Windows setup. You can install this version 
+  of the program under both 32-bit and 64-bit systems. The directory can be selected 
+  by the user, but strongly recommended is an installation to the system-dependent 
+  default location. To uninstall use the Windows control panel.</p> 
+<h4>Startup</h4>
+  <p>After installation you will find a desktop shortcut (optional) and an entry
+  in the Windows start menu.</p> 
+
+<hr>
+<h3><a name="author">Author:</a></h3>
+<dl>
+  <dd><a href="https://www.rathlev-home.de/">Dr. Jürgen Rathlev</a></dd>
+  <dd>24222 Schwentinental, Germany</dd>
+  <dd>Mail: <a href="mailto:kontakt@rathlev-home.de">kontakt(a)rathlev-home.de</a></dd>
+</dl>
+
+<hr>
+<h3><a name="ack">Notes:</a></h3>
+<dl>
+  <dt>The program was written using <b><a href="https://www.embarcadero.com/products/delphi" target="_blank">
+    Embarcadero Delphi 10 Seattle</a></b> &reg;.</dt>
+  <dt>The editor is based on the OpenSource project <b>SynEdit</b></dt>
+  <dd><a href="https://github.com/SynEdit/SynEdit" target="_blank"><i>https://github.com/SynEdit/SynEdit</i></a></dd>
+  <dt>The evaluation of mathematical expressions is based on the <b>Parser Toolbox 2.1</b> by  
+    <a href="http://www.juergendankert.de/" target="_blank">J. Dankert</a></a> 
+    with some adaptions to Delphi made by the author</dt>
+  <dt>The multilingual environment uses <b>GnuGetText for Delphi</b> by Lars B. Dybdahl</dt>
+  <dd>&nbsp;&nbsp;&nbsp;&copy; 2005, Lars B. Dybdahl and others -
+  <a href="http://sourceforge.net/projects/dxgettext/" target="_blank">
+    <i>GNU GetText for Delphi Toolkit on SourceForge</i></a></dd>
+  <dt>Program installation is performed using <b>Inno Setup</b> by Jordan Russell</dt>
+  <dd>&copy; 1997-2019 Jordan Russell - 
+    <a href="http://www.jrsoftware.org/isinfo.php" target="_blank"><i>http://www.jrsoftware.org/isinfo.php</i></a></dd>
+</dl>
+
+<hr>
+<h3><a name="license">Licensing</a></h3>
+<dl>
+  <dt><b>1. Using the program</b></dt>
+  <dd>The program may be used by anyone for private purposes and in all areas of research and development 
+   free of charge. There is no warranty either for the correct operation of the program or for the
+   correctness of the results. The author shall not be liable for any possible
+   damages to hardware and software arising out of use of the program.
+   </dd><p>
+    <dt><b>2. Distributing the program</b></dt>
+    <dd>The program may be distributed by any means, provided that the original files 
+    as supplied by the author remain intact and no charge is made other than for 
+    reasonable distribution costs.
+    The program may not be distributed as a component of any commercial product
+    without a prior license agreement with the author.
+  </dd>
+</dl>
+
+<hr>
+<i>Dr. J. Rathlev, 24222 Schwentinental, Germany, April 2020</i>
+</body>
+</html>

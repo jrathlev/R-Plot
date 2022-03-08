@@ -1,0 +1,1170 @@
+<html>
+<head>
+<title>R-Plot - Reference (c) 2012 &ndash; 2020, Dr. J. Rathlev, 24222 Schwentinental, Germany</title>
+<meta name="description" content="R-Plot">
+<meta name="author" content="J. Rathlev">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1">
+<META HTTP-EQUIV="expires" content="0">
+<link rel=stylesheet type="text/css" href="styles.css">
+</head>
+
+<body>
+<table width="100%">
+<tr>
+  <td width="50px" rowspan="2">
+    <img src="images\rp-logo.png" width="36" height="36" align="left" border="0"></td>
+  <td><h1 style="margin-top:2pt;margin-bottom:2pt;">R-Plot Version 2.0</h1></td>
+</tr>
+<tr valign="top">
+  <td><a href="rp-help.html" title="Overview">
+    <img src="images/arrow-up.png" width="22" height="22" align="right" border="0" hspace="5"></a>
+  <b>&copy; 2012 &ndash; 2020, Dr. J. Rathlev, 24222 Schwentinental, Germany</b>
+  </td>
+</tr>
+</table>
+
+<hr>
+<h2><a name="anfang">Overview</a></h2>
+<table width="50%">
+  <tr>
+    <td>
+      <ul>
+      <li><b><a href="#bild">Desktop</a></b>
+        <ul>
+          <li><b><a href="#menu">Main menu</a></b></li>
+          <li><b><a href="#tools">Tool bar</a></b></li>
+          <li><b><a href="#keys">Keyboard shortcuts</a></b></li>
+          <li><b><a href="#prefs">Preferences</a></b></li>
+        </ul>
+      </li>
+      <li><b>Miscellaneous</b>
+        <ul>
+          <li><b><a href="#format">Text formatting</a></b></li>
+          <li><b><a href="#symbols">Special characters</a></b></li>
+          <li><b><a href="#cmd">Command line</a></b></li>
+          <li><b><a href="rp-sample.html">Samples</a></b></li>
+        </ul>  
+        </li>  
+      </ul>
+    </td>
+    <td>
+      <ul>
+      <li><b><a href="#charts">Diagrams</a></b>
+        <ul>
+        <li><b><a href="#axis">Axes</a></b></li>
+        <li><b><a href="#curve">Data curves</a></b></li>
+        <li><b><a href="#fit">Best-fit curves</a></b></li>
+        <li><b><a href="#function">Function curves</a></b></li>
+        <li><b><a href="#bar">Bar charts</a></b></li>
+        <li><b><a href="#histo">Histograms</a></b></li>
+        <li><b><a href="#text">Text objects</a></b></li>
+        <li><b><a href="#line">Graphical objects</a></b></li>
+        <li><b><a href="#image">Images</a></b></li>
+        </ul>
+      </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<hr>
+<map name="Bild1">
+  <area shape="rect" coords="9,470,36,495" href="#quit" alt="Quit program">
+  <area shape="rect" coords="6,204,35,294" href="#zoom" alt="Zoom">
+  <area shape="rect" coords="7,356,37,416" href="#export" alt="Export">
+  <area shape="rect" coords="6,425,33,450" href="#color" alt="Color pick up">
+  <area shape="rect" coords="56,280,252,499" href="#items" alt="Objects of a chart">
+  <area shape="rect" coords="55,126,253,275" href="#chart" alt="Charts">
+  <area shape="rect" coords="280,288,455,309" href="#newobject" alt="Add new object">
+  <area shape="rect" coords="5,84,35,134" href="#load" alt="Load sheet">
+  <area shape="rect" coords="4,138,31,163" href="#save" alt="Save sheet">
+  <area shape="rect" coords="6,170,33,195" href="#saveas" alt="Save sheet as">
+  <area shape="rect" coords="53,55,455,117" href="#sheet" alt="Properties of sheet">
+  <area shape="rect" coords="7,57,34,82" href="#new" alt="New sheet">
+  <area shape="rect" coords="4,32,659,49" href="#menu" alt="Main menu">
+  <area shape="rect" coords="7,294,34,319" href="#update" alt="Refresh graphic">
+  <area shape="rect" coords="312,424,456,502" href="#edititem" alt="Edit object">
+  <area shape="rect" coords="279,424,315,499" href="#order" alt="Order of objects">
+  <area shape="rect" coords="5,326,34,352" href="#print" alt="Print">
+  <area shape="rect" coords="282,140,417,172" href="newchart" alt="New chart">
+  <area shape="rect" coords="425,141,456,169" href="clonechart" alt="Duplicate chart">
+  <area shape="rect" coords="319,186,453,214" href="editchart" alt="Edit chart">
+  <area shape="rect" coords="320,230,455,260" href="delchart" alt="Remove chart">
+  <area shape="rect" coords="282,186,313,260" href="chartorder" alt="Order of charts">
+  <area shape="rect" coords="290,310,325,345" href="#axis" alt="Add axis">
+  <area shape="rect" coords="290,350,325,385" href="#text" alt="Add text object">
+  <area shape="rect" coords="330,310,365,345" href="#curve" alt="Add data curve">
+  <area shape="rect" coords="330,350,365,385" href="#image" alt="Add image">
+  <area shape="rect" coords="370,310,405,345" href="#fit" alt="Add best-fit">
+  <area shape="rect" coords="370,350,405,385" href="#function" alt="Add function">
+  <area shape="rect" coords="410,310,445,345" href="#bar" alt="Add bar chart">
+  <area shape="rect" coords="410,350,445,385" href="#line" alt="Add graphical object">
+</map>
+
+<a name="bild"><h2>Desktop</h2></a>
+  Click on a region of the following screenshot will lead to specific help for that region.<p>
+<img src="images/r-plot-1.png" width="466" height="508" align="left" border="0" usemap="#Bild1">
+<br clear="all">
+<br>
+
+<a href="#anfang"><img src="images/arrow-up.png" width="22" height="22" border="0" alt="Anfang" align="right"></a>
+<a name="menu"><h2>Main menu</h2></a>
+<dl>
+  <dt><b>Sheet</b></dt>
+  <dd><a href="#new"><i>New</i></a> - Create a new sheet</dd>
+  <dd><a href="#load"><i>Load ..</i></a> - Load a saved sheet (<i>F3</i>)</dd>
+  <dd><a href="#load"><i>Recently used ..</i></a>  - List of of recently used sheets</dd>
+  <dd><a href="#dave"><i>Save</i></a> - Save a modified sheet (<i>F2</i>)</dd>
+  <dd><a href="#saveas"><i>Save as ..</i></a>  - Save a sheet as new file</dd>
+  <dd><a href="#sheet"><i>Properties ..</i></a> - Edit properties of sheet</dd>
+  <dd><a href="#print"><i>Print ..</i></a> - Print sheet</dd>
+  <dd><a href="#export"><i>Export</i></a></dd>
+    <dl>
+    <dd><a href="#savemeta"><i>as Postscript</i></a> - Export sheet as <i>EPS</i></dd>
+    <dd><a href="#copyclip"><i>to clipboard</i></a> - Copy sheet clipboard</dd>
+    </dl>
+  <dd><a href="#ende"><i>Quit</i></a> - Quit program</dd>
+
+  <dt><a href="#chart">Chart</a></dt>
+  <dd><i><b>New ..</b></i> - Add a new chart (<i>Ctrl+D</i>)</dd>
+  <dd><i><b>Edit ..</b></i></a> - Edit properties (e.g. size and background color)
+    of chart</dd>
+  <dd><i><b>Remove ..</b></i> - Remove chart</dd>
+
+  <dt><b>Objects</b></dt>
+  <dd><a href="#newobject"><i>Add</i></a></dd>
+    <dl>
+    <dd><i><b>Axis</b></i></dd>  
+      <dl>
+      <dd><i><b>X axis</b></i> - Add a horizontal axis(<i>Ctrl+X</i>)</dd>   
+      <dd><i><b>Y axis</b></i> - Add a vertical axis(<i>Ctrl+Y</i>)</dd>   
+      </dl>
+    <dd><i><b>Curve ..</b></i> - Add a data curve (<i>Ctrl+C</i>)</dd>  
+    <dd><i><b>Best-fit curve ..</b></i> - Add a best-fit curve (<i>Ctrl+F</i>)</dd>  
+    <dd><i><b>Graph</b></i></dd>  
+      <dl>
+      <dd><i><b>Bar graph ..</b></i> - Add a bar graph (<i>Ctrl+B</i>)</dd>   
+      <dd><i><b>Histogram ..</b></i> - Add a histogram (<i>Ctrl+H</i>)</dd>           
+      </dl>
+    <dd><i><b>Function ..</b></i> - Add a function (<i>Ctrl+U</i>)</dd>  
+    <dd><i><b>Text</b></i></dd>  
+      <dl>
+      <dd><i><b>Box ..</b></i> - Add multi-line text box (<i>Ctrl+T</i>)</dd>   
+      <dd><i><b>Comment ..</b></i> - Add rotatable single-line text (<i>Ctrl+M</i>)</dd>   
+      <dd><i><b>Legend ..</b></i> - Add legend  for curve (<i>Ctrl+G</i>)</dd>   
+      <dd><i><b>Result ..</b></i> - Add box with best-fit results (<i>Ctrl+R</i>)</dd>   
+      </dl>
+    <dd><i><b>Image..</b></i> - Add an image (e.g. <i>bmp, jpg, png</i>) (<i>Ctrl+I</i>)</dd>  
+    <dd><i><b>Other</b></i></dd>  
+      <dl>
+      <dd><i><b>Line ..</b></i> - Add line with optional arrows (<i>Ctrl+L</i>)</dd>   
+      <dd><i><b>Rectangle ..</b></i> - Add rectangle with optional fill (<i>Ctrl+O</i>)</dd>           
+      </dl>
+    </dl>
+  <dd><b><i>Edit ..</i></b> - Edit the selected object (<i>Ctrl+E</i>)</dd>
+  <dd><b><i>Remove .. </i></b> - Remove selected object</dd>
+
+  <dt><b>Preferences</b></dt>
+  <dd><a href="#prefs"><i>Sheet</i></a> - Edit preferences for new sheets</dd>
+  <dd><em>Language</em> - Select desktop language </dd>
+    <dl>
+    <dd><em>System default</em> - Use the system default language.</dd>
+    <dd><em>English</em></dd>
+    <dd><em>German</em></dd>
+    </dl>
+ 
+  <dt><b>Help</b></dt>
+  <dd><em>Documentation</em> - Show this help file (<i>F1</i>)</dd>
+  <dd><em>About</em> - Information about the program</dd>
+  <dd><em>References ..</em> - Information on components used from other authors</dd>
+</dl>
+<hr>
+
+<a href="#anfang"><img src="images/arrow-up.png" width="22" height="22" border="0" alt="Anfang" align="right"></a>
+<a name="tools"><h2 class="header">Tool bar</h2></a>
+
+<a name="new"><h3><img src="images/new-sheet.png" width="31" height="31" border="0" hspace="5">
+  Create new sheet</h3></a> 
+<img src="images/r-plot-neu.png" width="423" height="338" align="right" border="0" hspace="5" vspace="5">
+<p>Clicking the button or using the menu item <em>Sheet &rArr; New ..</em>
+  will open the dialog shown at right to enter a short description and select the sheet size, the 
+  margin widths (only required for direct sheet printing), the units to be used
+  (<i>cm</i> or <i>inch</i>) and the preferences for the charts to be created afterwards.
+  By default, the sheet size is set to 4 x 4 inch<sup>2</sup> suitable
+  to be inserted as a picture in a document.<br>
+  The user can adjust this setting to his wishes anytime by calling the menu item
+  <em><a href="#prefs">Preferences&rArr; Sheet</a></em>.<br>
+  Next to this, the program will create the first <a href="#newchart">chart</a>
+  automatically fitting to the size of the sheet.</p>
+  
+<a name="sheet"><h3><img src="images/edit-sheet.png" width="31" height="31" border="0" hspace="5">
+  Edit sheet</h3></a>
+<p>Clicking the button or using the menu item <em>Sheet &rArr; Edit ..</em>
+  will open the dialog shown at right to edit the sheet properties described above. Use the buttons
+  in the middle of the bottom section to load preferences from a file, save the
+  current settings to a file or to reset all values to their default. Doing so,
+  you can customize your basic design for different projects.
+  </p>
+
+<a name="load"><h3><img src="images/load-sheet.png" width="31" height="31" border="0" hspace="5">
+  Load sheet</h3> </a>
+<p>Clicking the button or using the menu item <em>Sheet &rArr; Load ..</em>
+  will open a dialog to select a saved sheet (file type: <em>xrp</em>). The sheet
+  will be loaded and displayed immediately.<br>
+  All recently used sheets are stored in a program internal list for fast selection:<br>
+  Click the button <img src="images/pop.png" width="31" height="21" border="0"> 
+  or use the menu item <em>Sheet &rArr; Recently used ..</em>.<br>
+  <b>Note:</b> All sheets are saved as zip archives containing an XML file
+  with the sheet data and the used images (if present) in <i>BMP</i> format.
+  </p>
+ 
+<img src="images/r-plot-let.png" width="423" height="338" align="right" border="0" hspace="5" vspace="5">
+<a name="save"><h3><img src="images/save-sheet.png" width="31" height="31" border="0" hspace="5">
+  Saving an edited sheet</h3></a>
+<p>Clicking the button or using the menu item <em>Sheet &rArr; Save ..</em>
+  will save the sheet data immediately using the current filename.
+</p>
+
+<a name="saveas"><h3><img src="images/save-sheet-as.png" width="31" height="31" border="0" hspace="5">
+  Saving a sheet with a new filename</h3></a>
+<p>Clicking the button or using the menu item <em>Sheet &rArr; Save as ..</em>
+  will save the sheet data under a new filename. 
+  </p>
+<br>
+&nbsp;  
+<a name="zoom"><h3>Graphical display</h3></a>
+<h4><img src="images/zoom-fit.png" width="31" height="31" border="0"> Adjust size</h4>
+<p>The graphic display will be scaled in a way that the sheet fits to the window.</p>
+  
+<h4><img src="images/zoom-in.png" width="31" height="31" border="0">Zoom in</h4>
+<p>The graphic display will be scaled up in steps of 1.4. The displayed details
+  can be moved by mouse dragging or using the scroll bars.</p>
+
+<h4><img src="images/zoom-out.png" width="31" height="31" border="0">Zoom out</h4>      
+<p>The graphic display will be scaled down in steps of 1.4.</p>
+
+<a name="update"><h4><img src="images/refresh.png" width="31" height="31" border="0">
+  Update display</h4></a>
+<p>Clicking this button will redraw the graphic window.</p>
+<br clear="all">
+
+<h3>Printing and export</h3>
+<a name="print"><h4><img src="images/print.png" width="31" height="31" border="0">
+  Print the sheet</h4></a>
+<p>Clicking the button or using the menu item <em>Sheet &rArr; Print ..</em>
+  will will open a dialog to select a printer and then start the print-out
+  of the sheet.</p>
+
+<a name="export"><h4><img src="images/eps.png" width="31" height="31" border="0">
+  Export sheet as Encapsulated-Postscript file (<i>EPS</i>)</h4></a>
+<p>The sheet will be converted to Postscript and saved as file which can later on 
+  be inserted for example as picture into a <i>LaTeX</i> document.</p>
+  
+<h4><img src="images/copy.png" width="31" height="31" border="0">
+  Copy sheet to  Windows clipboard</h4>
+<p>The sheet will be copied to the Windows clipboard and can be inserted from there
+  into any other appropriate application (such as text processing).</p>
+<br clear="all">
+
+<a name="color"><h3><img src="images/color.png" width="31" height="31" border="0">
+  Pick up a color</h3>  </a>
+<p>Clicking the button will modify the cursor to an eyedropper if moved over the
+  sheet. The color under the cursor will be displayed at the lower right with its
+  RGB values. Clicking the mouse will save this color as user defined color
+  and can be later on selected in each color dialog (e.g. for lines or background). 
+</p>  
+<hr> 
+
+<a href="#anfang"><img src="images/arrow-up.png" width="22" height="22" border="0" alt="Anfang" align="right"></a>
+<a name="charts"><h2 class="header">Charts</h2></a>
+<img src="images/chart-dialog.png" width="443" height="363" align="right" border="0" hspace="5">
+
+<a name="newchart"><h3><img src="images/new-chart.png" width="141" height="31" border="0">
+  &nbsp;Add new chart</h3></a>
+<p>Clicking the button or using the menu item <em>Chart &rArr; New ..</em>
+  will open a dialog to edit the chart settings. The chart size will be calculated 
+  automatically in a way that the first chart will fill the whole sheet. Adding more
+  charts, they will be arranged vertically with appropriate heights. In doing so,
+  an adjustable space for axes will be preserved. Nevertheless the user can change
+  location and size of charts for his purposes.<br>
+  Optional you can select a background color and a frame.</p> 
+<p>Each chart will be labeled automatically with a unique name but you can change this
+  name if you want. The upper list on the desktop will show you all charts in the 
+  sheet with their names and the associated number of objects. 
+  A green check mark means that the chart is currently displayed, a red struck circle
+  that the chart is not visible (refer to the check box at the lower left in
+  the chart edit dialog). If a red cross is displayed instead, this chart was marked for
+  <a href="#delchart">removing</a>.<br>
+  When updating the graphic window, the charts will be drawn in the order shown in the list. That 
+  means that a chart placed further down will overlap charts placed above. To change 
+  this order click one of the arrow buttons. The position of the selected chart 
+  will be moved accordingly.</p>
+  
+<a name="editchart"><h3><img src="images/edit-chart.png" width="136" height="31" border="0">
+  &nbsp;Edit chart</h3></a>
+<p>Clicking the button or using the menu item <em>Chart &rArr; Edit ..</em>
+  will open the dialog to edit the chart settings:</p>
+<ul>
+  <li><em>Name:</em> Name of the chart (automatically or user defined)</li>
+  <li><em>Position:</em> Specify the position of the lower left corner of the chart
+    (this will likewise be the origin of each first axis of coordinates).</li>
+  <li><em>Size:</em> Specify width and height of the chart (this will likewise be the 
+    length of each first axis of coordinates).</li>
+  <li><em>Default boundary area:</em> This is the width of the space kept free
+    at those sides of the chart showing no axes (default: 0.08 inch).</li>
+  <li><em>Boundary area for axis labeling:</em>  This is the width of the space kept free
+    at those sides of the chart showing the axes (default: 0.4 inch). If there are more
+    than one axis at one side of the chart this space is multiplied accordingly.</li>
+  <li><em>Border:</em> By default, the axes will border the chart. Alternatively,
+    you can draw a line with adjustable width, style and color instead.</li>
+  <li><em>Background color:</em> A chart can be transparent or provided with a 
+    background of selected color.</li>
+</ul>      
+<p>All chart settings including the settings for objects can be saved as template
+  for reuse in other charts:<br>
+<img src="images/temp-load.png" width="31" height="31" border="0"> Load a chart template<br>
+<img src="images/temp-save.png" width="31" height="31" border="0"> Save current settings
+  as template<br>
+  </p> 
+
+<a name="delchart"><h3>Remove chart</h3></a>
+<p>Clicking the button or using the menu item <em>Chart &rArr; Remove ..</em>
+  the selected chart will be marked as deleted which is displayed by a red cross
+  in the list of charts. You can undo this anytime before saving the sheet by 
+  clicking the button provided for this purpose.
+  Saving a sheet will delete the marked charts definitely.</p>
+  
+<a name="clonechart"><h3>Duplicate a chart</h3></a>
+<p>Clicking the button will create a clone of the selected chart including all
+  its objects. Position and size of the other charts will be adjusted automatically.</p>     
+<br clear="all">
+
+<hr>
+<a name="newobject"><h2 class="header">Objects of a chart</h2></a>
+<p>You can add different objects to each chart. Just click one of the buttons in the
+  tool palette. Some buttons will open a submenu for a specific selection.
+  Each object will be labeled automatically by the program with a unique name, but
+  you can change this if you wants.<br>
+  The lower list on the desktop will show you all objects of the selected chart
+  with their names and type information.
+  A green check mark means that the object is currently displayed, a red struck circle
+  that the object is not visible (refer to the check box at the lower left in the edit 
+  dialogs of the provided objects). If a red cross is displayed instead, this object 
+  was marked for <a href="#edititem">removing</a>.<br>
+  When updating the graphic window, the objects will be drawn in the order shown in the list. 
+  That means that an object placed further down will overlap objects placed above. To 
+  change this order click one of the arrow buttons. The position of the selected 
+  object will be moved accordingly.</p>
+<p>Some object dialogs offer the option to save the settings (e.g. for an axis) as
+  template. You can load such a template to reuse the settings for other objects<br>
+<img src="images/temp-load.png" width="31" height="31" border="0"> Load a template<br>
+<img src="images/temp-save.png" width="31" height="31" border="0"> Save current settings
+  as template<br>
+ &nbsp;</p>
+ 
+<img src="images/axis-dialog.png" width="567" height="573" align="right" border="0" hspace="5">
+<a name="axis"><h3><img src="images/axis.png" width="36" height="36" border="0" hspace="5">
+  Add coordinate axis</h3> </a>
+<p>The selection menu offers to create an X or Y axis or to duplicate an existing
+  axis. The dialog window (see picture at the right) shows the properties of the 
+  new axis for editing by the user:</p>
+<ul>
+  <li><em>Name:</em> Name of axis (automatic or user defined)</li>
+  <li><em>Type:</em> Type of axis (either horizontal or vertical)</li>
+  <li><em>Range:</em> Range for axis scaling (start and end value)<br>
+    Clicking the button showing a scale symbol will compute the
+    distances of major and minor tick marks automatically.</li>
+  <li><em>Scaling:</em> The scaling can be either linear, logarithmic, inverse
+    or linear containing a time scale with date and time values.</li>
+  <li><em>Position:</em> The axis will be positioned relative to the left or right
+    margin (resp. lower or upper margin). When creating a new axis the offset will be 
+    computed automatically depending on the number of axes already existing
+    in the chart.<br>
+    Optional you can create a mirror of the axis at the relative opposite side
+    of the chart or use an invisible axis.</li>
+  <li><em>Line:</em> Adjust the line width and color.</li>
+  <li><em>Grid lines:</em> You can display lines across the chart at the major tick 
+    marks. Width and color are selectable.</li>
+  <li><em>Tick marks:</em> Adjust the width and length of the tick marks. In addition
+    you can select if the marks should be drawn at the inner or outer side of
+    the axis or on both sides.<br>
+    The distance between the tick marks can be computed automatically (see above
+    under <em>Range</em>) or adjusted manually:
+    <ul id=level2>
+      <li><em>Major interval:</em> Specify in units as in the range setting</li>
+      <li><em>Steps:</em> Number of sub-intervals</li>
+    </ul>
+    </li>
+  <li><em>Axis labeling with numbers:</em> 
+    <img src="images/axis-user.png" width="321" height="341" align="right" border="0" hspace="5">    
+    <ul id=level2>
+      <li><em>Precision:</em> This specifies the number of relevant digits to be displayed
+        (<i>1 .. 8</i>, <i>automatic</i> or <i>integer value</i>). The program will round all values
+        accordingly. If <i>integer values</i> are selected, the numbers can be replaced  by 
+        a user defined labels (see below).</li>
+      <li><em>Notation:</em> You can select how the number should be displayed:
+        <i>fixed</i> (12345.6), <i>scientific</i> (1.23456&sdot;10<sup>4</sup>),
+        <i>engineering</i> (12.3456&sdot;10<sup>3</sup>) or using <i>unit prefixes</i> (12.3456k)</li>
+      <li><em>Distance to axis:</em> This is the distance between the axis and the side
+      of the labels facing the axis.</li>
+      <li><em>Text size and font:</em> Select label size and font.</li>
+      <li><em>Other options:</em> Optional labeling can be suppressed and rotated
+       by 90° for vertical axes.</li>
+    </ul>
+    </li>
+  <li><em>Axis labeling with user defined labels:</em> If <i>integer values</i>
+    was selected as precision, clicking the <i>user defined labels</i> button
+    will open a field to enter the labels for each major tick mark
+    (e.g. the names of the months as shown in picture at the right).
+    The position of the label can be shifted by the slider inside the major interval
+    between a center position at the associated tick mark and a center position
+    of the following tick mark. If the slider is set to its central position,
+    the label will displayed in the middle of the interval. Check the
+    box at the lower left to enable the user defined labels. Otherwise
+    the numbers would be displayed. At last click the <em>Done</em> button to   
+    apply the settings.</li>
+  <li><em>Caption:</em>
+    <ul id=level2>
+      <li><em>Text and unit:</em> Insert the caption at the axis. The optional
+        unit will will be either added with a preceding slash to the caption or
+        if the option <em>Show between tick marks</em> is selected, displayed between 
+        the last two tick marks of the axis (DIM 461).</li>
+      <li><em>Position:</em> Use the slider to move the caption along the axis.
+        In addition the distance to the axis can be changed if desired.</li>
+      <li><em>Text size and font:</em> The size and the font of the caption can
+        be adjusted individually.</li>
+    </ul>
+    </li>
+  <li><em>Individual text formatting:</em> Particular parts of the labels and captions
+    can be formatted as <i>bold</i>, <i>italic</i>, <i>superscript</i> or <i>subscript</i>
+    and you can insert special characters (such as Greek letters)
+    (<a href="#format">more details</a>).
+  </li>
+</ul>  
+<p>&nbsp;</p>
+
+<a name="curve"><h3><img src="images/curve.png" width="36" height="36" border="0" hspace="5">
+  Add data curve</h3></a>
+<img src="images/curve-dialog.png" width="518" height="401" align="right" border="0" hspace="5">
+<p>If this button is clicked on an empty sheet, a new sheet filling chart including
+  two axes for X and Y will be created automatically. The ranges will be adjusted
+  after the entry of the data points.<br>
+  The dialog window (see the picture at the right) shows the properties of the 
+  curve for editing by the user: </p>
+<ul>
+  <li><em>Name:</em> Name of the curve (automatic or user defined)</li>
+  <li><em>Select X axis:</em> If more than one X axes are defined, select the
+    one associated to the data for correct scaling.<br>
+    Optionally, an automatic adjustment of the axis range according to the data can 
+    be selected.</li>
+  <li><em>Select Y axis:</em> If more than one Y axes are defined, select the
+    one associated to the data for correct scaling.<br>
+    Optionally, an automatic adjustment of the axis range according to the data can 
+    be selected.</li>
+  <li><em>Edit data:</em> Clicking this button will open the dialog to 
+    <a href="#editdata">enter the data points</a>.</li>
+  <li><em>Symbol:</em> Each data point will be marked using a selectable symbol.
+    Shape, size and color can be adjusted.</li>
+  <li><em>Connect points:</em> If desired, the data point can be connected by straight 
+    lines or using a spline function as smooth curve. The smoothing factor is
+    adjustable (0 = no smoothing, 100 = strong smoothing). Also line with, style
+    (only for straight lines) and color are selectable.</li>
+  <li><em>Show error bars:</em> If the data set contains error deviations for
+    each point, they can be displayed as error bars in the chart (separated for X and Y).
+    Line width and color are selectable.</li>
+</ul>
+
+<a name="editdata"><h4>Data input</h4></a>
+<img src="images/data-1.png" width="548" height="401" align="right" border="0" hspace="5">
+<p>The data input uses a text editor and is done line by line (see picture at the right).
+  You can use either the tab or the space key to separate the columns.
+  In the upper part of the window, you can select if the data set contains
+  error values. According to this, additional columns will be provided (see the
+  picture at the lower right). Error values are always given as differences to
+  the nominal value and can be asymmetrical (values must be positive in any case).<br>
+  In the lower part of the window, you will find a tool bar with buttons
+  for the following functions:<br>
+  <img src="images/paste.png" width="26" height="26" border="0"> 
+    <em>Paste</em> text <em>from clipboard</em><br>
+  <img src="images/sort.png" width="26" height="26" border="0"> <em>Sort table</em> 
+    by increasing X values<br>
+  <img src="images/edit-mode.png" width="26" height="26" border="0"> Switch
+    between <em>block and column mode</em> on marking text<br>
+  <img src="images/find.png" width="26" height="26" border="0"> 
+    <em>Search</em> for text<br>
+  <img src="images/replace.png" width="26" height="26" border="0"> 
+    <em>Replace</em> text<br>
+  <img src="images/find-next.png" width="26" height="26" border="0"> Find or
+    replace <em>next text</em></p> 
+<br clear="all">
+
+<img src="images/data-2.png" width="548" height="401" align="right" border="0" hspace="5">
+<ul>
+  <li><em>Import data:</em> To import data in <i>CSV</i> format <a href="#import">see below</a></li>
+  <li><em>Align ranges:</em> If this box is checked, the check boxes in the
+    curve dialog for automatic scaling will be selected after closing the data 
+    input window.</li>
+</ul>
+
+<p>&nbsp;</p>
+<h4>Date and time input</h4>
+<p>Both manual input and import can use the following formats:</p>
+<ul>
+  <li><b>yyyy-mm-dd</b> only date, e.g. <i>2020-07-21</i></li>
+  <li><b>[d]d.[m]m.yyyy</b> only date, e.g. <i>21.7.2020</i></li>
+  <li><b>hh:mm[:ss]</b> only time. e.g. <i>12:30:15</i> or <i>12:30</i></li>
+  <li><b>sss[,z]</b> time in seconds, e.g. <i>125,5</i></li>
+  <li><b>yyyy-mm-dd hh:mm:ss</b> date and time, e.g. <i>2020-07-21 12:30:15</i>
+  <li><b>[d]d.[m]m.yyyy hh:mm[:ss]</b> date and time, e.g. <i>21.7.2020 12:30:15</i></li>
+</ul>
+
+<br clear="all">
+<p>&nbsp;</p>
+<a name="import"><h4>Import data</h4></a>
+<img src="images/import.png" width="596" height="449" align="right" border="0" hspace="5">
+<p>All data saved in <i>CSV</i> format (comma separated values) can be imported.
+  Because this format is supported by many applications, it provides a versatile data source.
+  The format settings in detail and the column allocation can be selected (see picture
+  at the right). Leading comment lines can be skipped.<br>
+  Depending on the <i>CSV</i> file to be imported, the column separator (e.g. comma or
+  semicolon), the decimal separator (point or comma) and the field delimiter (e.g.
+  quotations marks) must be selected as required. In lower window a section of the
+  <i>CSV</i> file to be imported will be displayed for examination. The columns
+  must be selected by clicking the small arrows beside of the column counters. A
+  green dot signals that the value was read faultlessly. If the signal is red,
+  either the column separator or the column selection is faulty.</p>
+<p><em>Reduce data by factor ..:</em> To reduce the number of a large amount of data 
+  sets, a factor can be specified. For example a number of 5 will take the average of
+  each five data sets.</p>
+
+<br clear="all">
+<p>&nbsp;</p>
+<a name="fit"><h3><img src="images/polfit.png" width="36" height="36" border="0" hspace="5">
+  Add best-fit curve</h3></a>
+<img src="images/fit-dialog.png" width="514" height="345" align="right" border="0" hspace="5">
+<p>Computing the best-fit curve (linear function or polynomial up to 10th degree)
+  uses the method of least squares. The scaling in X or Y direction can independently 
+  of each be linear, logarithmic or inverse.
+  </p>
+<ul>
+  <li><em>Name:</em> Name of the best-fit curve (automatic or user defined)</li>
+  <li><em>Select data curve:</em> Select the data set to be used for best-fit computation.</li>
+  <li><em>Best-fit function:</em> You can either select a linear function (linear
+    regression) or a polynomial up to 10th degree.</li>
+  <li><em>Line properties:</em> Adjust width, style and color.</li>
+  <li><em>X values for fit:</em> To compute the best-fit you can either use the full
+    X range or only an adjustable section (e.g. if the data curve can be approximated
+    only for a part of the range by a line).</li>
+  <li><em>Show fit function for ..:</em> You can select if the best-fit should 
+    only be displayed for the given data range or extrapolated to the limits
+    of the axis.</li>
+  <li><em>X and Y scaling:</em> Prior to the computation,the X or Y values will
+    scaled as selected. This can be used, for example, to compute the asymptotes
+    of a double logarithmic chart.</li>
+</ul>  
+
+<a name="function"><h3><img src="images/function.png" width="36" height="36" border="0" hspace="5">
+  Add function as curve</h3></a>
+<img src="images/function-dialog.png" width="543" height="393" align="right" border="0" hspace="5">
+<p>A function described by an arithmetic expression will be added to the chart.
+  If this button is clicked on an empty sheet, a new sheet filling chart including
+  two axes for X and Y will be created automatically. The range of the X axis
+  must be specified before the function can be entered.<br>
+  The dialog window (see the picture at the right) shows the properties of the 
+  function for editing by the user:</p>
+<ul>
+  <li><em>Name:</em> Name of the function (automatic or user defined)</li>
+  <li><em>Select X axis:</em> If more than one X axes are defined, select the
+    one associated to the function for correct scaling.</li>
+  <li><em>Select Y axis:</em> If more than one Y axes are defined, select the
+    one associated to the function for correct scaling.<br>
+    Optionally, an automatic adjustment of the axis range according to the data can 
+    be selected.</li>
+  <li><em>Line properties:</em> Adjust width, style and color.</li>
+  <li><em>X range for function:</em> you can either use the full X axis range or 
+    only an adjustable section (from ... to)</li>
+  <li><em>Angular units:</em> Ob computing the function, the following angular
+    units can be used: <em>radiant (rad)</em>, <em>degree (&deg;)</em> or 
+    <em>gradian (gon)</em>.</li>
+  <li><em>Formula:</em> Enter the functional relation <em>y&nbsp;=&nbsp;f(x)</em>
+    as formula. The syntax is similar to most programming languages. Expressions
+    are <em>not case sensitive</em>. The arguments in trigonometric function must
+    be specified in the selected angular units (see above). The same is valid
+    for the results of arc functions. You can use up to 6 user defined constants
+    in the formula. This simplifies to copy complex formulas inside a chart because
+    only constants must be adjusted.
+    <dl>
+      <dt><strong>Numbers:</strong></dt>
+      <dd>Numbers can contain a leading sign, a decimal separator (as defined by the
+      system) and an exponent.<br>
+      Examples: <em>3</em> ; <em>4.7</em> ; <em>-0.03</em> ; <em>1.2E-2</em></dd>
+      <dt><strong>Variable:</strong></dt>
+      <dd>Value from the selected X axis: <em>x</em></dd>
+      <dt><strong>Constants:</strong></dt>
+      <dd>Predefined constants: <em>Pi</em> and <em>e</em></dd>
+      <dd>User defined constants: <em>a</em>, <em>b</em>, <em>c</em>, <em>d</em>, <em>u</em> and <em>v</em></dd>
+      <dt><strong>Operators:</strong></dt>
+      <dd>You can use the operators for the four basic arithmetic operations <em>+</em>, <em>-</em>,
+      <em>*</em> and <em>/</em>. Powers must be specified by the <em>^</em> sign.
+      Parentheses, even nested, are allowed. The order of operations will be applied 
+      as common in mathematics .<br>
+      Example: 2.1 * x^2 + 3.5*(x-0.5) + e^x</dd>
+      <dt><strong>Functions:</strong></dt>
+      <dd>
+      - Trigonometric functions: <em>sin</em>, <em>cos</em>, <em>tan</em> and <em>cot</em><br>
+      - Arc functions: <em>asin</em>, <em>acos</em>, <em>atan</em> und <em>acot</em><br>
+      - Hyperbolic functions: <em>sinh</em>, <em>cosh</em>, <em>tanh</em>, and <em>coth</em><br>
+      - Area functions: <em>asinh</em>, <em>acosh</em>, <em>atanh</em> and <em>acoth</em><br>
+      - Logarithmic functions: <em>ln</em> (natural) and <em>lg</em> (common)<br>
+      - <i>e</i> function: <em>exp</em> and square root: <em>sqrt</em><br>
+      - other: <em>abs</em> (Absolute value), <em>sign</em> (Sign) and <em>fak</em> (factorial)  
+      </dd>
+    </dl>
+  </li>
+</ul>  
+  
+<a name="bar"><h3><img src="images/diagram.png" width="36" height="36" border="0" hspace="5">
+  Special charts</h3></a>
+<img src="images/bar-dialog.png" width="512" height="335" align="right" border="0" hspace="5">
+<h4>Add bar chart</h4>
+<p>If this button is clicked on an empty sheet, a new sheet filling chart including
+  two axes for X and Y will be created automatically. The ranges will be adjusted
+  after the entry of the data points.<br>
+  The dialog window (see the picture at the right) shows the properties of the 
+  bar chart for editing by the user:</p>
+<ul>
+  <li><em>Name:</em> Name of the bar chart (automatic or user defined)</li>
+  <li><em>Select X axis:</em> If more than one X axes are defined, select the
+    one associated to the data for correct scaling.<br>
+    Optionally, an automatic adjustment of the axis range according to the data can 
+    be selected.</li>
+  <li><em>Select Y axis:</em> If more than one Y axes are defined, select the
+    one associated to the data for correct scaling.<br>
+    Optionally, an automatic adjustment of the axis range according to the data can 
+    be selected.</li>
+  <li><em>Edit data:</em> Clicking this button will open the dialog to 
+    <a href="#editdata">enter the data points</a>.</li>
+  <li><em>Design:</em> Adjust width and color of the border and the background color
+    of the bars.</li>
+  <li><em>Bar width:</em> The bars will be displayed symmetrically to the X value
+    with the specified width.</li>
+  <li><em>Bar offset:</em> If several data series should be displayed, those
+    lying in the background can be displayed off to one side from the X value.</li>
+</ul>
+
+<a name="histo"><h4>Add histogram</h4></a>
+<img src="images/histo-dialog.png" width="512" height="335" align="right" border="0" hspace="5">
+<p>If this button is clicked on an empty sheet, a new sheet filling chart including
+  two axes for X and Y will be created automatically. The ranges will be adjusted
+  after the entry of the data points.<br>
+  On data entry, only one set of X values is required. Prior to displaying the chart,
+  the program will compute automatically how many values will fit to each a stripe. 
+  The dialog window (see the picture at the right) shows the properties of the 
+  bar chart for editing by the user:</p>
+<ul>
+  <li><em>Name:</em> Name of the histogram (automatic or user defined)</li>
+  <li><em>Select X axis:</em> If more than one X axes are defined, select the
+    one associated to the data for correct scaling.<br>
+    Optionally, an automatic adjustment of the axis range according to the data can 
+    be selected.</li>
+  <li><em>Select Y axis:</em> If more than one Y axes are defined, select the
+    one associated to the data for correct scaling.<br>
+    Optionally, an automatic adjustment of the axis range according to the data can 
+    be selected.</li>
+  <li><em>Edit data:</em> Clicking this button will open the dialog to 
+    <a href="#editdata">enter the data points</a>.</li>
+  <li><em>Design:</em> Adjust width and color of the border and the background color
+    of the bars.</li>
+  <li><em>Number of stripes:</em> The X axis will be divided in the number of stripes.
+    Each stripe represents a range of values. All data values fitting to each range
+    will be counted and displayed by an dedicated bar height.</li>
+</ul>
+
+<a name="text"><h3><img src="images/text.png" width="36" height="36" border="0" hspace="5">
+  Add text objects</h3></a>
+<img src="images/text-dialog.png" width="531" height="381" align="right" border="0" hspace="5">
+<p>Use this function to add independently placeable text. There are four variants
+  (<em>text box</em>, <em>comment</em>, <em>legend</em> and  
+  <em>Best-fit result</em>) as described below. All have the following common
+  properties:</p>
+<ul>
+  <li><em>Name:</em> Name of text object (automatic or user defined)</li>
+  <li><em>Position:</em> Specify the position of the lower left corner of the
+    text object relative to the lower left corner of the sheet. Each text object
+    can be dragged interactively in the graphic window using the mouse.</li>
+  <li><em>Font:</em> You can select any text font from the available TrueType
+    fonts on your computer. By default, <em>Arial</em> is selected. Size and
+    color are adjustable. In addition, you can select the style (bold and/or italic).
+    If you want to export your sheet as <i>EPS</i>, it is recommended to use
+    a font similar to one of the Postscript fonts (Times New Roman, Arial and Courier New).
+    </li>
+  <li><em>Background:</em> The text object can have either a transparent background
+    or any selected color (except for comments).</li>
+  <li><em>Border:</em> Optionally, a border can be drawn around the text object 
+    (except for comments). Line width and color are adjustable.</li>
+  <li><em>Formatted text:</em> Marks the selected text for a special format (e.g. bold)
+    (<a href="#format">more details</a>).</li>
+  <li><em>Character table:</em> Opens a dialog to select a character not available
+    on the keyboard (<a href="#chartab">more details</a>).</li>
+</ul> 
+
+<a name="box"><h4>Text box</h4></a> 
+<p>The text can contain several lines. The size of border and background are
+  adjusted automatically.</p> 
+<img src="images/comment.png" width="243" height="126" align="right" border="0" hspace="5">
+<ul>
+  <li><em>Individual text formatting:</em> Particular parts of the text
+    can be formatted as <i>bold</i>, <i>italic</i>, <i>superscript</i> or <i>subscript</i>
+    and you can insert special characters (such as Greek letters)
+    (<a href="#format">more details</a>).
+  </li>
+</ul>
+
+<a name="comment"><h4>Comments</h4></a>
+<p>A comment can only hold one line but can be rotated. The reference point
+  rotation is selectable.</p>
+<ul>
+  <li><em>Individual text formatting:</em> Particular parts of the text
+    can be formatted as <i>bold</i>, <i>italic</i>, <i>superscript</i> or <i>subscript</i>
+    and you can insert special characters (such as Greek letters)
+    (<a href="#format">more details</a>).
+  </li>
+  <li><em>Rotation:</em> Specify the angle of rotation counterclockwise in °</li>
+  <li><em>Alignment:</em> Select the reference point for the specified position</li>
+</ul>
+
+<a name="legend"><h4>Legends</h4></a>
+<img src="images/legende.png" width="251" height="136" align="right" border="0" hspace="5">
+<p>A legend shows a short snippet (symbol + line) of a curve or function together
+  with a short, user defined description.</p>
+<ul>
+  <li><em>Select curve or function:</em> Select the <a href="#curve">curve</a>
+    or <a href="#function">function</a> the legend refers to.</li>
+  <li><em>Individual text formatting:</em> Particular parts of the text
+    can be formatted as <i>bold</i>, <i>italic</i>, <i>superscript</i> or <i>subscript</i>
+    and you can insert special characters (such as Greek letters)
+    (<a href="#format">more details</a>).
+  </li>
+  <li><em>Show symbol: </em> Display the symbol used for the data points of the curve.</li> 
+</ul>
+
+<a name="result"><h4>Best-fit result</h4></a>
+<p>A text box is displayed showing the result of the computation for the best-fit
+  (polynomial coefficients).</p>
+<img src="images/fit.png" width="251" height="136" align="right" border="0" hspace="5">
+<ul>
+  <li><em>Select best-fit curve:</em> Select the <a href="#fit">best-fit curve</a>
+    whose result should be displayed</li>
+  <li><em>Show standard deviation:</em> Optional display of standard deviation</li>
+  <li><em>Show name of curve:</em> Optional display of the name of the 
+    <a href="#Fit">best-fit curve</a> as box header.</li>
+  <li><em>Show units:</em> If there are units specified for the <a href="#axis">exes</a>, 
+    the coefficients will be labeled accordingly.</li>
+</ul>
+<p>&nbsp;</p>
+
+<a name="line"><h3><img src="images/drawing.png" width="36" height="36" border="0" hspace="5">
+  Add graphic objects</h3></a>
+<p>Use this function to add lines (optionally with arrow heads) and rectangles (transparent
+  or colored) to your chart. Each object can be dragged and scaled interactively 
+  in the graphic window using the mouse.</p>
+
+<img src="images/line-dialog.png" width="546" height="282" align="right" border="0" hspace="5">
+<h4>Lines</h4>
+<ul>
+  <li><em>Name:</em> Name of the object (automatic or user defined)</li>
+  <li><em>Start point:</em> 
+    <ul id=level2>
+      <li><em>X and Y:</em> Specify the position of the start point of the
+        line relative to the lower left corner of the sheet.</li>
+      <li><em>With arrow head:</em> Draw an arrow head at the start point</li>
+    </ul></li>
+  <li><em>End point:</em>    
+    <ul id=level2>
+      <li><em>X and Y:</em> Specify the position of the end point of the
+        line relative to the lower left corner of the sheet.</li>
+      <li><em>With arrow head:</em> Draw an arrow head at the end point</li>
+    </ul></li>
+  <li><em>Line properties:</em> Adjust width, style and color.</li>
+  <li><em>Arrow head:</em> Adjust width and length of the arrow head.</li>
+</ul>
+<p>&nbsp;</p>
+
+<a name="rect"><h4>Rectangle</h4></a>
+<img src="images/rect-dialog.png" width="546" height="282" align="right" border="0" hspace="5">
+<ul>
+  <li><em>Name:</em> Name of the object (automatic or user defined)</li>
+  <li><em>Position and size:</em> Specify the position of the left lower corner
+    relative to the lower left corner of the sheet and the width and height of
+    the rectangle.</li>
+  <li><em>Border:</em> Adjust width, style and color of the border.
+    Optionally the border can be suppressed.</li>
+  <li><em>Background:</em> The rectangle can have either a transparent background
+    or any selected color.</li>
+</ul>
+<br clear="all">
+<p>&nbsp;</p>
+
+<a name="image"><h3><img src="images/image.png" width="36" height="36" border="0" hspace="5">
+  Add image</h3></a>
+<img src="images/img-dialog.png" width="495" height="420" align="right" border="0" hspace="5">
+<p>Use this function to insert any image (<i>jpg, bmp, gif, png, tif</i> or <i>emf</i>)
+  into the chart. The image can be dragged interactively in the graphic window 
+  using the mouse.</p>
+<ul>
+  <li><em>Name:</em>Name of the image (automatic or user defined)</li>
+  <li><em>Load image:</em> A dialog will open to select the image file.</li>
+  <li><em>Paste image:</em> The image will be pasted from the clipboard.</li>
+  <li><em>Position and size:</em>
+  <ul id=level2>
+    <li><em>X and Y:</em> Specify the position of the left lower corner
+      relative to the lower left corner of the sheet of the image.</li>
+    <li><em>Width and height:</em> Specify the image size in the chart.</li>
+    <li><em>Retain aspect ratio:</em> Changing the width, the height will be
+      adjusted in a way that the original aspect ratio of the image will be retained.
+      The same will happen if the height is changed.</li>
+    <li><em>Original size:</em> The original image size is displayed in pixels.
+      If desired, the image can be downsized to reduce the required memory space.</li> 
+    <li><em>Border:</em> Adjust width, style and color of the border.
+      Optionally the border can be suppressed.</li>
+    <li><em>Transparent:</em> The transparent color will be retrieved from the
+      lower left pixel of the image.</li> 
+  </ul>
+  </li>
+</ul> 
+<br clear="all">
+<hr>
+
+<a name="prefs"><h3 class="header">Preferences</h3></a>
+<p>The preferences define the properties that will be used for new <a href="#new">sheets</a>,
+  <a href="#charts">charts</a> and <a href="#newobject">objects</a>.
+  Preferences can be saved in a template file and loaded later on again. Doing so, 
+  it is possible to provide basic settings for different projects. All numeric
+  values refer to the currently selected unit (cm or inch).</p>
+  
+<h4>Sheet</h4>
+<img src="images/prefs-1.png" width="423" height="287" border="0">
+<img src="images/prefs-1a.png" width="423" height="287" border="0">
+<p>The default values for the sheet size are designed to create a picture to be 
+  inserted in a document (4 x 4 inch<sup>2</sup>, no margin). The size can be
+  adjusted to any value or selected from the common paper formats (e.g. ISO A4).
+  Margins are only required for sheets which should be printed directly.<br>
+  In addition you can select the background color and the unit of length to be
+  used (<i>cm</i> or <i>inch</i>).</p>
+
+<h4>Charts</h4> 
+<img src="images/prefs-2.png" width="423" height="287" border="0">
+<p>The background of the charts can be <i>transparent</i> (uses the color of the sheet)
+  or displayed in a selectable color. In addition the border width and the space
+  for the axis labeling can be adjusted.</p>
+   
+<h4>Axes</h4>
+<img src="images/prefs-3.png" width="423" height="287" border="0">
+<p>The distance between the axis labels and the axis caption and the particular
+  font size can be adjusted separately, as well as the line width and the length 
+  of the tick marks. In addition you can select the decimal separator for numeric 
+  values and if the chart should be enframed by axes (left and right, resp. bottom and top).</p>
+
+<h4>Lines and symbols</h4>
+<img src="images/prefs-4.png" width="423" height="287" border="0">
+<p>Defines the preferences for curves and functions: Line width and style (e.g.
+  solid or dotted), line color and the size, color and shape (e.g. circle or square)
+  of the symbols used for marking the measurement points. The fill color refers
+  to the <a href="#rect">graphic object</a> <i>rectangle.</i></p>
+
+<h4>Text</h4>
+<img src="images/prefs-5.png" width="423" height="287" border="0">
+<p>Select the default text font, size, style and color for axis captions and other text.</p>
+
+<hr>
+<a name="format"><h3>Individual text formatting</h3></a>
+<a href="#anfang">
+<img src="images/arrow-up.png" width="22" height="22" border="0" alt="Anfang" align="right"></a>
+<p>Use the following format characters to enclose particular parts of text which
+  should be displayed in a special style (e.g. bold or italic), as super- or subscript,
+  as Greek letters or mathematical symbols:</p>
+  <ul>
+    <li><strong>*&lt;Text&gt;*:</strong> Text enclosed by asterisks will displayed as <em>bold</em>.</li>
+    <li><strong>\&lt;Text&gt;\:</strong> Text enclosed by back slashes will displayed as <em>italic</em>.</li>
+    <li><strong>^&lt;Text&gt;^:</strong> Text enclosed by circumflexes will displayed as <em>superscript</em>.</li>
+    <li><strong>_&lt;Text&gt;_:</strong> Text enclosed by underlines will displayed as <em>subscript</em>.</li>
+    <li><strong>!&lt;Text&gt;!:</strong> Text enclosed by exclamation marks will displayed as <em>special characters</em>
+      (refer to the <a href="#symbols"> tables below</a> for the replacement character).</li>
+  </ul>
+
+<a name="symbols"><h3>Special characters</h3></a>
+<h4>Greek letters</h4>
+<table>
+  <tr>
+    <td>
+    <table id=rahmen>
+      <colgroup>
+        <col width="50px"><col width="50px">
+      </colgroup>
+      <tr><td id=ntitel><em>Greek</em></td><td id=ntitel><em>Character</em></td></tr>
+      <tr id=reihe><td id=innen><strong>&Alpha;</strong></td><td id=innen><strong>A</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Beta;</strong></td><td id=innen><strong>B</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Chi;</strong></td><td id=innen><strong>C</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Delta;</strong></td><td id=innen><strong>D</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Epsilon;</strong></td><td id=innen><strong>E</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Phi;</strong></td><td id=innen><strong>F</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Gamma;</strong></td><td id=innen><strong>G</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Eta;</strong></td><td id=innen><strong>H</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Iota;</strong></td><td id=innen><strong>I</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&thetasym;</strong></td><td id=innen><strong>J</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Kappa;</strong></td><td id=innen><strong>K</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Lambda;</strong></td><td id=innen><strong>L</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Mu;</strong></td><td id=innen><strong>M</strong></td></tr>
+    </table>
+    </td>
+    <td width=10>&nbsp;</td>
+    <td>
+    <table id=rahmen>
+      <colgroup>
+        <col width="50px"><col width="50px">
+      </colgroup>
+      <tr><td id=ntitel><em>Greek</em></td><td id=ntitel><em>Character</em></td></tr>
+      <tr id=reihe><td id=innen><strong>&Nu;</strong></td><td id=innen><strong>M</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Omicron;</strong></td><td id=innen><strong>O</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Pi;</strong></td><td id=innen><strong>P</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Theta;</strong></td><td id=innen><strong>Q</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Rho;</strong></td><td id=innen><strong>R</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Sigma;</strong></td><td id=innen><strong>S</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Tau;</strong></td><td id=innen><strong>T</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Upsilon;</strong></td><td id=innen><strong>U</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&sigmaf;</strong></td><td id=innen><strong>V</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Omega;</strong></td><td id=innen><strong>W</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Xi;</strong></td><td id=innen><strong>X</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Psi;</strong></td><td id=innen><strong>Y</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&Zeta;</strong></td><td id=innen><strong>Z</strong></td></tr>
+    </table>
+    </td>
+    <td width=10>&nbsp;</td>
+    <td>
+    <table id=rahmen>
+      <colgroup>
+        <col width="50px"><col width="50px">
+      </colgroup>
+      <tr><td id=ntitel><em>Greek</em></td><td id=ntitel><em>Character</em></td></tr>
+      <tr id=reihe><td id=innen><strong>&alpha;</strong></td><td id=innen><strong>a</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&beta;</strong></td><td id=innen><strong>b</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&chi;</strong></td><td id=innen><strong>c</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&delta;</strong></td><td id=innen><strong>d</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&epsilon;</strong></td><td id=innen><strong>e</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&phi;</strong></td><td id=innen><strong>f</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&gamma;</strong></td><td id=innen><strong>g</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&eta;</strong></td><td id=innen><strong>h</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&iota;</strong></td><td id=innen><strong>i</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&phi;</strong></td><td id=innen><strong>j</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&kappa;</strong></td><td id=innen><strong>k</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&lambda;</strong></td><td id=innen><strong>l</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&mu;</strong></td><td id=innen><strong>m</strong></td></tr>
+    </table>
+    </td>
+    <td width=10>&nbsp;</td>
+    <td>
+    <table id=rahmen>
+      <colgroup>
+        <col width="50px"><col width="50px">
+      </colgroup>
+      <tr><td id=ntitel><em>Greek</em></td><td id=ntitel><em>Character</em></td></tr>
+      <tr id=reihe><td id=innen><strong>&nu;</strong></td><td id=innen><strong>m</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&omicron;</strong></td><td id=innen><strong>o</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&pi;</strong></td><td id=innen><strong>p</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&theta;</strong></td><td id=innen><strong>q</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&rho;</strong></td><td id=innen><strong>r</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&sigma;</strong></td><td id=innen><strong>s</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&tau;</strong></td><td id=innen><strong>t</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&upsilon;</strong></td><td id=innen><strong>u</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&piv;</strong></td><td id=innen><strong>v</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&omega;</strong></td><td id=innen><strong>w</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&xi;</strong></td><td id=innen><strong>x</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&psi;</strong></td><td id=innen><strong>y</strong></td></tr>
+      <tr id=reihe><td id=innen><strong>&zeta;</strong></td><td id=innen><strong>z</strong></td></tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+<a name="math"><h4>Mathematical symbols</h4></a>
+<p>The hex equivalents are shown in parentheses.</p>
+<table>
+  <tr>
+    <td>
+    <table id=rahmen>
+      <colgroup>
+        <col width="70px"><col width="20px"><col width="50px">
+      </colgroup>
+      <tr><td id=ntitel><em>Symbol</em></td><td id=ntitel colspan="2"><em>Character</em></td></tr>
+      <tr id=reihe><td id=innen><strong>&cong;</strong></td><td id=innen><strong>@</strong></td><td id=innen>(0040)</td></tr>
+      <tr id=reihe><td id=innen><strong>&equiv;</strong></td><td id=innen><strong>°</strong></td><td id=innen>(00B0)</td></tr>
+      <tr id=reihe><td id=innen><strong>&asymp;</strong></td><td id=innen><strong>»</strong></td><td id=innen>(00BB)</td></tr>
+      <tr id=reihe><td id=innen><strong>&le;</strong></td><td id=innen><strong>£</strong></td><td id=innen>(00A3)</td></tr>
+      <tr id=reihe><td id=innen><strong>&ge;</strong></td><td id=innen><strong>³</strong></td><td id=innen>(00B3)</td></tr>
+      <tr id=reihe><td id=innen><strong>&infin;</strong></td><td id=innen><strong>¥</strong></td><td id=innen>(00A5)</td></tr>
+      <tr id=reihe><td id=innen><strong>&times;</strong></td><td id=innen><strong>´</strong></td><td id=innen>(00B4)</td></tr>
+      <tr id=reihe><td id=innen><strong>&otimes;</strong></td><td id=innen><strong>Ä</strong></td><td id=innen>(00C4)</td></tr>
+      <tr id=reihe><td id=innen><strong>&oplus;</strong></td><td id=innen><strong>Å</strong></td><td id=innen>(00C5)</td></tr>
+      <tr id=reihe><td id=innen><strong>&prod;</strong></td><td id=innen><strong>Õ</strong></td><td id=innen>(00D5)</td></tr>
+      <tr id=reihe><td id=innen><strong>&sum;</strong></td><td id=innen><strong>å</strong></td><td id=innen>(00E5)</td></tr>
+      <tr id=reihe><td id=innen><strong>&radic;</strong></td><td id=innen><strong>Ö</strong></td><td id=innen>(00D6)</td></tr>
+      <tr id=reihe><td id=innen><strong>&int;</strong></td><td id=innen><strong>ò</strong></td><td id=innen>(00F2)</td></tr>      
+      <tr id=reihe><td id=innen><strong>&lang;</strong></td><td id=innen><strong>á</strong></td><td id=innen>(00E1)</td></tr>
+      <tr id=reihe><td id=innen><strong>&rang;</strong></td><td id=innen><strong>ñ</strong></td><td id=innen>(00F1)</td></tr>
+    </table>
+    </td>
+    <td width=10>&nbsp;</td>
+    <td>
+    <table id=rahmen>
+      <colgroup>
+        <col width="70px"><col width="20px"><col width="50px">
+      </colgroup>
+      <tr><td id=ntitel><em>Symbol</em></td><td id=ntitel colspan="2"><em>Character</em></td></tr>
+      <tr id=reihe><td id=innen><strong>&perp;</strong></td><td id=innen><strong>^</strong></td><td id=innen>(005E)</td></tr>
+      <tr id=reihe><td id=innen><strong>&harr;</strong></td><td id=innen><strong>«</strong></td><td id=innen>(00AB)</td></tr>
+      <tr id=reihe><td id=innen><strong>&rarr;</strong></td><td id=innen><strong>®</strong></td><td id=innen>(00AE)</td></tr>
+      <tr id=reihe><td id=innen><strong>&darr;</strong></td><td id=innen><strong>¯</strong></td><td id=innen>(00AF)</td></tr>
+      <tr id=reihe><td id=innen><strong>&crarr;</strong></td><td id=innen><strong>¿</strong></td><td id=innen>(00BF)</td></tr>
+      <tr id=reihe><td id=innen><strong>&hArr;</strong></td><td id=innen><strong>Û</strong></td><td id=innen>(00DB)</td></tr>
+      <tr id=reihe><td id=innen><strong>&lArr;</strong></td><td id=innen><strong>Ü</strong></td><td id=innen>(00DC)</td></tr>
+      <tr id=reihe><td id=innen><strong>&uArr;</strong></td><td id=innen><strong>Ý</strong></td><td id=innen>(00DD)</td></tr>
+      <tr id=reihe><td id=innen><strong>&rArr;</strong></td><td id=innen><strong>Þ</strong></td><td id=innen>(00DE)</td></tr>
+      <tr id=reihe><td id=innen><strong>&dArr;</strong></td><td id=innen><strong>ß</strong></td><td id=innen>(00DF)</td></tr>
+      <tr id=reihe><td id=innen><strong>&loz;</strong></td><td id=innen><strong>à</strong></td><td id=innen>(00E0)</td></tr>
+      <tr id=reihe><td id=innen><strong>&clubs;</strong></td><td id=innen><strong>§</strong></td><td id=innen>(00A7)</td></tr>
+      <tr id=reihe><td id=innen><strong>&spades;</strong></td><td id=innen><strong>ª</strong></td><td id=innen>(00AA)</td></tr>
+      <tr id=reihe><td id=innen><strong>&hearts;</strong></td><td id=innen><strong>©</strong></td><td id=innen>(00A9)</td></tr>
+      <tr id=reihe><td id=innen><strong>&diams;</strong></td><td id=innen><strong>¨</strong></td><td id=innen>(00A8)</td></tr>
+    </table>
+    </td>
+    <td width=10>&nbsp;</td>
+    <td>
+    <table id=rahmen>
+      <colgroup>
+        <col width="70px"><col width="20px"><col width="50px">
+      </colgroup>
+      <tr><td id=ntitel><em>Symbol</em></td><td id=ntitel colspan="2"><em>Character</em></td></tr>
+      <tr id=reihe><td id=innen><strong>&alefsym;</strong></td><td id=innen><strong>À</strong></td><td id=innen>(00C0)</td></tr>
+      <tr id=reihe><td id=innen><strong>&image;</strong></td><td id=innen><strong>Á</strong></td><td id=innen>(00C1)</td></tr>
+      <tr id=reihe><td id=innen><strong>&real;</strong></td><td id=innen><strong>Â</strong></td><td id=innen>(00C2)</td></tr>
+      <tr id=reihe><td id=innen><strong>&weierp;</strong></td><td id=innen><strong>Ã</strong></td><td id=innen>(00C3)</td></tr>
+      <tr id=reihe><td id=innen><strong>&part;</strong></td><td id=innen><strong>¶</strong></td><td id=innen>(00B6)</td></tr>
+      <tr id=reihe><td id=innen><strong>&nabla;</strong></td><td id=innen><strong>Ñ</strong></td><td id=innen>(00D1)</td></tr>
+      <tr id=reihe><td id=innen><strong>&empty;</strong></td><td id=innen><strong>Æ</strong></td><td id=innen>(00C6)</td></tr>
+      <tr id=reihe><td id=innen><strong>&cap;</strong></td><td id=innen><strong>Ç</strong></td><td id=innen>(00C7)</td></tr>
+      <tr id=reihe><td id=innen><strong>&cup;</strong></td><td id=innen><strong>È</strong></td><td id=innen>(00C8()</td></tr>
+      <tr id=reihe><td id=innen><strong>&sup;</strong></td><td id=innen><strong>É</strong></td><td id=innen>(00C9))</td></tr>
+      <tr id=reihe><td id=innen><strong>&supe;</strong></td><td id=innen><strong>Ê</strong></td><td id=innen>(00CA)</td></tr>
+      <tr id=reihe><td id=innen><strong>&nsub;</strong></td><td id=innen><strong>Ë</strong></td><td id=innen>(00CB)</td></tr>
+      <tr id=reihe><td id=innen><strong>&sub;</strong></td><td id=innen><strong>Ì</strong></td><td id=innen>(00CC)</td></tr>
+      <tr id=reihe><td id=innen><strong>&sube;</strong></td><td id=innen><strong>Í</strong></td><td id=innen>(00CD)</td></tr>
+      <tr id=reihe><td id=innen><strong>&there4;</strong></td><td id=innen><strong>\</strong></td><td id=innen>(005C)</td></tr>
+    </table>
+    </td>
+  </tr>
+</table>
+
+<p><b>Examples:</b></p>
+<table width="100%" style="font-size:1.2em;margin-top:-10px;">
+  <tr>
+    <td><tt>y^2^</tt> &rArr; y<sup>2</sup></td>
+    <td><tt>x_1_^2^</tt> &rArr; x<sub>1</sub><sup>2</sup></td>
+    <td colspan="2"><tt>x_1_^2^ = y_4_^(a+b)^a^2^</tt> &rArr; x<sub>1</sub><sup>2</sup> = y<sub>4</sub><sup>(a+b)</sup> a<sup>2</sup></td>
+  </tr>
+  <tr>
+    <td><tt>*bold* text</tt> &rArr; <strong>bold</strong> text</td>
+    <td><tt>\italic\ text</tt> &rArr; <i>italic</i> text</td>
+    <td><tt>!abcd!</tt>  &rArr; &alpha;&beta;&chi;&delta;</td>
+    <td><tt>!å@Â³!</tt> &rArr; &sum;&cong;&real;&ge;</td>
+  </tr>
+</table>
+<br>
+
+<a name="chartab"><h4>Entry of special characters</h4></a>
+<p>To enter characters not available on the keyboard, you can open a dialog
+  (see the picture at the right) to select the desired character with a mouse
+  click from a table or by entering the associated hex code in the field at
+  the lower left.</p>
+<hr>
+
+<a name="cmd"><h3 class="header">Command line</h3></a>
+<p>If starting the program via a desktop shortcut or from another program, it
+  is possible to control its behavior by the following option:</p> 
+<dl>
+  <dt><b>none</b></dt>
+  <dd>The program starts showing the last opened sheet.</dd>
+  <dt>&nbsp;</dt>
+  <dt><b>[<em>Sheet</em>]</b></dt>
+  <dd>The specified <em>Sheet</em> will be loaded and displayed..</dd>
+  <dt>&nbsp;</dt>
+  <dt><b><a name="ini">/ini:[<em>IniFile</em>]</b></a></dt>
+  <dd>All program settings made by the user (such as the preferences for new sheets)
+    are saved in the file <em>RPlot.ini</em>. By default, you will find this file
+    in the directory used for the Application data of the user:<br>
+    <ul>
+      <li><b>Vista, Windows 7,8 and 10:</b> <i>C:\users\&lt;username&gt;\AppData\Roaming</i></li>
+      <li><b>Windows 2000 and XP:</b> <i>C:\Documents and Settings\&lt;username&gt;\Application Data\</i></li>
+    </ul>
+    Using this option you can select an alternative configuration file in the default 
+    directory (e.g. /ini:pb.ini ) or at any other location.  For this, a full path 
+    must be specified. 
+  </dd>
+  <dt>&nbsp;</dt>
+
+<hr>
+<a name="keys"><h3>Keyboard shortcuts</h3></a>
+<a href="#anfang"><img src="images/arrow-up.png" width="22" height="22" border="0" alt="Anfang" align="right"></a>
+<table>
+<tr valign="top">
+  <td width="20px">&nbsp;</td>
+  <td width="100px">
+        <b> 
+        F1<br>
+        F2<br>
+        F3<br>
+        Ctrl+B<br>
+        Ctrl+C<br>        
+        Ctrl+D<br>
+        Ctrl+E<br>
+        Ctrl+F<br>
+        Ctrl+H<br>
+        Ctrl+G<br>
+        Ctrl+I<br>
+        Ctrl+L<br>
+        Ctrl+M<br>
+        Ctrl+O<br>
+        Ctrl+R<br>
+        Ctrl+T<br>
+        Ctrl+U<br>
+        Ctrl+X<br>
+        Ctrl+Y<br>
+        </b>
+ </td>
+ <td>
+  this help<br>
+  <a href="#save">Save a sheet</a><br>
+  <a href="#load">Load a sheet</a><br>
+  <a href="#bar">Add a bar chart</a><br>
+  <a href="#curve">Add a data curve</a><br>
+  <a href="#newchart">Add a new chart</a><br> 
+  <a href="#edititem">Edit selected object</a><br> 
+  <a href="#fit">Add a best-fit curve</a><br>
+  <a href="#histo">Add a histogram</a><br>
+  <a href="#legend">Add a legend</a><br>
+  <a href="#image">Add an image</a><br>
+  <a href="#line">Add a line</a><br>
+  <a href="#comment">Add a comment<br>
+  <a href="#rect">Add a rectangle<br>
+  <a href="#result">Add a best-fir result<br>
+  <a href="#text">Add a text box<br>   
+  <a href="#function">Add a function </a><br>
+  <a href="#axis">Add an X axis</a> <br>
+  <a href="#axis">Add a Y axis</a><br>
+ </td>
+</tr>
+</table> 
+
+<hr>
+<i>Dr. J. Rathlev, 24222 Schwentinental, Germany, April 2020</i>
+</body>
+</html>
