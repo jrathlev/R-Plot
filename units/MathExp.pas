@@ -4,12 +4,21 @@
   Angepasst an Delphi: Nov. 2005
   Resourcestrings:     Jun. 2007
   Expressions als AnsiString für Delphi2009: Jul. 2011
+  Berechnung von Funktionswerten einer Variable: Mai 2012
+  letzte Änderung: April 2022
+
   J. Rathlev (kontakt(a)rathlev-home.de)
 
   function Calculate
   ------------------
     berechnet aus einem arithmetischen Ausdruck, der
     als String eingegeben wird, einen Zahlenwert (double)
+
+  function CalcFunction
+  ---------------------
+    berechnet aus einem arithmetischen Ausdruck, der als String eingegeben wird,
+    zu einer Variable X den Funktionswert Y (double) (s.o. "Calculate).
+    Zusätzlich können frei definierbare Konstanten übergeben werden
 
   function CalcErrorCode
   function CalcErrorPos
@@ -22,11 +31,13 @@
   -----------------------
     liefert einen erläuternden Text zu einem Fehlercode
 
-  procedure CalcSettings:
-  -----------------------
-    dient zur Änderung der Voreinstellung, wie Argu-
-    mente der Winkelfunktionen zu interpretieren und
-    die Resultate der Arcus-Funktionen anzugeben sind.
+  procedure CalcSetAngleUnits:
+  ----------------------------
+    dient zur Änderung der Voreinstellung für die Winkelfunktionsargumente
+
+  Vordefinierte Konstanten:
+  -------------------------
+    Pi und e
   }
 
 unit MathExp;
