@@ -266,9 +266,18 @@ function CountSubStr (const ASubStr,AString : string) : integer;
    Begrenzer (Del) lesen
    s wird um den verarbeiteten Teil gekürzt *)
 function ReadNxtInt (var s   : String;
+                     Dels    : TSysCharSet;
+                     Default : int64;
+                     var err : boolean) : int64; overload;
+
+function ReadNxtInt (var s   : String;
                      Del     : char;
                      Default : int64;
                      var err : boolean) : int64; overload;
+
+function ReadNxtInt (var s   : String;
+                     Dels    : TSysCharSet;
+                     Default : int64) : int64; overload;
 
 function ReadNxtInt (var s   : String;
                      Del     : char;
@@ -1121,22 +1130,42 @@ begin
 (* Integer, Double oder String aus einem String s bis zum nächsten Tenner lesen
    s wird um den verarbeiteten Teil gekürzt *)
 function ReadNxtInt (var s   : String;
-                     Del     : char;
+                     Dels    : TSysCharSet;
                      Default : int64;
                      var err : boolean) : int64;
 var
-  n    : int64;
-  i,ic : integer;
+  n,i,ic : integer;
 begin
-  s:=TrimLeft(s); i:=pos(Del,s);
-  if i=0 then i:=succ(length(s));
-  val(copy(s,1,pred(i)),n,ic);
-  if ic=0 then ReadNxtInt:=n
-  else begin
-    ReadNxtInt:=Default;
-    err:=true;
-    end;
-  delete(s,1,i);
+  s:=TrimLeft(s);
+  n:=length(s);
+  if n>0 then begin
+    i:=1;
+    while (i<=n) and not CharInSet(AnsiChar(s[i]),Dels) do inc(i);
+    val(copy(s,1,pred(i)),Result,ic);
+    if ic>0 then begin
+      ReadNxtInt:=Default;
+      err:=true;
+      end;
+    delete(s,1,i);
+    end
+  else Result:=Default;
+  end;
+
+function ReadNxtInt (var s   : String;
+                     Dels    : TSysCharSet;
+                     Default : int64) : int64; overload;
+var
+  err : boolean;
+begin
+  Result:=ReadNxtInt(s,Dels,Default,err);
+  end;
+
+function ReadNxtInt (var s   : String;
+                     Del     : char;
+                     Default : int64;
+                     var err : boolean) : int64;
+begin
+  Result:=ReadNxtInt(s,[Del],Default,err);
   end;
 
 function ReadNxtInt (var s   : String;

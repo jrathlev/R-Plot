@@ -595,11 +595,14 @@ begin
       if uid<>UcBom then begin  // in Unicode konvertieren
         fs.Position:=0;
         sl:=TStringList.Create;
-        sl.LoadFromStream(fs);
-        sl.Insert(0,UcSection);
-        fs.Size:=0;
-        sl.SaveToStream(fs,TEncoding.Unicode);
-        sl.Free;
+        try
+          sl.LoadFromStream(fs);
+          sl.Insert(0,UcSection);
+          fs.Size:=0;    // siehe THandleStream.SetSize
+          sl.SaveToStream(fs,TEncoding.Unicode);
+        finally
+          sl.Free;
+          end;
         end
     finally
       fs.Free;
