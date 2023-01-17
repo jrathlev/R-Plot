@@ -86,8 +86,8 @@ Source: "RPlot-u.ico"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\samples\*.xrp"; DestDir: "{commondocs}\RPlot\Samples"; Flags: ignoreversion
 
 [Icons]
-Name: "{group}\R-Plot"; Filename: "{app}\R-Plot.exe"
-Name: "{group}\{cm:UninstallProgram,R-Plot}"; Filename: "{uninstallexe}"
+Name: "{group}\R-Plot"; Filename: "{app}\RPlot.exe"
+Name: "{group}\{cm:UninstallProgram,R-Plot}"; Filename: "{uninstallexe}"; IconFilename: "{app}\RPlot-u.ico"
 Name: "{commondesktop}\R-Plot"; Filename: "{app}\RPlot.exe"; Tasks: desktopicon
 
 [Run]
