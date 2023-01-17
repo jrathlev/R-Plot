@@ -804,7 +804,6 @@ object TextDialog: TTextDialog
     Checked = True
     State = cbChecked
     TabOrder = 10
-    ExplicitTop = 319
   end
   object bbCharTab: TBitBtn
     Left = 230

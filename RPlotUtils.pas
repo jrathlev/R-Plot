@@ -2714,10 +2714,10 @@ begin
                     end;
                   // Punkte
                   Clip:=true;
-                  if SymType<>stNone then with DataTable do for k:=0 to Count-1 do with Data[k].Val do begin
+                  with DataTable do for k:=0 to Count-1 do with Data[k].Val do begin
                     pt:=FloatPoint(Scale(ix,X),Scale(iy,Y));
                     MinMax(pt,pmin,pmax); mmvalid:=true;
-                    PlotMark(pt,SymType,SymSize,LWidth,MColor,ChartColor);
+                    if SymType<>stNone then PlotMark(pt,SymType,SymSize,LWidth,MColor,ChartColor);
                     end;
                   if mmvalid then Outline:=MoveRect(FloatRect(pmin.X,pmin.Y,pmax.X,pmax.Y),MinusOrigin(PlotField));
                   // Positionen für Erkennung bei Mausbewegung berechnen

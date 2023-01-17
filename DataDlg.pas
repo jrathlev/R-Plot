@@ -108,7 +108,7 @@ implementation
 
 {$R *.dfm}
 
-uses GnuGetText, StringUtils, WinUtils, RPlotMain, ExtSysUtils, ExtStreams,
+uses GnuGetText, StringUtils, WinUtils, RPlotMain, ExtSysUtils, ExtStreams, MsgDialogs,
   System.Math, System.IniFiles, FileUtils, NumberUtils, FindReplDlg, SynEditTypes;
 
 const

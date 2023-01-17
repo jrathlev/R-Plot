@@ -26,8 +26,6 @@ object GraphDialog: TGraphDialog
     Align = alBottom
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitTop = 255
-    ExplicitWidth = 510
     DesignSize = (
       511
       48)
@@ -306,13 +304,9 @@ object GraphDialog: TGraphDialog
     Align = alClient
     Style = tsFlatButtons
     TabOrder = 2
-    ExplicitWidth = 510
-    ExplicitHeight = 199
     object tsScaled: TTabSheet
       Caption = 'tsScaled'
       TabVisible = False
-      ExplicitWidth = 502
-      ExplicitHeight = 189
       object gbDesign: TGroupBox
         Left = 5
         Top = 80
@@ -518,6 +512,10 @@ object GraphDialog: TGraphDialog
             Caption = 'tsHisto'
             ImageIndex = 1
             TabVisible = False
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 0
+            ExplicitHeight = 0
             object Label9: TLabel
               Left = 25
               Top = 20
@@ -592,6 +590,8 @@ object GraphDialog: TGraphDialog
       Caption = 'tsPie'
       ImageIndex = 1
       TabVisible = False
+      ExplicitLeft = 0
+      ExplicitTop = 0
       ExplicitWidth = 502
       ExplicitHeight = 189
       object gbPie: TGroupBox
@@ -616,7 +616,6 @@ object GraphDialog: TGraphDialog
     Align = alTop
     BevelOuter = bvNone
     TabOrder = 1
-    ExplicitWidth = 510
     object edDescription: TLabeledEdit
       Left = 10
       Top = 20

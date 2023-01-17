@@ -83,7 +83,6 @@ object FitDialog: TFitDialog
     ModalResult = 1
     NumGlyphs = 2
     TabOrder = 0
-    ExplicitTop = 280
   end
   object CancelBtn: TBitBtn
     Left = 410
@@ -147,7 +146,6 @@ object FitDialog: TFitDialog
     ModalResult = 2
     NumGlyphs = 2
     TabOrder = 1
-    ExplicitTop = 280
   end
   object edDescription: TLabeledEdit
     Left = 10
@@ -285,7 +283,6 @@ object FitDialog: TFitDialog
     Checked = True
     State = cbChecked
     TabOrder = 10
-    ExplicitTop = 288
   end
   object bbLoadTemplate: TBitBtn
     Left = 249
@@ -350,7 +347,6 @@ object FitDialog: TFitDialog
     ShowHint = True
     TabOrder = 11
     OnClick = bbLoadTemplateClick
-    ExplicitTop = 280
   end
   object bbSaveTemplate: TBitBtn
     Left = 284
@@ -415,7 +411,6 @@ object FitDialog: TFitDialog
     ShowHint = True
     TabOrder = 12
     OnClick = bbSaveTemplateClick
-    ExplicitTop = 280
   end
   object gbFitType: TGroupBox
     Left = 10

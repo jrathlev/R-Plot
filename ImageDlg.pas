@@ -101,7 +101,7 @@ implementation
 {$R *.dfm}
 
 uses GnuGetText, WinUtils, ExtSysUtils, System.IniFiles, Vcl.Imaging.jpeg,
-  Vcl.Clipbrd, Vcl.Imaging.GifImg, Vcl.Imaging.pngimage;
+  Vcl.Clipbrd, Vcl.Imaging.GifImg, Vcl.Imaging.pngimage, MsgDialogs;
 
 const
   BitMapHeight=8;

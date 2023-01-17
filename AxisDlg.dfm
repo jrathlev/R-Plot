@@ -619,6 +619,10 @@ object AxisDialog: TAxisDialog
     object tsProps: TTabSheet
       Caption = 'tsProps'
       TabVisible = False
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object gbLabels: TGroupBox
         Left = 0
         Top = 170
@@ -756,6 +760,10 @@ object AxisDialog: TAxisDialog
           object tsNumber: TTabSheet
             Caption = 'tsNumber'
             TabVisible = False
+            ExplicitLeft = 0
+            ExplicitTop = 0
+            ExplicitWidth = 0
+            ExplicitHeight = 0
             object paNumber: TPanel
               Left = 0
               Top = 0
@@ -1086,6 +1094,10 @@ object AxisDialog: TAxisDialog
       Caption = 'tsLabels'
       ImageIndex = 1
       TabVisible = False
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object gbUserLabels: TGroupBox
         Left = 0
         Top = 0
@@ -1466,6 +1478,10 @@ object AxisDialog: TAxisDialog
     object tsNormal: TTabSheet
       Caption = 'tsNormal'
       TabVisible = False
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object rgScale: TRadioGroup
         Left = 2
         Top = 85
@@ -1552,6 +1568,10 @@ object AxisDialog: TAxisDialog
       Caption = 'tsDateTime'
       ImageIndex = 1
       TabVisible = False
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object gbTimeRange: TGroupBox
         Left = 2
         Top = 0

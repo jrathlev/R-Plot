@@ -290,7 +290,7 @@ implementation
 uses Winapi.ShellAPI, System.IniFiles, Vcl.Printers, Vcl.Clipbrd,
   GnuGetText, InitProg, FileUtils, StringUtils, ExtSysUtils, ShowText,
   RPlotView, WinApiUtils, ChartDlg, AxisDlg, CurveDlg, DataDlg, FunctionDlg,
-  TextDlg, ImageDlg, DrawingDlg, GraphDlg, SelectAxisDlg, FitDlg;
+  TextDlg, ImageDlg, DrawingDlg, GraphDlg, SelectAxisDlg, FitDlg, MsgDialogs;
 
 { ------------------------------------------------------------------- }
 procedure TfrmSheet.FormCreate(Sender : TObject);

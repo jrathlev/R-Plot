@@ -142,6 +142,7 @@ type
     Label39: TLabel;
     feTickLength: TFloatRangeEdit;
     Label40: TLabel;
+    paOrientation: TPanel;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure cbFormsCloseUp(Sender: TObject);
@@ -165,7 +166,9 @@ type
     DefHeight    : integer;
     FSheet       : TDefaultSheet;
     procedure UpdateView;
-    procedure ShowData (sp : TSheetProperties);
+    procedure InitSize (IsMetric : boolean);
+    procedure InitSheet;
+    procedure ShowData (const sp : TSheetProperties);
     function SaveData : TSheetProperties;
   public
     { Public-Deklarationen }
@@ -441,7 +444,9 @@ begin
         MinValue:=MinValue*OneInch; MaxValue:=MaxValue*OneInch; Value:=Value*OneInch;
         end;
       rgDecSep.ItemIndex:=0;
-      end;                  }
+      end;
+                     }
+    InitSheet;
     with FSheet do if PUnit=puMetric then MetricSheet:=SaveData
     else InchSheet:=SaveData;
     PUnit:=TPlotUnit(rgUnit.ItemIndex);
@@ -517,10 +522,12 @@ begin
   end;
 
 procedure TPreferencesDialog.UpdateView;
-var
-  i    : integer;
-  metr : boolean;
-  s    : string;
+begin
+//  FSheet:=SaveData;
+//  ShowData;
+  end;
+
+procedure TPreferencesDialog.InitSize (IsMetric : boolean);
 
   procedure SetMargins (AMargin : TFRect);
   begin
@@ -531,23 +538,9 @@ var
     end;
 
 begin
-  metr:=rgUnit.ItemIndex=0;
-  for i:=0 to ComponentCount-1 do if Components[i] is TFloatRangeEdit then
-      with (Components[i] as TFloatRangeEdit) do begin
-    if metr then with MetricRanges[Tag] do begin
-      Decimal:=Dec; MinValue:=Min; MaxValue:=Max;
-      end
-    else with InchRanges[Tag] do begin
-      Decimal:=Dec; MinValue:=Min; MaxValue:=Max;
-      end;
-    end;
-  if metr then s:='cm' else s:='inch';
-  for i:=0 to ComponentCount-1 do if (Components[i] is TLabel) and (Components[i].Tag=1) then
-    (Components[i] as TLabel).Caption:=s;
-  rbPortrait.Visible:=cbForms.ItemIndex<>0;
-  rbLandscape.Visible:=rbPortrait.Visible;
+  paOrientation.Visible:=cbForms.ItemIndex<>0;
   with PaperSizes[TPageFormat(cbForms.ItemIndex)] do begin
-    if metr then with MSize do begin
+    if IsMetric then with MSize do begin
       if rbPortrait.Checked then begin
         feWidth.Value:=Width; feHeight.Value:=Height;
         if cbForms.ItemIndex=0 then SetMargins(NoMargin)
@@ -572,6 +565,28 @@ begin
         end;
       end;
     end;
+  end;
+
+procedure TPreferencesDialog.InitSheet;
+var
+  i    : integer;
+  metr : boolean;
+  s    : string;
+begin
+  metr:=rgUnit.ItemIndex=0;
+  for i:=0 to ComponentCount-1 do if Components[i] is TFloatRangeEdit then
+      with (Components[i] as TFloatRangeEdit) do begin
+    if metr then with MetricRanges[Tag] do begin
+      Decimal:=Dec; MinValue:=Min; MaxValue:=Max;
+      end
+    else with InchRanges[Tag] do begin
+      Decimal:=Dec; MinValue:=Min; MaxValue:=Max;
+      end;
+    end;
+  if metr then s:='cm' else s:='inch';
+  for i:=0 to ComponentCount-1 do if (Components[i] is TLabel) and (Components[i].Tag=1) then
+    (Components[i] as TLabel).Caption:=s;
+  InitSize(metr);
   with shBackground.Brush do begin
     Style:=bsSolid; Color:=bbBgColor.Tag;
     end;
@@ -610,7 +625,7 @@ begin
 procedure TPreferencesDialog.cbFormsCloseUp(Sender: TObject);
 begin
 //  with rgUnit do if cbForms.ItemIndex>4 then ItemIndex:=1 else ItemIndex:=0;
-  UpdateView;
+  InitSize(rgUnit.ItemIndex=0);
   end;
 
 procedure TPreferencesDialog.cxTranspChartClick(Sender: TObject);
@@ -618,7 +633,7 @@ begin
   if Visible then UpdateView;
   end;
 
-procedure TPreferencesDialog.ShowData (sp : TSheetProperties);
+procedure TPreferencesDialog.ShowData (const sp : TSheetProperties);
 var
   i  : integer;
   s  : string;
@@ -638,10 +653,13 @@ begin
   with sp do begin
     bbBgColor.Tag:=FBakColor;
     cbForms.ItemIndex:=integer(FPageFormat);
+    paOrientation.Visible:=cbForms.ItemIndex>0;
     with FSize do begin
       feWidth.Value:=Width; feHeight.Value:=Height;
+      feWidth.ReadOnly:=not paOrientation.Visible;
+      feHeight.ReadOnly:=not paOrientation.Visible;
       if (cbForms.ItemIndex>0) then begin
-        if (Width<Height) then rbPortrait.Checked:=true else rbLandscape.Checked:=true;
+//        if (Width<Height) then rbPortrait.Checked:=true else rbLandscape.Checked:=true;
         end;
       end;
     with FMargin do begin
@@ -788,7 +806,7 @@ begin
     ShowData(Properties);
     edDesc.Text:=SheetDesc;
     end;
-  UpdateView;
+//  UpdateView;
   ColorDialog.CustomColors.CommaText:=UserColors;
   ActiveControl:=edDesc;
   Result:=ShowModal=mrOK;

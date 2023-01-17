@@ -226,7 +226,7 @@ implementation
 
 uses GnuGetText, System.IniFiles, System.Math, System.StrUtils,
   NumberUtils, WinUtils, StringUtils, MathUtils, ExtSysUtils, DateUtils,
-  PlotFontDlg, SelectFromListDlg, TextFormatDlg, DateFormatDlg;
+  PlotFontDlg, SelectFromListDlg, TextFormatDlg, DateFormatDlg, MsgDialogs;
 
 const
   BitMapHeight=8;

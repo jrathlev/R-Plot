@@ -52,7 +52,7 @@ implementation
 
 {$R *.dfm}
 
-uses GnuGetText, WinUtils;
+uses GnuGetText, WinUtils, MsgDialogs;
 
 procedure TSelectAxisDialog.FormCreate(Sender: TObject);
 begin

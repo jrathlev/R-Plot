@@ -130,7 +130,7 @@ implementation
 {$R *.dfm}
 
 uses GnuGetText, WinUtils, ExtSysUtils, MathUtils, RWinFit, DataDlg,
-  System.IniFiles, System.Math;
+  System.IniFiles, System.Math, MsgDialogs;
 
 { ------------------------------------------------------------------- }
 const

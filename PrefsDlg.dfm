@@ -142,26 +142,6 @@ object PreferencesDialog: TPreferencesDialog
             MinValue = 5.000000000000000000
             MaxValue = 100.000000000000000000
           end
-          object rbPortrait: TRadioButton
-            Left = 10
-            Top = 58
-            Width = 71
-            Height = 17
-            Caption = 'Portrait'
-            Checked = True
-            TabOrder = 3
-            TabStop = True
-            OnClick = cbFormsCloseUp
-          end
-          object rbLandscape: TRadioButton
-            Left = 87
-            Top = 58
-            Width = 79
-            Height = 17
-            Caption = 'Landscape'
-            TabOrder = 4
-            OnClick = cbFormsCloseUp
-          end
           object bbBgColor: TBitBtn
             Left = 340
             Top = 55
@@ -246,8 +226,38 @@ object PreferencesDialog: TPreferencesDialog
               C0C0DCC0C0DCC0C0DCC0C0DCC0C0DCC0C0DCC0C0DCC0C0DCC0C0DCC0C0DCC0C0
               DCC0C0DCC0C0DCC0C0DCC0C0DCC0C0DCC0C0DCC0C0DCC0C0DCC0}
             NumGlyphs = 2
-            TabOrder = 5
+            TabOrder = 3
             OnClick = bbBgColorClick
+          end
+          object paOrientation: TPanel
+            Left = 5
+            Top = 60
+            Width = 176
+            Height = 31
+            BevelOuter = bvNone
+            Caption = 'paOrientation'
+            ShowCaption = False
+            TabOrder = 4
+            object rbLandscape: TRadioButton
+              Left = 85
+              Top = 5
+              Width = 79
+              Height = 17
+              Caption = 'Landscape'
+              TabOrder = 0
+              OnClick = cbFormsCloseUp
+            end
+            object rbPortrait: TRadioButton
+              Left = 5
+              Top = 5
+              Width = 71
+              Height = 17
+              Caption = 'Portrait'
+              Checked = True
+              TabOrder = 1
+              TabStop = True
+              OnClick = cbFormsCloseUp
+            end
           end
         end
         object gbMargin: TGroupBox
@@ -383,10 +393,6 @@ object PreferencesDialog: TPreferencesDialog
     object tsCharts: TTabSheet
       Caption = 'Charts'
       ImageIndex = 4
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Panel3: TPanel
         Left = 0
         Top = 0
@@ -557,10 +563,6 @@ object PreferencesDialog: TPreferencesDialog
     object tsAxes: TTabSheet
       Caption = 'Axes'
       ImageIndex = 5
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Panel6: TPanel
         Left = 0
         Top = 0
@@ -793,10 +795,6 @@ object PreferencesDialog: TPreferencesDialog
     object tsLines: TTabSheet
       Caption = 'Lines and symbols'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Panel4: TPanel
         Left = 0
         Top = 0
@@ -1065,10 +1063,6 @@ object PreferencesDialog: TPreferencesDialog
     object tsText: TTabSheet
       Caption = 'Text'
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Panel2: TPanel
         Left = 0
         Top = 0

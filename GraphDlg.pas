@@ -104,7 +104,7 @@ implementation
 
 {$R *.dfm}
 
-uses GnuGetText, ExtSysUtils, WinUtils, System.IniFiles, DataDlg;
+uses GnuGetText, ExtSysUtils, WinUtils, System.IniFiles, DataDlg, MsgDialogs;
 
 { ------------------------------------------------------------------- }
 const

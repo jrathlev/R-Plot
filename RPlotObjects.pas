@@ -151,6 +151,7 @@ type
   public
     procedure Offset(const DX, DY : double); overload;
     procedure Offset(const Point: TFPoint); overload;
+    function AsFRect : TFRect;
     case integer of
     0: (Left,Bottom,Width,Height : double);
     1: (BottomLeft, Size: TFPoint);
@@ -1196,7 +1197,7 @@ function NumberToPlotString (const s : string) : string;
 implementation
 
 uses GnuGetText, ExtSysUtils, NumberUtils, MathUtils, StrUtils, XMLUtils, FileUtils,
-  System.DateUtils, System.Math, Vcl.Imaging.jpeg, RPlotUtils;
+  System.DateUtils, System.Math, Vcl.Imaging.jpeg, RPlotUtils, MsgDialogs;
 
 { ------------------------------------------------------------------- }
 const
@@ -1211,6 +1212,11 @@ begin
 procedure TFloatArea.Offset(const Point: TFPoint);
 begin
   BottomLeft.Offset(Point);
+  end;
+
+function TFloatArea.AsFRect : TFRect;
+begin
+  Result.Left:=Left; Result.Bottom:=Bottom; Result.Right:=Left+Width; Result.Top:=Bottom+Height;
   end;
 
 { ------------------------------------------------------------------- }
@@ -2670,6 +2676,7 @@ begin
 
 function TChartItem.GetOutline : TFRect;
 begin
+  Result:=FChart.InnerArea.AsFRect;
 //  Result:=MoveRect(FloatRect(0,0,5,5),GetOrigin(FChart.FArea));
   end;
 
@@ -3169,6 +3176,7 @@ begin
 function TCurveItem.GetOutline : TFRect;
 begin
   Result:=FOutline;
+//  Result:=inherited;
   end;
 
 procedure TCurveItem.LoadData (XmlNode : IXMLNode; DataOptions : TDataOptions);

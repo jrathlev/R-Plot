@@ -135,7 +135,7 @@ implementation
 {$R *.dfm}
 
 uses GnuGetText, WinUtils, ExtSysUtils, NumberUtils, System.IniFiles,
-  CharTableDlg, TextFormatDlg;
+  CharTableDlg, TextFormatDlg, MsgDialogs;
 
 const
   BitMapHeight=8;

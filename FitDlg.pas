@@ -100,8 +100,8 @@ implementation
 
 {$R *.dfm}
 
-uses GnuGetText, ExtSysUtils, WinUtils, MathUtils, RWinFit, DataDlg, System.IniFiles;
-
+uses GnuGetText, ExtSysUtils, WinUtils, MsgDialogs, MathUtils, RWinFit, DataDlg,
+  System.IniFiles;
 
 { ------------------------------------------------------------------- }
 const
