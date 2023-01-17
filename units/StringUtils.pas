@@ -20,7 +20,7 @@
    the specific language governing rights and limitations under the License.
 
    New compilation - May 2007
-   last modified:  Sept. 2019
+   last modified:  December 2022
    *)
 
 unit StringUtils;
@@ -239,6 +239,7 @@ function ReplOptionChar (s : string; Back : boolean) : string;
 function IsLetter (c : char) : boolean;
 function IsDigit (c : char) : boolean;
 function IsHexDigit (c : char) : boolean;
+function PosNonDigit (const s : string; n : integer = 1) : integer;
 
 // Zahl in DreÌergruppen (fix und float)
 function InsertThousandSeparators (const NumStr : string; ThSep : char;
@@ -621,7 +622,7 @@ begin
   end;
 
 {------------------------------------------------------------------}
-(* Substring-Pos. ohne Unterschreidung groﬂ/klein *)
+(* Substring-Pos. ohne Unterscheidung groﬂ/klein *)
 function TextPos (const Substr, S: string): Integer;
 begin
   Result:=Pos(AnsiUppercase(Substr),AnsiUppercase(s));

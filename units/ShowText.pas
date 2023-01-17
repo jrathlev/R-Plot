@@ -105,7 +105,7 @@ implementation
 
 {$R *.DFM}
 
-uses GnuGetText, System.IniFiles, System.Math, WinUtils, FileUtils, System.StrUtils;
+uses GnuGetText, System.StrUtils, System.IniFiles, System.Math, WinUtils, MsgDialogs, FileUtils;
 
 {------------------------------------------------------------------- }
 // Ersatz für Bibliotheksfunktion, da dort nur 16-bit-Werte verarbeitet werden

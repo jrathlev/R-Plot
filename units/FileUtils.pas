@@ -37,15 +37,17 @@
          4.1 - Jan. 2017: several changes and enhancements
          4.2 - Jan. 2019: new functtion: GetExistingParentPath
          4.3 - Jan. 2020: new function: RemoveFirstDir
+         4.4 - June 2022: extensions to be used with portable devices
 
-   last modified: Sept. 2020
+   last modified: July 2022
    *)
 
 unit FileUtils;
 
 interface
 
-uses WinApi.Windows, System.Classes, System.SysUtils, System.IniFiles;
+uses WinApi.Windows, System.Classes, System.SysUtils, System.IniFiles,
+  IStreamApi;
 
 const
   Punkt = '.';
@@ -57,7 +59,7 @@ const
   FILE_WRITE_ATTRIBUTES = $0100;
   defBlockSize = 256*1024;
 
-  faAllFiles  = faArchive+faReadOnly+faHidden+faSysfile;
+  faAllFiles  = faArchive+faReadOnly+faHidden+faSysfile+faNormal;
   faNoArchive = faReadOnly+faHidden+faSysfile;
   faSuperHidden = faHidden+faSysfile;  //  hidden system dirs and files
 
@@ -85,6 +87,7 @@ type
     procedure WriteInt64(const Section, Ident: string; Value: int64);
   end;
 
+{ ------------------------------------------------------------------- }
   TInt64 = record
     case integer of
     0: (AsInt64 : int64);
@@ -95,12 +98,33 @@ type
     5 :(FileTime : TFileTime);
     end;
 
+  TFileStreamData = record
+    FileStream: IStream;
+    BufferSize: Cardinal;
+    procedure Reset;
+  end;
+
   TFileTimestamps = record
-    Valid          : boolean;
-    CreationTime,
-    LastAccessTime,
-    LastWriteTime  : TFileTime;
-    end;
+    Valid: boolean;
+    CreationTime, LastAccessTime, LastWriteTime: TFileTime;
+    procedure Reset;
+    procedure SetTimeStamps(CTime, MTime: TDateTime);
+  end;
+
+  TFileData = record
+  private
+    function GetModTime: TDateTime;
+    function GetCreateTime: TDateTime;
+  public
+    FileName,FullPath : string;
+    StreamData: TFileStreamData;
+    FileSize: int64;
+    FileAttr: Cardinal;
+    TimeStamps: TFileTimestamps;
+    procedure Reset;
+    property CreationTime: TDateTime read GetCreateTime;
+    property ModifiedTime: TDateTime read GetModTime;
+  end;
 
   TFileInfo = record
     Name     : string;
@@ -111,14 +135,9 @@ type
     Attr,Res : cardinal;
     end;
 
-  TFileData = record
-    TimeStamps : TFileTimestamps;
-    FileSize   : int64;
-    FileAttr   : cardinal;
-    end;
-
   TReparseType = (rtNone,rtJunction,rtSymbolic);
 
+{ ------------------------------------------------------------------- }
 // similar to TFileStream but different error handling
   TExtFileStream = class(THandleStream)
   strict private
@@ -202,7 +221,7 @@ function GetFileInfo (const FileName : string; var FSize : int64;
 function GetFileInfo (const FileName : string; var FileInfo : TFileInfo;
                       IncludeDirs : boolean = false) : boolean; overload;
 
-function GetFileData (const FileName : string; var FileData : TFileData) : boolean;
+function GetFileData (const AFileName : string; var FileData : TFileData) : boolean;
 
 // get file version, description, ...
 function GetFileInfoString (const Filename : string) : string;
@@ -351,7 +370,7 @@ function HasExt (const Name,Ext : string) : boolean;
 function AddPath (Path,Name : string) : string;
 
 // Expand filename to full path and add extension (if not exists)
-function ExpandToPath (Pfad,Name,Ext : string) : string;
+function ExpandToPath (const Pfad,Name,Ext : string) : string;
 function Erweiter (const Pfad,Name,Ext : string) : string;
 
 // Add suffix and extension to filename
@@ -378,6 +397,9 @@ function RemoveFirstDir (const Dir : string) : string;
 
 // Extract last subdirectory from path
 function ExtractLastDir (const Path : string) : string;
+
+// Extract first subdirectory from path and remove from Path
+function ExtractFirstDir (var Path : string) : string;
 
 // Get last existing parent path, set DefPath if not found
 function GetExistingParentPath (const Path,DefPath : string) : string;
@@ -468,6 +490,10 @@ function HasNoSubDirs (const Directory : string) : boolean;
 procedure DeleteEmptyDirectories (const Directory : string);
 
 { ---------------------------------------------------------------- }
+// Check if directory has specified file type
+function HasFileType (const Directory,Ext : string) : boolean;
+
+{ ---------------------------------------------------------------- }
 // Count files in directory and calculate the resulting volume
 procedure CountFiles (const Base,Dir,Ext : string; IncludeSubDir : boolean;
                       var FileCount : integer; var FileSize : int64); overload;
@@ -482,7 +508,7 @@ procedure DeleteDirectory (const Base,Dir           : string;
                            DeleteRoot               : boolean;
                            var DCount,FCount,ECount : cardinal); overload;
 function DeleteDirectory (const Directory : string;
-                          DeleteRoot      : boolean) : boolean; overload;
+                          DeleteRoot      : boolean = true) : boolean; overload;
 
 { ---------------------------------------------------------------- }
 // Check if a directory is accessible
@@ -1035,16 +1061,16 @@ begin
 
 { ------------------------------------------------------------------- }
 // get file size, timestamps and attributes
-function GetFileData (const FileName : string; var FileData : TFileData) : boolean;
+function GetFileData (const AFileName : string; var FileData : TFileData) : boolean;
 var
   FindRec : TSearchRec;
   FindResult : integer;
 begin
   Result:=false;            // does not exist
   with FileData do begin
-    FillChar(TimeStamps,sizeof(TFileTimestamps),0);
-    FileSize:=0; FileAttr:=INVALID_FILE_ATTRIBUTES;
-    FindResult:=FindFirst(FileName,faAnyFile,FindRec);
+    Reset;
+    FileName:=ExtractFileName(AFileName);
+    FindResult:=FindFirst(AFileName,faAnyFile,FindRec);
     if (FindResult=0) then with FindRec do begin
       TimeStamps:=GetTimestampsFromFindData(FindData);
       FileSize:=Size;
@@ -1569,14 +1595,17 @@ begin
 
 { --------------------------------------------------------------- }
 // Expand filename to full path and add extension (if not exists)
-function ExpandToPath (Pfad,Name,Ext : string) : string;
+function ExpandToPath (const Pfad,Name,Ext : string) : string;
+var
+  sn,se : string;
 begin
-  if (length(Ext)>0) and (Ext[1]=Punkt) then delete(Ext,1,1);
-  if (pos(Punkt,Name)=0) and (length(Ext)<>0) then Name:=Name+Punkt+Ext;
-  if (pos (DPunkt,Name)<>0) or (pos(BSlash,Name)=1)
-     or (length(Pfad)=0) then Result:=Name
-  else if Pfad[length(Pfad)]=BSlash then Result:=Pfad+Name
-         else Result:=Pfad+BSlash+Name;
+  se:=Ext; sn:=Name;
+  if (length(se)>0) and (se[1]=Punkt) then delete(se,1,1);
+  if (pos(Punkt,sn)=0) and (length(se)<>0) then sn:=sn+Punkt+se;
+  if (pos (DPunkt,sn)<>0) or (pos(BSlash,sn)=1)
+     or (length(Pfad)=0) then Result:=sn
+  else if Pfad[length(Pfad)]=BSlash then Result:=Pfad+sn
+         else Result:=Pfad+BSlash+sn;
   end;
 
 function Erweiter (const Pfad,Name,Ext  : string) : string;
@@ -1669,6 +1698,23 @@ begin
 function ExtractLastDir (const Path : string) : string;
 begin
   Result:=ExtractFileName(ExcludeTrailingPathDelimiter(Path));
+  end;
+
+// Extract first subdirectory from path and remove from Path
+function ExtractFirstDir (var Path : string) : string;
+var
+  n : integer;
+begin
+  Result:='';
+  if not ContainsFullPath(Path) then begin
+    n:=Pos(PathDelim,Path);
+    if n>0 then begin
+      Result:=copy(Path,1,n-1); delete(Path,1,n);
+      end
+    else begin
+      Result:=Path; Path:='';
+      end;
+    end;
   end;
 
 function RemoveFirstDir (const Dir : string) : string;
@@ -2379,6 +2425,16 @@ begin
   FindClose(DirInfo);
   end;
 
+{ ------------------------------------------------------------------- }
+// Check if directory holds a specified file type
+function HasFileType (const Directory,Ext : string) : boolean;
+var
+  DirInfo    : TSearchRec;
+begin
+  Result:=FindFirst(ExpandToPath(Directory,'*',Ext),faAnyFile,DirInfo)=0;
+  FindClose(DirInfo);
+  end;
+
 { ---------------------------------------------------------------- }
 // Count files in directory and calculate the resulting volume
 procedure CountFiles (const Base,Dir,Ext : string; IncludeSubDir : boolean;
@@ -2511,7 +2567,7 @@ constructor TUcStringList.Create;
 begin
   inherited Create;
   FHasBom:=false;
-end;
+  end;
 
 procedure TUcStringList.LoadFromStream(Stream: TStream; Encoding: TEncoding);
 var
@@ -2529,8 +2585,52 @@ begin
     FHasBom:=Size>0;
   finally
     EndUpdate;
+   end;
   end;
-end;
+
+// -----------------------------------------------------------------------------
+// Reset timestamps and file data
+procedure TFileTimestamps.Reset;
+begin
+  Valid:=false;
+  CreationTime:=ResetFileTime;
+  LastWriteTime:=ResetFileTime;
+  LastAccessTime:=ResetFileTime;
+  end;
+
+procedure TFileTimestamps.SetTimeStamps(CTime, MTime: TDateTime);
+begin
+  Valid:=True;
+  CreationTime:=LocalDateTimeToFileTime(CTime);
+  LastWriteTime:=LocalDateTimeToFileTime(MTime);
+  LastAccessTime:=LastWriteTime;
+  end;
+
+procedure TFileStreamData.Reset;
+begin
+  FileStream:=nil;
+  BufferSize:=0;
+  end;
+
+procedure TFileData.Reset;
+begin
+  FileName:='';
+  FullPath:='';
+  FileSize:=0;
+  FileAttr:=faArchive;
+  TimeStamps.Reset;
+  StreamData.Reset;
+  end;
+
+function TFileData.GetModTime: TDateTime;
+begin
+  Result:=FileTimeToLocalDateTime(TimeStamps.LastWriteTime);
+  end;
+
+function TFileData.GetCreateTime: TDateTime;
+begin
+  Result:=FileTimeToLocalDateTime(TimeStamps.CreationTime);
+  end;
 
 { ------------------------------------------------------------------- }
 {$IFDEF Trace}
