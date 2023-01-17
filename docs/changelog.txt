@@ -5,6 +5,12 @@ R-Plot
 Versionsgeschichte:
 -------------------
 
+2.0.3 (16.01.2023)
+  - Fehlerkorrekturen:
+    - Einträge im Startmenü bei Installation
+    - Markierung einer ausgewählten Kurve
+    - Ändern der Voreinstellungen für das Arbeitsblatt
+
 2.0.2 (24.10.2021)
   - Änderungen:
     - Geändertes Design
